@@ -1,0 +1,16 @@
+{
+  "id": "de.example.ups",
+  "name": "USV-Überwachung",
+  "version": "1.2.0",
+  "hostApi": "1",
+  "engines": { "phoedox": ">=1.4.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "frontend": { "module": "frontend/index.js" },
+  "contributes": {
+    "kinds": [{ "id": "ups", "schema": "schemas/ups.json", "icon": "battery-charging" }],
+    "mcpTools": [{ "name": "ups.runtime" }],
+    "events": ["schedule:every=60s"]
+  },
+  "permissions": ["graph:read", "graph:write:ups", "secrets:nut_password", "net:fetch:nut.lan"],
+  "license": { "noncommercial": "free", "commercial": { "plan": "ups-org", "trialDays": 14 } }
+}
