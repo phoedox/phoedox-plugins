@@ -15,3 +15,7 @@ plugins/ups/
 | `ups` | USV-Überwachung über NUT (Beispiel-Plugin) |
 
 Geplant: Proxmox & Portainer, UniFi / FRITZ!Box / OPNsense, NetBox, GitHub / GitLab, RoomPlan-Import.
+
+## Lizenz
+
+MIT – siehe [LICENSE](LICENSE).
