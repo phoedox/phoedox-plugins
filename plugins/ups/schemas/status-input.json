@@ -1,0 +1,1 @@
+{ "type": "object", "properties": { "ups": { "type": "string", "description": "Slug of the UPS entry; empty = all" } } }

@@ -1,34 +1,14 @@
-// Package manifestcheck validates every plugin manifest in plugins/*.
-// Full schema validation uses phoedox-sdk once it is published; until then
-// this checks the required fields and that referenced files exist.
+// Package manifestcheck validates every plugin manifest in plugins/* with
+// the SDK's rules and checks that referenced files exist.
 package manifestcheck
 
 import (
-	"encoding/json"
 	"os"
 	"path/filepath"
-	"regexp"
+	"strings"
 	"testing"
-)
 
-type manifest struct {
-	ID      string `json:"id"`
-	Name    string `json:"name"`
-	Version string `json:"version"`
-	HostAPI string `json:"hostApi"`
-	Engines struct {
-		Phoedox string `json:"phoedox"`
-	} `json:"engines"`
-	Contributes struct {
-		Kinds []struct {
-			Schema string `json:"schema"`
-		} `json:"kinds"`
-	} `json:"contributes"`
-}
-
-var (
-	idRe     = regexp.MustCompile(`^[a-z0-9]+(\.[a-z0-9-]+)+$`)
-	semverRe = regexp.MustCompile(`^\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$`)
+	"github.com/phoedox/phoedox-sdk/go/pdk"
 )
 
 func TestManifests(t *testing.T) {
@@ -37,25 +17,39 @@ func TestManifests(t *testing.T) {
 		t.Fatal("no plugin manifests found")
 	}
 	for _, f := range files {
-		t.Run(filepath.Base(filepath.Dir(f)), func(t *testing.T) {
+		dir := filepath.Dir(f)
+		t.Run(filepath.Base(dir), func(t *testing.T) {
 			data, err := os.ReadFile(f)
 			if err != nil {
 				t.Fatal(err)
 			}
-			var m manifest
-			if err := json.Unmarshal(data, &m); err != nil {
+			m, err := pdk.ParseManifest(data)
+			if err != nil {
 				t.Fatal(err)
 			}
-			if !idRe.MatchString(m.ID) || m.Name == "" || !semverRe.MatchString(m.Version) || m.HostAPI == "" || m.Engines.Phoedox == "" {
-				t.Fatalf("invalid manifest fields: %+v", m)
+			exists := func(what, p string) {
+				if _, err := os.Stat(filepath.Join(dir, p)); err != nil {
+					t.Errorf("%s %s missing", what, p)
+				}
 			}
 			for _, k := range m.Contributes.Kinds {
-				if k.Schema == "" {
-					continue
+				if k.Schema != "" {
+					exists("kind schema", k.Schema)
 				}
-				if _, err := os.Stat(filepath.Join(filepath.Dir(f), k.Schema)); err != nil {
-					t.Errorf("kind schema %s missing", k.Schema)
+			}
+			for _, tool := range m.Contributes.MCPTools {
+				if tool.Input != "" {
+					exists("tool input", tool.Input)
 				}
+			}
+			if m.Frontend != nil {
+				exists("frontend source", strings.TrimSuffix(m.Frontend.Module, ".js")+".ts")
+			}
+			if m.Backend != nil {
+				exists("backend", "backend")
+			}
+			if !strings.HasPrefix(m.ID, "com.phoedox.") && m.ID != "de.example.ups" {
+				t.Errorf("official plugins use com.phoedox.<name>")
 			}
 		})
 	}

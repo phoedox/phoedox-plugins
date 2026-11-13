@@ -3,12 +3,14 @@
   "name": "USV-Überwachung",
   "version": "1.2.0",
   "hostApi": "1",
-  "engines": { "phoedox": ">=1.4.0 <2.0.0" },
+  "description": "Liest Ladung, Laufzeit und Status von USVs über die HTTP-API eines NUT-Servers (z. B. PeaNUT) und zeigt sie am Eintrag an.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
   "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
   "frontend": { "module": "frontend/index.js" },
   "contributes": {
     "kinds": [{ "id": "ups", "schema": "schemas/ups.json", "icon": "battery-charging" }],
-    "mcpTools": [{ "name": "ups.runtime" }],
+    "relations": [{ "id": "powers", "from": ["ups"], "to": ["*"] }],
+    "mcpTools": [{ "name": "ups.status", "description": "Charge, runtime and status of one UPS or all UPS of the project.", "input": "schemas/status-input.json" }],
     "events": ["schedule:every=60s"]
   },
   "permissions": ["graph:read", "graph:write:ups", "secrets:nut_password", "net:fetch:nut.lan"],

@@ -1,11 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "USV",
+  "description": "Unterbrechungsfreie Stromversorgung",
   "type": "object",
   "required": ["kapazitaet"],
   "properties": {
-    "kapazitaet": { "type": "number", "description": "VA" },
-    "ladung": { "type": "number", "minimum": 0, "maximum": 100 },
-    "laufzeit": { "type": "number", "description": "Minuten" }
+    "kapazitaet": { "type": "number", "title": "Kapazität", "x-unit": "VA" },
+    "ladung": { "type": "number", "title": "Ladung", "minimum": 0, "maximum": 100, "x-unit": "%" },
+    "laufzeit": { "type": "number", "title": "Laufzeit", "x-unit": "min" },
+    "status": { "type": "string", "title": "Status", "enum": ["online", "batterie", "batterie_schwach", "unbekannt"] },
+    "nut_name": { "type": "string", "title": "Name im NUT-Server" },
+    "abgefragt": { "type": "string", "format": "date-time", "title": "Zuletzt abgefragt" }
   }
 }
