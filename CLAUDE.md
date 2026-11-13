@@ -4,6 +4,7 @@ Offizielle Plugins. Gesamtentscheidungen: `phoedox/phoedox` → `docs/decisions.
 
 ## Regeln
 
+- Immer die aktuelle stabile Go-Version und aktuelle Abhängigkeiten verwenden (`go` + `toolchain` in `go.mod`).
 - Ein Ordner pro Plugin unter `plugins/`, Manifest `phoedox-plugin.json` mit Reverse-DNS-ID `com.phoedox.<name>` für offizielle Plugins (Beispiel `de.example.ups` bleibt als Vorlage).
 - Rechte so knapp wie möglich anfordern; jedes neue Recht im PR begründen.
 - Backend: `//go:build wasip1`, Exporte per `//go:wasmexport`. Frontend: Elemente `phx-<name>`, Icons aus Lucide.
