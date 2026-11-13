@@ -1,0 +1,19 @@
+{
+  "id": "com.phoedox.github",
+  "name": "GitHub",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Holt die Repositories einer GitHub-Organisation oder eines Kontos ins Wissensnetz (Sprache, Lizenz, Sichtbarkeit, Sterne, letzter Push) und listet KI-Clients offene Issues und Pull Requests. Einstellungen: owner (Organisation oder Konto), optional token (fein granulares Token, nur Lesen; nötig für private Repositories).",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "kinds": [{ "id": "github_repo", "schema": "schemas/github_repo.json", "icon": "git-branch" }],
+    "mcpTools": [
+      { "name": "github.sync", "description": "Import the repositories of the configured owner now.", "input": "schemas/empty.json" },
+      { "name": "github.open", "description": "Open issues and pull requests of one repository of the configured owner.", "input": "schemas/open-input.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:read", "graph:write:github_repo", "secrets:owner", "secrets:token", "net:fetch:api.github.com"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}

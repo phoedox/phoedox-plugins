@@ -13,6 +13,13 @@ plugins/ups/
 | Plugin | Inhalt |
 |---|---|
 | `ups` | USV-Überwachung über NUT (Beispiel-Plugin) |
+| `homeassistant` | Bereiche und Geräte aus Home Assistant als Räume und Geräte; MCP `ha.state`, `ha.sync` |
+| `proxmox` | Knoten, VMs und LXC aus Proxmox VE mit „läuft auf“; MCP `pve.status`, `pve.sync` |
+| `github` | Repositories einer Organisation oder eines Kontos; MCP `github.open`, `github.sync` |
+
+Home Assistant und Proxmox nutzen `net:fetch:config`: Sie rufen nur die Adresse auf, die der
+Projektbesitzer in den Plugin-Einstellungen als `url` einträgt. Zugangsdaten liegen als `token`
+verschlüsselt beim Projekt.
 
 Geplant:
 

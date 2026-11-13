@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "url": { "type": "string", "format": "uri", "title": "Adresse" },
+    "description": { "type": "string", "title": "Beschreibung" },
+    "language": { "type": "string", "title": "Sprache" },
+    "license": { "type": "string", "title": "Lizenz" },
+    "visibility": { "type": "string", "title": "Sichtbarkeit", "enum": ["public", "private", "internal"] },
+    "stars": { "type": "number", "title": "Sterne" },
+    "open_issues": { "type": "number", "title": "Offene Issues" },
+    "archived": { "type": "boolean", "title": "Archiviert" },
+    "pushed_at": { "type": "string", "format": "date", "title": "Letzter Push" }
+  }
+}

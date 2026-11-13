@@ -1,0 +1,1 @@
+{ "type": "object", "properties": { "entities": { "type": "array", "items": { "type": "string" }, "description": "Entity ids like light.flur or sensor.keller_temperatur (at most 20)" } }, "required": ["entities"] }

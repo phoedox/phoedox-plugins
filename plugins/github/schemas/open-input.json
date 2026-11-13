@@ -1,0 +1,1 @@
+{ "type": "object", "properties": { "repo": { "type": "string", "description": "Repository name without owner, e.g. phoedox" } }, "required": ["repo"] }
