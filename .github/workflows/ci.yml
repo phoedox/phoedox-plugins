@@ -5,14 +5,7 @@ on:
 jobs:
   plugins:
     runs-on: ubuntu-latest
-    env:
-      # phoedox-sdk is private for now: a token with read access is needed
-      # (secret PHOEDOX_SDK_TOKEN). Not needed once the SDK repo is public.
-      GOPRIVATE: github.com/phoedox
     steps:
-      - name: Access to phoedox-sdk
-        env: { TOKEN: "${{ secrets.PHOEDOX_SDK_TOKEN }}" }
-        run: if [ -n "$TOKEN" ]; then git config --global url."https://x-access-token:${TOKEN}@github.com/phoedox/".insteadOf "https://github.com/phoedox/"; fi
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with: { go-version-file: go.mod }
