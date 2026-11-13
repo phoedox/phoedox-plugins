@@ -14,7 +14,10 @@ plugins/ups/
 |---|---|
 | `ups` | USV-Überwachung über NUT (Beispiel-Plugin) |
 
-Geplant: Proxmox & Portainer, UniFi / FRITZ!Box / OPNsense, NetBox, GitHub / GitLab, RoomPlan-Import.
+Geplant:
+
+- **Doku-Typen:** Checkliste/Formular, Glossar, Patchliste/Kabelplan, Netzwerk-Konfiguration, Kalender, Kanban, Zeitleiste/Gantt, Freies Diagramm, Prozess (EPK/eEPK, BPMN, Swimlanes), Architektur (C4), Sequenzdiagramm, Mindmap/Whiteboard, Datenbankmodell, Komponente, Sicherungskasten/Elektroplan, Karte, Notebook, Runbook
+- **Integrationen:** Proxmox & Portainer, UniFi / FRITZ!Box / OPNsense, NetBox, GitHub / GitLab, Zammad / Jira, RoomPlan-Import
 
 ## Lizenz
 
