@@ -1,6 +1,6 @@
 # Phoedox Plugins
 
-Offizielle Plugins. Gesamtentscheidungen: `phoedox/phoedox` → `docs/decisions.md`; SDK und Manifest-Schema: `phoedox/phoedox-sdk`.
+Offizielle Plugins. Gesamtentscheidungen: in Phoedox (https://app.phoedox.com, Projekt `phoedox`), v. a. ADR-0003 und ADR-0024 – per MCP lesen, neue mit `create_decision` anlegen; SDK und Manifest-Schema: `phoedox/phoedox-sdk`.
 
 ## Regeln
 
