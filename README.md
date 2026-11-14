@@ -41,6 +41,12 @@ plugins/ups/
 | `unifiprotect` | UniFi Protect NVR and cameras; MCP `protect.cameras`, `protect.sync` |
 | `frigate` | Frigate NVR and cameras; MCP `frigate.events`, `frigate.stats`, `frigate.sync` |
 | `esphome` | ESPHome devices from the ESPHome dashboard; MCP `esphome.devices`, `esphome.sync` |
+| `paperless` | Search Paperless-ngx documents, also by an entry's serial or model; MCP `paperless.search`, `paperless.for_entry` |
+| `m365` | Intune devices and licences via Microsoft Graph; MCP `m365.devices`, `m365.licenses`, `m365.sync` |
+| `gworkspace` | Google Workspace ChromeOS and mobile devices; MCP `gworkspace.devices`, `gworkspace.sync` |
+| `gdpr` | Record of processing activities (Art. 30 GDPR) as graph data; MCP `gdpr.register`, `gdpr.gaps` |
+| `isms` | ISO 27001 / BSI IT-Grundschutz controls without catalogue texts; MCP `isms.coverage`, `isms.soa` |
+| `labels` | Printable labels with QR code for Brother QL and Dymo (frontend only) |
 
 Integrations for self-hosted systems use `net:fetch:config`: they only call the address that the
 project owner enters as `url` in the plugin settings. They only read; none of them changes the
