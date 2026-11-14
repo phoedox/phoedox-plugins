@@ -1,0 +1,53 @@
+{
+  "id": "com.phoedox.shelly",
+  "name": "Shelly",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports Shelly devices from the local network into the knowledge graph: devices with a switch and power metering become smart plugs, all others devices (manufacturer, model, MAC, IP address, firmware, generation, host name). AI clients get live power, energy, voltage, temperature, Wi-Fi signal and available firmware updates. Read-only: the plugin only reads and never switches. Works with Gen1 (/shelly, /status) and Gen2 and later (RPC over HTTP, /rpc/Shelly.GetStatus); MQTT and the Shelly Cloud are not used. Settings: url (the first device, e.g. http://192.168.1.50), device2_url to device10_url (further devices, one address each: a plugin may only reach the hosts entered in its own address settings, so up to 10 devices per project; for more devices use the Home Assistant plugin), optional password (device password, sent only when a device asks for it: digest login as admin for Gen2 and later, basic login for Gen1; the same password for all devices) and optional username (Gen1 only, default admin). Shelly devices only speak plain HTTP on the local network, so use them on a trusted network or VLAN.",
+  "engines": {
+    "phoedox": ">=0.1.0 <2.0.0"
+  },
+  "backend": {
+    "wasm": "backend.wasm",
+    "memoryMb": 32
+  },
+  "contributes": {
+    "mcpTools": [
+      {
+        "name": "shelly.sync",
+        "description": "Import the configured Shelly devices into the knowledge graph now.",
+        "input": "schemas/empty.json",
+        "timeoutSec": 60
+      },
+      {
+        "name": "shelly.status",
+        "description": "Live status of every configured Shelly: per output on/off, power (W), energy (kWh), voltage and temperature; Wi-Fi network and signal (dBm), IP address, uptime and available firmware update.",
+        "input": "schemas/empty.json",
+        "timeoutSec": 60
+      }
+    ],
+    "events": [
+      "schedule:every=6h"
+    ]
+  },
+  "permissions": [
+    "graph:write:device,smart_plug",
+    "secrets:url",
+    "secrets:device2_url",
+    "secrets:device3_url",
+    "secrets:device4_url",
+    "secrets:device5_url",
+    "secrets:device6_url",
+    "secrets:device7_url",
+    "secrets:device8_url",
+    "secrets:device9_url",
+    "secrets:device10_url",
+    "secrets:username",
+    "secrets:password",
+    "net:fetch:config"
+  ],
+  "license": {
+    "noncommercial": "free",
+    "commercial": "free"
+  }
+}
