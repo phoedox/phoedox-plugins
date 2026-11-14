@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Control",
+  "description": "A security control or requirement of the ISMS; reference and title are entered by the user",
+  "type": "object",
+  "required": ["framework"],
+  "properties": {
+    "framework": { "type": "string", "title": "Framework", "enum": ["iso27001", "bsi", "own"] },
+    "ref": { "type": "string", "title": "Reference, e.g. A.5.15 or OPS.1.1.2.A3" },
+    "title": { "type": "string", "title": "Title (own wording)" },
+    "status": { "type": "string", "title": "Status", "enum": ["not_started", "planned", "partial", "implemented", "not_applicable"] },
+    "justification": { "type": "string", "title": "Justification" },
+    "owner": { "type": "string", "title": "Owner" },
+    "evidence": { "type": "string", "title": "Evidence (link or text)" },
+    "last_review": { "type": "string", "format": "date", "title": "Last review" }
+  }
+}

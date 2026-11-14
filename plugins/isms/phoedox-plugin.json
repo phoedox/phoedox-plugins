@@ -1,0 +1,19 @@
+{
+  "id": "com.phoedox.isms",
+  "name": "ISMS controls",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Helps to run an information security management system for ISO/IEC 27001 or BSI IT-Grundschutz in the knowledge graph. It adds the kind control (framework, reference, title, status, justification, owner, evidence, last review) and the relation covers from a control to any entry. You enter the references (e.g. A.5.15 or OPS.1.1.2.A3) and your own titles and texts; the plugin ships no catalogue and no texts of the standards. AI clients get the coverage (controls per framework and status, controls without evidence or without a review in the last 12 months, servers, VMs and services no control covers; isms.coverage) and the Statement of Applicability as Markdown (isms.soa). No settings and no network access; it only reads the project's entries.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "kinds": [{ "id": "control", "schema": "schemas/control.json", "icon": "shield-check" }],
+    "relations": [{ "id": "covers", "from": ["control"], "to": ["*"] }],
+    "mcpTools": [
+      { "name": "isms.coverage", "description": "Controls per framework and status, controls without evidence, controls not reviewed in the last 12 months, and servers, VMs and services that no control covers.", "input": "schemas/empty.json", "timeoutSec": 30 },
+      { "name": "isms.soa", "description": "Statement of Applicability as Markdown: every control with reference, title, applicability, status, justification, owner, evidence, last review and the entries it covers.", "input": "schemas/soa-input.json", "timeoutSec": 30 }
+    ]
+  },
+  "permissions": ["graph:read"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
