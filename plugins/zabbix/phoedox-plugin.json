@@ -1,0 +1,17 @@
+{
+  "id": "com.phoedox.zabbix",
+  "name": "Zabbix",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Gives AI clients the current problems and the hosts of a Zabbix server (6.4 or later) together with the Phoedox entry each host belongs to (matched by host name, visible name, IP address or DNS name). Read-only, no import. Settings: url (the Zabbix frontend, e.g. https://zabbix.example.org; the plugin calls /api_jsonrpc.php below it) and token (an API token of a user whose role may read the hosts and problems in question; no write access needed). The plugin reads the knowledge graph only to find matching entries.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "zabbix.problems", "description": "The 100 most recent problems (including recently resolved ones): name, severity, acknowledged, since when, hosts and the matching Phoedox entry.", "input": "schemas/empty.json" },
+      { "name": "zabbix.hosts", "description": "Hosts with technical and visible name, status (enabled or disabled), availability, IP address, DNS name and the matching Phoedox entry.", "input": "schemas/empty.json" }
+    ]
+  },
+  "permissions": ["graph:read", "secrets:url", "secrets:token", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
