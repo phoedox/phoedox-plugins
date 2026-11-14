@@ -1,0 +1,19 @@
+{
+  "id": "com.phoedox.netbox",
+  "name": "NetBox",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports locations, racks and devices from NetBox into the knowledge graph: locations as rooms, racks with their height, devices by role as router, switch, access point, server, patch panel or device, mounted in their rack at their unit. AI clients can search devices and list IP prefixes. Settings: url (e.g. https://netbox.example.org) and token (a read-only API token).",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 48 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "netbox.sync", "description": "Import NetBox locations, racks and devices into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "netbox.find", "description": "Search NetBox devices by name, serial number, asset tag or IP address.", "input": "schemas/find-input.json" },
+      { "name": "netbox.prefixes", "description": "IP prefixes from NetBox with VLAN, status and description.", "input": "schemas/empty.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:read", "graph:write:room,rack,router,switch,access_point,server,patch_panel,device", "secrets:url", "secrets:token", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}

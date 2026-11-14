@@ -1,0 +1,1 @@
+{ "type": "object", "properties": { "q": { "type": "string", "description": "Search text: device name, serial number, asset tag or IP address" } }, "required": ["q"] }
