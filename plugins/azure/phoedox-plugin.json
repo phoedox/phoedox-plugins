@@ -1,0 +1,18 @@
+{
+  "id": "com.phoedox.azure",
+  "name": "Microsoft Azure",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports the virtual machines of an Azure subscription into the knowledge graph as VMs (size, location, resource group, operating system and image, power state) and lists them for AI clients. Read-only: it signs in with client credentials at login.microsoftonline.com and only reads from Azure Resource Manager. Settings: tenant_id (directory ID), client_id and client_secret (an app registration with a client secret), subscription_id. The app registration needs the built-in role Reader on the subscription (it only needs Microsoft.Compute/virtualMachines/read); no write role.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "azure.sync", "description": "Import the virtual machines of the configured subscription into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "azure.vms", "description": "Virtual machines of the configured subscription with resource group, location, size, operating system, power state and provisioning state.", "input": "schemas/empty.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:write:vm", "secrets:tenant_id", "secrets:client_id", "secrets:client_secret", "secrets:subscription_id", "net:fetch:login.microsoftonline.com", "net:fetch:management.azure.com"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
