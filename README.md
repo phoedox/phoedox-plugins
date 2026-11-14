@@ -1,6 +1,6 @@
 # Phoedox Plugins
 
-Offizielle Plugins für [Phoedox](https://github.com/phoedox/phoedox). Jedes Plugin liegt in `plugins/<name>/`:
+Official plugins for [Phoedox](https://github.com/phoedox/phoedox). Each plugin is in `plugins/<name>/`:
 
 ```
 plugins/ups/
@@ -10,22 +10,22 @@ plugins/ups/
   schemas/              JSON-Schemas der Arten
 ```
 
-| Plugin | Inhalt |
+| Plugin | Content |
 |---|---|
-| `ups` | USV-Überwachung über NUT (Beispiel-Plugin) |
-| `homeassistant` | Bereiche und Geräte aus Home Assistant als Räume und Geräte; MCP `ha.state`, `ha.sync` |
-| `proxmox` | Knoten, VMs und LXC aus Proxmox VE mit „läuft auf“; MCP `pve.status`, `pve.sync` |
-| `github` | Repositories einer Organisation oder eines Kontos; MCP `github.open`, `github.sync` |
+| `ups` | UPS monitoring via NUT (example plugin) |
+| `homeassistant` | Areas and devices from Home Assistant as rooms and devices; MCP `ha.state`, `ha.sync` |
+| `proxmox` | Nodes, VMs and LXC from Proxmox VE with "runs on"; MCP `pve.status`, `pve.sync` |
+| `github` | Repositories of an organization or an account; MCP `github.open`, `github.sync` |
 
-Home Assistant und Proxmox nutzen `net:fetch:config`: Sie rufen nur die Adresse auf, die der
-Projektbesitzer in den Plugin-Einstellungen als `url` einträgt. Zugangsdaten liegen als `token`
-verschlüsselt beim Projekt.
+Home Assistant and Proxmox use `net:fetch:config`: they only call the address that the
+project owner enters as `url` in the plugin settings. Credentials are stored encrypted as `token`
+with the project.
 
-Geplant:
+Planned:
 
-- **Doku-Typen:** Checkliste/Formular, Glossar, Patchliste/Kabelplan, Netzwerk-Konfiguration, Kalender, Kanban, Zeitleiste/Gantt, Freies Diagramm, Prozess (EPK/eEPK, BPMN, Swimlanes), Architektur (C4), Sequenzdiagramm, Mindmap/Whiteboard, Datenbankmodell, Komponente, Sicherungskasten/Elektroplan, Karte, Notebook, Runbook
-- **Integrationen:** Proxmox & Portainer, UniFi / FRITZ!Box / OPNsense, NetBox, GitHub / GitLab, Zammad / Jira, RoomPlan-Import
+- **Doc types:** checklist/form, glossary, patch list/cable plan, network configuration, calendar, Kanban, timeline/Gantt, free diagram, process (EPC/eEPC, BPMN, swimlanes), architecture (C4), sequence diagram, mind map/whiteboard, database model, component, fuse box/electrical plan, map, notebook, runbook
+- **Integrations:** Proxmox & Portainer, UniFi / FRITZ!Box / OPNsense, NetBox, GitHub / GitLab, Zammad / Jira, RoomPlan import
 
-## Lizenz
+## License
 
-MIT – siehe [LICENSE](LICENSE).
+MIT – see [LICENSE](LICENSE).
