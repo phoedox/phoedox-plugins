@@ -1,0 +1,19 @@
+{
+  "id": "com.phoedox.cloudflare",
+  "name": "Cloudflare",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports the DNS zones of a Cloudflare account into the knowledge graph (status, plan, name servers, number of records and of proxied records) and links each zone to the servers, VMs, LXC containers and routers its A, AAAA and CNAME records point to (\"related to\", matched by IP address). AI clients can list the DNS records of a zone (type, name, content, proxied, TTL; TTL 1 means automatic). Read-only. Settings: token (an API token with the permissions Zone:Read and DNS:Read, for all zones or the zones to import).",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "kinds": [{ "id": "dns_zone", "schema": "schemas/dns_zone.json", "icon": "globe" }],
+    "mcpTools": [
+      { "name": "cloudflare.sync", "description": "Import the Cloudflare DNS zones into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "cloudflare.records", "description": "DNS records of one Cloudflare zone: type, name, content, proxied and TTL (1 = automatic).", "input": "schemas/records-input.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:read", "graph:write:dns_zone", "secrets:token", "net:fetch:api.cloudflare.com"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "name": { "type": "string", "title": "Zone" },
+    "status": { "type": "string", "title": "Status" },
+    "plan": { "type": "string", "title": "Plan" },
+    "name_servers": { "type": "string", "title": "Name servers" },
+    "records": { "type": "number", "title": "DNS records" },
+    "proxied_records": { "type": "number", "title": "Proxied records" }
+  }
+}
