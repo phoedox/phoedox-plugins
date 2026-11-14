@@ -1,0 +1,19 @@
+{
+  "id": "com.phoedox.m365",
+  "name": "Microsoft 365 (Intune)",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports the devices managed by Microsoft Intune into the knowledge graph as devices (name, manufacturer, model, serial number, operating system and version, compliance state, last sync, and the display name of the primary user; no e-mail addresses) and lists them and the subscribed Microsoft 365 licenses (consumed and available units per SKU) for AI clients. Read-only: it signs in with client credentials at login.microsoftonline.com and only reads from Microsoft Graph (graph.microsoft.com). Settings: tenant_id (directory ID or primary domain), client_id and client_secret (an app registration with a client secret). The app registration needs the Microsoft Graph application permissions DeviceManagementManagedDevices.Read.All (devices) and Organization.Read.All (licenses), with admin consent; no write permission. Devices removed from Intune stay in Phoedox until you delete them.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 48 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "m365.sync", "description": "Import the Intune managed devices into the knowledge graph now.", "input": "schemas/empty.json", "timeoutSec": 60 },
+      { "name": "m365.devices", "description": "Intune managed devices with operating system, model, serial number, compliance state, last sync and the display name of the primary user.", "input": "schemas/devices-input.json", "timeoutSec": 60 },
+      { "name": "m365.licenses", "description": "Subscribed Microsoft 365 licenses (SKUs) with enabled, consumed and available units.", "input": "schemas/empty.json", "timeoutSec": 20 }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:write:device", "secrets:tenant_id", "secrets:client_id", "secrets:client_secret", "net:fetch:login.microsoftonline.com", "net:fetch:graph.microsoft.com"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}

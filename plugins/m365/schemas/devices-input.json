@@ -1,0 +1,6 @@
+{
+  "type": "object",
+  "properties": {
+    "q": { "type": "string", "description": "Only devices whose name, serial number, model or user contains this text (empty = all)" }
+  }
+}
