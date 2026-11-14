@@ -1,0 +1,7 @@
+{
+  "type": "object",
+  "properties": {
+    "camera": { "type": "string", "description": "Only events of this camera (Frigate camera name, e.g. front_door; several separated by commas)" },
+    "label": { "type": "string", "description": "Only events with this label, e.g. person, car, dog (several separated by commas)" }
+  }
+}

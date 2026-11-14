@@ -1,0 +1,78 @@
+{
+  "id": "com.phoedox.frigate",
+  "name": "Frigate",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports a Frigate NVR into the knowledge graph: Frigate as a service (URL, port, version) and its cameras as cameras (IP address or host name from the stream or ONVIF address, state, detect resolution, recording on/off, object detection, tracked objects), each \"related to\" the service. Contributes the kind camera (shared with the UniFi Protect plugin) with the relations \"located in\" a room and \"powered by\" a switch, outlet or smart plug. AI clients get the 50 most recent events (label, camera, score, start and end time, clip and snapshot available; optionally filtered by camera or label) and statistics (version, camera and detection rates, detector inference time, CPU and memory, storage). Read-only: only GET requests and the login. Stream credentials are never stored; only the host is read from stream addresses. Settings: url (e.g. https://frigate.example.org:8971, or http://<host>:5000 for the unauthenticated internal port), optional username and password (a Frigate user, 0.14 or later; the plugin logs in with POST /api/login on each run and uses the session token, a viewer role is enough), optional token (a fixed bearer token instead; Frigate session tokens expire, so username and password are preferred) and optional name (default: Frigate).",
+  "engines": {
+    "phoedox": ">=0.1.0 <2.0.0"
+  },
+  "backend": {
+    "wasm": "backend.wasm",
+    "memoryMb": 32
+  },
+  "contributes": {
+    "kinds": [
+      {
+        "id": "camera",
+        "schema": "schemas/camera.json",
+        "icon": "cctv"
+      }
+    ],
+    "relations": [
+      {
+        "id": "located_in",
+        "from": [
+          "camera"
+        ],
+        "to": [
+          "room"
+        ]
+      },
+      {
+        "id": "powered_by",
+        "from": [
+          "camera"
+        ],
+        "to": [
+          "switch",
+          "outlet",
+          "smart_plug"
+        ]
+      }
+    ],
+    "mcpTools": [
+      {
+        "name": "frigate.sync",
+        "description": "Import Frigate and its cameras into the knowledge graph now.",
+        "input": "schemas/empty.json"
+      },
+      {
+        "name": "frigate.events",
+        "description": "The 50 most recent Frigate events: label (and sub label), camera, score in percent, start and end time (UTC), zones, whether a clip and a snapshot exist. Optional filters camera and label.",
+        "input": "schemas/events-input.json"
+      },
+      {
+        "name": "frigate.stats",
+        "description": "Frigate statistics: version and latest version, uptime, frames and detections per second per camera, connection quality, detector inference time, CPU and memory use and storage usage in GiB.",
+        "input": "schemas/empty.json"
+      }
+    ],
+    "events": [
+      "schedule:every=6h"
+    ]
+  },
+  "permissions": [
+    "graph:write:service,camera",
+    "secrets:url",
+    "secrets:username",
+    "secrets:password",
+    "secrets:token",
+    "secrets:name",
+    "net:fetch:config"
+  ],
+  "license": {
+    "noncommercial": "free",
+    "commercial": "free"
+  }
+}
