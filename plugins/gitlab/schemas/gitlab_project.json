@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "url": { "type": "string", "format": "uri", "title": "Address" },
+    "description": { "type": "string", "title": "Description" },
+    "visibility": { "type": "string", "title": "Visibility", "enum": ["public", "internal", "private"] },
+    "default_branch": { "type": "string", "title": "Default branch" },
+    "topics": { "type": "string", "title": "Topics" },
+    "stars": { "type": "number", "title": "Stars" },
+    "open_issues": { "type": "number", "title": "Open issues" },
+    "archived": { "type": "boolean", "title": "Archived" },
+    "last_activity": { "type": "string", "format": "date", "title": "Last activity" }
+  }
+}

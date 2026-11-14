@@ -1,0 +1,19 @@
+{
+  "id": "com.phoedox.gitlab",
+  "name": "GitLab",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports the projects of a GitLab group (with subgroups) into the knowledge graph (visibility, default branch, topics, last activity) and lists open issues and merge requests for AI clients. Works with gitlab.com and self-managed GitLab. Settings: url (e.g. https://gitlab.com), group (path, e.g. acme/infra), optional token (personal or group access token with read_api; needed for private projects).",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "kinds": [{ "id": "gitlab_project", "schema": "schemas/gitlab_project.json", "icon": "git-branch" }],
+    "mcpTools": [
+      { "name": "gitlab.sync", "description": "Import the projects of the configured group now.", "input": "schemas/empty.json" },
+      { "name": "gitlab.open", "description": "Open issues and merge requests of one project of the configured group.", "input": "schemas/open-input.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:read", "graph:write:gitlab_project", "secrets:url", "secrets:group", "secrets:token", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}

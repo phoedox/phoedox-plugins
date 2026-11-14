@@ -1,0 +1,1 @@
+{ "type": "object", "properties": { "project": { "type": "string", "description": "Project path inside the configured group, e.g. infra/ansible" } }, "required": ["project"] }
