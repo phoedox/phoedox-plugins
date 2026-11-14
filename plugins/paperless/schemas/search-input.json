@@ -1,0 +1,8 @@
+{
+  "type": "object",
+  "properties": {
+    "query": { "type": "string", "description": "Search text (Paperless-ngx full-text syntax), e.g. a serial number, a supplier or \"warranty ThinkPad\"" },
+    "limit": { "type": "integer", "minimum": 1, "maximum": 50, "description": "Maximum number of documents (default 10)" }
+  },
+  "required": ["query"]
+}

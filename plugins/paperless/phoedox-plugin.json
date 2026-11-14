@@ -1,0 +1,17 @@
+{
+  "id": "com.phoedox.paperless",
+  "name": "Paperless-ngx",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Finds documents in Paperless-ngx for AI clients: a full-text search, and the invoices, manuals and warranty papers of an entry (searched by its serial number, model and name). Documents stay in Paperless-ngx; nothing is imported or changed, and the tools return title, correspondent, document type, creation date, tags and a link to the document, not its content. Settings: url (the address of Paperless-ngx, e.g. https://paperless.example.org) and token (the API auth token of a Paperless-ngx user; results are limited to the documents this user may see, so a user with view rights only is enough). Reads entries only to build the search for paperless.for_entry.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "paperless.search", "description": "Full-text search in Paperless-ngx. Returns documents with title, correspondent, document type, creation date, tags and a link to the document in Paperless-ngx.", "input": "schemas/search-input.json", "timeoutSec": 20 },
+      { "name": "paperless.for_entry", "description": "Paperless-ngx documents about one entry (invoices, manuals, warranty papers), found by its serial number, model and name.", "input": "schemas/for-entry-input.json", "timeoutSec": 30 }
+    ]
+  },
+  "permissions": ["graph:read", "secrets:url", "secrets:token", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
