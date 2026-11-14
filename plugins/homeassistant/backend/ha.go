@@ -59,7 +59,11 @@ func parseDevices(body []byte) ([]Device, error) {
 
 // graphOps turns areas and devices into rooms, devices and located_in edges.
 // Slugs start with "ha-" so imports do not take over hand-made entries.
-func graphOps(devices []Device) pdk.GraphOps {
+func graphOps(devices []Device) pdk.GraphOps { return graphOpsVia(devices, "") }
+
+// graphOpsVia is graphOps for devices an agent bridges: the entries remember
+// the agent (ha_agent) so they are switched through it.
+func graphOpsVia(devices []Device, agent string) pdk.GraphOps {
 	var ops pdk.GraphOps
 	rooms := map[string]string{}
 	for _, d := range devices {
@@ -81,6 +85,9 @@ func graphOps(devices []Device) pdk.GraphOps {
 		}
 		if e := primaryEntity(d.Entities); e != "" {
 			attrs["ha_entity"] = e
+		}
+		if agent != "" {
+			attrs["ha_agent"] = agent
 		}
 		dev := ops.UpsertNamed(kindFor(primaryEntity(d.Entities)), "ha-"+slugify(name)+"-"+strings.ToLower(d.ID[:min(6, len(d.ID))]), name, attrs)
 		ops.Link(dev, "located_in", room, nil)
@@ -247,6 +254,32 @@ func Owners(entries []pdk.Entity) map[string]string {
 				out[id] = e.Slug
 			}
 		}
+	}
+	return out
+}
+
+// Bridge is what an agent in the home network reads from Home Assistant
+// (event agent.homeassistant).
+type Bridge struct {
+	Agent    string          `json:"agent"`
+	Hostname string          `json:"hostname"`
+	Devices  json.RawMessage `json:"devices"`
+	States   []struct {
+		EntityID string `json:"entity_id"`
+		State    string `json:"state"`
+		Unit     string `json:"unit"`
+	} `json:"states"`
+}
+
+// BridgeStates converts the bridged states to State values for Readings.
+func (b Bridge) BridgeStates() []State {
+	out := make([]State, 0, len(b.States))
+	for _, s := range b.States {
+		st := State{EntityID: s.EntityID, State: s.State}
+		if s.Unit != "" {
+			st.Attributes = map[string]any{"unit_of_measurement": s.Unit}
+		}
+		out = append(out, st)
 	}
 	return out
 }

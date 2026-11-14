@@ -12,6 +12,8 @@ import (
 	"time"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
+
+	"github.com/phoedox/phoedox-plugins/internal/integ"
 )
 
 func main() {}
@@ -19,8 +21,14 @@ func main() {}
 //go:wasmexport on_event
 func onEvent() int32 {
 	return pdk.HandleEvent(func(ev pdk.Event) error {
+		if ev.Type == "agent.homeassistant" {
+			return bridged(ev.Data)
+		}
 		if ev.Type != "schedule" {
 			return nil
+		}
+		if _, _, err := settings(); err != nil {
+			return nil // connected through an agent (or not set up yet)
 		}
 		// Every 5 minutes: record states; every 6 hours: import devices.
 		var last time.Time
@@ -42,7 +50,7 @@ func tool() int32 { return pdk.HandleTool(runTool) }
 
 func settings() (base, token string, err error) {
 	if base, err = pdk.Secret("url"); err != nil {
-		return "", "", fmt.Errorf("set the setting url (e.g. https://ha.example.org): %w", err)
+		return "", "", fmt.Errorf("set the setting url (e.g. https://ha.example.org), or, if a Phoedox agent connects Home Assistant, switch with the agent actions on the entry: %w", err)
 	}
 	if token, err = pdk.Secret("token"); err != nil {
 		return "", "", fmt.Errorf("set the setting token (a long-lived access token): %w", err)
@@ -76,13 +84,45 @@ func sync() (map[string]int, error) {
 	if err != nil {
 		return nil, err
 	}
-	ops := graphOps(devices)
-	if len(ops.Ops) > 0 {
-		if _, err := pdk.Graph.Apply(&ops); err != nil {
-			return nil, err
-		}
+	if err := integ.Apply(graphOps(devices)); err != nil {
+		return nil, err
 	}
 	return map[string]int{"devices": len(devices)}, nil
+}
+
+// bridged imports devices and records states an agent read from Home
+// Assistant in its network; the devices are switched through that agent.
+func bridged(data []byte) error {
+	var b Bridge
+	if err := json.Unmarshal(data, &b); err != nil {
+		return fmt.Errorf("unexpected data from the agent: %w", err)
+	}
+	if len(b.Devices) > 0 && string(b.Devices) != "null" {
+		devices, err := parseDevices(b.Devices)
+		if err != nil {
+			return err
+		}
+		if err := integ.Apply(graphOpsVia(devices, b.Agent)); err != nil {
+			return err
+		}
+	}
+	var entries []pdk.Entity
+	for _, kind := range []string{"device", "smart_plug", "light"} {
+		list, err := pdk.Graph.Query(pdk.Query{Kind: kind, Limit: 1000})
+		if err != nil {
+			return err
+		}
+		entries = append(entries, list...)
+	}
+	rs := Readings(b.BridgeStates(), Owners(entries))
+	for len(rs) > 0 {
+		n := min(len(rs), 500)
+		if _, err := pdk.Graph.Record(rs[:n]); err != nil {
+			return err
+		}
+		rs = rs[n:]
+	}
+	return nil
 }
 
 // record stores the states of the entities listed on imported entries.

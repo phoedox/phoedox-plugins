@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"testing"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
@@ -82,5 +83,22 @@ func TestReadings(t *testing.T) {
 	}, owners)
 	if len(got) != 2 || got[0].Value != 18.5 || got[0].Unit != "°C" || got[0].Entity != "ha-keller" || got[1].Value != 1 || got[1].Metric != "switch.keller_licht" {
 		t.Fatalf("readings: %+v", got)
+	}
+}
+
+func TestBridge(t *testing.T) {
+	name := "Plug"
+	ops := graphOpsVia([]Device{{ID: "abcdef12", Name: &name, Area: "Flur", Entities: []string{"switch.plug"}}}, "agent-1")
+	if len(ops.Ops) != 3 || ops.Ops[1].Attrs["ha_agent"] != "agent-1" || ops.Ops[1].Attrs["ha_entity"] != "switch.plug" {
+		t.Fatalf("ops: %+v", ops.Ops)
+	}
+	if direct := graphOps([]Device{{ID: "abcdef12", Name: &name, Area: "Flur", Entities: []string{"switch.plug"}}}); direct.Ops[1].Attrs["ha_agent"] != nil {
+		t.Fatalf("direct import names an agent: %+v", direct.Ops[1])
+	}
+	var b Bridge
+	_ = json.Unmarshal([]byte(`{"agent":"a","states":[{"entity_id":"sensor.t","state":"21.5","unit":"°C"},{"entity_id":"switch.plug","state":"off"}]}`), &b)
+	rs := Readings(b.BridgeStates(), map[string]string{"sensor.t": "x", "switch.plug": "y"})
+	if len(rs) != 2 || rs[0].Unit != "°C" || rs[0].Value != 21.5 || rs[1].Value != 0 {
+		t.Fatalf("bridged readings: %+v", rs)
 	}
 }
