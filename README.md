@@ -35,6 +35,12 @@ plugins/ups/
 | `zabbix` | Zabbix problems and hosts with their entries; MCP `zabbix.problems`, `zabbix.hosts` |
 | `checkmk` | Checkmk service problems and host states with their entries; MCP `checkmk.problems`, `checkmk.hosts` |
 | `grafana` | Grafana dashboards and firing alerts; MCP `grafana.dashboards`, `grafana.alerts` |
+| `shelly` | Shelly plugs and relays (up to 10 devices); MCP `shelly.status`, `shelly.sync` |
+| `tasmota` | Tasmota devices (up to 10); MCP `tasmota.status`, `tasmota.sync` |
+| `hue` | Philips Hue bridge, rooms and lights (local API v1); MCP `hue.lights`, `hue.sync` |
+| `unifiprotect` | UniFi Protect NVR and cameras; MCP `protect.cameras`, `protect.sync` |
+| `frigate` | Frigate NVR and cameras; MCP `frigate.events`, `frigate.stats`, `frigate.sync` |
+| `esphome` | ESPHome devices from the ESPHome dashboard; MCP `esphome.devices`, `esphome.sync` |
 
 Integrations for self-hosted systems use `net:fetch:config`: they only call the address that the
 project owner enters as `url` in the plugin settings. They only read; none of them changes the
