@@ -39,11 +39,10 @@ func GetJSON(service, url string, headers map[string]string, out any) error {
 	return nil
 }
 
-// Apply writes graph changes if there are any.
+// Apply writes graph changes in batches the host accepts.
 func Apply(ops pdk.GraphOps) error {
-	if len(ops.Ops) == 0 {
-		return nil
-	}
-	_, err := pdk.Graph.Apply(&ops)
-	return err
+	return ApplyBatches(ops, MaxOps, func(b *pdk.GraphOps) (map[string]string, error) {
+		r, err := pdk.Graph.Apply(b)
+		return r.Refs, err
+	})
 }
