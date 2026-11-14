@@ -1,0 +1,17 @@
+{
+  "id": "com.phoedox.uptimekuma",
+  "name": "Uptime Kuma",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Gives AI clients the live state of the monitors on an Uptime Kuma status page (status, last message, last check, 24-hour uptime) together with the Phoedox entry each monitor belongs to (matched by host name, address or name). Read-only, no import. Settings: url (e.g. https://status.example.org) and status_page (the slug of a status page that lists the monitors). Uses only the public status page JSON, so no credentials are needed; the plugin reads the knowledge graph only to find matching entries.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "uptimekuma.status", "description": "All monitors of the status page: name, group, current status (up, down, pending, maintenance), last message, last check time, 24-hour uptime in percent and the matching Phoedox entry.", "input": "schemas/empty.json" },
+      { "name": "uptimekuma.down", "description": "Only the monitors of the status page that are not up (down, pending, maintenance or without heartbeat), with the matching Phoedox entry.", "input": "schemas/empty.json" }
+    ]
+  },
+  "permissions": ["graph:read", "secrets:url", "secrets:status_page", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
