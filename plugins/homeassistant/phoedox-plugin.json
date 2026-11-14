@@ -1,7 +1,7 @@
 {
   "id": "com.phoedox.homeassistant",
   "name": "Home Assistant",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "hostApi": "1",
   "description": "Holt Bereiche und Geräte aus Home Assistant ins Wissensnetz (Räume, Geräte, „steht in“), zeigt Schalter an Einträgen und schaltet Geräte – auch Neustart über die Steckdose, an der ein Gerät hängt. KI-Clients dürfen nur vorschlagen; ein Mensch bestätigt. Einstellungen: url (z. B. https://ha.example.org) und token (Long-Lived Access Token).",
   "engines": {
@@ -33,6 +33,7 @@
         "description": "Switch a Home Assistant switch, light, fan or input_boolean on, off or toggle it.",
         "input": "schemas/call-input.json",
         "control": true,
+        "target": { "arg": "entity_id", "attr": "ha_entity" },
         "timeoutSec": 15
       },
       {
@@ -40,6 +41,7 @@
         "description": "Restart a device by switching the switch it is powered by off, waiting (default 10 s) and on again.",
         "input": "schemas/restart-input.json",
         "control": true,
+        "target": { "arg": "entity_id", "attr": "ha_entity" },
         "timeoutSec": 50
       }
     ],
