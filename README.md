@@ -6,8 +6,8 @@ Official plugins for [Phoedox](https://github.com/phoedox/phoedox). Each plugin 
 plugins/ups/
   phoedox-plugin.json   Manifest (Schema: phoedox-sdk/schema)
   backend/              Go → WASM (Extism)
-  frontend/             Lit-Elemente über @phoedox/sdk
-  schemas/              JSON-Schemas der Arten
+  frontend/             Lit elements via @phoedox/sdk
+  schemas/              JSON schemas of the kinds
 ```
 
 | Plugin | Content |
