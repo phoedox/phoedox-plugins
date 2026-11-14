@@ -1,0 +1,18 @@
+{
+  "id": "com.phoedox.aws",
+  "name": "AWS EC2",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports the EC2 instances of an AWS account into the knowledge graph as VMs (name from the Name tag, instance type, state, private and public IP, platform, availability zone and region; terminated instances are skipped) and lists them for AI clients. Read-only: the only API call is DescribeInstances, signed with Signature Version 4. Settings: access_key and secret_key (access key of an IAM user whose only policy is {\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Action\": \"ec2:DescribeInstances\", \"Resource\": \"*\"}]}), regions (comma-separated, e.g. eu-central-1,us-east-1; supported: eu-central-1, eu-west-1, eu-west-2, eu-west-3, eu-north-1, eu-south-1, us-east-1, us-east-2, us-west-1, us-west-2).",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "aws.sync", "description": "Import the EC2 instances of the configured regions into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "aws.instances", "description": "EC2 instances of the configured regions with name, type, state, private and public IP, availability zone, platform and launch time.", "input": "schemas/empty.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:write:vm", "secrets:access_key", "secrets:secret_key", "secrets:regions", "net:fetch:ec2.eu-central-1.amazonaws.com", "net:fetch:ec2.eu-west-1.amazonaws.com", "net:fetch:ec2.eu-west-2.amazonaws.com", "net:fetch:ec2.eu-west-3.amazonaws.com", "net:fetch:ec2.eu-north-1.amazonaws.com", "net:fetch:ec2.eu-south-1.amazonaws.com", "net:fetch:ec2.us-east-1.amazonaws.com", "net:fetch:ec2.us-east-2.amazonaws.com", "net:fetch:ec2.us-west-1.amazonaws.com", "net:fetch:ec2.us-west-2.amazonaws.com"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
