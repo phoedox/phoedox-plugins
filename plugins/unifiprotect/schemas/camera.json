@@ -1,0 +1,15 @@
+{
+  "title": "Camera",
+  "description": "A network or surveillance camera. Shared by the UniFi Protect and Frigate plugins (identical schema).",
+  "type": "object",
+  "properties": {
+    "model": { "type": "string", "title": "Model" },
+    "ip": { "type": "string", "format": "ipv4", "title": "IP address" },
+    "mac": { "type": "string", "title": "MAC address" },
+    "firmware": { "type": "string", "title": "Firmware" },
+    "state": { "type": "string", "title": "State", "enum": ["connected", "connecting", "disconnected", "disabled"] },
+    "resolution": { "type": "string", "title": "Resolution" },
+    "recording": { "type": "string", "title": "Recording", "enum": ["on", "off"] },
+    "location": { "type": "string", "title": "Location" }
+  }
+}
