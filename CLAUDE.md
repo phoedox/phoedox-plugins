@@ -4,6 +4,7 @@ Offizielle Plugins. Gesamtentscheidungen: in Phoedox (https://app.phoedox.com, P
 
 ## Regeln
 
+- **Dokumentation und Aufgaben auf Englisch:** README, `docs/`, Phoedox-Seiten, Entscheidungen (ADRs) und Karten auf dem Board „Roadmap“ immer auf Englisch schreiben; Deutsch nur als Übersetzung (Projekt `phoedox` hat Englisch als Hauptsprache).
 - Immer die aktuelle stabile Go-Version und aktuelle Abhängigkeiten verwenden (`go` + `toolchain` in `go.mod`).
 - Ein Ordner pro Plugin unter `plugins/`, Manifest `phoedox-plugin.json` mit Reverse-DNS-ID `com.phoedox.<name>` für offizielle Plugins (Beispiel `de.example.ups` bleibt als Vorlage).
 - Rechte so knapp wie möglich anfordern; jedes neue Recht im PR begründen.
