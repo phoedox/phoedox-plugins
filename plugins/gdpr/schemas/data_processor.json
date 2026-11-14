@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Data processor",
+  "description": "A processor that processes personal data on behalf of the controller (Art. 28 GDPR)",
+  "type": "object",
+  "properties": {
+    "contact": { "type": "string", "title": "Contact" },
+    "contract_signed": { "type": "string", "format": "date", "title": "Data processing agreement signed" },
+    "country": { "type": "string", "title": "Country" },
+    "avv_url": { "type": "string", "format": "uri", "title": "Data processing agreement (link)" }
+  }
+}
