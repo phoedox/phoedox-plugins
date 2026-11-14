@@ -1,0 +1,18 @@
+{
+  "id": "com.phoedox.gworkspace",
+  "name": "Google Workspace",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports the ChromeOS and mobile devices of a Google Workspace account into the knowledge graph as devices (model, serial number, operating system and version, status, last sync, organizational unit for ChromeOS, and for mobile devices the display name of the owner; no e-mail addresses) and lists them for AI clients. Read-only: it uses the Admin SDK Directory API (admin.googleapis.com) with a service account and domain-wide delegation, signing in at oauth2.googleapis.com. Settings: service_account_json (the whole JSON key file of the service account; client_email and private_key are used) and admin_email (a Workspace administrator the service account acts as; needs the admin privileges to view ChromeOS and mobile devices). In the Admin console, Security, API controls, Domain-wide delegation, allow the service account's client ID the scopes https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly and https://www.googleapis.com/auth/admin.directory.device.mobile.readonly; no write scope. Devices removed from Google Workspace stay in Phoedox until you delete them.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 48 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "gworkspace.sync", "description": "Import the ChromeOS and mobile devices of Google Workspace into the knowledge graph now.", "input": "schemas/empty.json", "timeoutSec": 60 },
+      { "name": "gworkspace.devices", "description": "ChromeOS and mobile devices of Google Workspace with model, serial number, operating system, status, last sync and organizational unit.", "input": "schemas/devices-input.json", "timeoutSec": 60 }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:write:device", "secrets:service_account_json", "secrets:admin_email", "net:fetch:oauth2.googleapis.com", "net:fetch:admin.googleapis.com"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
