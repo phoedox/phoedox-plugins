@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "identifier": { "type": "string", "title": "Identifier" },
+    "device": { "type": "string", "title": "Device" },
+    "ipv4": { "type": "string", "title": "IPv4 address" },
+    "subnet": { "type": "string", "title": "Subnet" },
+    "vlan": { "type": "number", "title": "VLAN" },
+    "status": { "type": "string", "title": "Status", "enum": ["up", "down", "no carrier"] }
+  }
+}

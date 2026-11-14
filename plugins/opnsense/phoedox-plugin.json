@@ -1,0 +1,21 @@
+{
+  "id": "com.phoedox.opnsense",
+  "name": "OPNsense",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports the OPNsense firewall (version) and its interfaces with address, subnet and VLAN into the knowledge graph and gives AI clients the DHCP leases and gateway status. Settings: url (e.g. https://fw.example.org), key and secret (API key of a user with read-only access to Diagnostics, Interfaces, DHCP and Gateways), optional name (default: OPNsense).",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "kinds": [{ "id": "opnsense_interface", "schema": "schemas/opnsense_interface.json", "icon": "network" }],
+    "relations": [{ "id": "part_of", "from": ["opnsense_interface"], "to": ["router"] }],
+    "mcpTools": [
+      { "name": "opnsense.sync", "description": "Import the firewall and its interfaces into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "opnsense.leases", "description": "Current DHCPv4 leases: address, MAC, hostname, interface and state.", "input": "schemas/empty.json" },
+      { "name": "opnsense.gateways", "description": "Gateways with status, delay and packet loss.", "input": "schemas/empty.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:read", "graph:write:router,opnsense_interface", "secrets:url", "secrets:key", "secrets:secret", "secrets:name", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
