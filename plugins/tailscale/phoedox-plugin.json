@@ -1,0 +1,19 @@
+{
+  "id": "com.phoedox.tailscale",
+  "name": "Tailscale",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports the devices of a Tailscale tailnet into the knowledge graph as Tailscale nodes (hostname, OS, Tailscale addresses, client version, last seen, update available, tags, authorized) and links each node \"related to\" an existing server, VM, LXC container or device with the same hostname. AI clients can ask which devices are online, when they were last seen and whose key expires. Read-only; devices shared in from other tailnets are only listed, not imported. Settings: apikey (a Tailscale API access token from the admin console under Settings > Keys; it has the rights of the user who created it and expires after at most 90 days) and optional tailnet (the tailnet ID or organization name; default \"-\", the tailnet of the key).",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "kinds": [{ "id": "tailscale_node", "schema": "schemas/tailscale_node.json", "icon": "waypoints" }],
+    "mcpTools": [
+      { "name": "tailscale.sync", "description": "Import the devices of the tailnet into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "tailscale.devices", "description": "Devices of the tailnet: online or last seen, user, OS, Tailscale IPs, client version, update available, key expiry, authorized and tags.", "input": "schemas/empty.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:read", "graph:write:tailscale_node", "secrets:apikey", "secrets:tailnet", "net:fetch:api.tailscale.com"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}

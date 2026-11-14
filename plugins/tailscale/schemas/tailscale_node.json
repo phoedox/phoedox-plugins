@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "hostname": { "type": "string", "title": "Hostname" },
+    "dns_name": { "type": "string", "title": "MagicDNS name" },
+    "os": { "type": "string", "title": "Operating system" },
+    "addresses": { "type": "string", "title": "Tailscale addresses" },
+    "tailscale_ip": { "type": "string", "title": "Tailscale IPv4" },
+    "client_version": { "type": "string", "title": "Client version" },
+    "last_seen": { "type": "string", "format": "date", "title": "Last seen" },
+    "update_available": { "type": "boolean", "title": "Update available" },
+    "tags": { "type": "string", "title": "Tags" },
+    "authorized": { "type": "boolean", "title": "Authorized" }
+  }
+}
