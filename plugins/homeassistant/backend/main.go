@@ -22,7 +22,17 @@ func onEvent() int32 {
 		if ev.Type != "schedule" {
 			return nil
 		}
-		_, err := sync()
+		// Every 5 minutes: record states; every 6 hours: import devices.
+		var last time.Time
+		if _, err := pdk.KV.Get("last_sync", &last); err == nil && time.Since(last) < 6*time.Hour {
+			_, err := record()
+			return err
+		}
+		if _, err := sync(); err != nil {
+			return err
+		}
+		_ = pdk.KV.Set("last_sync", time.Now())
+		_, err := record()
 		return err
 	})
 }
@@ -75,10 +85,49 @@ func sync() (map[string]int, error) {
 	return map[string]int{"devices": len(devices)}, nil
 }
 
+// record stores the states of the entities listed on imported entries.
+func record() (pdk.RecordResult, error) {
+	var entries []pdk.Entity
+	for _, kind := range []string{"device", "smart_plug", "light"} {
+		list, err := pdk.Graph.Query(pdk.Query{Kind: kind, Limit: 1000})
+		if err != nil {
+			return pdk.RecordResult{}, err
+		}
+		entries = append(entries, list...)
+	}
+	owners := Owners(entries)
+	if len(owners) == 0 {
+		return pdk.RecordResult{}, nil
+	}
+	body, err := call("GET", "/api/states", "")
+	if err != nil {
+		return pdk.RecordResult{}, err
+	}
+	var states []State
+	if err := json.Unmarshal(body, &states); err != nil {
+		return pdk.RecordResult{}, fmt.Errorf("unexpected answer from Home Assistant: %w", err)
+	}
+	var total pdk.RecordResult
+	rs := Readings(states, owners)
+	for len(rs) > 0 {
+		n := min(len(rs), 500)
+		r, err := pdk.Graph.Record(rs[:n])
+		if err != nil {
+			return total, err
+		}
+		total.Recorded += r.Recorded
+		total.Skipped += r.Skipped
+		rs = rs[n:]
+	}
+	return total, nil
+}
+
 func runTool(tc pdk.ToolCall) (any, error) {
 	switch tc.Name {
 	case "ha.sync":
 		return sync()
+	case "ha.record":
+		return record()
 	case "ha.state":
 		var args struct {
 			Entities []string `json:"entities"`

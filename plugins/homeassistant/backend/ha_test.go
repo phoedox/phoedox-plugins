@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/phoedox/phoedox-sdk/go/pdk"
+)
 
 func TestHomeAssistant(t *testing.T) {
 	body := []byte(`[{"area":"Keller","id":"a1b2c3d4e5","name":"Switch","manufacturer":"Ubiquiti","model":"USW-8"},
@@ -59,5 +63,24 @@ func TestControls(t *testing.T) {
 	}
 	if (RestartArgs{}).pause() != 10 || (RestartArgs{Seconds: 1}).pause() != 3 || (RestartArgs{Seconds: 99}).pause() != 30 {
 		t.Fatal("pause bounds")
+	}
+}
+
+func TestReadings(t *testing.T) {
+	owners := Owners([]pdk.Entity{
+		{Slug: "ha-keller", Attrs: map[string]any{"ha_entities": "sensor.keller_temperatur, switch.keller_licht, bad id"}},
+		{Slug: "ha-flur", Attrs: map[string]any{}},
+	})
+	if len(owners) != 2 || owners["switch.keller_licht"] != "ha-keller" {
+		t.Fatalf("owners: %v", owners)
+	}
+	got := Readings([]State{
+		{EntityID: "sensor.keller_temperatur", State: "18.5", Attributes: map[string]any{"unit_of_measurement": "°C"}},
+		{EntityID: "switch.keller_licht", State: "on"},
+		{EntityID: "sensor.keller_temperatur", State: "unavailable"},
+		{EntityID: "sensor.other", State: "3"},
+	}, owners)
+	if len(got) != 2 || got[0].Value != 18.5 || got[0].Unit != "°C" || got[0].Entity != "ha-keller" || got[1].Value != 1 || got[1].Metric != "switch.keller_licht" {
+		t.Fatalf("readings: %+v", got)
 	}
 }

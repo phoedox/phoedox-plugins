@@ -4,7 +4,9 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"regexp"
+	"strconv"
 	"strings"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
@@ -196,4 +198,55 @@ func kindFor(primary string) string {
 		return "light"
 	}
 	return "device"
+}
+
+// binaryDomains report on/off states that are recorded as 1 and 0.
+var binaryDomains = map[string]bool{"switch": true, "light": true, "fan": true, "input_boolean": true, "binary_sensor": true}
+
+// Readings turns Home Assistant states into readings of the entries that
+// list the entity in ha_entities (owners: HA entity id → entry slug).
+// Numbers keep their unit; on/off become 1/0; other states are skipped.
+func Readings(states []State, owners map[string]string) []pdk.Reading {
+	var out []pdk.Reading
+	for _, s := range states {
+		slug, ok := owners[s.EntityID]
+		if !ok {
+			continue
+		}
+		unit, _ := s.Attributes["unit_of_measurement"].(string)
+		domain, _, _ := strings.Cut(s.EntityID, ".")
+		var v float64
+		switch {
+		case binaryDomains[domain] && (s.State == "on" || s.State == "off"):
+			if s.State == "on" {
+				v = 1
+			}
+			unit = ""
+		default:
+			f, err := strconv.ParseFloat(s.State, 64)
+			if err != nil || math.IsNaN(f) || math.IsInf(f, 0) {
+				continue
+			}
+			v = f
+		}
+		if len(unit) > 20 {
+			unit = ""
+		}
+		out = append(out, pdk.Reading{Entity: slug, Metric: s.EntityID, Value: v, Unit: unit})
+	}
+	return out
+}
+
+// Owners maps every Home Assistant entity listed on an entry to its slug.
+func Owners(entries []pdk.Entity) map[string]string {
+	out := map[string]string{}
+	for _, e := range entries {
+		list, _ := e.Attrs["ha_entities"].(string)
+		for _, id := range strings.Split(list, ",") {
+			if id = strings.TrimSpace(id); entityRe.MatchString(id) {
+				out[id] = e.Slug
+			}
+		}
+	}
+	return out
 }

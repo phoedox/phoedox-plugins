@@ -1,9 +1,9 @@
 {
   "id": "com.phoedox.homeassistant",
   "name": "Home Assistant",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "hostApi": "1",
-  "description": "Holt Bereiche und Geräte aus Home Assistant ins Wissensnetz (Räume, Geräte, „steht in“), zeigt Schalter an Einträgen und schaltet Geräte – auch Neustart über die Steckdose, an der ein Gerät hängt. KI-Clients dürfen nur vorschlagen; ein Mensch bestätigt. Einstellungen: url (z. B. https://ha.example.org) und token (Long-Lived Access Token).",
+  "description": "Holt Bereiche und Geräte aus Home Assistant ins Wissensnetz (Räume, Geräte, „steht in“), zeigt Schalter an Einträgen und schaltet Geräte – auch Neustart über die Steckdose, an der ein Gerät hängt. Speichert alle 5 Minuten Messwerte und Schaltzustände für den Verlauf an den Einträgen. KI-Clients dürfen nur vorschlagen, außer der Eigentümer erlaubt es pro Gerät. Einstellungen: url (z. B. https://ha.example.org) und token (Long-Lived Access Token).",
   "engines": {
     "phoedox": ">=0.1.0 <2.0.0"
   },
@@ -16,6 +16,11 @@
       {
         "name": "ha.sync",
         "description": "Import areas and devices from Home Assistant into the knowledge graph now.",
+        "input": "schemas/empty.json"
+      },
+      {
+        "name": "ha.record",
+        "description": "Record the current values of the imported Home Assistant entities now (sensors with numbers, switches as 1/0). Runs every 5 minutes on its own.",
         "input": "schemas/empty.json"
       },
       {
@@ -46,7 +51,7 @@
       }
     ],
     "events": [
-      "schedule:every=6h"
+      "schedule:every=5m"
     ]
   },
   "permissions": [
