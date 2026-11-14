@@ -1,0 +1,18 @@
+{
+  "id": "com.phoedox.hetzner",
+  "name": "Hetzner Cloud",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports the servers of a Hetzner Cloud project into the knowledge graph as VMs (public IPv4, image, cores, memory, server type, datacenter, location and status) and lists them for AI clients with status, IP addresses and labels. Read-only. Settings: token (an API token of the project with read permission only; Hetzner Cloud Console, Security, API tokens).",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "hetzner.sync", "description": "Import the servers of the Hetzner Cloud project into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "hetzner.servers", "description": "Servers of the Hetzner Cloud project with status, server type, location, public and private IP addresses and labels.", "input": "schemas/empty.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:write:vm", "secrets:token", "net:fetch:api.hetzner.cloud"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
