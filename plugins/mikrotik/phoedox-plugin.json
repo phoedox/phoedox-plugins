@@ -1,0 +1,19 @@
+{
+  "id": "com.phoedox.mikrotik",
+  "name": "MikroTik RouterOS",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports a MikroTik router running RouterOS v7 (identity, board and model, RouterOS version, serial number) into the knowledge graph through the REST API and gives AI clients its interfaces with addresses and the DHCP leases. Read-only. Settings: url (e.g. https://192.168.88.1; the www-ssl service must be enabled with a valid certificate), username and password (a RouterOS user in a group with the read and rest-api policies, e.g. a copy of the built-in read group). SNMP-only devices such as Cisco or Aruba switches are not covered by this plugin.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "mikrotik.sync", "description": "Import the MikroTik router into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "mikrotik.interfaces", "description": "Interfaces of the MikroTik router: name, type, running, disabled, MAC address, comment and IP addresses.", "input": "schemas/empty.json" },
+      { "name": "mikrotik.leases", "description": "DHCP leases of the MikroTik router: address, MAC address, hostname, status, server and last seen.", "input": "schemas/empty.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:write:router", "secrets:url", "secrets:username", "secrets:password", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
