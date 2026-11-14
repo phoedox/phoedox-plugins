@@ -1,13 +1,15 @@
 //go:build wasip1
 
 // Backend of the Home Assistant plugin: imports areas and devices every six
-// hours (and on ha.sync) and answers ha.state for AI clients.
+// hours (and on ha.sync), answers ha.state, and switches (ha.call,
+// ha.restart) – control tools that people confirm when an AI asks.
 package main
 
 import (
 	"encoding/json"
 	"fmt"
 	"strings"
+	"time"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
 )
@@ -99,6 +101,84 @@ func runTool(tc pdk.ToolCall) (any, error) {
 			out = append(out, s)
 		}
 		return out, nil
+	case "ha.controls":
+		var args struct {
+			Entity string `json:"entity"`
+		}
+		_ = json.Unmarshal(tc.Args, &args)
+		return controls(args.Entity)
+	case "ha.call":
+		var args CallArgs
+		_ = json.Unmarshal(tc.Args, &args)
+		domain, svc, err := args.service()
+		if err != nil {
+			return nil, err
+		}
+		if err := service(domain, svc, args.EntityID); err != nil {
+			return nil, err
+		}
+		return currentState(args.EntityID), nil
+	case "ha.restart":
+		var args RestartArgs
+		_ = json.Unmarshal(tc.Args, &args)
+		if !Switchable(args.EntityID) {
+			return nil, fmt.Errorf("%q is not a switch", args.EntityID)
+		}
+		domain := strings.SplitN(args.EntityID, ".", 2)[0]
+		if err := service(domain, "turn_off", args.EntityID); err != nil {
+			return nil, err
+		}
+		time.Sleep(time.Duration(args.pause()) * time.Second)
+		if err := service(domain, "turn_on", args.EntityID); err != nil {
+			return nil, fmt.Errorf("switched off, but switching on again failed – switch it on in Home Assistant: %w", err)
+		}
+		return currentState(args.EntityID), nil
 	}
 	return nil, fmt.Errorf("unknown tool %s", tc.Name)
+}
+
+func service(domain, svc, entity string) error {
+	body, _ := json.Marshal(map[string]string{"entity_id": entity})
+	_, err := call("POST", "/api/services/"+domain+"/"+svc, string(body))
+	return err
+}
+
+func currentState(entity string) State {
+	s := State{EntityID: entity}
+	body, err := call("GET", "/api/states/"+entity, "")
+	if err == nil {
+		err = json.Unmarshal(body, &s)
+	}
+	if err != nil {
+		s.Error = err.Error()
+	}
+	s.Attributes = nil
+	return s
+}
+
+// controls finds the switch of an entry and the switch it is powered by.
+func controls(slug string) (Controls, error) {
+	var out Controls
+	d, err := pdk.Graph.Get(slug)
+	if err != nil {
+		return out, err
+	}
+	out.Entry = d.Entity.Name
+	if c := controlOf(d.Entity); c != nil {
+		c.State = currentState(c.EntityID).State
+		out.Self = c
+	}
+	for _, e := range d.Edges {
+		if e.Rel != "powered_by" || (e.From != d.Entity.ID && e.From != d.Entity.Slug) {
+			continue
+		}
+		if p, err := pdk.Graph.Get(e.To); err == nil {
+			if c := controlOf(p.Entity); c != nil {
+				c.State = currentState(c.EntityID).State
+				out.Power = c
+				break
+			}
+		}
+	}
+	return out, nil
 }

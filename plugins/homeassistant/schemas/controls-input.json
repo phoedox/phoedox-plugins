@@ -1,0 +1,1 @@
+{"type": "object", "required": ["entity"], "properties": {"entity": {"type": "string", "description": "Phoedox entry slug"}}}

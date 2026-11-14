@@ -1,0 +1,3 @@
+{"type": "object", "required": ["entity_id"], "properties": {
+  "entity_id": {"type": "string", "description": "the switch the device is powered by, e.g. switch.steckdose_router"},
+  "seconds": {"type": "integer", "minimum": 3, "maximum": 30, "description": "how long the power stays off (default 10)"}}}

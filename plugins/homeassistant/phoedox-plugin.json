@@ -1,18 +1,64 @@
 {
   "id": "com.phoedox.homeassistant",
   "name": "Home Assistant",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "hostApi": "1",
-  "description": "Holt Bereiche und Geräte aus Home Assistant ins Wissensnetz (Räume, Geräte, „steht in“) und liefert KI-Clients den aktuellen Zustand von Entitäten. Einstellungen: url (z. B. https://ha.example.org) und token (Long-Lived Access Token).",
-  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
-  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "description": "Holt Bereiche und Geräte aus Home Assistant ins Wissensnetz (Räume, Geräte, „steht in“), zeigt Schalter an Einträgen und schaltet Geräte – auch Neustart über die Steckdose, an der ein Gerät hängt. KI-Clients dürfen nur vorschlagen; ein Mensch bestätigt. Einstellungen: url (z. B. https://ha.example.org) und token (Long-Lived Access Token).",
+  "engines": {
+    "phoedox": ">=0.1.0 <2.0.0"
+  },
+  "backend": {
+    "wasm": "backend.wasm",
+    "memoryMb": 32
+  },
   "contributes": {
     "mcpTools": [
-      { "name": "ha.sync", "description": "Import areas and devices from Home Assistant into the knowledge graph now.", "input": "schemas/empty.json" },
-      { "name": "ha.state", "description": "Current state and attributes of Home Assistant entities, e.g. sensor.keller_temperatur.", "input": "schemas/state-input.json" }
+      {
+        "name": "ha.sync",
+        "description": "Import areas and devices from Home Assistant into the knowledge graph now.",
+        "input": "schemas/empty.json"
+      },
+      {
+        "name": "ha.state",
+        "description": "Current state and attributes of Home Assistant entities, e.g. sensor.keller_temperatur.",
+        "input": "schemas/state-input.json"
+      },
+      {
+        "name": "ha.controls",
+        "description": "The Home Assistant switch of an entry and the switch it is powered by (powered_by), with their states.",
+        "input": "schemas/controls-input.json"
+      },
+      {
+        "name": "ha.call",
+        "description": "Switch a Home Assistant switch, light, fan or input_boolean on, off or toggle it.",
+        "input": "schemas/call-input.json",
+        "control": true,
+        "timeoutSec": 15
+      },
+      {
+        "name": "ha.restart",
+        "description": "Restart a device by switching the switch it is powered by off, waiting (default 10 s) and on again.",
+        "input": "schemas/restart-input.json",
+        "control": true,
+        "timeoutSec": 50
+      }
     ],
-    "events": ["schedule:every=6h"]
+    "events": [
+      "schedule:every=6h"
+    ]
   },
-  "permissions": ["graph:read", "graph:write:room,device", "secrets:url", "secrets:token", "net:fetch:config"],
-  "license": { "noncommercial": "free", "commercial": "free" }
+  "permissions": [
+    "graph:read",
+    "graph:write:room,device,smart_plug,light",
+    "secrets:url",
+    "secrets:token",
+    "net:fetch:config"
+  ],
+  "license": {
+    "noncommercial": "free",
+    "commercial": "free"
+  },
+  "frontend": {
+    "module": "frontend/index.js"
+  }
 }

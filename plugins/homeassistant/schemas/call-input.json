@@ -1,0 +1,3 @@
+{"type": "object", "required": ["entity_id", "action"], "properties": {
+  "entity_id": {"type": "string", "description": "Home Assistant entity of domain switch, light, fan or input_boolean, e.g. switch.steckdose_flur"},
+  "action": {"type": "string", "enum": ["on", "off", "toggle"]}}}

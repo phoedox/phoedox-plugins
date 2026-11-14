@@ -35,3 +35,29 @@ func TestHomeAssistant(t *testing.T) {
 		t.Fatal("bad entity id must fail")
 	}
 }
+
+func TestControls(t *testing.T) {
+	devs, _ := parseDevices([]byte(`[{"area":"Flur","id":"abc123","name":"Steckdose Router","entities":["sensor.steckdose_power","switch.steckdose_router"]}]`))
+	ops := graphOps(devs)
+	attrs := ops.Ops[1].Attrs
+	if ops.Ops[1].Kind != "smart_plug" {
+		t.Fatalf("a device with a switch is a smart plug: %+v", ops.Ops[1])
+	}
+	if attrs["ha_entity"] != "switch.steckdose_router" || attrs["ha_entities"] != "sensor.steckdose_power, switch.steckdose_router" {
+		t.Fatalf("binding: %+v", attrs)
+	}
+	if primaryEntity([]string{"sensor.x", "light.decke", "switch.a"}) != "switch.a" || primaryEntity([]string{"sensor.x"}) != "" {
+		t.Fatal("primary entity")
+	}
+	for _, c := range []CallArgs{{EntityID: "sensor.temp", Action: "on"}, {EntityID: "switch.a", Action: "explode"}, {EntityID: "switch.a; rm", Action: "on"}} {
+		if _, _, err := c.service(); err == nil {
+			t.Errorf("%+v must fail", c)
+		}
+	}
+	if d, s, err := (CallArgs{EntityID: "light.flur", Action: "toggle"}).service(); err != nil || d != "light" || s != "toggle" {
+		t.Fatal(d, s, err)
+	}
+	if (RestartArgs{}).pause() != 10 || (RestartArgs{Seconds: 1}).pause() != 3 || (RestartArgs{Seconds: 99}).pause() != 30 {
+		t.Fatal("pause bounds")
+	}
+}

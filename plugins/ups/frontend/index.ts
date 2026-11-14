@@ -15,9 +15,15 @@ class UpsView extends PhxElement {
     .bar i.low { background: var(--bad); }
     @media (prefers-reduced-motion: reduce) { .bar i { transition: none; } }
   `;
-  entity = "";
-  e?: Entity;
+  // Declared so no class field can shadow Lit's accessors, whatever the build's class-field setting.
+  declare entity: string;
+  declare e?: Entity;
   private stop?: () => void;
+
+  constructor() {
+    super();
+    this.entity = "";
+  }
 
   connectedCallback() {
     super.connectedCallback();
