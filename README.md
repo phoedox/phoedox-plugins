@@ -22,10 +22,23 @@ plugins/ups/
 | `fritzbox` | FRITZ!Box via TR-064, optionally its active devices; MCP `fritz.hosts`, `fritz.sync` |
 | `opnsense` | OPNsense firewall and interfaces (address, subnet, VLAN); MCP `opnsense.leases`, `opnsense.gateways`, `opnsense.sync` |
 | `netbox` | NetBox locations, racks and devices mounted at their unit; MCP `netbox.find`, `netbox.prefixes`, `netbox.sync` |
+| `mikrotik` | MikroTik router via the RouterOS REST API; MCP `mikrotik.interfaces`, `mikrotik.leases`, `mikrotik.sync` |
+| `synology` | Synology NAS via the DSM Web API; MCP `synology.storage`, `synology.sync` |
+| `truenas` | TrueNAS system; MCP `truenas.pools`, `truenas.shares`, `truenas.sync` |
+| `tailscale` | Tailscale devices, linked to the entries with the same host name; MCP `tailscale.devices`, `tailscale.sync` |
+| `kubernetes` | Nodes, namespaces and workloads of a cluster; MCP `k8s.pods`, `k8s.events`, `k8s.sync` |
+| `hetzner` | Hetzner Cloud servers; MCP `hetzner.servers`, `hetzner.sync` |
+| `aws` | EC2 instances of chosen regions (SigV4, `ec2:DescribeInstances` only); MCP `aws.instances`, `aws.sync` |
+| `azure` | Azure virtual machines of a subscription (Reader role); MCP `azure.vms`, `azure.sync` |
+| `cloudflare` | DNS zones linked to the entries their records point to; MCP `cloudflare.records`, `cloudflare.sync` |
+| `uptimekuma` | Monitors of an Uptime Kuma status page with their entries; MCP `uptimekuma.status`, `uptimekuma.down` |
+| `zabbix` | Zabbix problems and hosts with their entries; MCP `zabbix.problems`, `zabbix.hosts` |
+| `checkmk` | Checkmk service problems and host states with their entries; MCP `checkmk.problems`, `checkmk.hosts` |
+| `grafana` | Grafana dashboards and firing alerts; MCP `grafana.dashboards`, `grafana.alerts` |
 
-All integrations except GitHub use `net:fetch:config`: they only call the address that the
+Integrations for self-hosted systems use `net:fetch:config`: they only call the address that the
 project owner enters as `url` in the plugin settings. They only read; none of them changes the
-connected system. Credentials are stored encrypted as `token`
+connected system. Cloud services (GitHub, Tailscale, Hetzner, AWS, Azure, Cloudflare) can only reach their fixed API hosts. Credentials are stored encrypted as `token`
 with the project.
 
 Planned:
