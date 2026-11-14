@@ -1,0 +1,18 @@
+{
+  "id": "com.phoedox.unifi",
+  "name": "UniFi Network",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports UniFi gateways, switches and access points into the knowledge graph (router, switch, access point, \"wired to\" their uplink) through the official UniFi Network API and lists connected clients for AI clients. Settings: url (the console, e.g. https://192.168.1.1), apikey (UniFi Network → Settings → Control Plane → Integrations), optional site (name; default: the first site).",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "unifi.sync", "description": "Import UniFi devices and their uplinks into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "unifi.clients", "description": "Clients connected to the UniFi network: name, IP, MAC, wired or wireless, and the device they are connected to.", "input": "schemas/empty.json" }
+    ],
+    "events": ["schedule:every=6h"]
+  },
+  "permissions": ["graph:read", "graph:write:router,switch,access_point", "secrets:url", "secrets:apikey", "secrets:site", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
