@@ -1,0 +1,17 @@
+{
+  "id": "com.phoedox.grafana",
+  "name": "Grafana",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Gives AI clients the dashboards of a Grafana instance (title, folder, link, tags; optionally filtered by a search text) and the firing Grafana-managed alerts with the Phoedox entry each alert belongs to (matched by its instance, host or hostname label). Read-only, no import. Settings: url (e.g. https://grafana.example.org, including a sub path if Grafana is served from one) and token (a service account token with the Viewer role). The plugin reads the knowledge graph only to find matching entries.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "grafana.dashboards", "description": "Dashboards with title, folder, absolute link and tags, optionally filtered by a search text.", "input": "schemas/dashboards-input.json" },
+      { "name": "grafana.alerts", "description": "Firing Grafana-managed alerts: alert name, severity, instance, state, active since, summary and the matching Phoedox entry.", "input": "schemas/empty.json" }
+    ]
+  },
+  "permissions": ["graph:read", "secrets:url", "secrets:token", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}
