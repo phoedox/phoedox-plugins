@@ -1,0 +1,19 @@
+{
+  "id": "com.phoedox.kubernetes",
+  "name": "Kubernetes",
+  "version": "0.1.0",
+  "hostApi": "1",
+  "description": "Imports a Kubernetes cluster into the knowledge graph: nodes as servers (OS image, kubelet version, internal IP, CPU and memory), namespaces with workloads as stacks and Deployments, StatefulSets and DaemonSets as containers (first image, ready/desired replicas) that are part of their namespace. kube-system is skipped unless include_system is yes. AI clients can list pods and the warning events of the last hour. Read-only. Settings: url (API server, e.g. https://k8s.example.org:6443; it needs a certificate the Phoedox host trusts), token (bearer token of a read-only service account), optional cluster (name used in entry IDs; default: the host of url), optional include_system (yes to include kube-system). Minimal ClusterRole for the service account: apiVersion: rbac.authorization.k8s.io/v1, kind: ClusterRole, rules: [{apiGroups: [\"\"], resources: [nodes, namespaces, pods, events], verbs: [get, list]}, {apiGroups: [apps], resources: [deployments, statefulsets, daemonsets], verbs: [get, list]}].",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
+  "contributes": {
+    "mcpTools": [
+      { "name": "k8s.sync", "description": "Import the cluster's nodes, namespaces and workloads into the knowledge graph now.", "input": "schemas/empty.json" },
+      { "name": "k8s.pods", "description": "Pods with namespace, name, phase, ready containers, restarts, node and age; optionally of one namespace.", "input": "schemas/namespace-input.json" },
+      { "name": "k8s.events", "description": "Warning events of the last hour (object, reason, message, count); optionally of one namespace.", "input": "schemas/namespace-input.json" }
+    ],
+    "events": ["schedule:every=1h"]
+  },
+  "permissions": ["graph:write:server,stack,container", "secrets:url", "secrets:token", "secrets:cluster", "secrets:include_system", "net:fetch:config"],
+  "license": { "noncommercial": "free", "commercial": "free" }
+}

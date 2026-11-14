@@ -1,0 +1,1 @@
+{ "type": "object", "properties": { "namespace": { "type": "string", "description": "Only this namespace, e.g. shop (optional; default: all namespaces)" } } }
