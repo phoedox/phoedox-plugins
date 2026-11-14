@@ -89,10 +89,10 @@ func TestReadings(t *testing.T) {
 func TestBridge(t *testing.T) {
 	name := "Plug"
 	ops := graphOpsVia([]Device{{ID: "abcdef12", Name: &name, Area: "Flur", Entities: []string{"switch.plug"}}}, "agent-1")
-	if len(ops.Ops) != 3 || ops.Ops[1].Attrs["ha_agent"] != "agent-1" || ops.Ops[1].Attrs["ha_entity"] != "switch.plug" {
+	if len(ops.Ops) != 3 || ops.Ops[1].Attrs["bridge_agent"] != "agent-1" || ops.Ops[1].Attrs["ha_entity"] != "switch.plug" {
 		t.Fatalf("ops: %+v", ops.Ops)
 	}
-	if direct := graphOps([]Device{{ID: "abcdef12", Name: &name, Area: "Flur", Entities: []string{"switch.plug"}}}); direct.Ops[1].Attrs["ha_agent"] != nil {
+	if direct := graphOps([]Device{{ID: "abcdef12", Name: &name, Area: "Flur", Entities: []string{"switch.plug"}}}); direct.Ops[1].Attrs["bridge_agent"] != nil {
 		t.Fatalf("direct import names an agent: %+v", direct.Ops[1])
 	}
 	var b Bridge

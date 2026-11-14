@@ -253,6 +253,9 @@ func controls(slug string) (Controls, error) {
 		return out, err
 	}
 	out.Entry = d.Entity.Name
+	if a, _ := d.Entity.Attrs["bridge_agent"].(string); a != "" {
+		return out, nil // switched through the agent with signed jobs
+	}
 	if c := controlOf(d.Entity); c != nil {
 		c.State = currentState(c.EntityID).State
 		out.Self = c

@@ -62,7 +62,7 @@ func parseDevices(body []byte) ([]Device, error) {
 func graphOps(devices []Device) pdk.GraphOps { return graphOpsVia(devices, "") }
 
 // graphOpsVia is graphOps for devices an agent bridges: the entries remember
-// the agent (ha_agent) so they are switched through it.
+// the agent (bridge_agent) so they are switched through it.
 func graphOpsVia(devices []Device, agent string) pdk.GraphOps {
 	var ops pdk.GraphOps
 	rooms := map[string]string{}
@@ -87,7 +87,7 @@ func graphOpsVia(devices []Device, agent string) pdk.GraphOps {
 			attrs["ha_entity"] = e
 		}
 		if agent != "" {
-			attrs["ha_agent"] = agent
+			attrs["bridge_agent"] = agent
 		}
 		dev := ops.UpsertNamed(kindFor(primaryEntity(d.Entities)), "ha-"+slugify(name)+"-"+strings.ToLower(d.ID[:min(6, len(d.ID))]), name, attrs)
 		ops.Link(dev, "located_in", room, nil)
