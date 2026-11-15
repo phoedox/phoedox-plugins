@@ -1,6 +1,7 @@
 {
   "id": "com.phoedox.zabbix",
   "name": "Zabbix",
+  "icon": "activity",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Gives AI clients the current problems and the hosts of a Zabbix server (6.4 or later) together with the Phoedox entry each host belongs to (matched by host name, visible name, IP address or DNS name). Read-only, no import. Settings: url (the Zabbix frontend, e.g. https://zabbix.example.org; the plugin calls /api_jsonrpc.php below it) and token (an API token of a user whose role may read the hosts and problems in question; no write access needed). The plugin reads the knowledge graph only to find matching entries.",

@@ -1,6 +1,7 @@
 {
   "id": "com.phoedox.hetzner",
   "name": "Hetzner Cloud",
+  "icon": "server",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the servers of a Hetzner Cloud project into the knowledge graph as VMs (public IPv4, image, cores, memory, server type, datacenter, location and status) and lists them for AI clients with status, IP addresses and labels. Read-only. Settings: token (an API token of the project with read permission only; Hetzner Cloud Console, Security, API tokens).",

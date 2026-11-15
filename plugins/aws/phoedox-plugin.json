@@ -1,6 +1,7 @@
 {
   "id": "com.phoedox.aws",
   "name": "AWS EC2",
+  "icon": "cloud",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the EC2 instances of an AWS account into the knowledge graph as VMs (name from the Name tag, instance type, state, private and public IP, platform, availability zone and region; terminated instances are skipped) and lists them for AI clients. Read-only: the only API call is DescribeInstances, signed with Signature Version 4. Settings: access_key and secret_key (access key of an IAM user whose only policy is {\"Version\": \"2012-10-17\", \"Statement\": [{\"Effect\": \"Allow\", \"Action\": \"ec2:DescribeInstances\", \"Resource\": \"*\"}]}), regions (comma-separated, e.g. eu-central-1,us-east-1; supported: eu-central-1, eu-west-1, eu-west-2, eu-west-3, eu-north-1, eu-south-1, us-east-1, us-east-2, us-west-1, us-west-2).",

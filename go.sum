@@ -10,3 +10,5 @@ github.com/phoedox/phoedox-sdk/go v0.0.0-20261114161454-cb3673c3a510 h1:jqW5meqS
 github.com/phoedox/phoedox-sdk/go v0.0.0-20261114161454-cb3673c3a510/go.mod h1:gnOW9yialI6MSk/Qtgq0mW+1xtYcA9EdClDMrIAn72c=
 github.com/phoedox/phoedox-sdk/go v0.0.0-20261114162431-c398db83c721 h1:BoGrceobkYknzhdz0hr2BgpK+2F3YKShZI86VxlJ5XA=
 github.com/phoedox/phoedox-sdk/go v0.0.0-20261114162431-c398db83c721/go.mod h1:gnOW9yialI6MSk/Qtgq0mW+1xtYcA9EdClDMrIAn72c=
+github.com/phoedox/phoedox-sdk/go v0.0.0-20261115132432-85eb88a1a71d h1:lIUxQNwYo+Rn0TBsMm7yJtmQZhB7YhK1PiYbigo2zEk=
+github.com/phoedox/phoedox-sdk/go v0.0.0-20261115132432-85eb88a1a71d/go.mod h1:gnOW9yialI6MSk/Qtgq0mW+1xtYcA9EdClDMrIAn72c=

@@ -1,6 +1,7 @@
 {
   "id": "com.phoedox.gitlab",
   "name": "GitLab",
+  "icon": "git-merge",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the projects of a GitLab group (with subgroups) into the knowledge graph (visibility, default branch, topics, last activity) and lists open issues and merge requests for AI clients. Works with gitlab.com and self-managed GitLab. Settings: url (e.g. https://gitlab.com), group (path, e.g. acme/infra), optional token (personal or group access token with read_api; needed for private projects).",

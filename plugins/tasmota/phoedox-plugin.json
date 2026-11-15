@@ -1,6 +1,7 @@
 {
   "id": "com.phoedox.tasmota",
   "name": "Tasmota",
+  "icon": "plug-zap",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports Tasmota devices from the local network into the knowledge graph: devices with a relay and an energy meter become smart plugs, all others devices (module or template name, firmware, hardware, IP address, MAC, host name, MQTT topic). AI clients get relay states, power, energy today/yesterday/total, voltage, current, Wi-Fi signal and uptime. Read-only: the plugin only sends the commands \"Status 0\" and \"Module\" over the HTTP API (/cm) and never switches; MQTT is not used. Settings: url (the first device, e.g. http://192.168.1.60), device2_url to device10_url (further devices, one address each: a plugin may only reach the hosts entered in its own address settings, so up to 10 devices per project), optional password (the web password, the same for all devices) and optional username (default admin). Tasmota only accepts the web password as URL parameters over plain HTTP, so it can appear in the device's own web log and is readable on the network; the plugin sends it only when set and removes it from its error messages. Recommended: no web password, with the devices on a trusted VLAN.",

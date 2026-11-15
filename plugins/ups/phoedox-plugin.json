@@ -1,6 +1,7 @@
 {
   "id": "de.example.ups",
   "name": "USV-Überwachung",
+  "icon": "battery-charging",
   "version": "1.2.0",
   "hostApi": "1",
   "description": "Liest Ladung, Laufzeit und Status von USVs über die HTTP-API eines NUT-Servers (z. B. PeaNUT) und zeigt sie am Eintrag an.",

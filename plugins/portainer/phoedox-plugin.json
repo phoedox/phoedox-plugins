@@ -1,6 +1,7 @@
 {
   "id": "com.phoedox.portainer",
   "name": "Portainer",
+  "icon": "container",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports Docker environments, stacks and containers from Portainer into the knowledge graph (server, stack, container, \"runs on\", \"part of\") and shows AI clients their state. Settings: url (e.g. https://portainer.example.org:9443) and token (Portainer access token; a read-only user is enough).",

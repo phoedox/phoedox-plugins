@@ -1,6 +1,7 @@
 {
   "id": "com.phoedox.truenas",
   "name": "TrueNAS",
+  "icon": "database",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports a TrueNAS system (hostname, TrueNAS version, model, serial number, memory) into the knowledge graph as a server through the REST API v2.0 and gives AI clients its ZFS pools (status, health, size, allocated and free space) and its SMB and NFS shares. Read-only. Works with TrueNAS SCALE / Community Edition and CORE as long as the REST API v2.0 is available. Settings: url (must be https, e.g. https://truenas.example.org; TrueNAS revokes API keys that are sent over plain HTTP) and apikey (an API key of a user with the Read-Only Administrator role, or of an administrator on releases without roles).",

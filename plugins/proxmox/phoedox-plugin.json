@@ -1,6 +1,7 @@
 {
   "id": "com.phoedox.proxmox",
   "name": "Proxmox VE",
+  "icon": "server-cog",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Holt Knoten, VMs und LXC-Container aus Proxmox VE ins Wissensnetz (Server, VM, LXC, „läuft auf“) und zeigt KI-Clients ihren Zustand. Einstellungen: url (z. B. https://pve.example.org:8006, gültiges Zertifikat) und token (API-Token im Format USER@REALM!ID=SECRET, Rolle PVEAuditor genügt).",

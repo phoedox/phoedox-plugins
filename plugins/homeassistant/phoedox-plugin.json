@@ -1,6 +1,7 @@
 {
   "id": "com.phoedox.homeassistant",
   "name": "Home Assistant",
+  "icon": "house",
   "version": "0.5.0",
   "hostApi": "1",
   "description": "Holt Bereiche und Geräte aus Home Assistant ins Wissensnetz (Räume, Geräte, „steht in“), zeigt Schalter an Einträgen und schaltet Geräte – auch Neustart über die Steckdose, an der ein Gerät hängt. Speichert alle 5 Minuten Messwerte und Schaltzustände für den Verlauf an den Einträgen. KI-Clients dürfen nur vorschlagen, außer der Eigentümer erlaubt es pro Gerät. Einstellungen: url (z. B. https://ha.example.org) und token (Long-Lived Access Token) – oder ohne Einstellungen über einen Phoedox-Agenten im Heimnetz (homeassistant in agent.yaml); dann schaltet der Agent per signiertem Auftrag.",
