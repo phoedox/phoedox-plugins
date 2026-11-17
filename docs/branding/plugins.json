@@ -1,0 +1,257 @@
+[
+ {
+  "id": "homeassistant",
+  "name": "Home Assistant",
+  "cat": "home",
+  "icon": "house"
+ },
+ {
+  "id": "hue",
+  "name": "Philips Hue",
+  "cat": "home",
+  "icon": "lightbulb"
+ },
+ {
+  "id": "shelly",
+  "name": "Shelly",
+  "cat": "home",
+  "icon": "plug"
+ },
+ {
+  "id": "tasmota",
+  "name": "Tasmota",
+  "cat": "home",
+  "icon": "plug-zap"
+ },
+ {
+  "id": "esphome",
+  "name": "ESPHome",
+  "cat": "home",
+  "icon": "cpu"
+ },
+ {
+  "id": "frigate",
+  "name": "Frigate",
+  "cat": "home",
+  "icon": "cctv"
+ },
+ {
+  "id": "unifiprotect",
+  "name": "UniFi Protect",
+  "cat": "home",
+  "icon": "video",
+  "old": "cctv"
+ },
+ {
+  "id": "fritzbox",
+  "name": "FRITZ!Box",
+  "cat": "network",
+  "icon": "router"
+ },
+ {
+  "id": "mikrotik",
+  "name": "MikroTik",
+  "cat": "network",
+  "icon": "ethernet-port",
+  "old": "router"
+ },
+ {
+  "id": "unifi",
+  "name": "UniFi Network",
+  "cat": "network",
+  "icon": "wifi"
+ },
+ {
+  "id": "opnsense",
+  "name": "OPNsense",
+  "cat": "network",
+  "icon": "brick-wall-fire"
+ },
+ {
+  "id": "tailscale",
+  "name": "Tailscale",
+  "cat": "network",
+  "icon": "waypoints"
+ },
+ {
+  "id": "cloudflare",
+  "name": "Cloudflare",
+  "cat": "network",
+  "icon": "globe"
+ },
+ {
+  "id": "netbox",
+  "name": "NetBox",
+  "cat": "network",
+  "icon": "boxes",
+  "old": "network"
+ },
+ {
+  "id": "proxmox",
+  "name": "Proxmox VE",
+  "cat": "servers",
+  "icon": "server-cog"
+ },
+ {
+  "id": "truenas",
+  "name": "TrueNAS",
+  "cat": "servers",
+  "icon": "database"
+ },
+ {
+  "id": "synology",
+  "name": "Synology DSM",
+  "cat": "servers",
+  "icon": "hard-drive"
+ },
+ {
+  "id": "ups",
+  "name": "UPS (NUT)",
+  "cat": "servers",
+  "icon": "battery-charging"
+ },
+ {
+  "id": "hetzner",
+  "name": "Hetzner Cloud",
+  "cat": "servers",
+  "icon": "server"
+ },
+ {
+  "id": "kubernetes",
+  "name": "Kubernetes",
+  "cat": "servers",
+  "icon": "ship-wheel",
+  "old": "container"
+ },
+ {
+  "id": "portainer",
+  "name": "Portainer",
+  "cat": "servers",
+  "icon": "container"
+ },
+ {
+  "id": "aws",
+  "name": "AWS EC2",
+  "cat": "cloud",
+  "icon": "cloud"
+ },
+ {
+  "id": "azure",
+  "name": "Azure",
+  "cat": "cloud",
+  "icon": "cloud-cog",
+  "old": "cloud"
+ },
+ {
+  "id": "m365",
+  "name": "Microsoft 365",
+  "cat": "cloud",
+  "icon": "layout-grid",
+  "old": "mail"
+ },
+ {
+  "id": "gworkspace",
+  "name": "Google Workspace",
+  "cat": "cloud",
+  "icon": "at-sign",
+  "old": "mail"
+ },
+ {
+  "id": "checkmk",
+  "name": "Checkmk",
+  "cat": "monitor",
+  "icon": "circle-check-big",
+  "old": "activity"
+ },
+ {
+  "id": "zabbix",
+  "name": "Zabbix",
+  "cat": "monitor",
+  "icon": "activity"
+ },
+ {
+  "id": "grafana",
+  "name": "Grafana",
+  "cat": "monitor",
+  "icon": "chart-line"
+ },
+ {
+  "id": "uptimekuma",
+  "name": "Uptime Kuma",
+  "cat": "monitor",
+  "icon": "heart-pulse"
+ },
+ {
+  "id": "github",
+  "name": "GitHub",
+  "cat": "dev",
+  "icon": "git-pull-request"
+ },
+ {
+  "id": "gitlab",
+  "name": "GitLab",
+  "cat": "dev",
+  "icon": "git-merge"
+ },
+ {
+  "id": "gdpr",
+  "name": "GDPR records",
+  "cat": "records",
+  "icon": "scroll-text"
+ },
+ {
+  "id": "isms",
+  "name": "ISMS controls",
+  "cat": "records",
+  "icon": "shield-check"
+ },
+ {
+  "id": "paperless",
+  "name": "Paperless-ngx",
+  "cat": "records",
+  "icon": "file-text"
+ },
+ {
+  "id": "labels",
+  "name": "Labels",
+  "cat": "records",
+  "icon": "qr-code"
+ },
+ {
+  "id": "gantt",
+  "name": "Schedule",
+  "cat": "blocks",
+  "icon": "chart-gantt"
+ },
+ {
+  "id": "calc",
+  "name": "Calculator",
+  "cat": "blocks",
+  "icon": "calculator"
+ },
+ {
+  "id": "matrix",
+  "name": "Decision matrix",
+  "cat": "blocks",
+  "icon": "grid-3x3"
+ },
+ {
+  "id": "poll",
+  "name": "Poll",
+  "cat": "blocks",
+  "icon": "vote"
+ },
+ {
+  "id": "quiz",
+  "name": "Quiz",
+  "cat": "blocks",
+  "icon": "graduation-cap"
+ },
+ {
+  "id": "mindmap",
+  "name": "Mind map",
+  "cat": "blocks",
+  "icon": "brain-circuit",
+  "old": "network"
+ }
+]
