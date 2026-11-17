@@ -1,0 +1,22 @@
+{
+  "id": "com.phoedox.calc",
+  "name": "Calculator",
+  "icon": "calculator",
+  "version": "1.0.0",
+  "hostApi": "1",
+  "description": "A ```calc block for pages and whiteboards: inputs and formulas, one line per value (\"Label (unit) = number, formula or @entry.attribute\"). Readers change the inputs and see the results at once, nothing is saved; inputs bound to an entry take its attribute from the knowledge graph. Formulas know + - * / ^ %, & for text, comparisons and SUM, AVERAGE, MIN, MAX, ROUND, CEIL, FLOOR, ABS, SQRT and IF.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 16 },
+  "frontend": { "module": "frontend/index.js" },
+  "contributes": {
+    "blocks": [{
+      "id": "calc",
+      "label": "Calculator",
+      "icon": "calculator",
+      "element": "phx-calc",
+      "board": true,
+      "example": "title: Power cost of the NAS\nPower (W) = 25\nElectricity price (€/kWh) = 0.32\nHours per day (h) = 24\nCost per year (€) = Power * Hours_per_day * 365 / 1000 * Electricity_price\nCost per month (€) = Cost_per_year / 12"
+    }]
+  },
+  "permissions": []
+}
