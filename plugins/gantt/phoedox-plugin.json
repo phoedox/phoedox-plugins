@@ -1,0 +1,22 @@
+{
+  "id": "com.phoedox.gantt",
+  "name": "Schedule (Gantt)",
+  "icon": "chart-gantt",
+  "version": "1.0.0",
+  "hostApi": "1",
+  "description": "A ```gantt block for pages and whiteboards: bars for tasks over time, sections, milestones, progress and dependencies as arrows, optionally with the cards of a board that have a due date.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 16 },
+  "frontend": { "module": "frontend/index.js" },
+  "contributes": {
+    "blocks": [{
+      "id": "gantt",
+      "label": "Schedule (Gantt)",
+      "icon": "chart-gantt",
+      "element": "phx-gantt",
+      "board": true,
+      "example": "title: Bathroom renovation\ntoday\n## Planning\nGet quotes [quotes]: 2026-01-05, 2w, done\nChoose a contractor [choose]: after quotes, 3d\n## Work\nDemolition [demo]: after choose, 1w\nTiles: after demo, 10d, 30%\nDone: 2026-03-20"
+    }]
+  },
+  "permissions": []
+}

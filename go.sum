@@ -2,3 +2,5 @@ github.com/extism/go-pdk v1.1.3 h1:hfViMPWrqjN6u67cIYRALZTZLk/enSPpNKa+rZ9X2SQ=
 github.com/extism/go-pdk v1.1.3/go.mod h1:Gz+LIU/YCKnKXhgge8yo5Yu1F/lbv7KtKFkiCSzW/P4=
 github.com/phoedox/phoedox-sdk/go v0.0.0-20261117055631-97500682ee8e h1:STNb2cu8y2MFLHHIi5btTGjFRXRgEn+EJ9kRAppyvpU=
 github.com/phoedox/phoedox-sdk/go v0.0.0-20261117055631-97500682ee8e/go.mod h1:gnOW9yialI6MSk/Qtgq0mW+1xtYcA9EdClDMrIAn72c=
+github.com/phoedox/phoedox-sdk/go v0.0.0-20261117194223-39bd5c7a50a4 h1:qJ6ia3QhoQAp7P+hyIofNz3VTutwxJQeQlOXfQWJ2dE=
+github.com/phoedox/phoedox-sdk/go v0.0.0-20261117194223-39bd5c7a50a4/go.mod h1:gnOW9yialI6MSk/Qtgq0mW+1xtYcA9EdClDMrIAn72c=
