@@ -58,6 +58,16 @@ Planned:
 - **Doc types:** checklist/form, glossary, patch list/cable plan, network configuration, calendar, Kanban, timeline/Gantt, free diagram, process (EPC/eEPC, BPMN, swimlanes), architecture (C4), sequence diagram, mind map/whiteboard, database model, component, fuse box/electrical plan, map, notebook, runbook
 - **Integrations:** Zammad / Jira, RoomPlan import (see the Roadmap board in Phoedox for more)
 
+## Publishing
+
+`scripts/pack.sh <plugin>` builds `dist/<id>-<version>.phxp` with `phx-plugin` from phoedox-sdk.
+To submit a plugin to the store, raise the version in its `phoedox-plugin.json` and push a tag
+`<plugin>/v<version>` (e.g. `ups/v1.3.0`). The workflow `publish.yml` checks the tag against the manifest,
+runs the tests, packs and uploads with trusted publishing – no secret in the repository. Once per plugin, the
+store's author area needs a trusted publisher: repository `phoedox/phoedox-plugins`, workflow `publish.yml`,
+environment `store`. The optional secret `PHOEDOX_AUTHOR_KEY` adds the author signature. Every upload waits in
+the review queue; CI never approves.
+
 ## License
 
 MIT – see [LICENSE](LICENSE).

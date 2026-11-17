@@ -1,0 +1,39 @@
+name: Publish
+# Tag <plugin>/v<version> (e.g. ups/v1.3.0) submits that plugin to the store
+# for review with trusted publishing (ADR-0074): no secret, the store checks
+# GitHub's ID token against the plugin's trusted publisher (this repository,
+# workflow publish.yml, environment "store").
+on:
+  push:
+    tags: ["*/v*"]
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: store
+    steps:
+      - uses: actions/checkout@v4
+      - name: SDK next to this repository (frontend imports @phoedox/sdk)
+        run: git clone --depth 1 https://github.com/phoedox/phoedox-sdk.git ../phoedox-sdk
+      - uses: actions/setup-go@v5
+        with: { go-version-file: go.mod }
+      - uses: oven-sh/setup-bun@v2
+      - name: Plugin and version from the tag
+        id: tag
+        run: |
+          name=${GITHUB_REF_NAME%%/v*}
+          version=${GITHUB_REF_NAME##*/v}
+          test -f "plugins/$name/phoedox-plugin.json" || { echo "::error::no plugin $name"; exit 1; }
+          have=$(jq -r .version "plugins/$name/phoedox-plugin.json")
+          [ "$have" = "$version" ] || { echo "::error::tag says $version, manifest says $have"; exit 1; }
+          echo "name=$name" >> "$GITHUB_OUTPUT"
+      - run: go test ./...
+      - name: Pack
+        id: pack
+        run: echo "package=$(scripts/pack.sh ${{ steps.tag.outputs.name }} dist)" >> "$GITHUB_OUTPUT"
+      - name: Publish for review
+        env:
+          PHOEDOX_AUTHOR_KEY: ${{ secrets.PHOEDOX_AUTHOR_KEY }}
+        run: go run github.com/phoedox/phoedox-sdk/go/cmd/phx-plugin publish "${{ steps.pack.outputs.package }}"
