@@ -53,6 +53,8 @@ plugins/ups/
 | [`matrix`](plugins/matrix/README.md) | ```matrix block: weighted decision matrix, other weights, "make it an open decision" |
 | [`calc`](plugins/calc/README.md) | ```calc block: calculator with inputs, formulas and entry attributes |
 | [`mindmap`](plugins/mindmap/README.md) | ```mindmap block: mind map from an outline, collapsible, copy for a whiteboard |
+| [`poll`](plugins/poll/README.md) | ```poll block: readers vote, counts for everyone (never who); live on whiteboards |
+| [`quiz`](plugins/quiz/README.md) | ```quiz block: questions with right/wrong answers and flashcards, kept per reader |
 
 Integrations for self-hosted systems use `net:fetch:config`: they only call the address that the
 project owner enters as `url` in the plugin settings. They only read; none of them changes the

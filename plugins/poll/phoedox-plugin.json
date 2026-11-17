@@ -1,0 +1,24 @@
+{
+  "id": "com.phoedox.poll",
+  "name": "Poll",
+  "icon": "vote",
+  "version": "1.0.0",
+  "hostApi": "1",
+  "description": "A ```poll block for pages and whiteboards: a question and its answers as a list (\"- …\"). Every signed-in reader has their own vote – one answer, or several with \"multiple: yes\" – and can change or take it back. Readers only ever see how many people chose each answer, never who. The results appear after voting (\"results: always\" shows them from the start), \"closed: yes\" ends the poll and \"id: …\" keeps the votes when the text changes.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 16 },
+  "frontend": { "module": "frontend/index.js" },
+  "contributes": {
+    "blocks": [{
+      "id": "poll",
+      "label": "Poll",
+      "icon": "vote",
+      "element": "phx-poll",
+      "board": true,
+      "live": true,
+      "size": { "w": 420, "h": 300 },
+      "example": "question: Where does the family trip go?\n- Zoo\n- Museum\n- Swimming pool"
+    }]
+  },
+  "permissions": []
+}

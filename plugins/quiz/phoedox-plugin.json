@@ -1,0 +1,21 @@
+{
+  "id": "com.phoedox.quiz",
+  "name": "Quiz",
+  "icon": "graduation-cap",
+  "version": "1.0.0",
+  "hostApi": "1",
+  "description": "A ```quiz block for pages: questions with right and wrong answers (\"? question\", \"+ right\", \"- wrong\") or flashcards to turn over (\"= answer\"), with an explanation after answering (\"> …\"). Every reader's answers and score are their own and kept per reader; \"Again\" starts over.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 16 },
+  "frontend": { "module": "frontend/index.js" },
+  "contributes": {
+    "blocks": [{
+      "id": "quiz",
+      "label": "Quiz",
+      "icon": "graduation-cap",
+      "element": "phx-quiz",
+      "example": "title: Do you know our network?\n? Which address does the router have?\n- 192.168.1.1\n+ 192.168.10.1\n- 10.0.0.1\n> Since the rebuild in March the home network is 192.168.10.0/24.\n\n? What is the guest Wi-Fi called?\n= Garden house"
+    }]
+  },
+  "permissions": []
+}
