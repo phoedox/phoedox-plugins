@@ -1,0 +1,22 @@
+{
+  "id": "com.phoedox.mindmap",
+  "name": "Mind map",
+  "icon": "network",
+  "version": "1.0.0",
+  "hostApi": "1",
+  "description": "A ```mindmap block for pages and whiteboards: an indented outline (spaces, tabs or \"- \" lists) drawn as a mind map with the first line in the middle and its branches to both sides. Readers collapse and expand branches and copy the map onto a whiteboard as shapes.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 16 },
+  "frontend": { "module": "frontend/index.js" },
+  "contributes": {
+    "blocks": [{
+      "id": "mindmap",
+      "label": "Mind map",
+      "icon": "network",
+      "element": "phx-mindmap",
+      "board": true,
+      "example": "Moving house\n  Flat\n    Give notice\n    Handover with a report\n  Internet\n    Move the contract\n    Take the router along\n  Boxes\n    Kitchen\n    Cellar"
+    }]
+  },
+  "permissions": []
+}

@@ -1,0 +1,22 @@
+{
+  "id": "com.phoedox.matrix",
+  "name": "Decision matrix",
+  "icon": "grid-3x3",
+  "version": "1.0.0",
+  "hostApi": "1",
+  "description": "A ```matrix block for pages and whiteboards: options scored against weighted criteria, totals as bars with the best option highlighted. Readers can try other weights without saving them, and the options can become an open decision in one click.",
+  "engines": { "phoedox": ">=0.1.0 <2.0.0" },
+  "backend": { "wasm": "backend.wasm", "memoryMb": 16 },
+  "frontend": { "module": "frontend/index.js" },
+  "contributes": {
+    "blocks": [{
+      "id": "matrix",
+      "label": "Decision matrix",
+      "icon": "grid-3x3",
+      "element": "phx-matrix",
+      "board": true,
+      "example": "title: Which NAS do we buy?\ncriteria: Price*3, Noise*2, Storage*3, Power use*1\nscale: 1-5\n- Synology DS224+: 3, 4, 3, 4\n- QNAP TS-264: 4, 3, 4, 3\n- Self-built: 5, 2, 5, 2"
+    }]
+  },
+  "permissions": []
+}
