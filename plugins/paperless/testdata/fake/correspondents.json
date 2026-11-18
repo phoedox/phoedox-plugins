@@ -1,0 +1,29 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "all": [
+    7,
+    9
+  ],
+  "results": [
+    {
+      "id": 7,
+      "slug": "example-electronics-shop",
+      "name": "Example Electronics Shop",
+      "match": "",
+      "matching_algorithm": 6,
+      "is_insensitive": true,
+      "document_count": 3
+    },
+    {
+      "id": 9,
+      "slug": "example-systems",
+      "name": "Example Systems",
+      "match": "",
+      "matching_algorithm": 6,
+      "is_insensitive": true,
+      "document_count": 3
+    }
+  ]
+}

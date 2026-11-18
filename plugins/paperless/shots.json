@@ -1,0 +1,61 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "token": "demo-paperless-token"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "device",
+        "name": "nas-01",
+        "slug": "nas-01",
+        "attrs": {
+          "manufacturer": "Example Systems",
+          "model": "HomeStore 4",
+          "serial": "HS4-2291-0457",
+          "ip": "10.20.0.10",
+          "purchase_date": "2024-11-08",
+          "warranty_until": "2027-11-08"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.paperless/tools/paperless.for_entry",
+      "body": {
+        "entry": "nas-01"
+      },
+      "as": "pl"
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "nas-papers",
+        "title": "Papers for nas-01",
+        "category": "Homelab",
+        "markdown": "What an AI client gets from the tool `paperless.for_entry` for @nas-01: the documents in Paperless-ngx found by its serial number, model and name. The documents stay in Paperless-ngx.\n\n| Document | Type | From | Date | Found by |\n|---|---|---|---|---|\n| [${pl.documents.0.title}](${pl.documents.0.url}) | ${pl.documents.0.document_type} | ${pl.documents.0.correspondent} | ${pl.documents.0.created} | ${pl.documents.0.matched_by} |\n| [${pl.documents.1.title}](${pl.documents.1.url}) | ${pl.documents.1.document_type} | ${pl.documents.1.correspondent} | ${pl.documents.1.created} | ${pl.documents.1.matched_by} |\n| [${pl.documents.2.title}](${pl.documents.2.url}) | ${pl.documents.2.document_type} | ${pl.documents.2.correspondent} | ${pl.documents.2.created} | ${pl.documents.2.matched_by} |\n| [${pl.documents.3.title}](${pl.documents.3.url}) | ${pl.documents.3.document_type} | ${pl.documents.3.correspondent} | ${pl.documents.3.created} | ${pl.documents.3.matched_by} |\n"
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "documents",
+      "path": "/p/${project}/d/nas-papers",
+      "caption": "An entry's invoices, manual and warranty as AI clients find them in Paperless-ngx"
+    }
+  ]
+}

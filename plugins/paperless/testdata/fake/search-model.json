@@ -1,0 +1,47 @@
+{
+  "count": 3,
+  "next": null,
+  "previous": null,
+  "all": [
+    388,
+    412,
+    413
+  ],
+  "results": [
+    {
+      "id": 388,
+      "title": "HomeStore 4 user manual",
+      "correspondent": 9,
+      "document_type": 2,
+      "tags": [
+        3
+      ],
+      "created": "2024-11-10",
+      "archive_serial_number": null
+    },
+    {
+      "id": 412,
+      "title": "Invoice HomeStore 4 NAS",
+      "correspondent": 7,
+      "document_type": 1,
+      "tags": [
+        3,
+        5
+      ],
+      "created": "2024-11-08",
+      "archive_serial_number": 412
+    },
+    {
+      "id": 413,
+      "title": "Warranty card HomeStore 4",
+      "correspondent": 9,
+      "document_type": 4,
+      "tags": [
+        3,
+        5
+      ],
+      "created": "2024-11-08",
+      "archive_serial_number": 413
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "count": 1,
+  "next": null,
+  "previous": null,
+  "all": [
+    455
+  ],
+  "results": [
+    {
+      "id": 455,
+      "title": "Replacement hard drive for nas-01",
+      "correspondent": 7,
+      "document_type": 1,
+      "tags": [
+        3
+      ],
+      "created": "2026-02-03",
+      "archive_serial_number": 455
+    }
+  ]
+}

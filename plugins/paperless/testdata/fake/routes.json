@@ -1,0 +1,31 @@
+{
+  "routes": [
+    {
+      "path": "/api/documents/",
+      "query": "query=%22HS4-2291-0457%22",
+      "file": "search-serial.json"
+    },
+    {
+      "path": "/api/documents/",
+      "query": "query=%22HomeStore+4%22",
+      "file": "search-model.json"
+    },
+    {
+      "path": "/api/documents/",
+      "query": "query=%22nas-01%22",
+      "file": "search-name.json"
+    },
+    {
+      "path": "/api/correspondents/",
+      "file": "correspondents.json"
+    },
+    {
+      "path": "/api/document_types/",
+      "file": "document_types.json"
+    },
+    {
+      "path": "/api/tags/",
+      "file": "tags.json"
+    }
+  ]
+}

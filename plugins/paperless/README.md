@@ -2,6 +2,8 @@
 
 `com.phoedox.paperless` · version 0.1.0
 
+![An entry's invoices, manual and warranty as AI clients find them in Paperless-ngx](screenshots/documents.webp)
+
 Finds documents in Paperless-ngx for AI clients: a full-text search, and the invoices, manuals and warranty papers of an entry (searched by its serial number, model and name). Documents stay in Paperless-ngx; nothing is imported or changed, and the tools return title, correspondent, document type, creation date, tags and a link to the document, not its content.
 
 ## What it adds

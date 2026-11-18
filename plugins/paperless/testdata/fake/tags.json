@@ -1,0 +1,29 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "all": [
+    3,
+    5
+  ],
+  "results": [
+    {
+      "id": 3,
+      "slug": "homelab",
+      "name": "Homelab",
+      "match": "",
+      "matching_algorithm": 6,
+      "is_insensitive": true,
+      "document_count": 3
+    },
+    {
+      "id": 5,
+      "slug": "warranty-until-2027",
+      "name": "Warranty until 2027",
+      "match": "",
+      "matching_algorithm": 6,
+      "is_insensitive": true,
+      "document_count": 3
+    }
+  ]
+}

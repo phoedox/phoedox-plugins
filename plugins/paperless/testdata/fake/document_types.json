@@ -1,0 +1,39 @@
+{
+  "count": 3,
+  "next": null,
+  "previous": null,
+  "all": [
+    1,
+    2,
+    4
+  ],
+  "results": [
+    {
+      "id": 1,
+      "slug": "invoice",
+      "name": "Invoice",
+      "match": "",
+      "matching_algorithm": 6,
+      "is_insensitive": true,
+      "document_count": 3
+    },
+    {
+      "id": 2,
+      "slug": "manual",
+      "name": "Manual",
+      "match": "",
+      "matching_algorithm": 6,
+      "is_insensitive": true,
+      "document_count": 3
+    },
+    {
+      "id": 4,
+      "slug": "warranty",
+      "name": "Warranty",
+      "match": "",
+      "matching_algorithm": 6,
+      "is_insensitive": true,
+      "document_count": 3
+    }
+  ]
+}
