@@ -2,6 +2,8 @@
 
 `com.phoedox.m365` · version 0.1.0
 
+![Devices managed in Intune as entries with maker, model and serial](screenshots/entries.webp)
+
 Imports the devices managed by Microsoft Intune into the knowledge graph as devices (name, manufacturer, model, serial number, operating system and version, compliance state, last sync, and the display name of the primary user; no e-mail addresses) and lists them and the subscribed Microsoft 365 licenses (consumed and available units per SKU) for AI clients. Read-only: it signs in with client credentials at login.microsoftonline.com and only reads from Microsoft Graph (graph.microsoft.com).
 
 ## What it adds

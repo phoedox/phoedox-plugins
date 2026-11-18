@@ -1,0 +1,39 @@
+{
+  "hosts": [
+    "login.microsoftonline.com",
+    "graph.microsoft.com"
+  ],
+  "secrets": {
+    "tenant_id": "maple-labs.example.org",
+    "client_id": "0b1c2d3e-4f5a-4b6c-8d7e-9f0a1b2c3d4e",
+    "client_secret": "demo-client-secret-for-screenshots"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 5
+  },
+  "shots": [
+    {
+      "name": "entries",
+      "path": "/p/${project}/graph",
+      "caption": "Devices managed in Intune as entries with maker, model and serial"
+    },
+    {
+      "name": "device",
+      "path": "/p/${project}/e/m365-ee15da12-af71-527c-86f9-6e6ba404e05d",
+      "caption": "A laptop's entry: OS version, user, compliance and last sync"
+    }
+  ]
+}
