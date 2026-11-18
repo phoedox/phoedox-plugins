@@ -3,6 +3,9 @@
   "name": "UPS monitoring",
   "icon": "battery-charging",
   "category": "servers",
+  "screenshots": [
+    { "file": "screenshots/panel.webp", "caption": "Charge, runtime and state of the UPS live on its entry, with what it powers" }
+  ],
   "version": "1.2.0",
   "hostApi": "1",
   "description": "Reads charge, runtime and status of UPS devices through the HTTP API of a NUT server (e.g. PeaNUT) and shows them on the entry.",

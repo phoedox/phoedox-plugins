@@ -3,6 +3,7 @@ package main
 import (
 	"testing"
 
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 	"github.com/phoedox/phoedox-sdk/go/pdk"
 )
 
@@ -23,5 +24,18 @@ func TestParseNUT(t *testing.T) {
 	s := summarize([]pdk.Entity{{Kind: "ups", Slug: "a", Attrs: map[string]any{"ladung": 80.0}}, {Kind: "device"}})
 	if len(s) != 1 || s[0].Charge != 80.0 {
 		t.Fatalf("%+v", s)
+	}
+}
+
+// TestDemoData parses the recorded demo answer; shots.json writes the same
+// values onto the demo UPS entry.
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "GET", "/api/v1/devices/rack-ups")
+	if err != nil {
+		t.Fatal(err)
+	}
+	r, err := parseNUT(body)
+	if err != nil || r.Charge != 100 || r.Runtime != 38.5 || r.Status != "online" {
+		t.Fatalf("%+v %v", r, err)
 	}
 }

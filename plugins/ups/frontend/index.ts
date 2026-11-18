@@ -1,6 +1,22 @@
 import { css, definePlugin, html, PhxElement, type Entity } from "@phoedox/sdk";
 
-const statusLabel: Record<string, string> = { online: "Netzbetrieb", batterie: "Batteriebetrieb", batterie_schwach: "Batterie schwach", unbekannt: "Unbekannt" };
+// The plugin's own texts in German and English (sdk.ui.locale picks one).
+const texts = {
+  de: {
+    status: { online: "Netzbetrieb", batterie: "Batteriebetrieb", batterie_schwach: "Batterie schwach", unbekannt: "Unbekannt" } as Record<string, string>,
+    empty: "Noch keine Messwerte – das Plugin fragt jede Minute nach.",
+    runtime: "min Laufzeit",
+    asOf: "Stand",
+    charge: "Ladung",
+  },
+  en: {
+    status: { online: "On mains", batterie: "On battery", batterie_schwach: "Battery low", unbekannt: "Unknown" } as Record<string, string>,
+    empty: "No readings yet – the plugin asks every minute.",
+    runtime: "min runtime",
+    asOf: "as of",
+    charge: "Charge",
+  },
+};
 
 /** Live charge, runtime and status on a UPS entry (and as a block). */
 class UpsView extends PhxElement {
@@ -34,16 +50,17 @@ class UpsView extends PhxElement {
     this.stop?.();
   }
   render() {
+    const t = this.sdk.ui.locale().startsWith("de") ? texts.de : texts.en;
     const a = this.e?.attrs ?? {};
-    if (a.ladung === undefined) return html`<span class="muted">Noch keine Messwerte – das Plugin fragt jede Minute nach.</span>`;
+    if (a.ladung === undefined) return html`<span class="muted">${t.empty}</span>`;
     const charge = Number(a.ladung);
     return html`<div class="row">
         <span class="big">${charge} %</span>
-        <span>${a.laufzeit !== undefined ? Number(a.laufzeit).toLocaleString() : "?"} min Laufzeit</span>
-        <span>${statusLabel[String(a.status)] ?? a.status}</span>
-        ${a.abgefragt ? html`<span class="muted">Stand ${new Date(String(a.abgefragt)).toLocaleTimeString()}</span>` : ""}
+        <span>${a.laufzeit !== undefined ? Number(a.laufzeit).toLocaleString() : "?"} ${t.runtime}</span>
+        <span>${t.status[String(a.status)] ?? a.status}</span>
+        ${a.abgefragt ? html`<span class="muted">${t.asOf} ${new Date(String(a.abgefragt)).toLocaleTimeString()}</span>` : ""}
       </div>
-      <div class="bar" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow=${charge} aria-label="Ladung"><i class=${charge < 30 ? "low" : ""} style="width:${charge}%"></i></div>`;
+      <div class="bar" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow=${charge} aria-label=${t.charge}><i class=${charge < 30 ? "low" : ""} style="width:${charge}%"></i></div>`;
   }
 }
 

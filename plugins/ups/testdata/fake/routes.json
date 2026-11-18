@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "path": "/api/v1/devices/rack-ups",
+      "file": "rack-ups.json"
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 `de.example.ups` · version 1.2.0
 
+![Charge, runtime and state of the UPS live on its entry, with what it powers](screenshots/panel.webp)
+
 Reads charge, runtime and status of UPS devices through the HTTP API of a NUT server (e.g. PeaNUT) and shows them on the entry. This is the example plugin of the SDK.
 
 ## What it adds

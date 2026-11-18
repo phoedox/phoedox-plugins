@@ -1,0 +1,37 @@
+{
+  "secrets": {
+    "nut_password": "demo-monitor-password"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": { "name": "Maple Street 12", "features": ["graph"] }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": { "kind": "server", "name": "nas", "slug": "nas", "attrs": { "hostname": "nas.home.arpa", "ip": "192.0.2.20", "os": "DSM 7.2.2" } }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": { "kind": "server", "name": "pve-01", "slug": "pve-01", "attrs": { "hostname": "pve-01.home.arpa", "ip": "192.0.2.10", "os": "Proxmox VE 8.4" } }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": { "kind": "ups", "name": "Rack UPS", "slug": "rack-ups",
+        "attrs": { "kapazitaet": 700, "nut_name": "rack-ups", "ladung": 100, "laufzeit": 38.5, "status": "online", "abgefragt": "2026-06-15T07:59:30Z" } }
+    },
+    { "method": "POST", "path": "/projects/${project}/edges", "body": { "from": "rack-ups", "rel": "powers", "to": "nas" } },
+    { "method": "POST", "path": "/projects/${project}/edges", "body": { "from": "rack-ups", "rel": "powers", "to": "pve-01" } }
+  ],
+  "shots": [
+    {
+      "name": "panel",
+      "path": "/p/${project}/e/rack-ups",
+      "caption": "Charge, runtime and state of the UPS live on its entry, with what it powers"
+    }
+  ]
+}
