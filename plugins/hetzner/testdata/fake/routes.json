@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {
+      "path": "/v1/servers",
+      "query": "page=1",
+      "file": "servers.json"
+    }
+  ]
+}

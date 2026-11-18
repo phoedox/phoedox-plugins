@@ -1,0 +1,359 @@
+{
+ "servers": [
+  {
+   "id": 48151623,
+   "name": "shop-web-1",
+   "status": "running",
+   "created": "2025-03-02T10:15:00+00:00",
+   "labels": {
+    "project": "maple-labs",
+    "role": "web",
+    "backup": "daily"
+   },
+   "public_net": {
+    "ipv4": {
+     "id": 481516231,
+     "ip": "198.51.100.40",
+     "blocked": false,
+     "dns_ptr": "shop-web-1.example.org"
+    },
+    "ipv6": {
+     "id": 481516232,
+     "ip": "2001:db8:4a1::/64",
+     "blocked": false,
+     "dns_ptr": []
+    },
+    "floating_ips": [],
+    "firewalls": [
+     {
+      "id": 1201,
+      "status": "applied"
+     }
+    ]
+   },
+   "private_net": [
+    {
+     "network": 3101,
+     "ip": "10.20.10.2",
+     "alias_ips": [],
+     "mac_address": "86:00:00:47:bc:07"
+    }
+   ],
+   "server_type": {
+    "id": 22,
+    "name": "cpx21",
+    "description": "CPX 21",
+    "cores": 3,
+    "memory": 4.0,
+    "disk": 80,
+    "cpu_type": "shared",
+    "architecture": "x86"
+   },
+   "datacenter": {
+    "id": 4,
+    "name": "fsn1-dc14",
+    "description": "Falkenstein 1 virtual DC 14",
+    "location": {
+     "id": 1,
+     "name": "fsn1",
+     "description": "Falkenstein DC Park 1",
+     "country": "DE",
+     "city": "Falkenstein",
+     "latitude": 50.47612,
+     "longitude": 12.370071,
+     "network_zone": "eu-central"
+    }
+   },
+   "image": {
+    "id": 161547269,
+    "type": "system",
+    "status": "available",
+    "name": "ubuntu-24.04",
+    "description": "Ubuntu 24.04",
+    "os_flavor": "ubuntu",
+    "os_version": "24.04",
+    "architecture": "x86"
+   },
+   "rescue_enabled": false,
+   "locked": false,
+   "backup_window": "22-02",
+   "outgoing_traffic": 123456789,
+   "ingoing_traffic": 987654321,
+   "included_traffic": 21990232555520,
+   "protection": {
+    "delete": true,
+    "rebuild": true
+   },
+   "primary_disk_size": 80,
+   "volumes": [],
+   "load_balancers": []
+  },
+  {
+   "id": 48151624,
+   "name": "shop-db-1",
+   "status": "running",
+   "created": "2025-03-02T10:17:00+00:00",
+   "labels": {
+    "project": "maple-labs",
+    "role": "db",
+    "backup": "daily"
+   },
+   "public_net": {
+    "ipv4": {
+     "id": 481516241,
+     "ip": "198.51.100.41",
+     "blocked": false,
+     "dns_ptr": "shop-db-1.example.org"
+    },
+    "ipv6": {
+     "id": 481516242,
+     "ip": "2001:db8:4a2::/64",
+     "blocked": false,
+     "dns_ptr": []
+    },
+    "floating_ips": [],
+    "firewalls": [
+     {
+      "id": 1201,
+      "status": "applied"
+     }
+    ]
+   },
+   "private_net": [
+    {
+     "network": 3101,
+     "ip": "10.20.10.3",
+     "alias_ips": [],
+     "mac_address": "86:00:00:48:bc:07"
+    }
+   ],
+   "server_type": {
+    "id": 45,
+    "name": "cax21",
+    "description": "CAX21",
+    "cores": 4,
+    "memory": 8.0,
+    "disk": 80,
+    "cpu_type": "shared",
+    "architecture": "arm"
+   },
+   "datacenter": {
+    "id": 2,
+    "name": "nbg1-dc3",
+    "description": "Nuremberg 1 virtual DC 3",
+    "location": {
+     "id": 2,
+     "name": "nbg1",
+     "description": "Nuremberg DC Park 1",
+     "country": "DE",
+     "city": "Nuremberg",
+     "latitude": 49.452102,
+     "longitude": 11.076665,
+     "network_zone": "eu-central"
+    }
+   },
+   "image": {
+    "id": 161547270,
+    "type": "system",
+    "status": "available",
+    "name": "ubuntu-24.04",
+    "description": "Ubuntu 24.04",
+    "os_flavor": "ubuntu",
+    "os_version": "24.04",
+    "architecture": "arm"
+   },
+   "rescue_enabled": false,
+   "locked": false,
+   "backup_window": "22-02",
+   "outgoing_traffic": 123456789,
+   "ingoing_traffic": 987654321,
+   "included_traffic": 21990232555520,
+   "protection": {
+    "delete": true,
+    "rebuild": true
+   },
+   "primary_disk_size": 80,
+   "volumes": [],
+   "load_balancers": []
+  },
+  {
+   "id": 51201977,
+   "name": "wg-gateway",
+   "status": "running",
+   "created": "2025-09-14T18:02:00+00:00",
+   "labels": {
+    "project": "maple-labs",
+    "role": "vpn"
+   },
+   "public_net": {
+    "ipv4": {
+     "id": 512019771,
+     "ip": "198.51.100.42",
+     "blocked": false,
+     "dns_ptr": "wg-gateway.example.org"
+    },
+    "ipv6": {
+     "id": 512019772,
+     "ip": "2001:db8:4a3::/64",
+     "blocked": false,
+     "dns_ptr": []
+    },
+    "floating_ips": [],
+    "firewalls": [
+     {
+      "id": 1201,
+      "status": "applied"
+     }
+    ]
+   },
+   "private_net": [
+    {
+     "network": 3101,
+     "ip": "10.20.10.4",
+     "alias_ips": [],
+     "mac_address": "86:00:00:b9:47:07"
+    }
+   ],
+   "server_type": {
+    "id": 104,
+    "name": "cx22",
+    "description": "CX22",
+    "cores": 2,
+    "memory": 4.0,
+    "disk": 40,
+    "cpu_type": "shared",
+    "architecture": "x86"
+   },
+   "datacenter": {
+    "id": 3,
+    "name": "hel1-dc2",
+    "description": "Helsinki 1 virtual DC 2",
+    "location": {
+     "id": 3,
+     "name": "hel1",
+     "description": "Helsinki DC Park 1",
+     "country": "FI",
+     "city": "Helsinki",
+     "latitude": 60.169855,
+     "longitude": 24.938379,
+     "network_zone": "eu-central"
+    }
+   },
+   "image": {
+    "id": 114690389,
+    "type": "system",
+    "status": "available",
+    "name": "debian-12",
+    "description": "Debian 12",
+    "os_flavor": "debian",
+    "os_version": "12",
+    "architecture": "x86"
+   },
+   "rescue_enabled": false,
+   "locked": false,
+   "backup_window": null,
+   "outgoing_traffic": 123456789,
+   "ingoing_traffic": 987654321,
+   "included_traffic": 21990232555520,
+   "protection": {
+    "delete": true,
+    "rebuild": true
+   },
+   "primary_disk_size": 40,
+   "volumes": [],
+   "load_balancers": []
+  },
+  {
+   "id": 55001842,
+   "name": "staging",
+   "status": "off",
+   "created": "2026-04-20T08:44:00+00:00",
+   "labels": {
+    "project": "maple-labs",
+    "env": "staging"
+   },
+   "public_net": {
+    "ipv4": null,
+    "ipv6": {
+     "id": 550018422,
+     "ip": "2001:db8:4a4::/64",
+     "blocked": false,
+     "dns_ptr": []
+    },
+    "floating_ips": [],
+    "firewalls": [
+     {
+      "id": 1201,
+      "status": "applied"
+     }
+    ]
+   },
+   "private_net": [
+    {
+     "network": 3101,
+     "ip": "10.20.10.5",
+     "alias_ips": [],
+     "mac_address": "86:00:00:f2:42:07"
+    }
+   ],
+   "server_type": {
+    "id": 104,
+    "name": "cx22",
+    "description": "CX22",
+    "cores": 2,
+    "memory": 4.0,
+    "disk": 40,
+    "cpu_type": "shared",
+    "architecture": "x86"
+   },
+   "datacenter": {
+    "id": 4,
+    "name": "fsn1-dc14",
+    "description": "Falkenstein 1 virtual DC 14",
+    "location": {
+     "id": 1,
+     "name": "fsn1",
+     "description": "Falkenstein DC Park 1",
+     "country": "DE",
+     "city": "Falkenstein",
+     "latitude": 50.47612,
+     "longitude": 12.370071,
+     "network_zone": "eu-central"
+    }
+   },
+   "image": {
+    "id": 161547269,
+    "type": "system",
+    "status": "available",
+    "name": "ubuntu-24.04",
+    "description": "Ubuntu 24.04",
+    "os_flavor": "ubuntu",
+    "os_version": "24.04",
+    "architecture": "x86"
+   },
+   "rescue_enabled": false,
+   "locked": false,
+   "backup_window": null,
+   "outgoing_traffic": 123456789,
+   "ingoing_traffic": 987654321,
+   "included_traffic": 21990232555520,
+   "protection": {
+    "delete": true,
+    "rebuild": true
+   },
+   "primary_disk_size": 40,
+   "volumes": [],
+   "load_balancers": []
+  }
+ ],
+ "meta": {
+  "pagination": {
+   "page": 1,
+   "per_page": 50,
+   "previous_page": null,
+   "next_page": null,
+   "last_page": 1,
+   "total_entries": 4
+  }
+ }
+}

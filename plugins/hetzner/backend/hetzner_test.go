@@ -4,6 +4,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 	"github.com/phoedox/phoedox-plugins/internal/integ"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
@@ -88,5 +89,26 @@ func TestErrorsAndBatches(t *testing.T) {
 	n := 0
 	if err := integ.ApplyBatches(ops, 2, func(b *pdk.GraphOps) (map[string]string, error) { n++; return nil, nil }); err != nil || n != 3 {
 		t.Fatal(n, err)
+	}
+}
+
+// TestDemoData parses the recorded demo answer (for screenshots once the API
+// address can be pointed at the fake API).
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "GET", "/v1/servers?page=1&per_page=50")
+	if err != nil {
+		t.Fatal(err)
+	}
+	list, next, err := parseServers(body)
+	if err != nil || next != 0 || len(list) != 4 {
+		t.Fatalf("%v %d %d", err, next, len(list))
+	}
+	ops := graphOps(list).Ops
+	if len(ops) != 4 || ops[0].ID != "hetzner-48151623" || ops[0].Attrs["ip"] != "198.51.100.40" || ops[0].Attrs["os"] != "Ubuntu 24.04" ||
+		ops[0].Attrs["location"] != "fsn1" || ops[0].Attrs["labels"] != "backup=daily, project=maple-labs, role=web" {
+		t.Fatalf("web: %+v", ops[0])
+	}
+	if ops[3].Attrs["ip"] != nil || ops[3].Attrs["status"] != "off" {
+		t.Fatalf("staging: %+v", ops[3])
 	}
 }
