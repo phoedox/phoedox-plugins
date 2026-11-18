@@ -1,0 +1,112 @@
+{
+  "links": [
+    {
+      "domainType": "link",
+      "rel": "self",
+      "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/domain-types/service/collections/all",
+      "method": "GET",
+      "type": "application/json"
+    }
+  ],
+  "id": "service",
+  "domainType": "service",
+  "value": [
+    {
+      "links": [
+        {
+          "domainType": "link",
+          "rel": "self",
+          "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/objects/service/pve-01",
+          "method": "GET",
+          "type": "application/json"
+        }
+      ],
+      "domainType": "service",
+      "id": "pve-01:SMART sda",
+      "title": "Service SMART sda on host pve-01",
+      "members": {},
+      "extensions": {
+        "host_name": "pve-01",
+        "host_address": "10.20.0.11",
+        "description": "SMART sda",
+        "state": 2,
+        "plugin_output": "CRIT - Reallocated sectors: 24 (warn/crit at 1/10), Powered on: 31842 hours",
+        "last_state_change": 1781488800,
+        "acknowledged": 0
+      }
+    },
+    {
+      "links": [
+        {
+          "domainType": "link",
+          "rel": "self",
+          "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/objects/service/homeassistant",
+          "method": "GET",
+          "type": "application/json"
+        }
+      ],
+      "domainType": "service",
+      "id": "homeassistant:HTTP Home Assistant",
+      "title": "Service HTTP Home Assistant on host homeassistant",
+      "members": {},
+      "extensions": {
+        "host_name": "homeassistant",
+        "host_address": "10.20.0.21",
+        "description": "HTTP Home Assistant",
+        "state": 2,
+        "plugin_output": "CRIT - connect to address 10.20.0.21 and port 8123: Connection refused",
+        "last_state_change": 1781508900,
+        "acknowledged": 1
+      }
+    },
+    {
+      "links": [
+        {
+          "domainType": "link",
+          "rel": "self",
+          "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/objects/service/nas-01",
+          "method": "GET",
+          "type": "application/json"
+        }
+      ],
+      "domainType": "service",
+      "id": "nas-01:Filesystem /mnt/tank",
+      "title": "Service Filesystem /mnt/tank on host nas-01",
+      "members": {},
+      "extensions": {
+        "host_name": "nas-01",
+        "host_address": "10.20.0.10",
+        "description": "Filesystem /mnt/tank",
+        "state": 1,
+        "plugin_output": "WARN - Used: 87.4% - 6.99 TB of 8.00 TB (warn/crit at 85.0%/90.0% used), trend: +18.2 GB / 24 hours",
+        "last_state_change": 1781251200,
+        "acknowledged": 0
+      }
+    },
+    {
+      "links": [
+        {
+          "domainType": "link",
+          "rel": "self",
+          "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/objects/service/router",
+          "method": "GET",
+          "type": "application/json"
+        }
+      ],
+      "domainType": "service",
+      "id": "router:Interface 4 wan",
+      "title": "Service Interface 4 wan on host router",
+      "members": {},
+      "extensions": {
+        "host_name": "router",
+        "host_address": "10.20.0.1",
+        "description": "Interface 4 wan",
+        "state": 1,
+        "plugin_output": "WARN - [wan], (up), Speed: 1 GBit/s, In: 92.1 MB/s (warn/crit at 90.0 MB/s/100.0 MB/s), Out: 4.3 MB/s",
+        "last_state_change": 1781508000,
+        "acknowledged": 0
+      }
+    }
+  ],
+  "extensions": {}
+}

@@ -1,0 +1,98 @@
+{
+  "secrets": {
+    "url": "${fake}/home",
+    "username": "automation",
+    "secret": "demo-automation-secret"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "nas-01",
+        "slug": "nas-01",
+        "attrs": {
+          "hostname": "nas-01.home.arpa",
+          "ip": "10.20.0.10",
+          "os": "TrueNAS"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "pve-01",
+        "slug": "pve-01",
+        "attrs": {
+          "hostname": "pve-01.home.arpa",
+          "ip": "10.20.0.11",
+          "os": "Proxmox VE"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "vm",
+        "name": "Home Assistant",
+        "slug": "home-assistant",
+        "attrs": {
+          "vmid": 101,
+          "os": "Home Assistant OS",
+          "ip": "10.20.0.21"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "router",
+        "name": "Router",
+        "slug": "router",
+        "attrs": {
+          "model": "OPNsense",
+          "ip": "10.20.0.1"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.checkmk/tools/checkmk.problems",
+      "body": {},
+      "as": "cmk"
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "monitoring-problems",
+        "title": "Open monitoring problems",
+        "category": "Homelab",
+        "markdown": "What an AI client gets from the tool `checkmk.problems` of the Checkmk plugin: the services that are not OK, worst first, each with the Phoedox entry of its host.\n\n| State | Host | Service | Output | Entry |\n|---|---|---|---|---|\n| ${cmk.0.state} | ${cmk.0.host} | ${cmk.0.service} | ${cmk.0.output} | @${cmk.0.entry.slug} |\n| ${cmk.1.state} | ${cmk.1.host} | ${cmk.1.service} | ${cmk.1.output} | @${cmk.1.entry.slug} |\n| ${cmk.2.state} | ${cmk.2.host} | ${cmk.2.service} | ${cmk.2.output} | @${cmk.2.entry.slug} |\n| ${cmk.3.state} | ${cmk.3.host} | ${cmk.3.service} | ${cmk.3.output} | @${cmk.3.entry.slug} |\n"
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "problems",
+      "path": "/p/${project}/d/monitoring-problems",
+      "caption": "Checkmk problems as AI clients get them, each linked to its entry"
+    }
+  ]
+}

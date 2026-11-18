@@ -1,0 +1,116 @@
+{
+  "links": [
+    {
+      "domainType": "link",
+      "rel": "self",
+      "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/domain-types/host/collections/all",
+      "method": "GET",
+      "type": "application/json"
+    }
+  ],
+  "id": "host",
+  "domainType": "host",
+  "value": [
+    {
+      "links": [
+        {
+          "domainType": "link",
+          "rel": "self",
+          "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/objects/host/nas-01",
+          "method": "GET",
+          "type": "application/json"
+        }
+      ],
+      "domainType": "host",
+      "id": "nas-01",
+      "title": "nas-01",
+      "members": {},
+      "extensions": {
+        "name": "nas-01",
+        "address": "10.20.0.10",
+        "state": 0
+      }
+    },
+    {
+      "links": [
+        {
+          "domainType": "link",
+          "rel": "self",
+          "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/objects/host/pve-01",
+          "method": "GET",
+          "type": "application/json"
+        }
+      ],
+      "domainType": "host",
+      "id": "pve-01",
+      "title": "pve-01",
+      "members": {},
+      "extensions": {
+        "name": "pve-01",
+        "address": "10.20.0.11",
+        "state": 0
+      }
+    },
+    {
+      "links": [
+        {
+          "domainType": "link",
+          "rel": "self",
+          "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/objects/host/homeassistant",
+          "method": "GET",
+          "type": "application/json"
+        }
+      ],
+      "domainType": "host",
+      "id": "homeassistant",
+      "title": "homeassistant",
+      "members": {},
+      "extensions": {
+        "name": "homeassistant",
+        "address": "10.20.0.21",
+        "state": 0
+      }
+    },
+    {
+      "links": [
+        {
+          "domainType": "link",
+          "rel": "self",
+          "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/objects/host/router",
+          "method": "GET",
+          "type": "application/json"
+        }
+      ],
+      "domainType": "host",
+      "id": "router",
+      "title": "router",
+      "members": {},
+      "extensions": {
+        "name": "router",
+        "address": "10.20.0.1",
+        "state": 0
+      }
+    },
+    {
+      "links": [
+        {
+          "domainType": "link",
+          "rel": "self",
+          "href": "https://monitoring.home.arpa/home/check_mk/api/1.0/objects/host/cam-garden",
+          "method": "GET",
+          "type": "application/json"
+        }
+      ],
+      "domainType": "host",
+      "id": "cam-garden",
+      "title": "cam-garden",
+      "members": {},
+      "extensions": {
+        "name": "cam-garden",
+        "address": "10.20.0.42",
+        "state": 1
+      }
+    }
+  ],
+  "extensions": {}
+}

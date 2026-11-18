@@ -2,6 +2,8 @@
 
 `com.phoedox.checkmk` · version 0.1.0
 
+![Checkmk problems as AI clients get them, each linked to its entry](screenshots/problems.webp)
+
 Gives AI clients the service problems and the host states of a Checkmk site (2.1 or later, REST API) together with the Phoedox entry each host belongs to (matched by host name or address). Read-only, no import.
 
 ## What it adds

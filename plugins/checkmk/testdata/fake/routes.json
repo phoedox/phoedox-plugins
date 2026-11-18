@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "path": "/home/check_mk/api/1.0/domain-types/service/collections/all",
+      "file": "services.json"
+    },
+    {
+      "path": "/home/check_mk/api/1.0/domain-types/host/collections/all",
+      "file": "hosts.json"
+    }
+  ]
+}
