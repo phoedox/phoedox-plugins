@@ -1,0 +1,191 @@
+{
+ "result": [
+  {
+   "id": "023e105f4ecef8ad9ca31a8372d0c353",
+   "name": "example.org",
+   "status": "active",
+   "paused": false,
+   "type": "full",
+   "development_mode": 0,
+   "name_servers": [
+    "ada.ns.cloudflare.com",
+    "bob.ns.cloudflare.com"
+   ],
+   "original_name_servers": [
+    "ns1.example.net",
+    "ns2.example.net"
+   ],
+   "original_registrar": null,
+   "original_dnshost": null,
+   "modified_on": "2026-05-30T09:12:44.123456Z",
+   "created_on": "2024-02-11T18:03:21.654321Z",
+   "activated_on": "2024-02-11T18:20:02.112233Z",
+   "meta": {
+    "step": 2,
+    "custom_certificate_quota": 0,
+    "page_rule_quota": 3,
+    "phishing_detected": false
+   },
+   "owner": {
+    "id": null,
+    "type": "user",
+    "email": null
+   },
+   "account": {
+    "id": "0123456789abcdef0123456789abcdef",
+    "name": "Doe family"
+   },
+   "tenant": {
+    "id": null,
+    "name": null
+   },
+   "tenant_unit": {
+    "id": null
+   },
+   "permissions": [
+    "#dns_records:read",
+    "#zone:read"
+   ],
+   "plan": {
+    "id": "0feeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "name": "Free Website",
+    "price": 0,
+    "currency": "USD",
+    "frequency": "",
+    "is_subscribed": true,
+    "can_subscribe": false,
+    "legacy_id": "free",
+    "legacy_discount": false,
+    "externally_managed": false
+   }
+  },
+  {
+   "id": "1a2b3c4d5e6f708192a3b4c5d6e7f809",
+   "name": "example.net",
+   "status": "active",
+   "paused": false,
+   "type": "full",
+   "development_mode": 0,
+   "name_servers": [
+    "ada.ns.cloudflare.com",
+    "bob.ns.cloudflare.com"
+   ],
+   "original_name_servers": [
+    "ns1.example.net",
+    "ns2.example.net"
+   ],
+   "original_registrar": null,
+   "original_dnshost": null,
+   "modified_on": "2026-05-30T09:12:44.123456Z",
+   "created_on": "2024-02-11T18:03:21.654321Z",
+   "activated_on": "2024-02-11T18:20:02.112233Z",
+   "meta": {
+    "step": 2,
+    "custom_certificate_quota": 0,
+    "page_rule_quota": 3,
+    "phishing_detected": false
+   },
+   "owner": {
+    "id": null,
+    "type": "user",
+    "email": null
+   },
+   "account": {
+    "id": "0123456789abcdef0123456789abcdef",
+    "name": "Doe family"
+   },
+   "tenant": {
+    "id": null,
+    "name": null
+   },
+   "tenant_unit": {
+    "id": null
+   },
+   "permissions": [
+    "#dns_records:read",
+    "#zone:read"
+   ],
+   "plan": {
+    "id": "0feeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "name": "Pro Website",
+    "price": 25,
+    "currency": "USD",
+    "frequency": "monthly",
+    "is_subscribed": true,
+    "can_subscribe": false,
+    "legacy_id": "pro",
+    "legacy_discount": false,
+    "externally_managed": false
+   }
+  },
+  {
+   "id": "9f8e7d6c5b4a39281706f5e4d3c2b1a0",
+   "name": "example.com",
+   "status": "pending",
+   "paused": false,
+   "type": "full",
+   "development_mode": 0,
+   "name_servers": [
+    "cleo.ns.cloudflare.com",
+    "dan.ns.cloudflare.com"
+   ],
+   "original_name_servers": [
+    "ns1.example.net",
+    "ns2.example.net"
+   ],
+   "original_registrar": null,
+   "original_dnshost": null,
+   "modified_on": "2026-05-30T09:12:44.123456Z",
+   "created_on": "2024-02-11T18:03:21.654321Z",
+   "activated_on": null,
+   "meta": {
+    "step": 2,
+    "custom_certificate_quota": 0,
+    "page_rule_quota": 3,
+    "phishing_detected": false
+   },
+   "owner": {
+    "id": null,
+    "type": "user",
+    "email": null
+   },
+   "account": {
+    "id": "0123456789abcdef0123456789abcdef",
+    "name": "Doe family"
+   },
+   "tenant": {
+    "id": null,
+    "name": null
+   },
+   "tenant_unit": {
+    "id": null
+   },
+   "permissions": [
+    "#dns_records:read",
+    "#zone:read"
+   ],
+   "plan": {
+    "id": "0feeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "name": "Free Website",
+    "price": 0,
+    "currency": "USD",
+    "frequency": "",
+    "is_subscribed": true,
+    "can_subscribe": false,
+    "legacy_id": "free",
+    "legacy_discount": false,
+    "externally_managed": false
+   }
+  }
+ ],
+ "result_info": {
+  "page": 1,
+  "per_page": 50,
+  "count": 3,
+  "total_count": 3,
+  "total_pages": 1
+ },
+ "success": true,
+ "errors": [],
+ "messages": []
+}

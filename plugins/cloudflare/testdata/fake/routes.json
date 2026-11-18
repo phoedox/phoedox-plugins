@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {"path": "/client/v4/zones", "file": "zones.json"},
+    {"path": "/client/v4/zones/023e105f4ecef8ad9ca31a8372d0c353/dns_records", "file": "records/example.org.json"},
+    {"path": "/client/v4/zones/1a2b3c4d5e6f708192a3b4c5d6e7f809/dns_records", "file": "records/example.net.json"},
+    {"path": "/client/v4/zones/9f8e7d6c5b4a39281706f5e4d3c2b1a0/dns_records", "file": "records/example.com.json"}
+  ]
+}

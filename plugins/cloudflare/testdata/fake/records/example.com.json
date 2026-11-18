@@ -1,0 +1,65 @@
+{
+ "result": [
+  {
+   "id": "9f8e7d6c5b4a39281706f5e4d3c20001",
+   "zone_id": "9f8e7d6c5b4a39281706f5e4d3c2b1a0",
+   "zone_name": "example.com",
+   "name": "example.com",
+   "type": "A",
+   "content": "192.0.2.80",
+   "proxiable": true,
+   "proxied": false,
+   "ttl": 3600,
+   "settings": {},
+   "meta": {},
+   "comment": null,
+   "tags": [],
+   "created_on": "2024-02-11T18:21:00.000000Z",
+   "modified_on": "2026-05-30T09:12:44.000000Z"
+  },
+  {
+   "id": "9f8e7d6c5b4a39281706f5e4d3c20002",
+   "zone_id": "9f8e7d6c5b4a39281706f5e4d3c2b1a0",
+   "zone_name": "example.com",
+   "name": "www.example.com",
+   "type": "CNAME",
+   "content": "example.com",
+   "proxiable": true,
+   "proxied": false,
+   "ttl": 3600,
+   "settings": {},
+   "meta": {},
+   "comment": null,
+   "tags": [],
+   "created_on": "2024-02-11T18:21:00.000000Z",
+   "modified_on": "2026-05-30T09:12:44.000000Z"
+  },
+  {
+   "id": "9f8e7d6c5b4a39281706f5e4d3c20003",
+   "zone_id": "9f8e7d6c5b4a39281706f5e4d3c2b1a0",
+   "zone_name": "example.com",
+   "name": "example.com",
+   "type": "TXT",
+   "content": "v=spf1 -all",
+   "proxiable": false,
+   "proxied": false,
+   "ttl": 3600,
+   "settings": {},
+   "meta": {},
+   "comment": null,
+   "tags": [],
+   "created_on": "2024-02-11T18:21:00.000000Z",
+   "modified_on": "2026-05-30T09:12:44.000000Z"
+  }
+ ],
+ "result_info": {
+  "page": 1,
+  "per_page": 100,
+  "count": 3,
+  "total_count": 3,
+  "total_pages": 1
+ },
+ "success": true,
+ "errors": [],
+ "messages": []
+}

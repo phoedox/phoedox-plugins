@@ -1,0 +1,17 @@
+{
+  "secrets": {"token": "demo-cloudflare-api-token"},
+  "hosts": ["api.cloudflare.com"],
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/entities", "body": {"kind": "router", "slug": "gateway", "name": "Gateway", "attrs": {"model": "OPNsense", "ip": "198.51.100.23", "uplink": "fiber"}}},
+    {"method": "POST", "path": "/projects/${project}/entities", "body": {"kind": "server", "slug": "vps-fra", "name": "vps-fra", "attrs": {"hostname": "vps-fra.example.net", "ip": "192.0.2.80", "os": "Debian 13"}}},
+    {"method": "POST", "path": "/projects/${project}/entities", "body": {"kind": "server", "slug": "mail", "name": "mail", "attrs": {"hostname": "mail.example.net", "ip": "192.0.2.81", "os": "Debian 13"}}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.cloudflare/tools/cloudflare.sync", "body": {}}
+  ],
+  "wait": {"path": "/projects/${project}/entities", "min": 6},
+  "shots": [
+    {"name": "map", "path": "/p/${project}/graph/map", "caption": "Cloudflare DNS zones on the map, linked to the hosts their records point to", "wait": 3000},
+    {"name": "zones", "path": "/p/${project}/graph?kind=dns_zone", "caption": "DNS zones as entries with status, plan, name servers and record counts"},
+    {"name": "zone", "path": "/p/${project}/e/cloudflare-023e105f4ecef8ad9ca31a8372d0c353", "caption": "A zone with status, plan, name servers and the hosts its records point to"}
+  ]
+}

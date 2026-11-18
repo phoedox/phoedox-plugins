@@ -1,4 +1,6 @@
 {
+  "title": "DNS zone",
+  "description": "A DNS zone (domain) at Cloudflare.",
   "type": "object",
   "properties": {
     "name": { "type": "string", "title": "Zone" },

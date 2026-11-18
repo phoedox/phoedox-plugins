@@ -2,6 +2,8 @@
 
 `com.phoedox.cloudflare` · version 0.1.0
 
+![Cloudflare DNS zones on the map, linked to the hosts their records point to](screenshots/map.webp)
+
 Imports the DNS zones of a Cloudflare account into the knowledge graph (status, plan, name servers, number of records and of proxied records) and links each zone to the servers, VMs, LXC containers and routers its A, AAAA and CNAME records point to ("related to", matched by IP address). AI clients can list the DNS records of a zone (type, name, content, proxied, TTL; TTL 1 means automatic). Read-only.
 
 ## What it adds

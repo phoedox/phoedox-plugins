@@ -4,6 +4,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 	"github.com/phoedox/phoedox-plugins/internal/integ"
 	"github.com/phoedox/phoedox-sdk/go/pdk"
 )
@@ -128,5 +129,43 @@ func TestErrorsAndValidation(t *testing.T) {
 	})
 	if second.From != "z" {
 		t.Fatalf("ref not replaced: %+v", second)
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	get := func(p string) []byte {
+		body, err := fakeapi.Body("../testdata/fake", "GET", strings.TrimPrefix(api, "https://api.cloudflare.com")+p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	zones, err := parsePage[Zone](200, get("/zones?per_page=50&page=1"))
+	if err != nil || len(zones.Result) != 3 {
+		t.Fatalf("%v %+v", err, zones)
+	}
+	var data []ZoneData
+	for _, z := range zones.Result {
+		recs, err := parsePage[Record](200, get("/zones/"+z.ID+"/dns_records?per_page=100&page=1"))
+		if err != nil || len(recs.Result) == 0 {
+			t.Fatalf("%s: %v", z.Name, err)
+		}
+		data = append(data, ZoneData{Zone: z, Records: recs.Result, Total: recs.ResultInfo.TotalCount})
+	}
+	m := integ.NewMatcher([]pdk.Entity{
+		{Slug: "gateway", Kind: "router", Name: "Gateway", Attrs: map[string]any{"ip": "198.51.100.23"}},
+		{Slug: "vps-fra", Kind: "server", Name: "vps-fra", Attrs: map[string]any{"ip": "192.0.2.80"}},
+		{Slug: "mail", Kind: "server", Name: "mail", Attrs: map[string]any{"ip": "192.0.2.81"}},
+	})
+	ops := graphOps(data, m)
+	links := 0
+	for _, o := range ops.Ops {
+		if o.Op == "link" {
+			links++
+		}
+	}
+	if len(ops.Ops)-links != 3 || links != 5 || ops.Ops[0].Attrs["proxied_records"] != 7 {
+		t.Fatalf("ops: %+v", ops.Ops)
 	}
 }
