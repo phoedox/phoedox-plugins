@@ -1,7 +1,8 @@
 {
   "id": "com.phoedox.unifiprotect",
   "name": "UniFi Protect",
-  "icon": "cctv",
+  "icon": "video",
+  "category": "home",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports UniFi Protect into the knowledge graph through the official integration API: the NVR (console) as a device (model, MAC, Protect version), cameras as cameras (model, MAC, connection state), floodlights as lights and sensors as devices, each \"related to\" the NVR. Contributes the kind camera (shared with the Frigate plugin) with the relations \"located in\" a room and \"powered by\" a switch, outlet or smart plug. AI clients get the cameras with state, model, video and HDR mode, microphone and enabled smart detections. Read-only: only GET requests. The integration API does not provide IP addresses, firmware, recording mode or last-seen times, so these camera attributes stay empty (fill them in by hand if needed). Settings: url (the console, e.g. https://unifi.example.org, or the cloud connector https://api.ui.com/v1/connector/consoles/<console id> with a UniFi Site Manager API key) and apikey (UniFi OS > Control Plane > Integrations, or Site Manager > API). The certificate must be trusted by Phoedox; the console's default self-signed certificate is not, so use a console with a trusted certificate, a reverse proxy or the cloud connector. Needs UniFi Protect 5.3 or later.",

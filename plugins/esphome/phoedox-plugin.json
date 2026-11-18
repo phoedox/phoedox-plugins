@@ -2,6 +2,7 @@
   "id": "com.phoedox.esphome",
   "name": "ESPHome",
   "icon": "cpu",
+  "category": "home",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the devices of an ESPHome dashboard (Device Builder) into the knowledge graph as devices (board, platform, IP address, MAC, host name, deployed ESPHome version, configuration file, comment), \"located in\" the room named by their area (an existing room with the same name is reused, otherwise one is created). AI clients get every device with online state, versions, available update, web server and integrations, plus discovered devices that are not adopted yet. Read-only: only GET /devices and /ping; nothing is compiled, flashed or switched. The devices themselves are not contacted: the native API is protobuf over TCP and the web_server component has no device information endpoint, so the dashboard is the only clean JSON source; /devices is the endpoint the Home Assistant integration uses and may change when the dashboard drops it. Settings: url (the dashboard, e.g. http://192.168.1.40:6052; the Home Assistant add-on must expose its port, ingress is not reachable) and optional username and password (the dashboard login, sent as basic authentication; the dashboard before ESPHome 2026.6 only works without a password).",

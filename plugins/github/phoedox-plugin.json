@@ -2,9 +2,10 @@
   "id": "com.phoedox.github",
   "name": "GitHub",
   "icon": "git-pull-request",
+  "category": "development",
   "version": "0.1.0",
   "hostApi": "1",
-  "description": "Holt die Repositories einer GitHub-Organisation oder eines Kontos ins Wissensnetz (Sprache, Lizenz, Sichtbarkeit, Sterne, letzter Push) und listet KI-Clients offene Issues und Pull Requests. Einstellungen: owner (Organisation oder Konto), optional token (fein granulares Token, nur Lesen; nötig für private Repositories).",
+  "description": "Imports the repositories of a GitHub organisation or account into the knowledge graph (language, licence, visibility, stars, last push) and lists open issues and pull requests for AI clients. Settings: owner (organisation or account), optional token (fine-grained token, read only; needed for private repositories).",
   "engines": { "phoedox": ">=0.1.0 <2.0.0" },
   "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
   "contributes": {

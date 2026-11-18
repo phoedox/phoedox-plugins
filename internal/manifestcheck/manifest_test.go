@@ -16,6 +16,7 @@ func TestManifests(t *testing.T) {
 	if len(files) == 0 {
 		t.Fatal("no plugin manifests found")
 	}
+	tiles := map[string]string{}
 	for _, f := range files {
 		dir := filepath.Dir(f)
 		t.Run(filepath.Base(dir), func(t *testing.T) {
@@ -50,6 +51,26 @@ func TestManifests(t *testing.T) {
 			}
 			if !strings.HasPrefix(m.ID, "com.phoedox.") && m.ID != "de.example.ups" {
 				t.Errorf("official plugins use com.phoedox.<name>")
+			}
+			// Tiles and logos (ADR-0090, docs/branding).
+			if m.Icon == "" || m.Category == "" || m.Category == "other" {
+				t.Errorf("official plugins need an icon and a category other than other")
+			}
+			tile := m.Category + "/" + m.Icon
+			if other, dup := tiles[tile]; dup {
+				t.Errorf("same icon and category as %s: %s", other, tile)
+			}
+			tiles[tile] = filepath.Base(dir)
+			for _, l := range []string{m.Logo, m.LogoDark} {
+				if l == "" {
+					continue
+				}
+				b, err := os.ReadFile(filepath.Join(dir, l))
+				if err != nil {
+					t.Errorf("logo %s missing", l)
+				} else if err := pdk.CheckSVG(b); err != nil {
+					t.Errorf("%s: %v", l, err)
+				}
 			}
 		})
 	}

@@ -2,6 +2,7 @@
   "id": "com.phoedox.paperless",
   "name": "Paperless-ngx",
   "icon": "file-text",
+  "category": "records",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Finds documents in Paperless-ngx for AI clients: a full-text search, and the invoices, manuals and warranty papers of an entry (searched by its serial number, model and name). Documents stay in Paperless-ngx; nothing is imported or changed, and the tools return title, correspondent, document type, creation date, tags and a link to the document, not its content. Settings: url (the address of Paperless-ngx, e.g. https://paperless.example.org) and token (the API auth token of a Paperless-ngx user; results are limited to the documents this user may see, so a user with view rights only is enough). Reads entries only to build the search for paperless.for_entry.",

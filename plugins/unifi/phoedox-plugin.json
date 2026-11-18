@@ -2,6 +2,7 @@
   "id": "com.phoedox.unifi",
   "name": "UniFi Network",
   "icon": "wifi",
+  "category": "network",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports UniFi gateways, switches and access points into the knowledge graph (router, switch, access point, \"wired to\" their uplink) through the official UniFi Network API and lists connected clients for AI clients. Settings: url (the console, e.g. https://192.168.1.1), apikey (UniFi Network → Settings → Control Plane → Integrations), optional site (name; default: the first site).",

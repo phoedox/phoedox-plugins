@@ -1,7 +1,8 @@
 {
   "id": "com.phoedox.kubernetes",
   "name": "Kubernetes",
-  "icon": "container",
+  "icon": "ship-wheel",
+  "category": "servers",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports a Kubernetes cluster into the knowledge graph: nodes as servers (OS image, kubelet version, internal IP, CPU and memory), namespaces with workloads as stacks and Deployments, StatefulSets and DaemonSets as containers (first image, ready/desired replicas) that are part of their namespace. kube-system is skipped unless include_system is yes. AI clients can list pods and the warning events of the last hour. Read-only. Settings: url (API server, e.g. https://k8s.example.org:6443; it needs a certificate the Phoedox host trusts), token (bearer token of a read-only service account), optional cluster (name used in entry IDs; default: the host of url), optional include_system (yes to include kube-system). Minimal ClusterRole for the service account: apiVersion: rbac.authorization.k8s.io/v1, kind: ClusterRole, rules: [{apiGroups: [\"\"], resources: [nodes, namespaces, pods, events], verbs: [get, list]}, {apiGroups: [apps], resources: [deployments, statefulsets, daemonsets], verbs: [get, list]}].",

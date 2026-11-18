@@ -2,6 +2,7 @@
   "id": "com.phoedox.uptimekuma",
   "name": "Uptime Kuma",
   "icon": "heart-pulse",
+  "category": "monitoring",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Gives AI clients the live state of the monitors on an Uptime Kuma status page (status, last message, last check, 24-hour uptime) together with the Phoedox entry each monitor belongs to (matched by host name, address or name). Read-only, no import. Settings: url (e.g. https://status.example.org) and status_page (the slug of a status page that lists the monitors). Uses only the public status page JSON, so no credentials are needed; the plugin reads the knowledge graph only to find matching entries.",

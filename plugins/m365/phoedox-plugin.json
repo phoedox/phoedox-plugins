@@ -1,7 +1,8 @@
 {
   "id": "com.phoedox.m365",
   "name": "Microsoft 365 (Intune)",
-  "icon": "mail",
+  "icon": "layout-grid",
+  "category": "cloud",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the devices managed by Microsoft Intune into the knowledge graph as devices (name, manufacturer, model, serial number, operating system and version, compliance state, last sync, and the display name of the primary user; no e-mail addresses) and lists them and the subscribed Microsoft 365 licenses (consumed and available units per SKU) for AI clients. Read-only: it signs in with client credentials at login.microsoftonline.com and only reads from Microsoft Graph (graph.microsoft.com). Settings: tenant_id (directory ID or primary domain), client_id and client_secret (an app registration with a client secret). The app registration needs the Microsoft Graph application permissions DeviceManagementManagedDevices.Read.All (devices) and Organization.Read.All (licenses), with admin consent; no write permission. Devices removed from Intune stay in Phoedox until you delete them.",

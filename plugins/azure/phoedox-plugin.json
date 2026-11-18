@@ -1,7 +1,8 @@
 {
   "id": "com.phoedox.azure",
   "name": "Microsoft Azure",
-  "icon": "cloud",
+  "icon": "cloud-cog",
+  "category": "cloud",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the virtual machines of an Azure subscription into the knowledge graph as VMs (size, location, resource group, operating system and image, power state) and lists them for AI clients. Read-only: it signs in with client credentials at login.microsoftonline.com and only reads from Azure Resource Manager. Settings: tenant_id (directory ID), client_id and client_secret (an app registration with a client secret), subscription_id. The app registration needs the built-in role Reader on the subscription (it only needs Microsoft.Compute/virtualMachines/read); no write role.",

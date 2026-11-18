@@ -1,7 +1,8 @@
 {
   "id": "com.phoedox.mindmap",
   "name": "Mind map",
-  "icon": "network",
+  "icon": "brain-circuit",
+  "category": "blocks",
   "version": "1.0.0",
   "hostApi": "1",
   "description": "A ```mindmap block for pages and whiteboards: an indented outline (spaces, tabs or \"- \" lists) drawn as a mind map with the first line in the middle and its branches to both sides. Readers collapse and expand branches and copy the map onto a whiteboard as shapes.",

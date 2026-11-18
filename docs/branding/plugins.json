@@ -159,38 +159,38 @@
  {
   "id": "checkmk",
   "name": "Checkmk",
-  "cat": "monitor",
+  "cat": "monitoring",
   "icon": "circle-check-big",
   "old": "activity"
  },
  {
   "id": "zabbix",
   "name": "Zabbix",
-  "cat": "monitor",
+  "cat": "monitoring",
   "icon": "activity"
  },
  {
   "id": "grafana",
   "name": "Grafana",
-  "cat": "monitor",
+  "cat": "monitoring",
   "icon": "chart-line"
  },
  {
   "id": "uptimekuma",
   "name": "Uptime Kuma",
-  "cat": "monitor",
+  "cat": "monitoring",
   "icon": "heart-pulse"
  },
  {
   "id": "github",
   "name": "GitHub",
-  "cat": "dev",
+  "cat": "development",
   "icon": "git-pull-request"
  },
  {
   "id": "gitlab",
   "name": "GitLab",
-  "cat": "dev",
+  "cat": "development",
   "icon": "git-merge"
  },
  {

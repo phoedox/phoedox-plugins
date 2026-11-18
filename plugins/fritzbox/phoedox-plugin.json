@@ -2,6 +2,7 @@
   "id": "com.phoedox.fritzbox",
   "name": "FRITZ!Box",
   "icon": "router",
+  "category": "network",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the FRITZ!Box (model, firmware, serial number) into the knowledge graph through TR-064 and lists the devices in the home network for AI clients; optionally imports active devices with \"wired to\" or \"uplink\" to the box. Settings: url (e.g. http://192.168.178.1:49000), username and password (a FRITZ!Box user with the right \"FRITZ!Box settings\"), optional import_hosts (yes to import devices). TR-064 must be enabled under Home Network → Network → Network Settings.",

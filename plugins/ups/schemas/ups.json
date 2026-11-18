@@ -1,15 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "USV",
-  "description": "Unterbrechungsfreie Stromversorgung",
+  "title": "UPS",
+  "description": "Uninterruptible power supply",
   "type": "object",
   "required": ["kapazitaet"],
   "properties": {
-    "kapazitaet": { "type": "number", "title": "Kapazität", "x-unit": "VA" },
-    "ladung": { "type": "number", "title": "Ladung", "minimum": 0, "maximum": 100, "x-unit": "%" },
-    "laufzeit": { "type": "number", "title": "Laufzeit", "x-unit": "min" },
+    "kapazitaet": { "type": "number", "title": "Capacity", "x-unit": "VA" },
+    "ladung": { "type": "number", "title": "Charge", "minimum": 0, "maximum": 100, "x-unit": "%" },
+    "laufzeit": { "type": "number", "title": "Runtime", "x-unit": "min" },
     "status": { "type": "string", "title": "Status", "enum": ["online", "batterie", "batterie_schwach", "unbekannt"] },
-    "nut_name": { "type": "string", "title": "Name im NUT-Server" },
-    "abgefragt": { "type": "string", "format": "date-time", "title": "Zuletzt abgefragt" }
+    "nut_name": { "type": "string", "title": "Name in the NUT server" },
+    "abgefragt": { "type": "string", "format": "date-time", "title": "Last read" }
   }
 }

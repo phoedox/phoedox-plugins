@@ -2,6 +2,7 @@
   "id": "com.phoedox.gantt",
   "name": "Schedule (Gantt)",
   "icon": "chart-gantt",
+  "category": "blocks",
   "version": "1.0.0",
   "hostApi": "1",
   "description": "A ```gantt block for pages and whiteboards: bars for tasks over time, sections, milestones, progress and dependencies as arrows, optionally with the cards of a board that have a due date.",

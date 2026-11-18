@@ -2,6 +2,7 @@
   "id": "com.phoedox.matrix",
   "name": "Decision matrix",
   "icon": "grid-3x3",
+  "category": "blocks",
   "version": "1.0.0",
   "hostApi": "1",
   "description": "A ```matrix block for pages and whiteboards: options scored against weighted criteria, totals as bars with the best option highlighted. Readers can try other weights without saving them, and the options can become an open decision in one click.",

@@ -1,10 +1,11 @@
 {
   "id": "de.example.ups",
-  "name": "USV-Überwachung",
+  "name": "UPS monitoring",
   "icon": "battery-charging",
+  "category": "servers",
   "version": "1.2.0",
   "hostApi": "1",
-  "description": "Liest Ladung, Laufzeit und Status von USVs über die HTTP-API eines NUT-Servers (z. B. PeaNUT) und zeigt sie am Eintrag an.",
+  "description": "Reads charge, runtime and status of UPS devices through the HTTP API of a NUT server (e.g. PeaNUT) and shows them on the entry.",
   "engines": { "phoedox": ">=0.1.0 <2.0.0" },
   "backend": { "wasm": "backend.wasm", "memoryMb": 32 },
   "frontend": { "module": "frontend/index.js" },

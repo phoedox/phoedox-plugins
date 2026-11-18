@@ -1,7 +1,8 @@
 {
   "id": "com.phoedox.checkmk",
   "name": "Checkmk",
-  "icon": "activity",
+  "icon": "circle-check-big",
+  "category": "monitoring",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Gives AI clients the service problems and the host states of a Checkmk site (2.1 or later, REST API) together with the Phoedox entry each host belongs to (matched by host name or address). Read-only, no import. Settings: url (the site address, e.g. https://monitoring.example.org/mysite), username and secret (an automation user that may see the hosts and services in question; monitoring read access is enough). The plugin reads the knowledge graph only to find matching entries.",

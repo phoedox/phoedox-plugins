@@ -2,9 +2,10 @@
   "id": "com.phoedox.homeassistant",
   "name": "Home Assistant",
   "icon": "house",
+  "category": "home",
   "version": "0.5.0",
   "hostApi": "1",
-  "description": "Holt Bereiche und Geräte aus Home Assistant ins Wissensnetz (Räume, Geräte, „steht in“), zeigt Schalter an Einträgen und schaltet Geräte – auch Neustart über die Steckdose, an der ein Gerät hängt. Speichert alle 5 Minuten Messwerte und Schaltzustände für den Verlauf an den Einträgen. KI-Clients dürfen nur vorschlagen, außer der Eigentümer erlaubt es pro Gerät. Einstellungen: url (z. B. https://ha.example.org) und token (Long-Lived Access Token) – oder ohne Einstellungen über einen Phoedox-Agenten im Heimnetz (homeassistant in agent.yaml); dann schaltet der Agent per signiertem Auftrag.",
+  "description": "Imports areas and devices from Home Assistant into the knowledge graph (rooms, devices, \"located in\"), shows switches on entries and switches devices – also a restart through the socket a device is plugged into. Stores readings and switch states every 5 minutes for the history on entries. AI clients may only suggest, unless the owner allows it per device. Settings: url (e.g. https://ha.example.org) and token (long-lived access token) – or no settings, through a Phoedox agent in the home network (homeassistant in agent.yaml); the agent then switches by signed job.",
   "engines": {
     "phoedox": ">=0.1.0 <2.0.0"
   },

@@ -1,7 +1,8 @@
 {
   "id": "com.phoedox.netbox",
   "name": "NetBox",
-  "icon": "network",
+  "icon": "boxes",
+  "category": "network",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports locations, racks and devices from NetBox into the knowledge graph: locations as rooms, racks with their height, devices by role as router, switch, access point, server, patch panel or device, mounted in their rack at their unit. AI clients can search devices and list IP prefixes. Settings: url (e.g. https://netbox.example.org) and token (a read-only API token).",

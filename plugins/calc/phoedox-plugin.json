@@ -2,6 +2,7 @@
   "id": "com.phoedox.calc",
   "name": "Calculator",
   "icon": "calculator",
+  "category": "blocks",
   "version": "1.0.0",
   "hostApi": "1",
   "description": "A ```calc block for pages and whiteboards: inputs and formulas, one line per value (\"Label (unit) = number, formula or @entry.attribute\"). Readers change the inputs and see the results at once, nothing is saved; inputs bound to an entry take its attribute from the knowledge graph. Formulas know + - * / ^ %, & for text, comparisons and SUM, AVERAGE, MIN, MAX, ROUND, CEIL, FLOOR, ABS, SQRT and IF.",
