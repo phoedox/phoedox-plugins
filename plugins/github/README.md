@@ -2,6 +2,8 @@
 
 `com.phoedox.github` · version 0.1.0
 
+![A repository's entry: description, license, open issues and last push](screenshots/repo.webp)
+
 Imports the repositories of a GitHub organization or account into the knowledge graph (language, licence, visibility, stars, last push) and lists open issues and pull requests for AI clients.
 
 ## What it adds

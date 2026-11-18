@@ -1,0 +1,37 @@
+{
+  "hosts": [
+    "api.github.com"
+  ],
+  "secrets": {
+    "owner": "maple-labs",
+    "token": "github_pat_demo_for_screenshots_only"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 6
+  },
+  "shots": [
+    {
+      "name": "repo",
+      "path": "/p/${project}/e/gh-maple-labs-maple-ui",
+      "caption": "A repository's entry: description, license, open issues and last push"
+    },
+    {
+      "name": "entries",
+      "path": "/p/${project}/graph",
+      "caption": "The repositories of an organization as entries with language and stars"
+    }
+  ]
+}
