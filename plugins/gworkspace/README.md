@@ -2,6 +2,8 @@
 
 `com.phoedox.gworkspace` · version 0.1.0
 
+![Chromebooks and phones from Google Workspace as device entries](screenshots/entries.webp)
+
 Imports the ChromeOS and mobile devices of a Google Workspace account into the knowledge graph as devices (model, serial number, operating system and version, status, last sync, organizational unit for ChromeOS, and for mobile devices the display name of the owner; no e-mail addresses) and lists them for AI clients. Read-only: it uses the Admin SDK Directory API (admin.googleapis.com) with a service account and domain-wide delegation, signing in at oauth2.googleapis.com.
 
 ## What it adds

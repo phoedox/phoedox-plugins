@@ -3,6 +3,10 @@
   "name": "Google Workspace",
   "icon": "at-sign",
   "category": "cloud",
+  "screenshots": [
+    { "file": "screenshots/entries.webp", "caption": "Chromebooks and phones from Google Workspace as device entries" },
+    { "file": "screenshots/device.webp", "caption": "A Chromebook's entry: model, serial, OS version, org unit and asset tag" }
+  ],
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the ChromeOS and mobile devices of a Google Workspace account into the knowledge graph as devices (model, serial number, operating system and version, status, last sync, organizational unit for ChromeOS, and for mobile devices the display name of the owner; no e-mail addresses) and lists them for AI clients. Read-only: it uses the Admin SDK Directory API (admin.googleapis.com) with a service account and domain-wide delegation, signing in at oauth2.googleapis.com. Settings: service_account_json (the whole JSON key file of the service account; client_email and private_key are used) and admin_email (a Workspace administrator the service account acts as; needs the admin privileges to view ChromeOS and mobile devices). In the Admin console, Security, API controls, Domain-wide delegation, allow the service account's client ID the scopes https://www.googleapis.com/auth/admin.directory.device.chromeos.readonly and https://www.googleapis.com/auth/admin.directory.device.mobile.readonly; no write scope. Devices removed from Google Workspace stay in Phoedox until you delete them.",
