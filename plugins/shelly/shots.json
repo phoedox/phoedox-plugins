@@ -1,0 +1,67 @@
+{
+  "secrets": {
+    "url": "${fake}/rack-plug",
+    "device2_url": "${fake}/media-plug",
+    "device3_url": "${fake}/main-meter",
+    "device4_url": "${fake}/garden-pump",
+    "device5_url": "${fake}/shutters",
+    "device6_url": "${fake}/basement-climate",
+    "device7_url": "${fake}/garage-door",
+    "device8_url": "${fake}/coffee-plug"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "subnet",
+        "slug": "iot-network",
+        "name": "IoT network",
+        "attrs": {
+          "cidr": "192.0.2.0/24",
+          "vlan": 30,
+          "gateway": "192.0.2.1",
+          "dhcp_start": "192.0.2.100",
+          "dhcp_end": "192.0.2.199",
+          "purpose": "Smart home devices"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.shelly/tools/shelly.sync",
+      "body": {}
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 9
+  },
+  "shots": [
+    {
+      "name": "addresses",
+      "path": "/p/${project}/ipam",
+      "caption": "Shelly plugs, meters and relays with their addresses in the IoT network",
+      "actions": [
+        {
+          "click": "text=Used addresses"
+        }
+      ]
+    },
+    {
+      "name": "devices",
+      "path": "/p/${project}/graph?kind=device",
+      "caption": "Shelly devices as entries with model, IP and MAC address"
+    }
+  ]
+}

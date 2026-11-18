@@ -1,0 +1,71 @@
+{
+ "ble": {},
+ "cloud": {
+  "connected": true
+ },
+ "em:0": {
+  "id": 0,
+  "a_current": 2.41,
+  "a_voltage": 230.1,
+  "a_act_power": 512.3,
+  "a_aprt_power": 540.0,
+  "a_pf": 0.95,
+  "b_current": 1.62,
+  "b_voltage": 231.4,
+  "b_act_power": 338.9,
+  "b_aprt_power": 370.1,
+  "b_pf": 0.92,
+  "c_current": 1.77,
+  "c_voltage": 229.6,
+  "c_act_power": 389.3,
+  "c_aprt_power": 402.8,
+  "c_pf": 0.97,
+  "n_current": null,
+  "total_current": 5.8,
+  "total_act_power": 1240.5,
+  "total_aprt_power": 1312.9
+ },
+ "emdata:0": {
+  "id": 0,
+  "a_total_act_energy": 1534210.4,
+  "b_total_act_energy": 1102330.1,
+  "c_total_act_energy": 998712.6,
+  "total_act": 3635253.1
+ },
+ "eth": {
+  "ip": "192.0.2.33"
+ },
+ "mqtt": {
+  "connected": false
+ },
+ "sys": {
+  "mac": "02005E100033",
+  "restart_required": false,
+  "time": "10:00",
+  "unixtime": 1781510400,
+  "uptime": 864000,
+  "ram_size": 246084,
+  "ram_free": 118460,
+  "fs_size": 458752,
+  "fs_free": 135168,
+  "cfg_rev": 14,
+  "kvs_rev": 0,
+  "schedule_rev": 0,
+  "webhook_rev": 0,
+  "available_updates": {}
+ },
+ "temperature:0": {
+  "id": 0,
+  "tC": 41.2,
+  "tF": 106.2
+ },
+ "wifi": {
+  "sta_ip": null,
+  "status": "disconnected",
+  "ssid": null,
+  "rssi": 0
+ },
+ "ws": {
+  "connected": false
+ }
+}

@@ -2,6 +2,8 @@
 
 `com.phoedox.shelly` · version 0.1.0
 
+![Shelly plugs, meters and relays with their addresses in the IoT network](screenshots/addresses.webp)
+
 Imports Shelly devices from the local network into the knowledge graph: devices with a switch and power metering become smart plugs, all others devices (manufacturer, model, MAC, IP address, firmware, generation, host name). AI clients get live power, energy, voltage, temperature, Wi-Fi signal and available firmware updates. Read-only: the plugin only reads and never switches. Works with Gen1 (/shelly, /status) and Gen2 and later (RPC over HTTP, /rpc/Shelly.GetStatus); MQTT and the Shelly Cloud are not used.
 
 ## What it adds

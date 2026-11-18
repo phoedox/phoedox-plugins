@@ -1,0 +1,27 @@
+{
+ "device": {
+  "type": "SHSW-1",
+  "mac": "02005E100037",
+  "hostname": "shelly1-02005E100037",
+  "num_outputs": 1
+ },
+ "wifi_sta": {
+  "enabled": true,
+  "ssid": "Doe-IoT",
+  "ipv4_method": "dhcp"
+ },
+ "name": "Garage door",
+ "fw": "20230913-112003/v1.14.0-gcb84623",
+ "timezone": "Europe/Berlin",
+ "lat": 0,
+ "lng": 0,
+ "tzautodetect": true,
+ "relays": [
+  {
+   "name": "Garage door",
+   "appliance_type": "General",
+   "default_state": "off",
+   "auto_off": 0
+  }
+ ]
+}

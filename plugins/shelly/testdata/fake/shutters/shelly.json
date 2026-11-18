@@ -1,0 +1,13 @@
+{
+ "name": "Living room shutters",
+ "id": "shellyplus2pm-02005e100035",
+ "mac": "02005E100035",
+ "slot": 0,
+ "model": "SNSW-102P16EU",
+ "gen": 2,
+ "fw_id": "20260520-091530/1.5.0-g1a2b3c4",
+ "ver": "1.5.0",
+ "app": "Plus2PM",
+ "auth_en": false,
+ "auth_domain": null
+}

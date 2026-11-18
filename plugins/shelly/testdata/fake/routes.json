@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {"path": "/rack-plug/shelly", "file": "rack-plug/shelly.json"},
+    {"path": "/rack-plug/rpc/Shelly.GetStatus", "file": "rack-plug/status.json"},
+    {"path": "/media-plug/shelly", "file": "media-plug/shelly.json"},
+    {"path": "/media-plug/rpc/Shelly.GetStatus", "file": "media-plug/status.json"},
+    {"path": "/main-meter/shelly", "file": "main-meter/shelly.json"},
+    {"path": "/main-meter/rpc/Shelly.GetStatus", "file": "main-meter/status.json"},
+    {"path": "/garden-pump/shelly", "file": "garden-pump/shelly.json"},
+    {"path": "/garden-pump/rpc/Shelly.GetStatus", "file": "garden-pump/status.json"},
+    {"path": "/shutters/shelly", "file": "shutters/shelly.json"},
+    {"path": "/shutters/rpc/Shelly.GetStatus", "file": "shutters/status.json"},
+    {"path": "/basement-climate/shelly", "file": "basement-climate/shelly.json"},
+    {"path": "/basement-climate/rpc/Shelly.GetStatus", "file": "basement-climate/status.json"},
+    {"path": "/garage-door/shelly", "file": "garage-door/shelly.json"},
+    {"path": "/garage-door/status", "file": "garage-door/status.json"},
+    {"path": "/garage-door/settings", "file": "garage-door/settings.json"},
+    {"path": "/coffee-plug/shelly", "file": "coffee-plug/shelly.json"},
+    {"path": "/coffee-plug/status", "file": "coffee-plug/status.json"},
+    {"path": "/coffee-plug/settings", "file": "coffee-plug/settings.json"}
+  ]
+}

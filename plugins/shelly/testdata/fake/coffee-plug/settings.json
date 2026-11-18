@@ -1,0 +1,27 @@
+{
+ "device": {
+  "type": "SHPLG-S",
+  "mac": "02005E100038",
+  "hostname": "shellyplug-s-02005E100038",
+  "num_outputs": 1
+ },
+ "wifi_sta": {
+  "enabled": true,
+  "ssid": "Doe-IoT",
+  "ipv4_method": "dhcp"
+ },
+ "name": "Coffee machine",
+ "fw": "20230913-113421/v1.14.0-gcb84623",
+ "timezone": "Europe/Berlin",
+ "lat": 0,
+ "lng": 0,
+ "tzautodetect": true,
+ "relays": [
+  {
+   "name": "Coffee machine",
+   "appliance_type": "General",
+   "default_state": "off",
+   "auto_off": 0
+  }
+ ]
+}

@@ -10,6 +10,8 @@ import (
 	"testing"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 const gen2Info = `{"name":"Kitchen Plug","id":"shellyplusplugs-e86beae12345","mac":"E86BEAE12345","slot":0,"model":"SNPL-00112EU","gen":2,
@@ -157,5 +159,42 @@ func TestManifestSlots(t *testing.T) {
 	}
 	if len(slots()) != maxDevices || fmtMAC("e8-6b-ea-e1-23-45") != "E8:6B:EA:E1:23:45" {
 		t.Fatal("helpers")
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	get := func(p string) []byte {
+		body, err := fakeapi.Body("../testdata/fake", "GET", p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	kinds := map[string]int{}
+	for _, slug := range []string{"rack-plug", "media-plug", "main-meter", "garden-pump", "shutters", "basement-climate", "garage-door", "coffee-plug"} {
+		info, err := parseInfo(get("/" + slug + "/shelly"))
+		if err != nil {
+			t.Fatal(slug, err)
+		}
+		d := Device{Setting: "url", Host: "127.0.0.1", Info: info}
+		if info.Gen >= 2 {
+			d.Status, err = parseGen2Status(get("/" + slug + "/rpc/Shelly.GetStatus"))
+		} else {
+			d.Status, err = parseGen1Status(get("/" + slug + "/status"))
+			s := parseSettings1(get("/" + slug + "/settings"))
+			d.Name, d.Hostname = *s.Name, s.Device.Hostname
+		}
+		if err != nil {
+			t.Fatal(slug, err)
+		}
+		op := graphOps(d).Ops[0]
+		if op.Attrs["ip"] == "127.0.0.1" || op.Attrs["ip"] == nil {
+			t.Fatalf("%s: ip %v", slug, op.Attrs["ip"])
+		}
+		kinds[op.Kind]++
+	}
+	if kinds["smart_plug"] != 4 || kinds["device"] != 4 {
+		t.Fatalf("kinds: %v", kinds)
 	}
 }

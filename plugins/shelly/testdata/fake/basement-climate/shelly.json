@@ -1,0 +1,13 @@
+{
+ "name": "Basement climate",
+ "id": "shellyplusht-02005e100036",
+ "mac": "02005E100036",
+ "slot": 0,
+ "model": "SNSN-0013A",
+ "gen": 2,
+ "fw_id": "20260520-091530/1.5.0-g1a2b3c4",
+ "ver": "1.5.0",
+ "app": "PlusHT",
+ "auth_en": false,
+ "auth_domain": null
+}

@@ -1,0 +1,63 @@
+{
+ "wifi_sta": {
+  "connected": true,
+  "ssid": "Doe-IoT",
+  "ip": "192.0.2.38",
+  "rssi": -55
+ },
+ "cloud": {
+  "enabled": false,
+  "connected": false
+ },
+ "mqtt": {
+  "connected": false
+ },
+ "time": "10:00",
+ "unixtime": 1781510400,
+ "serial": 2210,
+ "has_update": false,
+ "mac": "02005E100038",
+ "relays": [
+  {
+   "ison": false,
+   "has_timer": false,
+   "timer_started": 0,
+   "timer_duration": 0,
+   "timer_remaining": 0,
+   "overpower": false,
+   "source": "http"
+  }
+ ],
+ "meters": [
+  {
+   "power": 0.0,
+   "overpower": 0.0,
+   "is_valid": true,
+   "timestamp": 1781510400,
+   "counters": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "total": 50712000
+  }
+ ],
+ "temperature": 29.8,
+ "overtemperature": false,
+ "tmp": {
+  "tC": 29.8,
+  "tF": 85.6,
+  "is_valid": true
+ },
+ "update": {
+  "status": "idle",
+  "has_update": false,
+  "new_version": "20230913-113421/v1.14.0-gcb84623",
+  "old_version": "20230913-113421/v1.14.0-gcb84623"
+ },
+ "ram_total": 52064,
+ "ram_free": 39200,
+ "fs_size": 233681,
+ "fs_free": 162648,
+ "uptime": 1209600
+}

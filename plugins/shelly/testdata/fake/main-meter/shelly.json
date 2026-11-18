@@ -1,0 +1,13 @@
+{
+ "name": "Main meter",
+ "id": "shellypro3em-02005e100033",
+ "mac": "02005E100033",
+ "slot": 0,
+ "model": "SPEM-003CEBEU",
+ "gen": 2,
+ "fw_id": "20260520-091530/1.5.0-g1a2b3c4",
+ "ver": "1.5.0",
+ "app": "Pro3EM",
+ "auth_en": false,
+ "auth_domain": null
+}

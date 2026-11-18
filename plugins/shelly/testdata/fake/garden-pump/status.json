@@ -1,0 +1,73 @@
+{
+ "ble": {},
+ "cloud": {
+  "connected": true
+ },
+ "input:0": {
+  "id": 0,
+  "state": false
+ },
+ "mqtt": {
+  "connected": false
+ },
+ "switch:0": {
+  "id": 0,
+  "source": "init",
+  "output": false,
+  "apower": 0.0,
+  "voltage": 229.9,
+  "freq": 50.0,
+  "current": 0.0,
+  "aenergy": {
+   "total": 48230.0,
+   "by_minute": [
+    0,
+    0,
+    0
+   ],
+   "minute_ts": 1781510400
+  },
+  "ret_aenergy": {
+   "total": 0,
+   "by_minute": [
+    0,
+    0,
+    0
+   ],
+   "minute_ts": 1781510400
+  },
+  "temperature": {
+   "tC": 27.4,
+   "tF": 81.3
+  }
+ },
+ "sys": {
+  "mac": "02005E100034",
+  "restart_required": false,
+  "time": "10:00",
+  "unixtime": 1781510400,
+  "uptime": 864000,
+  "ram_size": 246084,
+  "ram_free": 118460,
+  "fs_size": 458752,
+  "fs_free": 135168,
+  "cfg_rev": 14,
+  "kvs_rev": 0,
+  "schedule_rev": 0,
+  "webhook_rev": 0,
+  "available_updates": {
+   "stable": {
+    "version": "1.5.0"
+   }
+  }
+ },
+ "wifi": {
+  "sta_ip": "192.0.2.34",
+  "status": "got ip",
+  "ssid": "Doe-IoT",
+  "rssi": -71
+ },
+ "ws": {
+  "connected": false
+ }
+}

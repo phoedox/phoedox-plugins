@@ -1,0 +1,13 @@
+{
+ "name": "Rack plug",
+ "id": "shellyplusplugs-02005e100031",
+ "mac": "02005E100031",
+ "slot": 0,
+ "model": "SNPL-00112EU",
+ "gen": 2,
+ "fw_id": "20260520-091530/1.4.4-g1a2b3c4",
+ "ver": "1.4.4",
+ "app": "PlusPlugS",
+ "auth_en": false,
+ "auth_domain": null
+}
