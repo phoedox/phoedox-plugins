@@ -1,0 +1,36 @@
+{
+  "hosts": [
+    "api.hetzner.cloud"
+  ],
+  "secrets": {
+    "token": "demo-hetzner-read-only-token"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 4
+  },
+  "shots": [
+    {
+      "name": "entries",
+      "path": "/p/${project}/graph",
+      "caption": "Cloud servers from Hetzner as VM entries with OS, IP, vCPU and memory"
+    },
+    {
+      "name": "server",
+      "path": "/p/${project}/e/hetzner-48151623",
+      "caption": "A server's entry: type, location, addresses, labels and status"
+    }
+  ]
+}

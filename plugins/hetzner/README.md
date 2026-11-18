@@ -2,6 +2,8 @@
 
 `com.phoedox.hetzner` · version 0.1.0
 
+![Cloud servers from Hetzner as VM entries with OS, IP, vCPU and memory](screenshots/entries.webp)
+
 Imports the servers of a Hetzner Cloud project into the knowledge graph as VMs (public IPv4, image, cores, memory, server type, datacenter, location and status) and lists them for AI clients with status, IP addresses and labels. Read-only.
 
 ## What it adds
