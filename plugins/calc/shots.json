@@ -1,0 +1,142 @@
+{
+  "setup": [
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "wifi-and-network",
+        "title": "Wi-Fi and network",
+        "category": "Network",
+        "markdown": "Main network 10.20.0.0/24, guest Wi-Fi on its own VLAN."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "heating",
+        "title": "Heating and hot water",
+        "category": "House",
+        "markdown": "Gas boiler in the basement, serviced every October."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "emergency-contacts",
+        "title": "Emergency contacts",
+        "category": "House",
+        "markdown": "Water, power and gas shut-offs are in the basement next to the stairs."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "appliance",
+        "name": "Homelab rack",
+        "slug": "homelab-rack",
+        "attrs": {
+          "power": 85,
+          "hours_per_day": 24
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "appliance",
+        "name": "Chest freezer",
+        "slug": "chest-freezer",
+        "attrs": {
+          "power": 90,
+          "hours_per_day": 9
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "electricity-cost",
+        "title": "Electricity cost",
+        "category": "House",
+        "markdown": "What the always-on devices at 12 Maple Street cost. The wattages come from their entries, so the numbers follow when an entry changes.\n\n```calc\ntitle: Electricity cost per year\nElectricity price (€/kWh) = 0.32\nHomelab rack (W) = @homelab-rack.power\nChest freezer (W) = @chest-freezer.power\nFreezer runs (h/day) = @chest-freezer.hours_per_day\nRack per year (€) = ROUND(Homelab_rack * 24 * 365 / 1000 * Electricity_price)\nFreezer per year (€) = Chest_freezer * Freezer_runs * 365 / 1000 * Electricity_price\nTogether per month (€) = (Rack_per_year + Freezer_per_year) / 12\n```\n\nChange the price to try next year's tariff; nothing is saved."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "whiteboard",
+        "slug": "solar-board",
+        "title": "Solar panels",
+        "category": "House",
+        "whiteboard": {
+          "background": "dots",
+          "elements": [
+            {
+              "id": "t1",
+              "type": "text",
+              "x": 0,
+              "y": -80,
+              "w": 600,
+              "h": 40,
+              "text": "Solar panels on the garage",
+              "fontSize": 32
+            },
+            {
+              "id": "c1",
+              "type": "block",
+              "kind": "calc",
+              "source": "title: Solar panels on the garage roof\nPanels = 8\nPeak power per panel (W) = 430\nYield (kWh/kWp) = 950\nOwn use (%) = 35\nPrice (€/kWh) = 0.32\nFeed-in (€/kWh) = 0.08\nCost (€) = 7900\nYield per year (kWh) = Panels * Peak_power_per_panel / 1000 * Yield\nSaved per year (€) = ROUND(Yield_per_year * (Own_use / 100 * Price + (1 - Own_use / 100) * Feed_in), 0)\nPays off after (years) = ROUND(Cost / Saved_per_year, 1)",
+              "x": 0,
+              "y": 0,
+              "w": 560,
+              "h": 400
+            },
+            {
+              "id": "s1",
+              "type": "sticky",
+              "x": 590,
+              "y": 0,
+              "w": 230,
+              "h": 130,
+              "fill": "yellow",
+              "text": "Roof faces south-west, no shade after 11 am"
+            },
+            {
+              "id": "s2",
+              "type": "sticky",
+              "x": 590,
+              "y": 150,
+              "w": 230,
+              "h": 130,
+              "fill": "blue",
+              "text": "Get a second quote in September"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "calculator",
+      "path": "/p/${project}/d/electricity-cost",
+      "caption": "A calculator that takes the devices' wattage from their entries"
+    },
+    {
+      "name": "whiteboard",
+      "path": "/p/${project}/d/solar-board",
+      "caption": "A solar payback calculator on a whiteboard, next to sticky notes",
+      "wait": 2500
+    }
+  ]
+}

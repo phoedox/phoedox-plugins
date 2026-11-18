@@ -4,7 +4,7 @@
 
 A ```calc block for pages and whiteboards: inputs and formulas, one line per value ("Label (unit) = number, formula or @entry.attribute"). Readers change the inputs and see the results at once, nothing is saved; inputs bound to an entry take its attribute from the knowledge graph. Formulas know + - * / ^ %, & for text, comparisons and SUM, AVERAGE, MIN, MAX, ROUND, CEIL, FLOOR, ABS, SQRT and IF.
 
-![Calculator in Phoedox](docs/screenshot.png)
+![A calculator that takes the devices' wattage from their entries](screenshots/calculator.webp)
 
 ## What it adds
 
