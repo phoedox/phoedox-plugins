@@ -1,0 +1,33 @@
+{
+ "api_version": "1",
+ "connection": "ok",
+ "downgrade_packages": [],
+ "download_size": "",
+ "last_check": "Mon Jun 15 07:12:44 CEST 2026",
+ "needs_reboot": "0",
+ "new_packages": [],
+ "os_version": "FreeBSD 14.3-RELEASE-p1",
+ "product_id": "opnsense",
+ "product_target": "opnsense",
+ "product_version": "26.1.8",
+ "product_abi": "26.1",
+ "product": {
+  "product_abi": "26.1",
+  "product_arch": "amd64",
+  "product_copyright_owner": "Deciso B.V.",
+  "product_crypto": "OpenSSL",
+  "product_hash": "a1b2c3d4e",
+  "product_id": "opnsense",
+  "product_latest": "26.1.9",
+  "product_mirror": "https://pkg.opnsense.org/FreeBSD:14:amd64/26.1",
+  "product_name": "OPNsense",
+  "product_nickname": "Witty Woodpecker",
+  "product_series": "26.1",
+  "product_version": "26.1.8",
+  "product_website": "https://opnsense.org/"
+ },
+ "status": "update",
+ "status_msg": "There are 4 updates available, total download size is 31.2MiB.",
+ "updates": "4",
+ "upgrade_packages": []
+}

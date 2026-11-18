@@ -1,0 +1,41 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "key": "demo-api-key",
+    "secret": "demo-api-secret",
+    "name": "Firewall"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.opnsense/tools/opnsense.sync",
+      "body": {}
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 8
+  },
+  "shots": [
+    {
+      "name": "interfaces",
+      "path": "/p/${project}/graph?kind=opnsense_interface",
+      "caption": "OPNsense interfaces as entries with address, subnet, VLAN and status"
+    },
+    {
+      "name": "firewall",
+      "path": "/p/${project}/e/opnsense-firewall",
+      "caption": "The firewall as a router entry with its OPNsense version and LAN address"
+    }
+  ]
+}

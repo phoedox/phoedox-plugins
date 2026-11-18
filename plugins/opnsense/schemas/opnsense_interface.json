@@ -1,4 +1,6 @@
 {
+  "title": "OPNsense interface",
+  "description": "An interface of an OPNsense firewall: physical port, VLAN or tunnel.",
   "type": "object",
   "properties": {
     "identifier": { "type": "string", "title": "Identifier" },

@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {"path": "/api/core/firmware/status", "file": "firmware-status.json"},
+    {"path": "/api/interfaces/overview/interfacesInfo", "file": "interfaces.json"},
+    {"path": "/api/dhcpv4/leases/searchLease", "file": "leases.json"},
+    {"path": "/api/routes/gateway/status", "file": "gateways.json"}
+  ]
+}

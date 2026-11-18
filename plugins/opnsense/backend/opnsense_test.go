@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
+)
 
 func TestOPNsense(t *testing.T) {
 	if firmwareVersion([]byte(`{"product":{"product_version":"24.7.8"}}`)) != "24.7.8" || firmwareVersion([]byte(`{"product_version":"23.1"}`)) != "23.1" {
@@ -32,5 +36,35 @@ func TestOPNsense(t *testing.T) {
 	gws, err := parseGateways([]byte(`{"items":[{"name":"WAN_DHCP","address":"100.64.0.1","status_translated":"Online","delay":"4.1 ms","loss":"0.0 %"}]}`))
 	if err != nil || gws[0].Status != "Online" {
 		t.Fatalf("gateways: %+v %v", gws, err)
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	get := func(p string) []byte {
+		body, err := fakeapi.Body("../testdata/fake", "GET", p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	if v := firmwareVersion(get("/api/core/firmware/status")); v != "26.1.8" {
+		t.Fatal(v)
+	}
+	ifaces, err := parseIfaces(get("/api/interfaces/overview/interfacesInfo"))
+	if err != nil || len(ifaces) != 8 {
+		t.Fatalf("%v %d", err, len(ifaces))
+	}
+	ops := graphOps("Firewall", "26.1.8", ifaces)
+	if len(ops.Ops) != 1+7*2 || ops.Ops[0].Attrs["ip"] != "10.20.0.1" || ops.Ops[5].Attrs["vlan"] != 30 {
+		t.Fatalf("ops: %+v", ops.Ops)
+	}
+	leases, err := parseLeases(get("/api/dhcpv4/leases/searchLease"))
+	if err != nil || len(leases) != 8 || leases[4].Interface != "IoT" {
+		t.Fatalf("%v %+v", err, leases)
+	}
+	gws, err := parseGateways(get("/api/routes/gateway/status"))
+	if err != nil || len(gws) != 3 || gws[2].Status != "Offline" {
+		t.Fatalf("%v %+v", err, gws)
 	}
 }

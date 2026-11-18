@@ -2,6 +2,8 @@
 
 `com.phoedox.opnsense` · version 0.1.0
 
+![OPNsense interfaces as entries with address, subnet, VLAN and status](screenshots/interfaces.webp)
+
 Imports the OPNsense firewall (version) and its interfaces with address, subnet and VLAN into the knowledge graph and gives AI clients the DHCP leases and gateway status.
 
 ## What it adds

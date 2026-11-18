@@ -3,6 +3,10 @@
   "name": "OPNsense",
   "icon": "brick-wall-fire",
   "category": "network",
+  "screenshots": [
+    { "file": "screenshots/interfaces.webp", "caption": "OPNsense interfaces as entries with address, subnet, VLAN and status" },
+    { "file": "screenshots/firewall.webp", "caption": "The firewall as a router entry with its OPNsense version and LAN address" }
+  ],
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the OPNsense firewall (version) and its interfaces with address, subnet and VLAN into the knowledge graph and gives AI clients the DHCP leases and gateway status. Settings: url (e.g. https://fw.example.org), key and secret (API key of a user with read-only access to Diagnostics, Interfaces, DHCP and Gateways), optional name (default: OPNsense).",
