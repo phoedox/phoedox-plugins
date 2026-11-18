@@ -3,6 +3,8 @@
   "name": "GitHub",
   "icon": "git-pull-request",
   "category": "development",
+  "logo": "logo.svg",
+  "logoDark": "logo-dark.svg",
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the repositories of a GitHub organisation or account into the knowledge graph (language, licence, visibility, stars, last push) and lists open issues and pull requests for AI clients. Settings: owner (organisation or account), optional token (fine-grained token, read only; needed for private repositories).",
