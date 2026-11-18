@@ -73,4 +73,20 @@ for (const mode of ["light", "dark"]) {
   html += `<h2>Sizes: 24 · 42 · 72 · 128</h2><div class="sizes">${await tile("house", "home", mode, 24)}${await tile("house", "home", mode, 42)}${await tile("house", "home", mode, 72)}${await tile("house", "home", mode, 128)}</div></div>`;
 }
 fs.writeFileSync(OUT + "preview.html", html);
-for (const [id, , cat, icon] of P) fs.writeFileSync(OUT + `tiles/${id}.svg`, await tile(icon, cat, "light", 128));
+// Per plugin: tiles/<id>.svg (128 px) and tiles/small/<id>.svg (32 px, for
+// tables). A plugin with its brand's logo (manifest logo) gets the logo on
+// a plain tile instead (ADR-0090; never recoloured).
+fs.mkdirSync(OUT + "tiles/small", { recursive: true });
+const PLUGINS = new URL("../plugins/", import.meta.url).pathname;
+for (const [id, , cat, icon] of P) {
+  const m = JSON.parse(fs.readFileSync(`${PLUGINS}${id}/phoedox-plugin.json`, "utf8"));
+  for (const [file, size] of [[`tiles/${id}.svg`, 128], [`tiles/small/${id}.svg`, 32]]) {
+    fs.writeFileSync(OUT + file, m.logo ? logoTile(fs.readFileSync(`${PLUGINS}${id}/${m.logo}`, "utf8"), size) : await tile(icon, cat, "light", size));
+  }
+}
+
+function logoTile(svg, size) {
+  const inner = svg.replace(/<\?xml[^>]*>/, "").replace(/<!DOCTYPE[^>]*>/i, "").trim().replace(/^<svg[^>]*>/, (t) => t.replace(/\s(width|height|x|y)="[^"]*"/g, "")).replace(/^<svg/, `<svg x="${size * 0.14}" y="${size * 0.14}" width="${size * 0.72}" height="${size * 0.72}"`);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">` +
+    `<rect x="0.5" y="0.5" width="${size - 1}" height="${size - 1}" rx="${size * 0.25}" fill="#fffdfb" stroke="#e4ddd6"/>${inner}</svg>`;
+}
