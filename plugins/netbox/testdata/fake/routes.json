@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {"path": "/api/dcim/locations/", "file": "locations.json"},
+    {"path": "/api/dcim/racks/", "file": "racks.json"},
+    {"path": "/api/dcim/device-types/", "file": "device-types.json"},
+    {"path": "/api/dcim/devices/", "file": "devices.json"},
+    {"path": "/api/ipam/prefixes/", "file": "prefixes.json"}
+  ]
+}

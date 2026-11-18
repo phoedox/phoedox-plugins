@@ -1,0 +1,1117 @@
+{
+ "count": 11,
+ "next": null,
+ "previous": null,
+ "results": [
+  {
+   "id": 1,
+   "url": "https://netbox.home.arpa/api/dcim/devices/1/",
+   "display": "patch-1",
+   "name": "patch-1",
+   "device_type": {
+    "id": 7,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/7/",
+    "display": "Patch panel 24 x Cat6a",
+    "model": "Patch panel 24 x Cat6a",
+    "slug": "patch-panel-24-x-cat6a",
+    "description": "",
+    "manufacturer": {
+     "id": 6,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/6/",
+     "display": "Generic",
+     "name": "Generic",
+     "slug": "generic",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 6,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/6/",
+    "display": "Patch panel",
+    "name": "Patch panel",
+    "slug": "patch-panel",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 3,
+    "url": "https://netbox.home.arpa/api/dcim/locations/3/",
+    "display": "Living room",
+    "name": "Living room",
+    "slug": "living-room",
+    "description": ""
+   },
+   "rack": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/racks/1/",
+    "display": "Rack 1",
+    "name": "Rack 1",
+    "description": ""
+   },
+   "position": 24.0,
+   "face": {
+    "value": "front",
+    "label": "Front"
+   },
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "airflow": null,
+   "primary_ip": null,
+   "primary_ip4": null,
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 2,
+   "url": "https://netbox.home.arpa/api/dcim/devices/2/",
+   "display": "sw-core",
+   "name": "sw-core",
+   "device_type": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/1/",
+    "display": "USW Pro 24 PoE",
+    "model": "USW Pro 24 PoE",
+    "slug": "usw-pro-24-poe",
+    "description": "",
+    "manufacturer": {
+     "id": 1,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/1/",
+     "display": "Ubiquiti",
+     "name": "Ubiquiti",
+     "slug": "ubiquiti",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 2,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/2/",
+    "display": "Switch",
+    "name": "Switch",
+    "slug": "switch",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "DEMO-USW24-0001",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/locations/1/",
+    "display": "Basement",
+    "name": "Basement",
+    "slug": "basement",
+    "description": ""
+   },
+   "rack": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/racks/1/",
+    "display": "Rack 1",
+    "name": "Rack 1",
+    "description": ""
+   },
+   "position": 22.0,
+   "face": {
+    "value": "front",
+    "label": "Front"
+   },
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "airflow": null,
+   "primary_ip": {
+    "id": 2,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/2/",
+    "display": "10.20.0.2/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.2/24",
+    "description": ""
+   },
+   "primary_ip4": {
+    "id": 2,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/2/",
+    "display": "10.20.0.2/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.2/24",
+    "description": ""
+   },
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 3,
+   "url": "https://netbox.home.arpa/api/dcim/devices/3/",
+   "display": "fw-01",
+   "name": "fw-01",
+   "device_type": {
+    "id": 2,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/2/",
+    "display": "DEC740",
+    "model": "DEC740",
+    "slug": "dec740",
+    "description": "",
+    "manufacturer": {
+     "id": 2,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/2/",
+     "display": "Deciso",
+     "name": "Deciso",
+     "slug": "deciso",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/1/",
+    "display": "Firewall",
+    "name": "Firewall",
+    "slug": "firewall",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "DEMO-DEC740-0042",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/locations/1/",
+    "display": "Basement",
+    "name": "Basement",
+    "slug": "basement",
+    "description": ""
+   },
+   "rack": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/racks/1/",
+    "display": "Rack 1",
+    "name": "Rack 1",
+    "description": ""
+   },
+   "position": 20.0,
+   "face": {
+    "value": "front",
+    "label": "Front"
+   },
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "airflow": null,
+   "primary_ip": {
+    "id": 3,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/3/",
+    "display": "10.20.0.1/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.1/24",
+    "description": ""
+   },
+   "primary_ip4": {
+    "id": 3,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/3/",
+    "display": "10.20.0.1/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.1/24",
+    "description": ""
+   },
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 4,
+   "url": "https://netbox.home.arpa/api/dcim/devices/4/",
+   "display": "Blank panel 1U (4)",
+   "name": null,
+   "device_type": {
+    "id": 9,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/9/",
+    "display": "Blank panel 1U",
+    "model": "Blank panel 1U",
+    "slug": "blank-panel-1u",
+    "description": "",
+    "manufacturer": {
+     "id": 6,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/6/",
+     "display": "Generic",
+     "name": "Generic",
+     "slug": "generic",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 8,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/8/",
+    "display": "Blank",
+    "name": "Blank",
+    "slug": "blank",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/locations/1/",
+    "display": "Basement",
+    "name": "Basement",
+    "slug": "basement",
+    "description": ""
+   },
+   "rack": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/racks/1/",
+    "display": "Rack 1",
+    "name": "Rack 1",
+    "description": ""
+   },
+   "position": 19.0,
+   "face": {
+    "value": "front",
+    "label": "Front"
+   },
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "airflow": null,
+   "primary_ip": null,
+   "primary_ip4": null,
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 5,
+   "url": "https://netbox.home.arpa/api/dcim/devices/5/",
+   "display": "pve-01",
+   "name": "pve-01",
+   "device_type": {
+    "id": 3,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/3/",
+    "display": "SYS-5019C-MR",
+    "model": "SYS-5019C-MR",
+    "slug": "sys-5019c-mr",
+    "description": "",
+    "manufacturer": {
+     "id": 3,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/3/",
+     "display": "Supermicro",
+     "name": "Supermicro",
+     "slug": "supermicro",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 3,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/3/",
+    "display": "Hypervisor",
+    "name": "Hypervisor",
+    "slug": "hypervisor",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "DEMO-SM5019-0101",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/locations/1/",
+    "display": "Basement",
+    "name": "Basement",
+    "slug": "basement",
+    "description": ""
+   },
+   "rack": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/racks/1/",
+    "display": "Rack 1",
+    "name": "Rack 1",
+    "description": ""
+   },
+   "position": 16.0,
+   "face": {
+    "value": "front",
+    "label": "Front"
+   },
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "airflow": null,
+   "primary_ip": {
+    "id": 5,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/5/",
+    "display": "10.20.0.21/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.21/24",
+    "description": ""
+   },
+   "primary_ip4": {
+    "id": 5,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/5/",
+    "display": "10.20.0.21/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.21/24",
+    "description": ""
+   },
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 6,
+   "url": "https://netbox.home.arpa/api/dcim/devices/6/",
+   "display": "pve-02",
+   "name": "pve-02",
+   "device_type": {
+    "id": 4,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/4/",
+    "display": "ThinkSystem SR250 V2",
+    "model": "ThinkSystem SR250 V2",
+    "slug": "thinksystem-sr250-v2",
+    "description": "",
+    "manufacturer": {
+     "id": 8,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/8/",
+     "display": "Lenovo",
+     "name": "Lenovo",
+     "slug": "lenovo",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 3,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/3/",
+    "display": "Hypervisor",
+    "name": "Hypervisor",
+    "slug": "hypervisor",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "DEMO-SR250-0102",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/locations/1/",
+    "display": "Basement",
+    "name": "Basement",
+    "slug": "basement",
+    "description": ""
+   },
+   "rack": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/racks/1/",
+    "display": "Rack 1",
+    "name": "Rack 1",
+    "description": ""
+   },
+   "position": 14.0,
+   "face": {
+    "value": "front",
+    "label": "Front"
+   },
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "airflow": null,
+   "primary_ip": {
+    "id": 6,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/6/",
+    "display": "10.20.0.22/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.22/24",
+    "description": ""
+   },
+   "primary_ip4": {
+    "id": 6,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/6/",
+    "display": "10.20.0.22/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.22/24",
+    "description": ""
+   },
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 7,
+   "url": "https://netbox.home.arpa/api/dcim/devices/7/",
+   "display": "nas-01",
+   "name": "nas-01",
+   "device_type": {
+    "id": 5,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/5/",
+    "display": "RS822+",
+    "model": "RS822+",
+    "slug": "rs822plus",
+    "description": "",
+    "manufacturer": {
+     "id": 4,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/4/",
+     "display": "Synology",
+     "name": "Synology",
+     "slug": "synology",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 4,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/4/",
+    "display": "Storage",
+    "name": "Storage",
+    "slug": "storage",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "DEMO-RS822-0007",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/locations/1/",
+    "display": "Basement",
+    "name": "Basement",
+    "slug": "basement",
+    "description": ""
+   },
+   "rack": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/racks/1/",
+    "display": "Rack 1",
+    "name": "Rack 1",
+    "description": ""
+   },
+   "position": 8.0,
+   "face": {
+    "value": "front",
+    "label": "Front"
+   },
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "airflow": null,
+   "primary_ip": {
+    "id": 7,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/7/",
+    "display": "10.20.0.11/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.11/24",
+    "description": ""
+   },
+   "primary_ip4": {
+    "id": 7,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/7/",
+    "display": "10.20.0.11/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.11/24",
+    "description": ""
+   },
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 8,
+   "url": "https://netbox.home.arpa/api/dcim/devices/8/",
+   "display": "ups-01",
+   "name": "ups-01",
+   "device_type": {
+    "id": 6,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/6/",
+    "display": "SMT1500RMI2U",
+    "model": "SMT1500RMI2U",
+    "slug": "smt1500rmi2u",
+    "description": "",
+    "manufacturer": {
+     "id": 5,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/5/",
+     "display": "APC",
+     "name": "APC",
+     "slug": "apc",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 5,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/5/",
+    "display": "Ups",
+    "name": "Ups",
+    "slug": "ups",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "DEMO-SMT1500-0055",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/locations/1/",
+    "display": "Basement",
+    "name": "Basement",
+    "slug": "basement",
+    "description": ""
+   },
+   "rack": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/racks/1/",
+    "display": "Rack 1",
+    "name": "Rack 1",
+    "description": ""
+   },
+   "position": 1.0,
+   "face": {
+    "value": "front",
+    "label": "Front"
+   },
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "airflow": null,
+   "primary_ip": {
+    "id": 8,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/8/",
+    "display": "10.20.0.9/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.9/24",
+    "description": ""
+   },
+   "primary_ip4": {
+    "id": 8,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/8/",
+    "display": "10.20.0.9/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.9/24",
+    "description": ""
+   },
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 9,
+   "url": "https://netbox.home.arpa/api/dcim/devices/9/",
+   "display": "ap-office",
+   "name": "ap-office",
+   "device_type": {
+    "id": 8,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/8/",
+    "display": "U7 Pro",
+    "model": "U7 Pro",
+    "slug": "u7-pro",
+    "description": "",
+    "manufacturer": {
+     "id": 1,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/1/",
+     "display": "Ubiquiti",
+     "name": "Ubiquiti",
+     "slug": "ubiquiti",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 7,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/7/",
+    "display": "Access point",
+    "name": "Access point",
+    "slug": "access-point",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "DEMO-U7PRO-0005",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 2,
+    "url": "https://netbox.home.arpa/api/dcim/locations/2/",
+    "display": "Office",
+    "name": "Office",
+    "slug": "office",
+    "description": ""
+   },
+   "rack": null,
+   "position": null,
+   "face": null,
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "airflow": null,
+   "primary_ip": {
+    "id": 9,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/9/",
+    "display": "10.20.0.5/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.5/24",
+    "description": ""
+   },
+   "primary_ip4": {
+    "id": 9,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/9/",
+    "display": "10.20.0.5/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.5/24",
+    "description": ""
+   },
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 10,
+   "url": "https://netbox.home.arpa/api/dcim/devices/10/",
+   "display": "sw-office",
+   "name": "sw-office",
+   "device_type": {
+    "id": 10,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/10/",
+    "display": "USW Flex Mini",
+    "model": "USW Flex Mini",
+    "slug": "usw-flex-mini",
+    "description": "",
+    "manufacturer": {
+     "id": 1,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/1/",
+     "display": "Ubiquiti",
+     "name": "Ubiquiti",
+     "slug": "ubiquiti",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 2,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/2/",
+    "display": "Switch",
+    "name": "Switch",
+    "slug": "switch",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "DEMO-FLEX-0003",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 2,
+    "url": "https://netbox.home.arpa/api/dcim/locations/2/",
+    "display": "Office",
+    "name": "Office",
+    "slug": "office",
+    "description": ""
+   },
+   "rack": null,
+   "position": null,
+   "face": null,
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "planned",
+    "label": "Planned"
+   },
+   "airflow": null,
+   "primary_ip": {
+    "id": 10,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/10/",
+    "display": "10.20.0.3/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.3/24",
+    "description": ""
+   },
+   "primary_ip4": {
+    "id": 10,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/10/",
+    "display": "10.20.0.3/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.3/24",
+    "description": ""
+   },
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 11,
+   "url": "https://netbox.home.arpa/api/dcim/devices/11/",
+   "display": "ap-living",
+   "name": "ap-living",
+   "device_type": {
+    "id": 8,
+    "url": "https://netbox.home.arpa/api/dcim/device-types/8/",
+    "display": "U7 Pro",
+    "model": "U7 Pro",
+    "slug": "u7-pro",
+    "description": "",
+    "manufacturer": {
+     "id": 1,
+     "url": "https://netbox.home.arpa/api/dcim/manufacturers/1/",
+     "display": "Ubiquiti",
+     "name": "Ubiquiti",
+     "slug": "ubiquiti",
+     "description": ""
+    }
+   },
+   "role": {
+    "id": 7,
+    "url": "https://netbox.home.arpa/api/dcim/device-roles/7/",
+    "display": "Access point",
+    "name": "Access point",
+    "slug": "access-point",
+    "description": ""
+   },
+   "tenant": null,
+   "platform": null,
+   "serial": "DEMO-U7PRO-0006",
+   "asset_tag": null,
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 3,
+    "url": "https://netbox.home.arpa/api/dcim/locations/3/",
+    "display": "Living room",
+    "name": "Living room",
+    "slug": "living-room",
+    "description": ""
+   },
+   "rack": null,
+   "position": null,
+   "face": null,
+   "latitude": null,
+   "longitude": null,
+   "parent_device": null,
+   "status": {
+    "value": "offline",
+    "label": "Offline"
+   },
+   "airflow": null,
+   "primary_ip": {
+    "id": 11,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/11/",
+    "display": "10.20.0.6/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.6/24",
+    "description": ""
+   },
+   "primary_ip4": {
+    "id": 11,
+    "url": "https://netbox.home.arpa/api/ipam/ip-addresses/11/",
+    "display": "10.20.0.6/24",
+    "family": {
+     "value": 4,
+     "label": "IPv4"
+    },
+    "address": "10.20.0.6/24",
+    "description": ""
+   },
+   "primary_ip6": null,
+   "oob_ip": null,
+   "cluster": null,
+   "virtual_chassis": null,
+   "vc_position": null,
+   "vc_priority": null,
+   "description": "",
+   "comments": "",
+   "config_template": null,
+   "config_context": {},
+   "local_context_data": null,
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:10:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  }
+ ]
+}

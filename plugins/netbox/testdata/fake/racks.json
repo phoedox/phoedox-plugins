@@ -1,0 +1,69 @@
+{
+ "count": 1,
+ "next": null,
+ "previous": null,
+ "results": [
+  {
+   "id": 1,
+   "url": "https://netbox.home.arpa/api/dcim/racks/1/",
+   "display": "Rack 1",
+   "name": "Rack 1",
+   "facility_id": "",
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "location": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/locations/1/",
+    "display": "Basement",
+    "name": "Basement",
+    "slug": "basement",
+    "description": ""
+   },
+   "tenant": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "role": null,
+   "serial": "",
+   "asset_tag": null,
+   "rack_type": null,
+   "form_factor": {
+    "value": "4-post-cabinet",
+    "label": "4-post cabinet"
+   },
+   "width": {
+    "value": 19,
+    "label": "19 inches"
+   },
+   "u_height": 24,
+   "starting_unit": 1,
+   "weight": null,
+   "max_weight": null,
+   "weight_unit": null,
+   "desc_units": false,
+   "outer_width": 600,
+   "outer_depth": 600,
+   "outer_unit": {
+    "value": "mm",
+    "label": "Millimeters"
+   },
+   "mounting_depth": null,
+   "airflow": null,
+   "description": "Wall cabinet next to the heating",
+   "comments": "",
+   "tags": [],
+   "custom_fields": {},
+   "created": "2025-01-18T10:05:00Z",
+   "last_updated": "2026-05-30T09:00:00Z",
+   "device_count": 8,
+   "powerfeed_count": 0
+  }
+ ]
+}

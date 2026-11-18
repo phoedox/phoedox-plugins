@@ -1,0 +1,88 @@
+{
+ "count": 3,
+ "next": null,
+ "previous": null,
+ "results": [
+  {
+   "id": 1,
+   "url": "https://netbox.home.arpa/api/dcim/locations/1/",
+   "display": "Basement",
+   "name": "Basement",
+   "slug": "basement",
+   "description": "",
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "parent": null,
+   "_depth": 0,
+   "rack_count": 1,
+   "device_count": 8,
+   "tags": [],
+   "created": "2025-01-18T10:00:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 2,
+   "url": "https://netbox.home.arpa/api/dcim/locations/2/",
+   "display": "Office",
+   "name": "Office",
+   "slug": "office",
+   "description": "",
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "parent": null,
+   "_depth": 0,
+   "rack_count": 0,
+   "device_count": 2,
+   "tags": [],
+   "created": "2025-01-18T10:00:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  },
+  {
+   "id": 3,
+   "url": "https://netbox.home.arpa/api/dcim/locations/3/",
+   "display": "Living room",
+   "name": "Living room",
+   "slug": "living-room",
+   "description": "",
+   "site": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/dcim/sites/1/",
+    "display": "Maple Street 12",
+    "name": "Maple Street 12",
+    "slug": "maple-street-12",
+    "description": ""
+   },
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "parent": null,
+   "_depth": 0,
+   "rack_count": 0,
+   "device_count": 1,
+   "tags": [],
+   "created": "2025-01-18T10:00:00Z",
+   "last_updated": "2026-05-30T09:00:00Z"
+  }
+ ]
+}

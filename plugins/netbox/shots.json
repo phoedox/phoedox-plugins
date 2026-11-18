@@ -1,0 +1,12 @@
+{
+  "secrets": {"url": "${fake}", "token": "demo-netbox-read-token"},
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.netbox/tools/netbox.sync", "body": {}}
+  ],
+  "wait": {"path": "/projects/${project}/entities", "min": 14},
+  "shots": [
+    {"name": "rack", "path": "/p/${project}/e/nb-rack-1-rack-1", "caption": "The rack from NetBox with its devices mounted at their units"},
+    {"name": "map", "path": "/p/${project}/graph/map", "caption": "Locations, rack and devices from NetBox on the knowledge graph map", "wait": 3000}
+  ]
+}

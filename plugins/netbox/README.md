@@ -2,6 +2,8 @@
 
 `com.phoedox.netbox` · version 0.1.0
 
+![The rack from NetBox with its devices mounted at their units](screenshots/rack.webp)
+
 Imports locations, racks and devices from NetBox into the knowledge graph: locations as rooms, racks with their height, devices by role as router, switch, access point, server, patch panel or device, mounted in their rack at their unit. AI clients can search devices and list IP prefixes.
 
 ## What it adds

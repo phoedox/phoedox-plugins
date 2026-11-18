@@ -41,6 +41,7 @@ type DeviceType struct {
 	ID           int     `json:"id"`
 	Model        string  `json:"model"`
 	UHeight      float64 `json:"u_height"`
+	FrontPorts   int     `json:"front_port_template_count"`
 	Manufacturer *ref    `json:"manufacturer"`
 }
 
@@ -128,6 +129,15 @@ func graphOps(locations []Location, racks []Rack, types map[int]DeviceType, devi
 		}
 		kind := kindOf(d.role())
 		attrs := map[string]any{}
+		if kind == "patch_panel" {
+			// Phoedox requires the number of ports of a patch panel; without
+			// front ports on its device type it becomes a plain device.
+			if n := frontPorts(d, types); n > 0 {
+				attrs["ports"] = n
+			} else {
+				kind = "device"
+			}
+		}
 		if d.Serial != "" && kind != "patch_panel" {
 			attrs["serial"] = d.Serial
 		}
@@ -166,6 +176,17 @@ func graphOps(locations []Location, racks []Rack, types map[int]DeviceType, devi
 		}
 	}
 	return ops
+}
+
+// frontPorts is the number of front ports of a device's type.
+func frontPorts(d Device, types map[int]DeviceType) int {
+	if d.DeviceType == nil {
+		return 0
+	}
+	if t, ok := types[d.DeviceType.ID]; ok {
+		return t.FrontPorts
+	}
+	return d.DeviceType.FrontPorts
 }
 
 // Found is a search result of netbox.find.

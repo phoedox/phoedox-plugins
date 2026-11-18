@@ -1,0 +1,175 @@
+{
+ "count": 5,
+ "next": null,
+ "previous": null,
+ "results": [
+  {
+   "id": 1,
+   "url": "https://netbox.home.arpa/api/ipam/prefixes/1/",
+   "display": "10.20.0.0/24",
+   "family": {
+    "value": 4,
+    "label": "IPv4"
+   },
+   "prefix": "10.20.0.0/24",
+   "scope_type": "dcim.site",
+   "scope_id": 1,
+   "vrf": null,
+   "tenant": null,
+   "vlan": {
+    "id": 1,
+    "url": "https://netbox.home.arpa/api/ipam/vlans/1/",
+    "display": "LAN",
+    "vid": 10,
+    "name": "LAN",
+    "description": ""
+   },
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "role": null,
+   "is_pool": false,
+   "mark_utilized": false,
+   "description": "Home LAN",
+   "comments": "",
+   "tags": [],
+   "custom_fields": {},
+   "children": 0,
+   "_depth": 0
+  },
+  {
+   "id": 2,
+   "url": "https://netbox.home.arpa/api/ipam/prefixes/2/",
+   "display": "10.20.30.0/24",
+   "family": {
+    "value": 4,
+    "label": "IPv4"
+   },
+   "prefix": "10.20.30.0/24",
+   "scope_type": "dcim.site",
+   "scope_id": 1,
+   "vrf": null,
+   "tenant": null,
+   "vlan": {
+    "id": 2,
+    "url": "https://netbox.home.arpa/api/ipam/vlans/2/",
+    "display": "IoT",
+    "vid": 30,
+    "name": "IoT",
+    "description": ""
+   },
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "role": null,
+   "is_pool": false,
+   "mark_utilized": false,
+   "description": "Smart home devices",
+   "comments": "",
+   "tags": [],
+   "custom_fields": {},
+   "children": 0,
+   "_depth": 0
+  },
+  {
+   "id": 3,
+   "url": "https://netbox.home.arpa/api/ipam/prefixes/3/",
+   "display": "10.20.40.0/24",
+   "family": {
+    "value": 4,
+    "label": "IPv4"
+   },
+   "prefix": "10.20.40.0/24",
+   "scope_type": "dcim.site",
+   "scope_id": 1,
+   "vrf": null,
+   "tenant": null,
+   "vlan": {
+    "id": 3,
+    "url": "https://netbox.home.arpa/api/ipam/vlans/3/",
+    "display": "Guests",
+    "vid": 40,
+    "name": "Guests",
+    "description": ""
+   },
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "role": null,
+   "is_pool": false,
+   "mark_utilized": false,
+   "description": "Guest Wi-Fi",
+   "comments": "",
+   "tags": [],
+   "custom_fields": {},
+   "children": 0,
+   "_depth": 0
+  },
+  {
+   "id": 4,
+   "url": "https://netbox.home.arpa/api/ipam/prefixes/4/",
+   "display": "10.20.50.0/24",
+   "family": {
+    "value": 4,
+    "label": "IPv4"
+   },
+   "prefix": "10.20.50.0/24",
+   "scope_type": "dcim.site",
+   "scope_id": 1,
+   "vrf": null,
+   "tenant": null,
+   "vlan": {
+    "id": 4,
+    "url": "https://netbox.home.arpa/api/ipam/vlans/4/",
+    "display": "Cameras",
+    "vid": 50,
+    "name": "Cameras",
+    "description": ""
+   },
+   "status": {
+    "value": "reserved",
+    "label": "Reserved"
+   },
+   "role": null,
+   "is_pool": false,
+   "mark_utilized": false,
+   "description": "Cameras, not yet moved",
+   "comments": "",
+   "tags": [],
+   "custom_fields": {},
+   "children": 0,
+   "_depth": 0
+  },
+  {
+   "id": 5,
+   "url": "https://netbox.home.arpa/api/ipam/prefixes/5/",
+   "display": "2001:db8:12::/48",
+   "family": {
+    "value": 6,
+    "label": "IPv6"
+   },
+   "prefix": "2001:db8:12::/48",
+   "scope_type": "dcim.site",
+   "scope_id": 1,
+   "vrf": null,
+   "tenant": null,
+   "vlan": null,
+   "status": {
+    "value": "active",
+    "label": "Active"
+   },
+   "role": null,
+   "is_pool": false,
+   "mark_utilized": false,
+   "description": "Delegated IPv6 prefix",
+   "comments": "",
+   "tags": [],
+   "custom_fields": {},
+   "children": 0,
+   "_depth": 0
+  }
+ ]
+}
