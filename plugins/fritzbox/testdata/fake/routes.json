@@ -1,0 +1,7 @@
+{
+  "routes": [
+    {"method": "POST", "path": "/upnp/control/deviceinfo", "headers": {"Content-Type": "text/xml; charset=\"utf-8\""}, "file": "deviceinfo.xml"},
+    {"method": "POST", "path": "/upnp/control/hosts", "headers": {"Content-Type": "text/xml; charset=\"utf-8\""}, "file": "hostlistpath.xml"},
+    {"path": "/devicehostlist.lua", "headers": {"Content-Type": "text/xml"}, "file": "hostlist.xml"}
+  ]
+}

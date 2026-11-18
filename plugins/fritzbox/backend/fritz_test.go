@@ -3,6 +3,8 @@ package main
 import (
 	"strings"
 	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 func TestDigest(t *testing.T) {
@@ -49,5 +51,34 @@ func TestSOAPAndHosts(t *testing.T) {
 	}
 	if only := graphOps(Info{Model: "FRITZ!Box 6660 Cable"}, nil); len(only.Ops) != 1 {
 		t.Fatal("hosts imported without asking")
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "POST", "/upnp/control/deviceinfo")
+	if err != nil {
+		t.Fatal(err)
+	}
+	v, err := soapValues(string(body))
+	if err != nil || v["NewModelName"] != "FRITZ!Box 7590 AX" || v["NewSerialNumber"] == "" {
+		t.Fatalf("%v %v", err, v)
+	}
+	if body, err = fakeapi.Body("../testdata/fake", "POST", "/upnp/control/hosts"); err != nil {
+		t.Fatal(err)
+	}
+	if v, err = soapValues(string(body)); err != nil || !strings.HasPrefix(v["NewX_AVM-DE_HostListPath"], "/devicehostlist.lua?") {
+		t.Fatalf("%v %v", err, v)
+	}
+	if body, err = fakeapi.Body("../testdata/fake", "GET", v["NewX_AVM-DE_HostListPath"]); err != nil {
+		t.Fatal(err)
+	}
+	hosts, err := parseHosts(string(body))
+	if err != nil || len(hosts) != 13 {
+		t.Fatalf("%v %d", err, len(hosts))
+	}
+	ops := graphOps(Info{Model: "FRITZ!Box 7590 AX", Firmware: "260.08.02"}, hosts)
+	if len(ops.Ops) != 1+11*2 {
+		t.Fatalf("ops: %d", len(ops.Ops))
 	}
 }

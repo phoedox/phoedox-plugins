@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<s:Body>
+<u:GetInfoResponse xmlns:u="urn:dslforum-org:service:DeviceInfo:1">
+<NewManufacturerName>AVM</NewManufacturerName><NewManufacturerOUI>00040E</NewManufacturerOUI><NewModelName>FRITZ!Box 7590 AX</NewModelName><NewDescription>FRITZ!Box 7590 AX 260.08.02</NewDescription><NewProductClass>AVMFB</NewProductClass><NewSerialNumber>DEMO-7590-0001</NewSerialNumber><NewSoftwareVersion>260.08.02</NewSoftwareVersion><NewHardwareVersion>FRITZ!Box 7590 AX</NewHardwareVersion><NewSpecVersion>1.0</NewSpecVersion><NewProvisioningCode></NewProvisioningCode><NewUpTime>1209600</NewUpTime><NewDeviceLog></NewDeviceLog>
+</u:GetInfoResponse>
+</s:Body>
+</s:Envelope>

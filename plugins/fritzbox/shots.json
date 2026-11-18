@@ -1,0 +1,42 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "username": "phoedox",
+    "password": "demo-password",
+    "import_hosts": "yes"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.fritzbox/tools/fritz.sync",
+      "body": {}
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 12
+  },
+  "shots": [
+    {
+      "name": "map",
+      "path": "/p/${project}/graph/map",
+      "caption": "Devices in the home network, wired or over Wi-Fi to the FRITZ!Box",
+      "wait": 3000
+    },
+    {
+      "name": "router",
+      "path": "/p/${project}/e/fritzbox-fritz-box-7590-ax",
+      "caption": "The FRITZ!Box as a router entry with model, firmware and serial number"
+    }
+  ]
+}

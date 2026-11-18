@@ -2,6 +2,8 @@
 
 `com.phoedox.fritzbox` · version 0.1.0
 
+![Devices in the home network, wired or over Wi-Fi to the FRITZ!Box](screenshots/map.webp)
+
 Imports the FRITZ!Box (model, firmware, serial number) into the knowledge graph through TR-064 and lists the devices in the home network for AI clients; optionally imports active devices with "wired to" or "uplink" to the box.
 
 ## What it adds
