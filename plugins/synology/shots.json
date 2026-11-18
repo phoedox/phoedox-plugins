@@ -1,0 +1,30 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "username": "phoedox",
+    "password": "demo-password"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 1
+  },
+  "shots": [
+    {
+      "name": "nas",
+      "path": "/p/${project}/e/synology-demo-2150abn0042",
+      "caption": "The Synology NAS as server entry with model, serial, DSM version and memory"
+    }
+  ]
+}

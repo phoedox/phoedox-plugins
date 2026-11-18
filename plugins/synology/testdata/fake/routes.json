@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/webapi/entry.cgi",
+      "seq": [
+        "login.json",
+        "system.json",
+        "network.json",
+        "logout.json",
+        "login.json",
+        "system.json",
+        "network.json",
+        "logout.json",
+        "login.json",
+        "system.json",
+        "network.json",
+        "logout.json"
+      ]
+    }
+  ]
+}

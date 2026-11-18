@@ -1,0 +1,92 @@
+{
+ "data": {
+  "storagePools": [
+   {
+    "id": "reuse_1",
+    "device_type": "shr_with_1_disk_protect",
+    "disks": [
+     "sata1",
+     "sata2",
+     "sata3",
+     "sata4"
+    ],
+    "status": "normal",
+    "size": {
+     "total": "35947798970368",
+     "used": "14286432100352"
+    },
+    "raid_type": "single"
+   }
+  ],
+  "volumes": [
+   {
+    "id": "volume_1",
+    "display_name": "Volume 1",
+    "desc": "",
+    "vol_path": "/volume1",
+    "status": "normal",
+    "fs_type": "btrfs",
+    "pool_path": "reuse_1",
+    "size": {
+     "total": "34861574144000",
+     "used": "13963125006336"
+    }
+   }
+  ],
+  "disks": [
+   {
+    "id": "sata1",
+    "name": "Drive 1",
+    "longName": "Drive 1",
+    "vendor": "WDC",
+    "model": "WD120EFBX-68B0EN0",
+    "diskType": "SATA",
+    "size_total": "12000138625024",
+    "status": "normal",
+    "smart_status": "normal",
+    "temp": 35,
+    "used_by": "reuse_1"
+   },
+   {
+    "id": "sata2",
+    "name": "Drive 2",
+    "longName": "Drive 2",
+    "vendor": "WDC",
+    "model": "WD120EFBX-68B0EN0",
+    "diskType": "SATA",
+    "size_total": "12000138625024",
+    "status": "normal",
+    "smart_status": "normal",
+    "temp": 36,
+    "used_by": "reuse_1"
+   },
+   {
+    "id": "sata3",
+    "name": "Drive 3",
+    "longName": "Drive 3",
+    "vendor": "WDC",
+    "model": "WD120EFBX-68B0EN0",
+    "diskType": "SATA",
+    "size_total": "12000138625024",
+    "status": "normal",
+    "smart_status": "normal",
+    "temp": 37,
+    "used_by": "reuse_1"
+   },
+   {
+    "id": "sata4",
+    "name": "Drive 4",
+    "longName": "Drive 4",
+    "vendor": "WDC",
+    "model": "WD120EFBX-68B0EN0",
+    "diskType": "SATA",
+    "size_total": "12000138625024",
+    "status": "normal",
+    "smart_status": "normal",
+    "temp": 38,
+    "used_by": "reuse_1"
+   }
+  ]
+ },
+ "success": true
+}

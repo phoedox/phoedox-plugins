@@ -1,9 +1,12 @@
 package main
 
 import (
+	"encoding/json"
 	"net/url"
 	"strings"
 	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 func TestForms(t *testing.T) {
@@ -155,5 +158,49 @@ func TestStorage(t *testing.T) {
 	}
 	if _, err := parseStorage([]byte(`{"volumes":"x"}`)); err == nil {
 		t.Fatal("accepted a broken answer")
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use. DSM
+// answers every call on /webapi/entry.cgi, so routes.json plays them as a
+// sequence: login, SYNO.Core.System info, SYNO.Core.Network get, logout.
+func TestDemoData(t *testing.T) {
+	const dir = "../testdata/fake"
+	body, err := fakeapi.Body(dir, "POST", "/webapi/entry.cgi")
+	if err != nil {
+		t.Fatal(err)
+	}
+	data, err := unwrap(body, true)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, err := parseSID(data); err != nil {
+		t.Fatal(err)
+	}
+	api, err := fakeapi.Load(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	read := func(file string) json.RawMessage {
+		t.Helper()
+		body, err := api.Content(fakeapi.Route{File: file})
+		if err != nil {
+			t.Fatal(err)
+		}
+		data, err := unwrap(body, false)
+		if err != nil {
+			t.Fatalf("%s: %v", file, err)
+		}
+		return data
+	}
+	n := parseSystem(read("system.json"))
+	n.Hostname = parseHostname(read("network.json"))
+	op := graphOps(n, "http://127.0.0.1:5000").Ops[0]
+	if op.ID != "synology-demo-2150abn0042" || op.Name != "nas" || op.Attrs["os"] != "DSM 7.2.2-72806 Update 4" || op.Attrs["ram"] != 8.0 || op.Attrs["ip"] != nil {
+		t.Fatalf("nas: %+v", op)
+	}
+	st, err := parseStorage(read("storage.json"))
+	if err != nil || len(st.Pools) != 1 || len(st.Volumes) != 1 || len(st.Disks) != 4 || st.Volumes[0].UsedPercent != 40.1 {
+		t.Fatalf("storage: %+v %v", st, err)
 	}
 }

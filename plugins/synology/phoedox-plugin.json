@@ -3,6 +3,9 @@
   "name": "Synology DSM",
   "icon": "hard-drive",
   "category": "servers",
+  "screenshots": [
+    { "file": "screenshots/nas.webp", "caption": "The Synology NAS as server entry with model, serial, DSM version and memory" }
+  ],
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports a Synology NAS (hostname, model, DSM version, serial number, memory) into the knowledge graph as a server through the DSM Web API and gives AI clients its storage pools, volumes and drives with status and usage. Read-only: the plugin only signs in, reads and signs out. Settings: url (e.g. https://nas.example.org:5001, valid certificate), username and password (a dedicated DSM account in the administrators group, because DSM only shows system and storage information to administrators; the account must not use 2-step verification). If DSM blocks the Phoedox server after failed sign-ins, remove it from the block list under Control Panel > Security > Protection.",

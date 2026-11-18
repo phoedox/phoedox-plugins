@@ -2,6 +2,8 @@
 
 `com.phoedox.synology` · version 0.1.0
 
+![The Synology NAS as server entry with model, serial, DSM version and memory](screenshots/nas.webp)
+
 Imports a Synology NAS (hostname, model, DSM version, serial number, memory) into the knowledge graph as a server through the DSM Web API and gives AI clients its storage pools, volumes and drives with status and usage. Read-only: the plugin only signs in, reads and signs out.
 
 ## What it adds

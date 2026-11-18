@@ -1,0 +1,45 @@
+{
+ "data": {
+  "cpu_clock_speed": 2600,
+  "cpu_cores": "4",
+  "cpu_family": "Ryzen",
+  "cpu_series": "R1600",
+  "cpu_vendor": "AMD",
+  "enabled_ntp": true,
+  "external_pci_slot_info": [
+   {
+    "Occupied": "no",
+    "Recognized": "no",
+    "cardName": "-",
+    "slot": "1"
+   }
+  ],
+  "firmware_date": "2025/11/04",
+  "firmware_ver": "DSM 7.2.2-72806 Update 4",
+  "model": "DS923+",
+  "ntp_server": "time.google.com",
+  "ram_size": 8192,
+  "sata_dev": [],
+  "serial": "DEMO-2150ABN0042",
+  "support_esata": "no",
+  "sys_temp": 41,
+  "sys_tempwarn": false,
+  "systempwarn": false,
+  "temperature_warning": false,
+  "time": "2026-06-15 10:00:00",
+  "time_zone": "Amsterdam",
+  "time_zone_desc": "(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
+  "up_time": "412:10:33",
+  "usb_dev": [
+   {
+    "cls": "hid",
+    "pid": "0002",
+    "producer": "American Power Conversion",
+    "product": "Back-UPS ES 700",
+    "rev": "1.06",
+    "vid": "051d"
+   }
+  ]
+ },
+ "success": true
+}
