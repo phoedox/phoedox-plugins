@@ -1,0 +1,279 @@
+{
+ "configured": [
+  {
+   "name": "living-room-sensor",
+   "friendly_name": "Living room air quality",
+   "configuration": "living-room-sensor.yaml",
+   "loaded_integrations": [
+    "api",
+    "esp32",
+    "i2c",
+    "logger",
+    "ota",
+    "scd4x",
+    "sensor",
+    "web_server",
+    "wifi"
+   ],
+   "deployed_version": "2026.5.2",
+   "current_version": "2026.5.2",
+   "path": "/config/esphome/living-room-sensor.yaml",
+   "comment": "CO2, temperature and humidity",
+   "address": "living-room-sensor.home.arpa",
+   "web_port": 80,
+   "target_platform": "esp32",
+   "board_id": "esp32-c3-devkitm-1",
+   "area": "Living room",
+   "ip": "192.0.2.51",
+   "ip_addresses": [
+    "192.0.2.51"
+   ],
+   "mac_address": "02:00:5E:10:00:51",
+   "state": "online",
+   "offline_seconds": null,
+   "uses_mqtt": false,
+   "uses_deep_sleep": false
+  },
+  {
+   "name": "kitchen-presence",
+   "friendly_name": "Kitchen presence",
+   "configuration": "kitchen-presence.yaml",
+   "loaded_integrations": [
+    "api",
+    "binary_sensor",
+    "esp32",
+    "ld2410",
+    "logger",
+    "ota",
+    "uart",
+    "wifi"
+   ],
+   "deployed_version": "2026.5.2",
+   "current_version": "2026.5.2",
+   "path": "/config/esphome/kitchen-presence.yaml",
+   "comment": "LD2410 radar above the fridge",
+   "address": "kitchen-presence.home.arpa",
+   "web_port": null,
+   "target_platform": "esp32",
+   "board_id": "esp32dev",
+   "area": "Kitchen",
+   "ip": "192.0.2.52",
+   "ip_addresses": [
+    "192.0.2.52"
+   ],
+   "mac_address": "02:00:5E:10:00:52",
+   "state": "online",
+   "offline_seconds": null,
+   "uses_mqtt": false,
+   "uses_deep_sleep": false
+  },
+  {
+   "name": "garage-door",
+   "friendly_name": "Garage door",
+   "configuration": "garage-door.yaml",
+   "loaded_integrations": [
+    "api",
+    "binary_sensor",
+    "cover",
+    "esp8266",
+    "logger",
+    "ota",
+    "switch",
+    "wifi"
+   ],
+   "deployed_version": "2026.4.1",
+   "current_version": "2026.5.2",
+   "path": "/config/esphome/garage-door.yaml",
+   "comment": "Relay and reed contact for the door opener",
+   "address": "garage-door.home.arpa",
+   "web_port": null,
+   "target_platform": "esp8266",
+   "board_id": "d1_mini",
+   "area": "Garage",
+   "ip": "192.0.2.53",
+   "ip_addresses": [
+    "192.0.2.53"
+   ],
+   "mac_address": "02:00:5E:10:00:53",
+   "state": "online",
+   "offline_seconds": null,
+   "uses_mqtt": false,
+   "uses_deep_sleep": false
+  },
+  {
+   "name": "water-meter",
+   "friendly_name": "Water meter",
+   "configuration": "water-meter.yaml",
+   "loaded_integrations": [
+    "api",
+    "esp32",
+    "logger",
+    "ota",
+    "pulse_meter",
+    "sensor",
+    "web_server",
+    "wifi"
+   ],
+   "deployed_version": "2026.5.2",
+   "current_version": "2026.5.2",
+   "path": "/config/esphome/water-meter.yaml",
+   "comment": "Reads the water meter pulses",
+   "address": "water-meter.home.arpa",
+   "web_port": 80,
+   "target_platform": "esp32",
+   "board_id": "esp32-c6-devkitc-1",
+   "area": "Basement",
+   "ip": "192.0.2.54",
+   "ip_addresses": [
+    "192.0.2.54"
+   ],
+   "mac_address": "02:00:5E:10:00:54",
+   "state": "online",
+   "offline_seconds": null,
+   "uses_mqtt": false,
+   "uses_deep_sleep": false
+  },
+  {
+   "name": "heating-flow",
+   "friendly_name": "Heating flow sensors",
+   "configuration": "heating-flow.yaml",
+   "loaded_integrations": [
+    "api",
+    "dallas_temp",
+    "esp32",
+    "logger",
+    "one_wire",
+    "ota",
+    "sensor",
+    "wifi"
+   ],
+   "deployed_version": "2025.12.3",
+   "current_version": "2026.5.2",
+   "path": "/config/esphome/heating-flow.yaml",
+   "comment": "Flow and return temperature",
+   "address": "heating-flow.home.arpa",
+   "web_port": null,
+   "target_platform": "esp32",
+   "board_id": "nodemcu-32s",
+   "area": "Basement",
+   "ip": "192.0.2.55",
+   "ip_addresses": [
+    "192.0.2.55"
+   ],
+   "mac_address": "02:00:5E:10:00:55",
+   "state": "online",
+   "offline_seconds": null,
+   "uses_mqtt": false,
+   "uses_deep_sleep": false
+  },
+  {
+   "name": "bedroom-blinds",
+   "friendly_name": "Bedroom blinds",
+   "configuration": "bedroom-blinds.yaml",
+   "loaded_integrations": [
+    "api",
+    "cover",
+    "esp32",
+    "logger",
+    "ota",
+    "stepper",
+    "wifi"
+   ],
+   "deployed_version": "2026.5.2",
+   "current_version": "2026.5.2",
+   "path": "/config/esphome/bedroom-blinds.yaml",
+   "comment": null,
+   "address": "bedroom-blinds.home.arpa",
+   "web_port": null,
+   "target_platform": "esp32",
+   "board_id": "esp32-s3-devkitc-1",
+   "area": "Bedroom",
+   "ip": "192.0.2.56",
+   "ip_addresses": [
+    "192.0.2.56"
+   ],
+   "mac_address": "02:00:5E:10:00:56",
+   "state": "offline",
+   "offline_seconds": 5400.0,
+   "uses_mqtt": false,
+   "uses_deep_sleep": false
+  },
+  {
+   "name": "garden-weather",
+   "friendly_name": "Garden weather station",
+   "configuration": "garden-weather.yaml",
+   "loaded_integrations": [
+    "api",
+    "bme280_i2c",
+    "deep_sleep",
+    "esp32",
+    "i2c",
+    "logger",
+    "ota",
+    "sensor",
+    "wifi"
+   ],
+   "deployed_version": "2026.3.0",
+   "current_version": "2026.5.2",
+   "path": "/config/esphome/garden-weather.yaml",
+   "comment": "Solar powered, wakes every 10 minutes",
+   "address": "garden-weather.home.arpa",
+   "web_port": null,
+   "target_platform": "esp32",
+   "board_id": "esp32dev",
+   "area": "Garden",
+   "ip": "192.0.2.57",
+   "ip_addresses": [
+    "192.0.2.57"
+   ],
+   "mac_address": "02:00:5E:10:00:57",
+   "state": "online",
+   "offline_seconds": null,
+   "uses_mqtt": false,
+   "uses_deep_sleep": true
+  },
+  {
+   "name": "office-desk-light",
+   "friendly_name": "Office desk light",
+   "configuration": "office-desk-light.yaml",
+   "loaded_integrations": [
+    "api",
+    "esp8266",
+    "light",
+    "logger",
+    "ota",
+    "output",
+    "wifi"
+   ],
+   "deployed_version": "2026.5.2",
+   "current_version": "2026.5.2",
+   "path": "/config/esphome/office-desk-light.yaml",
+   "comment": null,
+   "address": "office-desk-light.home.arpa",
+   "web_port": null,
+   "target_platform": "esp8266",
+   "board_id": "esp01_1m",
+   "area": "Office",
+   "ip": "192.0.2.58",
+   "ip_addresses": [
+    "192.0.2.58"
+   ],
+   "mac_address": "02:00:5E:10:00:58",
+   "state": "online",
+   "offline_seconds": null,
+   "uses_mqtt": false,
+   "uses_deep_sleep": false
+  }
+ ],
+ "importable": [
+  {
+   "name": "apollo-msr-2-0a1b2c",
+   "friendly_name": "Apollo MSR-2",
+   "package_import_url": "github://example.org/esphome-firmware/msr-2.yaml",
+   "project_name": "example.msr-2",
+   "project_version": "25.3.1",
+   "network": "wifi",
+   "ignored": false
+  }
+ ]
+}

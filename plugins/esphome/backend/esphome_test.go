@@ -4,6 +4,8 @@ import (
 	"testing"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 // Device Builder (2026.6+): runtime state flattened into each entry.
@@ -81,5 +83,27 @@ func TestErrors(t *testing.T) {
 		if _, err := parseDevices([]byte(b)); err == nil {
 			t.Errorf("accepted %s", b)
 		}
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "GET", "/devices")
+	if err != nil {
+		t.Fatal(err)
+	}
+	devs, err := parseDevices(body)
+	if err != nil || len(devs.Configured) != 8 || len(devs.Importable) != 1 {
+		t.Fatalf("%v %+v", err, devs)
+	}
+	if ops := graphOps(devs.Configured, map[string]string{}); len(ops.Ops) != 8+7+8 {
+		t.Fatalf("ops: %d", len(ops.Ops))
+	}
+	if body, err = fakeapi.Body("../testdata/fake", "GET", "/ping"); err != nil {
+		t.Fatal(err)
+	}
+	o := overview(devs, parsePing(body))
+	if *o.Devices[5].Online || !o.Devices[4].UpdateAvailable || !o.Devices[0].WebServer {
+		t.Fatalf("overview: %+v", o.Devices)
 	}
 }

@@ -2,6 +2,8 @@
 
 `com.phoedox.esphome` · version 0.1.0
 
+![ESPHome devices on the knowledge graph map, located in their rooms](screenshots/map.webp)
+
 Imports the devices of an ESPHome dashboard (Device Builder) into the knowledge graph as devices (board, platform, IP address, MAC, host name, deployed ESPHome version, configuration file, comment), "located in" the room named by their area (an existing room with the same name is reused, otherwise one is created). AI clients get every device with online state, versions, available update, web server and integrations, plus discovered devices that are not adopted yet. Read-only: only GET /devices and /ping; nothing is compiled, flashed or switched. The devices themselves are not contacted: the native API is protobuf over TCP and the web_server component has no device information endpoint, so the dashboard is the only clean JSON source; /devices is the endpoint the Home Assistant integration uses and may change when the dashboard drops it.
 
 ## What it adds

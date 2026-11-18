@@ -1,0 +1,13 @@
+{
+  "secrets": {"url": "${fake}"},
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.esphome/tools/esphome.sync", "body": {}}
+  ],
+  "wait": {"path": "/projects/${project}/entities", "min": 15},
+  "shots": [
+    {"name": "map", "path": "/p/${project}/graph/map", "caption": "ESPHome devices on the knowledge graph map, located in their rooms", "wait": 3000},
+    {"name": "devices", "path": "/p/${project}/graph?kind=device", "caption": "ESPHome devices as entries with board, IP address and MAC address"},
+    {"name": "device", "path": "/p/${project}/e/esphome-living-room-sensor", "caption": "A sensor with its board, ESPHome version, configuration and comment"}
+  ]
+}

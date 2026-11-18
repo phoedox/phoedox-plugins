@@ -1,0 +1,10 @@
+{
+ "living-room-sensor.yaml": true,
+ "kitchen-presence.yaml": true,
+ "garage-door.yaml": true,
+ "water-meter.yaml": true,
+ "heating-flow.yaml": true,
+ "bedroom-blinds.yaml": false,
+ "garden-weather.yaml": true,
+ "office-desk-light.yaml": true
+}

@@ -1,0 +1,6 @@
+{
+  "routes": [
+    {"path": "/devices", "file": "devices.json"},
+    {"path": "/ping", "file": "ping.json"}
+  ]
+}
