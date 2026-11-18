@@ -6,6 +6,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 	"github.com/phoedox/phoedox-plugins/internal/integ"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
@@ -147,5 +148,25 @@ func TestErrors(t *testing.T) {
 	ops.Upsert("vm", "a", nil)
 	if err := integ.ApplyBatches(ops, 500, func(b *pdk.GraphOps) (map[string]string, error) { return nil, nil }); err != nil {
 		t.Fatal(err)
+	}
+}
+
+// TestDemoData parses the recorded demo answer (for screenshots once the EC2
+// endpoint can be pointed at the fake API).
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "POST", "/")
+	if err != nil {
+		t.Fatal(err)
+	}
+	list, next, err := parseInstances("eu-central-1", body)
+	if err != nil || next != "" || len(list) != 3 {
+		t.Fatalf("%v %q %d", err, next, len(list))
+	}
+	ops := graphOps(list).Ops
+	if len(ops) != 3 || ops[0].ID != "aws-i-0a1b2c3d4e5f60001" || ops[0].Name != "shop-web" || ops[0].Attrs["ip"] != "198.51.100.60" || ops[0].Attrs["vcpu"] != 2 {
+		t.Fatalf("web: %+v", ops[0])
+	}
+	if ops[1].Attrs["ip"] != "10.20.21.12" || ops[2].Attrs["state"] != "stopped" {
+		t.Fatalf("worker, batch: %+v %+v", ops[1], ops[2])
 	}
 }

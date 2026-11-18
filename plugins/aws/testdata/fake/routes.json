@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/",
+      "file": "describe-instances.xml",
+      "headers": {
+        "Content-Type": "text/xml;charset=UTF-8"
+      }
+    }
+  ]
+}
