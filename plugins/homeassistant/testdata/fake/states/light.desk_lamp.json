@@ -1,0 +1,15 @@
+{
+ "entity_id": "light.desk_lamp",
+ "state": "on",
+ "attributes": {
+  "friendly_name": "Desk lamp",
+  "brightness": 230
+ },
+ "last_changed": "2026-06-15T07:58:12.000000+00:00",
+ "last_updated": "2026-06-15T07:58:12.000000+00:00",
+ "context": {
+  "id": "01J0DEMO0000000000000009",
+  "parent_id": null,
+  "user_id": null
+ }
+}

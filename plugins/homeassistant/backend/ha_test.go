@@ -5,6 +5,8 @@ import (
 	"testing"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 func TestHomeAssistant(t *testing.T) {
@@ -100,5 +102,44 @@ func TestBridge(t *testing.T) {
 	rs := Readings(b.BridgeStates(), map[string]string{"sensor.t": "x", "switch.plug": "y"})
 	if len(rs) != 2 || rs[0].Unit != "°C" || rs[0].Value != 21.5 || rs[1].Value != 0 {
 		t.Fatalf("bridged readings: %+v", rs)
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "POST", "/api/template")
+	if err != nil {
+		t.Fatal(err)
+	}
+	devs, err := parseDevices(body)
+	if err != nil || len(devs) != 13 {
+		t.Fatalf("%v %d", err, len(devs))
+	}
+	ops := graphOps(devs)
+	if len(ops.Ops) != 7+13+13 {
+		t.Fatalf("ops: %d", len(ops.Ops))
+	}
+	var entries []pdk.Entity
+	for _, o := range ops.Ops {
+		if o.Op == "upsert" {
+			entries = append(entries, pdk.Entity{Slug: o.ID, Attrs: o.Attrs})
+		}
+	}
+	if body, err = fakeapi.Body("../testdata/fake", "GET", "/api/states"); err != nil {
+		t.Fatal(err)
+	}
+	var states []State
+	if err := json.Unmarshal(body, &states); err != nil {
+		t.Fatal(err)
+	}
+	if rs := Readings(states, Owners(entries)); len(rs) != 23 {
+		t.Fatalf("readings: %d", len(rs))
+	}
+	if body, err = fakeapi.Body("../testdata/fake", "GET", "/api/states/switch.rack_plug"); err != nil {
+		t.Fatal(err)
+	}
+	var s State
+	if err := json.Unmarshal(body, &s); err != nil || s.State != "on" {
+		t.Fatalf("%v %+v", err, s)
 	}
 }

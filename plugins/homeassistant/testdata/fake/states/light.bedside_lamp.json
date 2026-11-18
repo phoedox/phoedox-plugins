@@ -1,0 +1,14 @@
+{
+ "entity_id": "light.bedside_lamp",
+ "state": "unavailable",
+ "attributes": {
+  "friendly_name": "Bedside lamp"
+ },
+ "last_changed": "2026-06-15T07:58:12.000000+00:00",
+ "last_updated": "2026-06-15T07:58:12.000000+00:00",
+ "context": {
+  "id": "01J0DEMO0000000000000022",
+  "parent_id": null,
+  "user_id": null
+ }
+}

@@ -3,6 +3,10 @@
   "name": "Home Assistant",
   "icon": "house",
   "category": "home",
+  "screenshots": [
+    { "file": "screenshots/restart.webp", "caption": "A server with a restart through the Home Assistant plug it is powered by" },
+    { "file": "screenshots/map.webp", "caption": "Rooms and devices from Home Assistant on the knowledge graph map" }
+  ],
   "version": "0.5.0",
   "hostApi": "1",
   "description": "Imports areas and devices from Home Assistant into the knowledge graph (rooms, devices, \"located in\"), shows switches on entries and switches devices – also a restart through the socket a device is plugged into. Stores readings and switch states every 5 minutes for the history on entries. AI clients may only suggest, unless the owner allows it per device. Settings: url (e.g. https://ha.example.org) and token (long-lived access token) – or no settings, through a Phoedox agent in the home network (homeassistant in agent.yaml); the agent then switches by signed job.",

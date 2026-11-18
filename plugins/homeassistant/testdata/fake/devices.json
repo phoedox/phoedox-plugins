@@ -1,0 +1,15 @@
+[
+  {"area": "Living room", "id": "3f1c2a9b7d4e4c0a8b6f1e2d3c4b5a69", "name": "Ceiling light", "manufacturer": "Signify", "model": "Hue White Ambiance A60", "entities": ["light.living_room_ceiling"]},
+  {"area": "Living room", "id": "8a2d4f6b1c3e4a5b9d7f0e1c2b3a4d58", "name": "Media plug", "manufacturer": "Shelly", "model": "Plus Plug S", "entities": ["switch.media_plug", "sensor.media_plug_power", "sensor.media_plug_energy"]},
+  {"area": "Living room", "id": "c7e9a1b3d5f74e2a8c6b4d2f0e1a3c47", "name": "Climate sensor", "manufacturer": "Aqara", "model": "Temperature and Humidity Sensor T1", "entities": ["sensor.living_room_temperature", "sensor.living_room_humidity"]},
+  {"area": "Kitchen", "id": "1b3d5f7a9c2e4b6d8f0a1c3e5b7d9f36", "name": "Coffee machine plug", "manufacturer": "Shelly", "model": "Plus Plug S", "entities": ["switch.coffee_machine", "sensor.coffee_machine_power"]},
+  {"area": "Kitchen", "id": "5e7a9c1b3d4f4a6c8e0b2d4f6a8c0e25", "name": "Kitchen spots", "manufacturer": "Signify", "model": "Hue White GU10", "entities": ["light.kitchen_spots"]},
+  {"area": "Office", "id": "9c1e3a5b7d6f4b8a0c2e4a6c8e0b2d14", "name": "Desk lamp", "manufacturer": "IKEA", "model": "TRADFRI bulb E27 WS", "entities": ["light.desk_lamp"]},
+  {"area": "Office", "id": "2d4f6a8c0e1b4d3f5a7c9e1b3d5f7a03", "name": "Office climate", "manufacturer": "Aqara", "model": "Temperature and Humidity Sensor T1", "entities": ["sensor.office_temperature", "sensor.office_humidity"]},
+  {"area": "Basement", "id": "6a8c0e2b4d1f4c5a7e9b1d3f5a7c9e92", "name": "Rack plug", "manufacturer": "Shelly", "model": "Plus Plug S", "entities": ["switch.rack_plug", "sensor.rack_plug_power", "sensor.rack_plug_energy"]},
+  {"area": "Basement", "id": "e0b2d4f6a8c14e3b5d7f9a1c3e5b7d81", "name": "NAS", "manufacturer": "Synology", "model": "DS923+", "entities": ["sensor.nas_temperature", "sensor.nas_volume_used", "binary_sensor.nas_security_status"]},
+  {"area": "Basement", "id": "4f6a8c0e2b3d4e5f7a9c1e3b5d7f9a70", "name": "Basement climate", "manufacturer": "Aqara", "model": "Temperature and Humidity Sensor T1", "entities": ["sensor.basement_temperature", "sensor.basement_humidity"]},
+  {"area": "Garage", "id": "b3d5f7a9c1e24f4b6d8f0a2c4e6b8d69", "name": "Wallbox", "manufacturer": "go-e", "model": "Charger Gemini", "entities": ["switch.wallbox_charging", "sensor.wallbox_power"]},
+  {"area": "Bedroom", "id": "7d9f1b3e5a6c4d8f0b2d4f6a8c0e2b58", "name": "Bedside lamp", "manufacturer": "Signify", "model": "Hue Go", "entities": ["light.bedside_lamp"]},
+  {"area": "Garden", "id": "0a2c4e6b8d9f4a1c3e5b7d9f1a3c5e47", "name": "Irrigation valve", "manufacturer": "Shelly", "model": "Plus 1", "entities": ["switch.irrigation_valve"]}
+]

@@ -1,0 +1,14 @@
+{
+ "entity_id": "switch.wallbox_charging",
+ "state": "off",
+ "attributes": {
+  "friendly_name": "Wallbox charging"
+ },
+ "last_changed": "2026-06-15T07:58:12.000000+00:00",
+ "last_updated": "2026-06-15T07:58:12.000000+00:00",
+ "context": {
+  "id": "01J0DEMO0000000000000020",
+  "parent_id": null,
+  "user_id": null
+ }
+}

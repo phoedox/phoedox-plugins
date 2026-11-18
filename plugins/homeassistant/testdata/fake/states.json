@@ -1,0 +1,370 @@
+[
+ {
+  "entity_id": "light.living_room_ceiling",
+  "state": "on",
+  "attributes": {
+   "friendly_name": "Ceiling light",
+   "brightness": 178,
+   "color_mode": "color_temp",
+   "color_temp_kelvin": 2700
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000000",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "switch.media_plug",
+  "state": "on",
+  "attributes": {
+   "friendly_name": "Media plug"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000001",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.media_plug_power",
+  "state": "38.4",
+  "attributes": {
+   "unit_of_measurement": "W",
+   "device_class": "power",
+   "friendly_name": "Media plug power"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000002",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.media_plug_energy",
+  "state": "62.71",
+  "attributes": {
+   "unit_of_measurement": "kWh",
+   "device_class": "energy",
+   "friendly_name": "Media plug energy"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000003",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.living_room_temperature",
+  "state": "21.6",
+  "attributes": {
+   "unit_of_measurement": "°C",
+   "device_class": "temperature",
+   "friendly_name": "Living room temperature"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000004",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.living_room_humidity",
+  "state": "47",
+  "attributes": {
+   "unit_of_measurement": "%",
+   "device_class": "humidity",
+   "friendly_name": "Living room humidity"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000005",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "switch.coffee_machine",
+  "state": "off",
+  "attributes": {
+   "friendly_name": "Coffee machine"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000006",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.coffee_machine_power",
+  "state": "0.0",
+  "attributes": {
+   "unit_of_measurement": "W",
+   "device_class": "power",
+   "friendly_name": "Coffee machine power"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000007",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "light.kitchen_spots",
+  "state": "off",
+  "attributes": {
+   "friendly_name": "Kitchen spots"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000008",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "light.desk_lamp",
+  "state": "on",
+  "attributes": {
+   "friendly_name": "Desk lamp",
+   "brightness": 230
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000009",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.office_temperature",
+  "state": "22.4",
+  "attributes": {
+   "unit_of_measurement": "°C",
+   "device_class": "temperature",
+   "friendly_name": "Office temperature"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000010",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.office_humidity",
+  "state": "44",
+  "attributes": {
+   "unit_of_measurement": "%",
+   "device_class": "humidity",
+   "friendly_name": "Office humidity"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000011",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "switch.rack_plug",
+  "state": "on",
+  "attributes": {
+   "friendly_name": "Rack plug"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000012",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.rack_plug_power",
+  "state": "74.2",
+  "attributes": {
+   "unit_of_measurement": "W",
+   "device_class": "power",
+   "friendly_name": "Rack plug power"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000013",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.rack_plug_energy",
+  "state": "311.05",
+  "attributes": {
+   "unit_of_measurement": "kWh",
+   "device_class": "energy",
+   "friendly_name": "Rack plug energy"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000014",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.nas_temperature",
+  "state": "41",
+  "attributes": {
+   "unit_of_measurement": "°C",
+   "device_class": "temperature",
+   "friendly_name": "NAS temperature"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000015",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.nas_volume_used",
+  "state": "63.8",
+  "attributes": {
+   "unit_of_measurement": "%",
+   "friendly_name": "NAS volume 1 used"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000016",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "binary_sensor.nas_security_status",
+  "state": "off",
+  "attributes": {
+   "device_class": "safety",
+   "friendly_name": "NAS security status"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000017",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.basement_temperature",
+  "state": "17.9",
+  "attributes": {
+   "unit_of_measurement": "°C",
+   "device_class": "temperature",
+   "friendly_name": "Basement temperature"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000018",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.basement_humidity",
+  "state": "58",
+  "attributes": {
+   "unit_of_measurement": "%",
+   "device_class": "humidity",
+   "friendly_name": "Basement humidity"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000019",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "switch.wallbox_charging",
+  "state": "off",
+  "attributes": {
+   "friendly_name": "Wallbox charging"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000020",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "sensor.wallbox_power",
+  "state": "0.0",
+  "attributes": {
+   "unit_of_measurement": "W",
+   "device_class": "power",
+   "friendly_name": "Wallbox power"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000021",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "light.bedside_lamp",
+  "state": "unavailable",
+  "attributes": {
+   "friendly_name": "Bedside lamp"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000022",
+   "parent_id": null,
+   "user_id": null
+  }
+ },
+ {
+  "entity_id": "switch.irrigation_valve",
+  "state": "off",
+  "attributes": {
+   "friendly_name": "Irrigation valve"
+  },
+  "last_changed": "2026-06-15T07:58:12.000000+00:00",
+  "last_updated": "2026-06-15T07:58:12.000000+00:00",
+  "context": {
+   "id": "01J0DEMO0000000000000023",
+   "parent_id": null,
+   "user_id": null
+  }
+ }
+]

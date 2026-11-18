@@ -1,0 +1,15 @@
+{
+  "secrets": {"url": "${fake}", "token": "demo-long-lived-access-token"},
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.homeassistant/tools/ha.sync", "body": {}},
+    {"method": "POST", "path": "/projects/${project}/entities", "body": {"kind": "server", "slug": "homeserver", "name": "Home server", "attrs": {"hostname": "homeserver.home.arpa", "ip": "192.0.2.10"}}},
+    {"method": "POST", "path": "/projects/${project}/edges", "body": {"from": "homeserver", "rel": "powered_by", "to": "ha-rack-plug-6a8c0e"}},
+    {"method": "POST", "path": "/projects/${project}/edges", "body": {"from": "homeserver", "rel": "located_in", "to": "ha-basement"}}
+  ],
+  "wait": {"path": "/projects/${project}/entities", "min": 21},
+  "shots": [
+    {"name": "restart", "path": "/p/${project}/e/homeserver", "caption": "A server with a restart through the Home Assistant plug it is powered by"},
+    {"name": "map", "path": "/p/${project}/graph/map", "caption": "Rooms and devices from Home Assistant on the knowledge graph map", "wait": 3000}
+  ]
+}

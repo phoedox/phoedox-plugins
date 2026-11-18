@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {"method": "POST", "path": "/api/template", "file": "devices.json"},
+    {"path": "/api/states", "file": "states.json"},
+    {"path": "/api/states/light.living_room_ceiling", "file": "states/light.living_room_ceiling.json"},
+    {"path": "/api/states/switch.media_plug", "file": "states/switch.media_plug.json"},
+    {"path": "/api/states/switch.coffee_machine", "file": "states/switch.coffee_machine.json"},
+    {"path": "/api/states/light.kitchen_spots", "file": "states/light.kitchen_spots.json"},
+    {"path": "/api/states/light.desk_lamp", "file": "states/light.desk_lamp.json"},
+    {"path": "/api/states/switch.rack_plug", "file": "states/switch.rack_plug.json"},
+    {"path": "/api/states/switch.wallbox_charging", "file": "states/switch.wallbox_charging.json"},
+    {"path": "/api/states/light.bedside_lamp", "file": "states/light.bedside_lamp.json"},
+    {"path": "/api/states/switch.irrigation_valve", "file": "states/switch.irrigation_valve.json"},
+    {"method": "POST", "path": "/api/services/*/*", "json": []}
+  ]
+}

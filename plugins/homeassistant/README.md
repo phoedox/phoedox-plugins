@@ -4,7 +4,7 @@
 
 Imports areas and devices from Home Assistant into the knowledge graph (rooms, devices, "located in"), shows switches on entries and switches devices, including a restart through the outlet a device is plugged into. Every 5 minutes it records measured values and switch states for the history on the entries. AI clients may only propose switching, unless the owner allows it per device.
 
-![Home Assistant in Phoedox](docs/screenshot.png)
+![A server with a restart through the Home Assistant plug it is powered by](screenshots/restart.webp)
 
 ## What it adds
 
