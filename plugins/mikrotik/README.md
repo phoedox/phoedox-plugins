@@ -2,6 +2,8 @@
 
 `com.phoedox.mikrotik` · version 0.1.0
 
+![The MikroTik router as an entry with board, RouterOS version and serial](screenshots/router.webp)
+
 Imports a MikroTik router running RouterOS v7 (identity, board and model, RouterOS version, serial number) into the knowledge graph through the REST API and gives AI clients its interfaces with addresses and the DHCP leases. Read-only.
 
 ## What it adds

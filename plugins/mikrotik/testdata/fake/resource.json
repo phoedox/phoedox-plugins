@@ -1,0 +1,19 @@
+{
+ "architecture-name": "arm64",
+ "board-name": "hAP ax^3",
+ "build-time": "2026-05-12 08:31:54",
+ "cpu": "ARM64",
+ "cpu-count": "4",
+ "cpu-frequency": "864",
+ "cpu-load": "3",
+ "factory-software": "7.5",
+ "free-hdd-space": "94683136",
+ "free-memory": "829743104",
+ "platform": "MikroTik",
+ "total-hdd-space": "134217728",
+ "total-memory": "1073741824",
+ "uptime": "2w3d4h12m51s",
+ "version": "7.19.2 (stable)",
+ "write-sect-since-reboot": "1820",
+ "write-sect-total": "402113"
+}

@@ -1,0 +1,10 @@
+{
+  "routes": [
+    {"path": "/rest/system/identity", "file": "identity.json"},
+    {"path": "/rest/system/resource", "file": "resource.json"},
+    {"path": "/rest/system/routerboard", "file": "routerboard.json"},
+    {"path": "/rest/interface", "file": "interface.json"},
+    {"path": "/rest/ip/address", "file": "address.json"},
+    {"path": "/rest/ip/dhcp-server/lease", "file": "leases.json"}
+  ]
+}

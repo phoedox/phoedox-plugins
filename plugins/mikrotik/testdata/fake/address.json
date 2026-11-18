@@ -1,0 +1,44 @@
+[
+ {
+  ".id": "*1",
+  "actual-interface": "bridge",
+  "address": "10.20.0.1/24",
+  "disabled": "false",
+  "dynamic": "false",
+  "interface": "bridge",
+  "invalid": "false",
+  "network": "10.20.0.0",
+  "comment": "Home LAN"
+ },
+ {
+  ".id": "*2",
+  "actual-interface": "vlan30-iot",
+  "address": "10.20.30.1/24",
+  "disabled": "false",
+  "dynamic": "false",
+  "interface": "vlan30-iot",
+  "invalid": "false",
+  "network": "10.20.30.0",
+  "comment": "IoT"
+ },
+ {
+  ".id": "*3",
+  "actual-interface": "wg-home",
+  "address": "10.20.99.1/24",
+  "disabled": "false",
+  "dynamic": "false",
+  "interface": "wg-home",
+  "invalid": "false",
+  "network": "10.20.99.0"
+ },
+ {
+  ".id": "*4",
+  "actual-interface": "ether1",
+  "address": "198.51.100.23/24",
+  "disabled": "false",
+  "dynamic": "true",
+  "interface": "ether1",
+  "invalid": "false",
+  "network": "198.51.100.0"
+ }
+]

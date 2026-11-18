@@ -1,0 +1,12 @@
+{
+  "secrets": {"url": "${fake}", "username": "phoedox-read", "password": "demo-password"},
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.mikrotik/tools/mikrotik.sync", "body": {}}
+  ],
+  "wait": {"ms": 12000},
+  "shots": [
+    {"name": "router", "path": "/p/${project}/e/mikrotik-demo-he0812a3b4c/edit", "caption": "The MikroTik router as an entry with board, RouterOS version and serial",
+     "actions": [{"fill": ["input[name=\"a.ip\"]", "10.20.0.1"]}, {"click": "button:has-text('Save')"}, {"wait": 1500}]}
+  ]
+}

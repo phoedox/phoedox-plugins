@@ -3,6 +3,8 @@ package main
 import (
 	"strings"
 	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 const (
@@ -133,5 +135,39 @@ func TestHTTPError(t *testing.T) {
 	}
 	if httpError(500).Error() != "MikroTik answered HTTP 500" {
 		t.Fatal(httpError(500))
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	get := func(p string) []byte {
+		body, err := fakeapi.Body("../testdata/fake", "GET", "/rest"+p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	sys, err := parseSystem(get("/system/identity"), get("/system/resource"), get("/system/routerboard"))
+	if err != nil || sys.Serial != "DEMO-HE0812A3B4C" || sys.Board != "hAP ax^3" {
+		t.Fatalf("%v %+v", err, sys)
+	}
+	addrs, err := parseAddresses(get("/ip/address"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	ifaces, err := parseInterfaces(get("/interface"), addrs)
+	if err != nil || len(ifaces) != 10 || len(ifaces[7].Addresses) != 1 {
+		t.Fatalf("%v %+v", err, ifaces)
+	}
+	ip := routerIP("https://router.home.arpa", addrs)
+	if ip != "10.20.0.1" {
+		t.Fatal(ip)
+	}
+	if ops := graphOps(sys, routerID(sys, ifaces), ip); ops.Ops[0].ID != "mikrotik-demo-he0812a3b4c" || ops.Ops[0].Attrs["ip"] != "10.20.0.1" {
+		t.Fatalf("ops: %+v", ops.Ops)
+	}
+	leases, err := parseLeases(get("/ip/dhcp-server/lease"))
+	if err != nil || len(leases) != 8 || leases[2].Status != "bound" {
+		t.Fatalf("%v %+v", err, leases)
 	}
 }
