@@ -1,0 +1,330 @@
+{
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "nas-01",
+        "slug": "nas-01",
+        "attrs": {
+          "hostname": "nas-01.home.arpa",
+          "ip": "10.20.0.10",
+          "os": "TrueNAS"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "pve-01",
+        "slug": "pve-01",
+        "attrs": {
+          "hostname": "pve-01.home.arpa",
+          "ip": "10.20.0.11",
+          "os": "Proxmox VE"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "vm",
+        "name": "Home Assistant",
+        "slug": "home-assistant",
+        "attrs": {
+          "vmid": 101,
+          "os": "Home Assistant OS",
+          "ip": "10.20.0.21"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "vm",
+        "name": "Nextcloud VM",
+        "slug": "nextcloud-vm",
+        "attrs": {
+          "vmid": 102,
+          "os": "Debian 13",
+          "ip": "10.20.0.22"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "service",
+        "name": "Nextcloud",
+        "slug": "nextcloud",
+        "attrs": {
+          "url": "https://cloud.home.arpa"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "router",
+        "name": "Router",
+        "slug": "router",
+        "attrs": {
+          "model": "OPNsense",
+          "ip": "10.20.0.1"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "control",
+        "name": "Nightly backups with an offsite copy",
+        "slug": "backup",
+        "attrs": {
+          "framework": "iso27001",
+          "ref": "A.8.13",
+          "title": "Nightly backups with an offsite copy",
+          "status": "implemented",
+          "owner": "Alex Doe",
+          "evidence": "Restore test log, May 2026",
+          "last_review": "2026-05-30"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "control",
+        "name": "Own accounts, no shared admin password",
+        "slug": "access",
+        "attrs": {
+          "framework": "iso27001",
+          "ref": "A.5.15",
+          "title": "Own accounts, no shared admin password",
+          "status": "implemented",
+          "owner": "Alex Doe",
+          "evidence": "Password manager vault 'Homelab'",
+          "last_review": "2026-04-02"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "control",
+        "name": "Two-factor sign-in for remote access",
+        "slug": "mfa",
+        "attrs": {
+          "framework": "iso27001",
+          "ref": "A.8.5",
+          "title": "Two-factor sign-in for remote access",
+          "status": "partial",
+          "owner": "Alex Doe",
+          "last_review": "2026-04-02"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "control",
+        "name": "Monthly updates of hosts and VMs",
+        "slug": "updates",
+        "attrs": {
+          "framework": "iso27001",
+          "ref": "A.8.8",
+          "title": "Monthly updates of hosts and VMs",
+          "status": "implemented",
+          "owner": "Alex Doe",
+          "evidence": "Update calendar",
+          "last_review": "2025-03-14"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "control",
+        "name": "Guest and IoT devices in their own VLANs",
+        "slug": "segmentation",
+        "attrs": {
+          "framework": "iso27001",
+          "ref": "A.8.22",
+          "title": "Guest and IoT devices in their own VLANs",
+          "status": "planned",
+          "owner": "Alex Doe"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "control",
+        "name": "Rack locked, garage alarmed",
+        "slug": "physical",
+        "attrs": {
+          "framework": "iso27001",
+          "ref": "A.7.2",
+          "title": "Rack locked, garage alarmed",
+          "status": "not_started",
+          "owner": "Jane Doe"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "control",
+        "name": "Secure development",
+        "slug": "dev",
+        "attrs": {
+          "framework": "iso27001",
+          "ref": "A.8.25",
+          "title": "Secure development",
+          "status": "not_applicable",
+          "owner": "Alex Doe",
+          "justification": "Nothing is developed in the household"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "backup",
+        "rel": "covers",
+        "to": "nas-01"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "backup",
+        "rel": "covers",
+        "to": "nextcloud-vm"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "backup",
+        "rel": "covers",
+        "to": "home-assistant"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "access",
+        "rel": "covers",
+        "to": "pve-01"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "access",
+        "rel": "covers",
+        "to": "nas-01"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "access",
+        "rel": "covers",
+        "to": "nextcloud"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "mfa",
+        "rel": "covers",
+        "to": "nextcloud"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "mfa",
+        "rel": "covers",
+        "to": "router"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "updates",
+        "rel": "covers",
+        "to": "pve-01"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "updates",
+        "rel": "covers",
+        "to": "nextcloud-vm"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "segmentation",
+        "rel": "covers",
+        "to": "router"
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 13
+  },
+  "shots": [
+    {
+      "name": "control",
+      "path": "/p/${project}/e/backup",
+      "caption": "A control with status and evidence, and the systems it covers"
+    },
+    {
+      "name": "controls",
+      "path": "/p/${project}/graph?kind=control",
+      "caption": "All controls of the ISMS as entries, with framework and reference"
+    }
+  ]
+}
