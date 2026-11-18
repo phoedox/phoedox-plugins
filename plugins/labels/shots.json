@@ -1,0 +1,134 @@
+{
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "room",
+        "name": "Garage office",
+        "slug": "garage-office"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "rack",
+        "name": "Homelab rack",
+        "slug": "homelab-rack",
+        "attrs": {
+          "height_units": 12,
+          "depth": 450
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "device",
+        "name": "nas-01",
+        "slug": "nas-01",
+        "attrs": {
+          "manufacturer": "Example Systems",
+          "model": "HomeStore 4",
+          "serial": "HS4-2291-0457",
+          "ip": "10.20.0.10",
+          "mac": "02:00:5e:10:20:0a",
+          "purchase_date": "2024-11-08",
+          "warranty_until": "2027-11-08"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "switch",
+        "name": "sw-garage",
+        "slug": "sw-garage",
+        "attrs": {
+          "ports": 16,
+          "managed": true,
+          "ip": "10.20.0.3"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "access_point",
+        "name": "ap-garage",
+        "slug": "ap-garage",
+        "attrs": {
+          "model": "AP Wall 6",
+          "ip": "10.20.0.5",
+          "poe": true
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "nas-01",
+        "rel": "mounted_in",
+        "to": "homelab-rack"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "homelab-rack",
+        "rel": "located_in",
+        "to": "garage-office"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "nas-01",
+        "rel": "depends_on",
+        "to": "sw-garage"
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 5
+  },
+  "shots": [
+    {
+      "name": "label",
+      "path": "/p/${project}/e/nas-01",
+      "caption": "A label with QR code and chosen fields, ready to print from the entry",
+      "actions": [
+        {
+          "click": "phx-labels button[aria-expanded]"
+        },
+        {
+          "wait": 400
+        },
+        {
+          "click": "phx-labels label:has-text('Model') input"
+        },
+        {
+          "wait": 600
+        }
+      ]
+    }
+  ]
+}
