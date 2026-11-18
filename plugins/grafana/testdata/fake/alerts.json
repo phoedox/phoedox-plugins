@@ -1,0 +1,64 @@
+{
+  "status": "success",
+  "data": {
+    "alerts": [
+      {
+        "labels": {
+          "alertname": "Disk almost full",
+          "grafana_folder": "Homelab",
+          "instance": "nas-01.home.arpa:9100",
+          "mountpoint": "/mnt/tank",
+          "severity": "warning"
+        },
+        "annotations": {
+          "summary": "/mnt/tank on nas-01 is 87% full"
+        },
+        "state": "Alerting",
+        "activeAt": "2026-06-12T08:00:00Z",
+        "value": "8.74e+01"
+      },
+      {
+        "labels": {
+          "alertname": "Host down",
+          "grafana_folder": "Homelab",
+          "instance": "10.20.0.21:9100",
+          "severity": "critical"
+        },
+        "annotations": {
+          "summary": "Home Assistant does not answer since 07:35"
+        },
+        "state": "Alerting",
+        "activeAt": "2026-06-15T07:35:00Z",
+        "value": "0e+00"
+      },
+      {
+        "labels": {
+          "alertname": "Freezer too warm",
+          "grafana_folder": "House",
+          "instance": "chest-freezer",
+          "severity": "critical"
+        },
+        "annotations": {
+          "summary": "Chest freezer at -12 °C for 20 minutes"
+        },
+        "state": "Alerting (NoData)",
+        "activeAt": "2026-06-15T07:10:00Z",
+        "value": "-1.2e+01"
+      },
+      {
+        "labels": {
+          "alertname": "High CPU",
+          "grafana_folder": "Homelab",
+          "instance": "pve-01.home.arpa:9100",
+          "severity": "warning"
+        },
+        "annotations": {
+          "summary": "CPU of pve-01 above 90%"
+        },
+        "state": "Pending",
+        "activeAt": "2026-06-15T07:58:00Z",
+        "value": "9.3e+01"
+      }
+    ]
+  }
+}

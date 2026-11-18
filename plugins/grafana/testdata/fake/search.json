@@ -1,0 +1,100 @@
+[
+  {
+    "id": 8,
+    "uid": "heating",
+    "orgId": 1,
+    "title": "Heating and temperatures",
+    "uri": "db/heating",
+    "url": "/d/heating/heating",
+    "slug": "",
+    "type": "dash-db",
+    "tags": [
+      "energy",
+      "rooms"
+    ],
+    "isStarred": false,
+    "folderId": 10,
+    "folderUid": "house",
+    "folderTitle": "House",
+    "folderUrl": "/dashboards/f/house/",
+    "sortMeta": 0
+  },
+  {
+    "id": 3,
+    "uid": "homelab-nodes",
+    "orgId": 1,
+    "title": "Homelab nodes",
+    "uri": "db/homelab-nodes",
+    "url": "/d/homelab-nodes/homelab-nodes",
+    "slug": "",
+    "type": "dash-db",
+    "tags": [
+      "homelab",
+      "node-exporter"
+    ],
+    "isStarred": true,
+    "folderId": 10,
+    "folderUid": "homelab",
+    "folderTitle": "Homelab",
+    "folderUrl": "/dashboards/f/homelab/",
+    "sortMeta": 0
+  },
+  {
+    "id": 9,
+    "uid": "internet",
+    "orgId": 1,
+    "title": "Internet connection",
+    "uri": "db/internet",
+    "url": "/d/internet/internet",
+    "slug": "",
+    "type": "dash-db",
+    "tags": [
+      "wan"
+    ],
+    "isStarred": false,
+    "folderId": 10,
+    "folderUid": "network",
+    "folderTitle": "Network",
+    "folderUrl": "/dashboards/f/network/",
+    "sortMeta": 0
+  },
+  {
+    "id": 5,
+    "uid": "nas-storage",
+    "orgId": 1,
+    "title": "NAS storage",
+    "uri": "db/nas-storage",
+    "url": "/d/nas-storage/nas-storage",
+    "slug": "",
+    "type": "dash-db",
+    "tags": [
+      "homelab",
+      "zfs"
+    ],
+    "isStarred": false,
+    "folderId": 10,
+    "folderUid": "homelab",
+    "folderTitle": "Homelab",
+    "folderUrl": "/dashboards/f/homelab/",
+    "sortMeta": 0
+  },
+  {
+    "id": 7,
+    "uid": "power-meter",
+    "orgId": 1,
+    "title": "Power and solar",
+    "uri": "db/power-meter",
+    "url": "/d/power-meter/power-meter",
+    "slug": "",
+    "type": "dash-db",
+    "tags": [
+      "energy"
+    ],
+    "isStarred": false,
+    "folderId": 10,
+    "folderUid": "house",
+    "folderTitle": "House",
+    "folderUrl": "/dashboards/f/house/",
+    "sortMeta": 0
+  }
+]

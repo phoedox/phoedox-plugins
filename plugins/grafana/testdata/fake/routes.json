@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "path": "/api/search",
+      "file": "search.json"
+    },
+    {
+      "path": "/api/prometheus/grafana/api/v1/alerts",
+      "file": "alerts.json"
+    }
+  ]
+}

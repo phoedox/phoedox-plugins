@@ -1,0 +1,116 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "token": "demo-grafana-service-account-token"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "nas-01",
+        "slug": "nas-01",
+        "attrs": {
+          "hostname": "nas-01.home.arpa",
+          "ip": "10.20.0.10",
+          "os": "TrueNAS"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "pve-01",
+        "slug": "pve-01",
+        "attrs": {
+          "hostname": "pve-01.home.arpa",
+          "ip": "10.20.0.11",
+          "os": "Proxmox VE"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "vm",
+        "name": "Home Assistant",
+        "slug": "home-assistant",
+        "attrs": {
+          "vmid": 101,
+          "os": "Home Assistant OS",
+          "ip": "10.20.0.21"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "router",
+        "name": "Router",
+        "slug": "router",
+        "attrs": {
+          "model": "OPNsense",
+          "ip": "10.20.0.1"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "appliance",
+        "name": "Chest freezer",
+        "slug": "chest-freezer",
+        "attrs": {
+          "power": 90,
+          "hours_per_day": 9
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.grafana/tools/grafana.alerts",
+      "body": {},
+      "as": "al"
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.grafana/tools/grafana.dashboards",
+      "body": {},
+      "as": "db"
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "grafana-alerts",
+        "title": "Grafana alerts and dashboards",
+        "category": "Homelab",
+        "markdown": "What an AI client gets from the Grafana plugin: the firing alerts (`grafana.alerts`), each with the Phoedox entry it belongs to, and the dashboards (`grafana.dashboards`).\n\n## Firing alerts\n\n| Severity | Alert | Summary | Entry |\n|---|---|---|---|\n| ${al.0.severity} | ${al.0.name} | ${al.0.summary} | @${al.0.entry.slug} |\n| ${al.1.severity} | ${al.1.name} | ${al.1.summary} | @${al.1.entry.slug} |\n| ${al.2.severity} | ${al.2.name} | ${al.2.summary} | @${al.2.entry.slug} |\n\n## Dashboards\n\n- [${db.0.title}](${db.0.url}) · ${db.0.folder}\n- [${db.1.title}](${db.1.url}) · ${db.1.folder}\n- [${db.2.title}](${db.2.url}) · ${db.2.folder}\n- [${db.3.title}](${db.3.url}) · ${db.3.folder}\n- [${db.4.title}](${db.4.url}) · ${db.4.folder}\n"
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "alerts",
+      "path": "/p/${project}/d/grafana-alerts",
+      "caption": "Grafana alerts as AI clients get them, each linked to its entry"
+    }
+  ]
+}

@@ -3,6 +3,9 @@
   "name": "Grafana",
   "icon": "chart-line",
   "category": "monitoring",
+  "screenshots": [
+    { "file": "screenshots/alerts.webp", "caption": "Grafana alerts as AI clients get them, each linked to its entry" }
+  ],
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Gives AI clients the dashboards of a Grafana instance (title, folder, link, tags; optionally filtered by a search text) and the firing Grafana-managed alerts with the Phoedox entry each alert belongs to (matched by its instance, host or hostname label). Read-only, no import. Settings: url (e.g. https://grafana.example.org, including a sub path if Grafana is served from one) and token (a service account token with the Viewer role). The plugin reads the knowledge graph only to find matching entries.",

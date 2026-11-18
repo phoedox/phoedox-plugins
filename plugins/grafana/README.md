@@ -2,6 +2,8 @@
 
 `com.phoedox.grafana` · version 0.1.0
 
+![Grafana alerts as AI clients get them, each linked to its entry](screenshots/alerts.webp)
+
 Gives AI clients the dashboards of a Grafana instance (title, folder, link, tags; optionally filtered by a search text) and the firing Grafana-managed alerts with the Phoedox entry each alert belongs to (matched by its instance, host or hostname label). Read-only, no import.
 
 ## What it adds
