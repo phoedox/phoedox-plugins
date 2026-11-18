@@ -1,0 +1,283 @@
+{
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "person",
+        "name": "Jane Doe",
+        "slug": "jane-doe",
+        "attrs": {
+          "email": "jane@example.org",
+          "role": "Freelance translator"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "nas-01",
+        "slug": "nas-01",
+        "attrs": {
+          "hostname": "nas-01.home.arpa",
+          "ip": "10.20.0.10",
+          "os": "TrueNAS"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "service",
+        "name": "Nextcloud",
+        "slug": "nextcloud",
+        "attrs": {
+          "url": "https://cloud.home.arpa"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "software",
+        "name": "Invoicing app",
+        "slug": "invoicing-app",
+        "attrs": {
+          "version": "4.2"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "service",
+        "name": "Website",
+        "slug": "website",
+        "attrs": {
+          "url": "https://translations.example.org"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "data_processor",
+        "name": "Example Mail Hosting",
+        "slug": "example-mail-hosting",
+        "attrs": {
+          "contact": "privacy@mail.example.org",
+          "contract_signed": "2025-03-02",
+          "country": "Germany",
+          "avv_url": "https://mail.example.org/dpa"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "data_processor",
+        "name": "Example Backup Cloud",
+        "slug": "example-backup-cloud",
+        "attrs": {
+          "contact": "dpo@backup.example.org",
+          "country": "Netherlands"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "processing_activity",
+        "name": "Customer invoicing",
+        "slug": "customer-invoicing",
+        "attrs": {
+          "purpose": "Invoices and payment reminders for translation customers",
+          "legal_basis": "contract",
+          "data_categories": "Name, address, VAT ID, bank details",
+          "data_subjects": "Customers",
+          "recipients": "Tax adviser",
+          "third_country_transfer": false,
+          "retention": "10 years after the end of the year of the invoice",
+          "toms": "Encrypted disks, nightly backups, two-factor sign-in",
+          "controller_contact": "Jane Doe, translations, 12 Maple Street, jane@example.org",
+          "last_review": "2026-03-12"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "processing_activity",
+        "name": "Translation orders",
+        "slug": "translation-orders",
+        "attrs": {
+          "purpose": "Receiving, translating and delivering customers' documents",
+          "legal_basis": "contract",
+          "data_categories": "Texts to translate, which may contain personal data",
+          "data_subjects": "Customers and people named in their documents",
+          "recipients": "None",
+          "third_country_transfer": false,
+          "retention": "6 months after delivery",
+          "toms": "Shared only through Nextcloud links with expiry",
+          "controller_contact": "Jane Doe, translations, 12 Maple Street, jane@example.org",
+          "last_review": "2026-03-12"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "processing_activity",
+        "name": "Newsletter",
+        "slug": "newsletter",
+        "attrs": {
+          "purpose": "Quarterly newsletter about language services",
+          "legal_basis": "consent",
+          "data_categories": "Email address, first name",
+          "data_subjects": "Subscribers",
+          "recipients": "Mail hosting provider",
+          "third_country_transfer": false,
+          "retention": "Until the subscription is cancelled",
+          "controller_contact": "Jane Doe, translations, 12 Maple Street, jane@example.org",
+          "last_review": "2025-02-01"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "processing_activity",
+        "name": "Website contact form",
+        "slug": "contact-form",
+        "attrs": {
+          "purpose": "Answering requests for quotes",
+          "legal_basis": "legitimate_interests",
+          "data_categories": "Name, email address, message",
+          "data_subjects": "Prospective customers",
+          "recipients": "None",
+          "third_country_transfer": false,
+          "controller_contact": "Jane Doe, translations, 12 Maple Street, jane@example.org",
+          "last_review": "2026-01-20"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "customer-invoicing",
+        "rel": "processed_by",
+        "to": "invoicing-app"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "customer-invoicing",
+        "rel": "processed_by",
+        "to": "nas-01"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "customer-invoicing",
+        "rel": "processed_by",
+        "to": "jane-doe"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "customer-invoicing",
+        "rel": "processor",
+        "to": "example-backup-cloud"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "translation-orders",
+        "rel": "processed_by",
+        "to": "nextcloud"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "translation-orders",
+        "rel": "processed_by",
+        "to": "nas-01"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "newsletter",
+        "rel": "processor",
+        "to": "example-mail-hosting"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "contact-form",
+        "rel": "processed_by",
+        "to": "website"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/edges",
+      "body": {
+        "from": "contact-form",
+        "rel": "processor",
+        "to": "example-mail-hosting"
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 11
+  },
+  "shots": [
+    {
+      "name": "activities",
+      "path": "/p/${project}/graph?kind=processing_activity",
+      "caption": "The record of processing activities as entries of the knowledge graph"
+    },
+    {
+      "name": "activity",
+      "path": "/p/${project}/e/customer-invoicing",
+      "caption": "One activity with its legal basis, retention, systems and processors"
+    }
+  ]
+}
