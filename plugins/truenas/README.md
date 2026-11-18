@@ -2,6 +2,8 @@
 
 `com.phoedox.truenas` · version 0.1.0
 
+![The TrueNAS system as server entry with version, model, serial and memory](screenshots/server.webp)
+
 Imports a TrueNAS system (hostname, TrueNAS version, model, serial number, memory) into the knowledge graph as a server through the REST API v2.0 and gives AI clients its ZFS pools (status, health, size, allocated and free space) and its SMB and NFS shares. Read-only. Works with TrueNAS SCALE / Community Edition and CORE as long as the REST API v2.0 is available.
 
 ## What it adds

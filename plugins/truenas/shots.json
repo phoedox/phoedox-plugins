@@ -1,0 +1,32 @@
+{
+  "hosts": [
+    "truenas.home.arpa"
+  ],
+  "secrets": {
+    "url": "https://truenas.home.arpa",
+    "apikey": "1-demoTrueNASApiKeyForScreenshotsOnly"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 1
+  },
+  "shots": [
+    {
+      "name": "server",
+      "path": "/p/${project}/e/truenas-demo-a1-30512",
+      "caption": "The TrueNAS system as server entry with version, model, serial and memory"
+    }
+  ]
+}
