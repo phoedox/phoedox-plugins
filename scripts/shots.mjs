@@ -64,7 +64,7 @@ async function waitFor(fn, timeout = 30000, what = "condition") {
 
 async function startServer(fetchMap = "") {
   const data = fs.mkdtempSync(path.join(tmp, "data-"));
-  const env = { ...process.env, PHOEDOX_PLUGINS_FETCH_MAP: fetchMap, PHOEDOX_DATA_DIR: data, PHOEDOX_LISTEN: `127.0.0.1:${port}`, PHOEDOX_PUBLIC_URL: base,
+  const env = { ...process.env, PHOEDOX_PLUGINS_FETCH_MAP: fetchMap, PHOEDOX_FAKE_NOW: clock.toISOString(), PHOEDOX_DATA_DIR: data, PHOEDOX_LISTEN: `127.0.0.1:${port}`, PHOEDOX_PUBLIC_URL: base,
     PHOEDOX_PLUGINS_ALLOW_UNSIGNED: "true", PHOEDOX_BACKUP_HOURS: "0", PHOEDOX_INSECURE_COOKIES: "true", PHOEDOX_DEFAULT_LOCALE: "en" };
   sh(path.join(bin, "phx"), ["admin", "create-user", "--email", admin.email, "--name", "Alex Doe", "--admin", "--password", admin.password], { env });
   const proc = spawn(path.join(bin, "phoedox"), [], { env, stdio: ["ignore", "ignore", "pipe"] });
@@ -198,14 +198,18 @@ async function run(browser, name) {
       const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
       let png;
       if (shot.selector) {
+        // The element with a margin, widened to 16:10, cut from the whole
+        // page (not only the visible part), then scaled into the frame.
         const el = page.locator(shot.selector).first();
         await el.scrollIntoViewIfNeeded();
-        const b = await el.boundingBox();
+        const b = await el.evaluate((n) => { const r = n.getBoundingClientRect(); return { x: r.x + scrollX, y: r.y + scrollY, width: r.width, height: r.height }; });
+        const doc = await page.evaluate(() => ({ w: document.documentElement.scrollWidth, h: document.documentElement.scrollHeight }));
         const m = 48;
         let w = b.width + 2 * m, h = b.height + 2 * m;
         if (w / h > W / H) h = (w * H) / W; else w = (h * W) / H;
-        const x = Math.max(0, b.x + b.width / 2 - w / 2), y = Math.max(0, b.y + b.height / 2 - h / 2);
-        png = await page.screenshot({ clip: { x, y, width: Math.min(w, W - x), height: Math.min(h, H - y) } });
+        w = Math.min(w, doc.w); h = Math.min(h, doc.h);
+        const x = Math.min(Math.max(0, b.x + b.width / 2 - w / 2), doc.w - w), y = Math.min(Math.max(0, b.y + b.height / 2 - h / 2), doc.h - h);
+        png = await page.screenshot({ fullPage: true, clip: { x, y, width: w, height: h } });
       } else png = await page.screenshot();
       const webp = await toWebP(browser, png, bg);
       if (webp.length > 2 << 20) throw new Error(`${name}/${shot.name}: larger than 2 MB`);
