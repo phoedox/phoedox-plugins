@@ -36,4 +36,9 @@ jobs:
       - name: Publish for review
         env:
           PHOEDOX_AUTHOR_KEY: ${{ secrets.PHOEDOX_AUTHOR_KEY }}
-        run: go run github.com/phoedox/phoedox-sdk/go/cmd/phx-plugin publish "${{ steps.pack.outputs.package }}"
+        # A logo was checked against the brand's rules (docs/branding/brands.md,
+        # ADR-0090) before it went into the manifest.
+        run: |
+          args=()
+          jq -e '.logo' "plugins/${{ steps.tag.outputs.name }}/phoedox-plugin.json" >/dev/null && args+=(-logo-rights)
+          go run github.com/phoedox/phoedox-sdk/go/cmd/phx-plugin publish "${{ steps.pack.outputs.package }}" "${args[@]}"
