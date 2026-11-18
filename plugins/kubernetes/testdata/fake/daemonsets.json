@@ -1,0 +1,93 @@
+{
+ "kind": "DaemonSetList",
+ "apiVersion": "apps/v1",
+ "metadata": {
+  "resourceVersion": "812400"
+ },
+ "items": [
+  {
+   "metadata": {
+    "name": "svclb-traefik",
+    "namespace": "kube-system",
+    "uid": "e0a5f7a4-1e7d-5575-bb81-c603be7f8b50",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "svclb-traefik"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "svclb-traefik"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "svclb-traefik"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "klipper-lb",
+        "image": "rancher/klipper-lb:v0.4.9"
+       }
+      ]
+     }
+    }
+   },
+   "status": {
+    "observedGeneration": 3,
+    "currentNumberScheduled": 3,
+    "desiredNumberScheduled": 3,
+    "numberAvailable": 3,
+    "numberReady": 3,
+    "updatedNumberScheduled": 3
+   }
+  },
+  {
+   "metadata": {
+    "name": "node-exporter",
+    "namespace": "monitoring",
+    "uid": "3c46bacd-392c-51ed-9a16-cf3a99e41c2b",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "node-exporter"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "node-exporter"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "node-exporter"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "node-exporter",
+        "image": "quay.io/prometheus/node-exporter:v1.8.2"
+       }
+      ]
+     }
+    }
+   },
+   "status": {
+    "observedGeneration": 3,
+    "currentNumberScheduled": 3,
+    "desiredNumberScheduled": 3,
+    "numberAvailable": 3,
+    "numberReady": 3,
+    "updatedNumberScheduled": 3
+   }
+  }
+ ]
+}

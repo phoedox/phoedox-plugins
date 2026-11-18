@@ -1,0 +1,9 @@
+{
+  "routes": [
+    { "path": "/api/v1/nodes", "file": "nodes.json" },
+    { "path": "/api/v1/namespaces", "file": "namespaces.json" },
+    { "path": "/apis/apps/v1/deployments", "file": "deployments.json" },
+    { "path": "/apis/apps/v1/statefulsets", "file": "statefulsets.json" },
+    { "path": "/apis/apps/v1/daemonsets", "file": "daemonsets.json" }
+  ]
+}

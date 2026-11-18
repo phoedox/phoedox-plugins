@@ -2,6 +2,8 @@
 
 `com.phoedox.kubernetes` · version 0.1.0
 
+![Namespaces and their workloads from the cluster on the knowledge graph map](screenshots/map.webp)
+
 Imports a Kubernetes cluster into the knowledge graph: nodes as servers (OS image, kubelet version, internal IP, CPU and memory), namespaces with workloads as stacks and Deployments, StatefulSets and DaemonSets as containers (first image, ready/desired replicas) that are part of their namespace. kube-system is skipped unless include_system is yes. AI clients can list pods and the warning events of the last hour. Read-only.
 
 ## What it adds

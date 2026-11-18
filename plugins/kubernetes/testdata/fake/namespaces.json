@@ -1,0 +1,153 @@
+{
+ "kind": "NamespaceList",
+ "apiVersion": "v1",
+ "metadata": {
+  "resourceVersion": "812400"
+ },
+ "items": [
+  {
+   "metadata": {
+    "name": "default",
+    "uid": "ba8f05ce-8d1d-5af5-9b99-efa7a9c76dcc",
+    "creationTimestamp": "2025-11-02T10:00:00Z",
+    "labels": {
+     "kubernetes.io/metadata.name": "default"
+    }
+   },
+   "spec": {
+    "finalizers": [
+     "kubernetes"
+    ]
+   },
+   "status": {
+    "phase": "Active"
+   }
+  },
+  {
+   "metadata": {
+    "name": "kube-system",
+    "uid": "406acb8a-0a7c-57d1-b430-10bce1d3d5d8",
+    "creationTimestamp": "2025-11-02T10:00:00Z",
+    "labels": {
+     "kubernetes.io/metadata.name": "kube-system"
+    }
+   },
+   "spec": {
+    "finalizers": [
+     "kubernetes"
+    ]
+   },
+   "status": {
+    "phase": "Active"
+   }
+  },
+  {
+   "metadata": {
+    "name": "kube-public",
+    "uid": "807b84ff-68f9-5f4c-9a2c-5a92c0f56656",
+    "creationTimestamp": "2025-11-02T10:00:00Z",
+    "labels": {
+     "kubernetes.io/metadata.name": "kube-public"
+    }
+   },
+   "spec": {
+    "finalizers": [
+     "kubernetes"
+    ]
+   },
+   "status": {
+    "phase": "Active"
+   }
+  },
+  {
+   "metadata": {
+    "name": "kube-node-lease",
+    "uid": "2052fd09-03ec-558e-82de-8e29d4c6b839",
+    "creationTimestamp": "2025-11-02T10:00:00Z",
+    "labels": {
+     "kubernetes.io/metadata.name": "kube-node-lease"
+    }
+   },
+   "spec": {
+    "finalizers": [
+     "kubernetes"
+    ]
+   },
+   "status": {
+    "phase": "Active"
+   }
+  },
+  {
+   "metadata": {
+    "name": "home",
+    "uid": "a3f4137c-8db5-5688-921b-fd399dc27c41",
+    "creationTimestamp": "2025-11-02T10:00:00Z",
+    "labels": {
+     "kubernetes.io/metadata.name": "home"
+    }
+   },
+   "spec": {
+    "finalizers": [
+     "kubernetes"
+    ]
+   },
+   "status": {
+    "phase": "Active"
+   }
+  },
+  {
+   "metadata": {
+    "name": "media",
+    "uid": "3b801772-8e6e-59c1-9de6-387cad736965",
+    "creationTimestamp": "2025-11-02T10:00:00Z",
+    "labels": {
+     "kubernetes.io/metadata.name": "media"
+    }
+   },
+   "spec": {
+    "finalizers": [
+     "kubernetes"
+    ]
+   },
+   "status": {
+    "phase": "Active"
+   }
+  },
+  {
+   "metadata": {
+    "name": "monitoring",
+    "uid": "4dd04374-f723-560f-9b5d-16564c989661",
+    "creationTimestamp": "2025-11-02T10:00:00Z",
+    "labels": {
+     "kubernetes.io/metadata.name": "monitoring"
+    }
+   },
+   "spec": {
+    "finalizers": [
+     "kubernetes"
+    ]
+   },
+   "status": {
+    "phase": "Active"
+   }
+  },
+  {
+   "metadata": {
+    "name": "maple-labs",
+    "uid": "33ebd32f-bc50-5101-8500-af40331b0e28",
+    "creationTimestamp": "2025-11-02T10:00:00Z",
+    "labels": {
+     "kubernetes.io/metadata.name": "maple-labs"
+    }
+   },
+   "spec": {
+    "finalizers": [
+     "kubernetes"
+    ]
+   },
+   "status": {
+    "phase": "Active"
+   }
+  }
+ ]
+}

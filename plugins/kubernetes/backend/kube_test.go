@@ -5,6 +5,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 	"github.com/phoedox/phoedox-plugins/internal/integ"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
@@ -88,7 +89,7 @@ func TestGraphOps(t *testing.T) {
 			t.Fatalf("op %d: %+v, want %+v", i, rest[i], w)
 		}
 	}
-	if s := rest[0]; s.Attrs["status"] != "active" || s.Attrs["namespace"] != "db" {
+	if s := rest[0]; s.Attrs["status"] != "running" || s.Attrs["phase"] != "active" || s.Attrs["namespace"] != "db" {
 		t.Fatalf("stack: %+v", s)
 	}
 	if l := rest[2]; l.Rel != "part_of" || l.From != rest[1].Ref || l.To != rest[0].Ref {
@@ -203,5 +204,45 @@ func TestApplyBatches(t *testing.T) {
 	}
 	if err := integ.ApplyBatches(ops, 500, func(*pdk.GraphOps) (map[string]string, error) { return nil, errors.New("denied") }); err == nil {
 		t.Fatal("error lost")
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	get := func(p string) []byte {
+		t.Helper()
+		body, err := fakeapi.Body("../testdata/fake", "GET", p+"?limit=500")
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	nodes, _, err := parseList[Node](get("/api/v1/nodes"))
+	if err != nil || len(nodes) != 3 {
+		t.Fatalf("nodes: %v %d", err, len(nodes))
+	}
+	namespaces, _, err := parseList[Namespace](get("/api/v1/namespaces"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	var workloads []Workload
+	for kind, p := range map[string]string{"Deployment": "/apis/apps/v1/deployments", "StatefulSet": "/apis/apps/v1/statefulsets", "DaemonSet": "/apis/apps/v1/daemonsets"} {
+		list, next, err := parseWorkloads(kind, get(p))
+		if err != nil || next != "" {
+			t.Fatalf("%s: %v %q", kind, err, next)
+		}
+		workloads = append(workloads, list...)
+	}
+	ops := graphOps("maple-k3s", nodes, namespaces, workloads, false).Ops
+	count := map[string]int{}
+	for _, o := range ops {
+		count[o.Kind+o.Op]++
+	}
+	// 3 nodes; home, maple-labs, media, monitoring; 10 workloads outside kube-system.
+	if count["serverupsert"] != 3 || count["stackupsert"] != 4 || count["containerupsert"] != 10 || count["link"] != 10 {
+		t.Fatalf("ops: %v", count)
+	}
+	if cp := ops[0]; cp.Attrs["roles"] != "control-plane, etcd, master" || cp.Attrs["ip"] != "10.20.1.21" || cp.Attrs["ram"] != 15.5 {
+		t.Fatalf("control plane: %+v", cp)
 	}
 }

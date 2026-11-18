@@ -1,0 +1,93 @@
+{
+ "kind": "StatefulSetList",
+ "apiVersion": "apps/v1",
+ "metadata": {
+  "resourceVersion": "812400"
+ },
+ "items": [
+  {
+   "metadata": {
+    "name": "prometheus",
+    "namespace": "monitoring",
+    "uid": "67c7f597-27d5-5924-8fd6-a5b429f6e3f7",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "prometheus"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "prometheus"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "prometheus"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "prometheus",
+        "image": "quay.io/prometheus/prometheus:v3.0.1"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  },
+  {
+   "metadata": {
+    "name": "postgres",
+    "namespace": "maple-labs",
+    "uid": "08805e8c-5e12-5fd2-8af9-b02e9678e880",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "postgres"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "postgres"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "postgres"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "postgres",
+        "image": "postgres:17.2"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  }
+ ]
+}

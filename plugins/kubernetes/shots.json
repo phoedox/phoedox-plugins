@@ -1,0 +1,46 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "token": "demo-service-account-token",
+    "cluster": "maple-k3s"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 17
+  },
+  "shots": [
+    {
+      "name": "map",
+      "path": "/p/${project}/graph/map",
+      "caption": "Namespaces and their workloads from the cluster on the knowledge graph map",
+      "wait": 3000
+    },
+    {
+      "name": "stack",
+      "path": "/p/${project}/e/k8s-maple-k3s-maple-labs",
+      "caption": "A namespace as stack with its Deployments and StatefulSets as containers"
+    },
+    {
+      "name": "entries",
+      "path": "/p/${project}/graph",
+      "caption": "Deployments, StatefulSets and DaemonSets as container entries with image",
+      "actions": [
+        {
+          "click": "text=Container"
+        }
+      ]
+    }
+  ]
+}

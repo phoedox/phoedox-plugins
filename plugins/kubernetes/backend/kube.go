@@ -260,7 +260,12 @@ func graphOps(cluster string, nodes []Node, namespaces []Namespace, workloads []
 	for _, ns := range names {
 		attrs := map[string]any{"cluster": cluster, "namespace": ns}
 		if p := phase[ns]; p != "" {
-			attrs["status"] = strings.ToLower(p)
+			// The stack kind knows only running and stopped; the phase
+			// itself (active, terminating) is kept as its own value.
+			attrs["phase"] = strings.ToLower(p)
+			if p == "Active" {
+				attrs["status"] = "running"
+			}
 		}
 		stack := ops.UpsertNamed("stack", base+"-"+integ.Slugify(ns), ns, attrs)
 		for _, w := range byNS[ns] {

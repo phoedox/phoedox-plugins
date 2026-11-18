@@ -1,0 +1,240 @@
+{
+ "kind": "NodeList",
+ "apiVersion": "v1",
+ "metadata": {
+  "resourceVersion": "812400"
+ },
+ "items": [
+  {
+   "metadata": {
+    "name": "k3s-1",
+    "uid": "9d3ef72e-1798-59d2-81ad-cf0a45c8b119",
+    "resourceVersion": "812345",
+    "creationTimestamp": "2025-11-02T09:14:00Z",
+    "labels": {
+     "kubernetes.io/arch": "amd64",
+     "kubernetes.io/hostname": "k3s-1",
+     "kubernetes.io/os": "linux",
+     "node.kubernetes.io/instance-type": "k3s",
+     "node-role.kubernetes.io/control-plane": "true",
+     "node-role.kubernetes.io/master": "true",
+     "node-role.kubernetes.io/etcd": "true"
+    }
+   },
+   "spec": {
+    "podCIDR": "10.42.1.0/24",
+    "providerID": "k3s://k3s-1"
+   },
+   "status": {
+    "capacity": {
+     "cpu": "4",
+     "ephemeral-storage": "244568380Ki",
+     "memory": "16303412Ki",
+     "pods": "110"
+    },
+    "allocatable": {
+     "cpu": "4",
+     "memory": "16303412Ki",
+     "pods": "110"
+    },
+    "conditions": [
+     {
+      "type": "MemoryPressure",
+      "status": "False",
+      "reason": "KubeletHasSufficientMemory"
+     },
+     {
+      "type": "DiskPressure",
+      "status": "False",
+      "reason": "KubeletHasNoDiskPressure"
+     },
+     {
+      "type": "PIDPressure",
+      "status": "False",
+      "reason": "KubeletHasSufficientPID"
+     },
+     {
+      "type": "Ready",
+      "status": "True",
+      "reason": "KubeletReady",
+      "message": "kubelet is posting ready status"
+     }
+    ],
+    "addresses": [
+     {
+      "type": "InternalIP",
+      "address": "10.20.1.21"
+     },
+     {
+      "type": "Hostname",
+      "address": "k3s-1.home.arpa"
+     }
+    ],
+    "nodeInfo": {
+     "machineID": "",
+     "systemUUID": "",
+     "bootID": "",
+     "kernelVersion": "6.8.0-49-generic",
+     "osImage": "Ubuntu 24.04.1 LTS",
+     "containerRuntimeVersion": "containerd://1.7.23-k3s2",
+     "kubeletVersion": "v1.31.4+k3s1",
+     "kubeProxyVersion": "v1.31.4+k3s1",
+     "operatingSystem": "linux",
+     "architecture": "amd64"
+    }
+   }
+  },
+  {
+   "metadata": {
+    "name": "k3s-2",
+    "uid": "2be92195-0816-5396-b15b-aee6800983d4",
+    "resourceVersion": "812345",
+    "creationTimestamp": "2025-11-02T09:31:00Z",
+    "labels": {
+     "kubernetes.io/arch": "amd64",
+     "kubernetes.io/hostname": "k3s-2",
+     "kubernetes.io/os": "linux",
+     "node.kubernetes.io/instance-type": "k3s"
+    }
+   },
+   "spec": {
+    "podCIDR": "10.42.2.0/24",
+    "providerID": "k3s://k3s-2"
+   },
+   "status": {
+    "capacity": {
+     "cpu": "4",
+     "ephemeral-storage": "244568380Ki",
+     "memory": "16303412Ki",
+     "pods": "110"
+    },
+    "allocatable": {
+     "cpu": "4",
+     "memory": "16303412Ki",
+     "pods": "110"
+    },
+    "conditions": [
+     {
+      "type": "MemoryPressure",
+      "status": "False",
+      "reason": "KubeletHasSufficientMemory"
+     },
+     {
+      "type": "DiskPressure",
+      "status": "False",
+      "reason": "KubeletHasNoDiskPressure"
+     },
+     {
+      "type": "PIDPressure",
+      "status": "False",
+      "reason": "KubeletHasSufficientPID"
+     },
+     {
+      "type": "Ready",
+      "status": "True",
+      "reason": "KubeletReady",
+      "message": "kubelet is posting ready status"
+     }
+    ],
+    "addresses": [
+     {
+      "type": "InternalIP",
+      "address": "10.20.1.22"
+     },
+     {
+      "type": "Hostname",
+      "address": "k3s-2.home.arpa"
+     }
+    ],
+    "nodeInfo": {
+     "machineID": "",
+     "systemUUID": "",
+     "bootID": "",
+     "kernelVersion": "6.8.0-49-generic",
+     "osImage": "Ubuntu 24.04.1 LTS",
+     "containerRuntimeVersion": "containerd://1.7.23-k3s2",
+     "kubeletVersion": "v1.31.4+k3s1",
+     "kubeProxyVersion": "v1.31.4+k3s1",
+     "operatingSystem": "linux",
+     "architecture": "amd64"
+    }
+   }
+  },
+  {
+   "metadata": {
+    "name": "k3s-3",
+    "uid": "976c1a19-e6c3-5ed2-98ad-6e21686e91ef",
+    "resourceVersion": "812345",
+    "creationTimestamp": "2026-02-21T15:02:00Z",
+    "labels": {
+     "kubernetes.io/arch": "amd64",
+     "kubernetes.io/hostname": "k3s-3",
+     "kubernetes.io/os": "linux",
+     "node.kubernetes.io/instance-type": "k3s"
+    }
+   },
+   "spec": {
+    "podCIDR": "10.42.3.0/24",
+    "providerID": "k3s://k3s-3"
+   },
+   "status": {
+    "capacity": {
+     "cpu": "8",
+     "ephemeral-storage": "244568380Ki",
+     "memory": "32601144Ki",
+     "pods": "110"
+    },
+    "allocatable": {
+     "cpu": "8",
+     "memory": "32601144Ki",
+     "pods": "110"
+    },
+    "conditions": [
+     {
+      "type": "MemoryPressure",
+      "status": "False",
+      "reason": "KubeletHasSufficientMemory"
+     },
+     {
+      "type": "DiskPressure",
+      "status": "False",
+      "reason": "KubeletHasNoDiskPressure"
+     },
+     {
+      "type": "PIDPressure",
+      "status": "False",
+      "reason": "KubeletHasSufficientPID"
+     },
+     {
+      "type": "Ready",
+      "status": "True",
+      "reason": "KubeletReady",
+      "message": "kubelet is posting ready status"
+     }
+    ],
+    "addresses": [
+     {
+      "type": "InternalIP",
+      "address": "10.20.1.23"
+     },
+     {
+      "type": "Hostname",
+      "address": "k3s-3.home.arpa"
+     }
+    ],
+    "nodeInfo": {
+     "machineID": "",
+     "systemUUID": "",
+     "bootID": "",
+     "kernelVersion": "6.8.0-49-generic",
+     "osImage": "Ubuntu 24.04.1 LTS",
+     "containerRuntimeVersion": "containerd://1.7.23-k3s2",
+     "kubeletVersion": "v1.31.4+k3s1",
+     "kubeProxyVersion": "v1.31.4+k3s1",
+     "operatingSystem": "linux",
+     "architecture": "amd64"
+    }
+   }
+  }
+ ]
+}

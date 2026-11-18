@@ -1,0 +1,391 @@
+{
+ "kind": "DeploymentList",
+ "apiVersion": "apps/v1",
+ "metadata": {
+  "resourceVersion": "812400"
+ },
+ "items": [
+  {
+   "metadata": {
+    "name": "coredns",
+    "namespace": "kube-system",
+    "uid": "85aaa5d7-91e9-590b-b71a-c34f0aa15e9f",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "coredns"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "coredns"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "coredns"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "mirrored-coredns-coredns",
+        "image": "rancher/mirrored-coredns-coredns:1.11.3"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  },
+  {
+   "metadata": {
+    "name": "traefik",
+    "namespace": "kube-system",
+    "uid": "5ed7ff13-695a-53bf-a95d-9a6ad3309057",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "traefik"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "traefik"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "traefik"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "mirrored-library-traefik",
+        "image": "rancher/mirrored-library-traefik:3.1.6"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  },
+  {
+   "metadata": {
+    "name": "home-assistant",
+    "namespace": "home",
+    "uid": "7f08fc07-852b-52ff-9162-5bd6091d7f3a",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "home-assistant"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "home-assistant"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "home-assistant"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "home-assistant",
+        "image": "ghcr.io/home-assistant/home-assistant:2026.6.1"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  },
+  {
+   "metadata": {
+    "name": "mosquitto",
+    "namespace": "home",
+    "uid": "d01a0548-e8fc-54ae-98ed-01fa29770a45",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "mosquitto"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "mosquitto"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "mosquitto"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "eclipse-mosquitto",
+        "image": "eclipse-mosquitto:2.0.20"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  },
+  {
+   "metadata": {
+    "name": "jellyfin",
+    "namespace": "media",
+    "uid": "fd8497b4-4116-5e1c-a163-a001353825c6",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "jellyfin"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "jellyfin"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "jellyfin"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "jellyfin",
+        "image": "jellyfin/jellyfin:10.10.3"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  },
+  {
+   "metadata": {
+    "name": "audiobookshelf",
+    "namespace": "media",
+    "uid": "bebea678-2b01-5cdc-95d9-48e7f84c28b5",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "audiobookshelf"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "audiobookshelf"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "audiobookshelf"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "audiobookshelf",
+        "image": "ghcr.io/advplyr/audiobookshelf:2.17.5"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  },
+  {
+   "metadata": {
+    "name": "grafana",
+    "namespace": "monitoring",
+    "uid": "f9a1f7e8-fe68-52f8-a5b3-158f6cf02a54",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "grafana"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "grafana"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "grafana"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "grafana",
+        "image": "grafana/grafana:11.4.0"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  },
+  {
+   "metadata": {
+    "name": "shop",
+    "namespace": "maple-labs",
+    "uid": "d4959a38-8d24-5466-a814-e2b6b35d7d65",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "shop"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "shop"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "shop"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "shop",
+        "image": "ghcr.io/maple-labs/shop:1.8.2"
+       },
+       {
+        "name": "nginx",
+        "image": "nginx:1.27-alpine"
+       }
+      ]
+     }
+    },
+    "replicas": 2
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 2,
+    "readyReplicas": 2,
+    "availableReplicas": 2,
+    "updatedReplicas": 2
+   }
+  },
+  {
+   "metadata": {
+    "name": "worker",
+    "namespace": "maple-labs",
+    "uid": "6659c978-2df1-51e4-9c67-dd90cd74f614",
+    "generation": 3,
+    "creationTimestamp": "2026-01-10T18:00:00Z",
+    "labels": {
+     "app.kubernetes.io/name": "worker"
+    }
+   },
+   "spec": {
+    "selector": {
+     "matchLabels": {
+      "app.kubernetes.io/name": "worker"
+     }
+    },
+    "template": {
+     "metadata": {
+      "labels": {
+       "app.kubernetes.io/name": "worker"
+      }
+     },
+     "spec": {
+      "containers": [
+       {
+        "name": "worker",
+        "image": "ghcr.io/maple-labs/worker:1.8.2"
+       }
+      ]
+     }
+    },
+    "replicas": 1
+   },
+   "status": {
+    "observedGeneration": 3,
+    "replicas": 1,
+    "readyReplicas": 1,
+    "availableReplicas": 1,
+    "updatedReplicas": 1
+   }
+  }
+ ]
+}
