@@ -1,0 +1,69 @@
+{
+  "setup": [
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "wifi-and-network",
+        "title": "Wi-Fi and network",
+        "category": "Network",
+        "markdown": "Main network 10.20.0.0/24, guest Wi-Fi on its own VLAN."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "heating",
+        "title": "Heating and hot water",
+        "category": "House",
+        "markdown": "Gas boiler in the basement, serviced every October."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "emergency-contacts",
+        "title": "Emergency contacts",
+        "category": "House",
+        "markdown": "Water, power and gas shut-offs are in the basement next to the stairs."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "house-quiz",
+        "title": "House quiz",
+        "category": "Family",
+        "markdown": "A small quiz for the family and the babysitter. Answers are kept per reader; \"Again\" starts over.\n\n```quiz\ntitle: Do you know our home network?\n? Which address does the router have?\n- 192.168.1.1\n+ 10.20.0.1\n- 10.0.0.1\n> Since the rebuild in March the home network is 10.20.0.0/24.\n\n? Where is the main water shut-off?\n- Under the kitchen sink\n+ In the basement, next to the stairs\n- In the garage\n> The valve turns clockwise to close.\n\n? What is the guest Wi-Fi called?\n= Maple Guests\n> The password is on the fridge, not here.\n```"
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "quiz",
+      "path": "/p/${project}/d/house-quiz",
+      "caption": "Questions with an explanation after answering, scored per reader",
+      "actions": [
+        {
+          "click": "phx-quiz button.opt:has-text('10.20.0.1')"
+        },
+        {
+          "wait": 300
+        },
+        {
+          "click": "phx-quiz button.opt:has-text('Under the kitchen sink')"
+        },
+        {
+          "wait": 600
+        }
+      ]
+    }
+  ]
+}

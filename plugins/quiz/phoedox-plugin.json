@@ -3,6 +3,9 @@
   "name": "Quiz",
   "icon": "graduation-cap",
   "category": "blocks",
+  "screenshots": [
+    { "file": "screenshots/quiz.webp", "caption": "Questions with an explanation after answering, scored per reader" }
+  ],
   "version": "1.0.0",
   "hostApi": "1",
   "description": "A ```quiz block for pages: questions with right and wrong answers (\"? question\", \"+ right\", \"- wrong\") or flashcards to turn over (\"= answer\"), with an explanation after answering (\"> …\"). Every reader's answers and score are their own and kept per reader; \"Again\" starts over.",

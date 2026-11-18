@@ -4,7 +4,7 @@
 
 A ```quiz block for pages: questions with right and wrong answers ("? question", "+ right", "- wrong") or flashcards to turn over ("= answer"), with an explanation after answering ("> …"). Every reader's answers and score are their own and kept per reader; "Again" starts over.
 
-![Quiz in Phoedox](docs/screenshot.png)
+![Questions with an explanation after answering, scored per reader](screenshots/quiz.webp)
 
 ## What it adds
 
