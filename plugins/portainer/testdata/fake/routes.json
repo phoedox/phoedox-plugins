@@ -1,0 +1,22 @@
+{
+  "routes": [
+    {
+      "path": "/api/endpoints",
+      "file": "endpoints.json"
+    },
+    {
+      "path": "/api/endpoints/1/docker/containers/json",
+      "query": "all=1",
+      "file": "containers-1.json"
+    },
+    {
+      "path": "/api/endpoints/2/docker/containers/json",
+      "query": "all=1",
+      "file": "containers-2.json"
+    },
+    {
+      "path": "/api/stacks",
+      "file": "stacks.json"
+    }
+  ]
+}

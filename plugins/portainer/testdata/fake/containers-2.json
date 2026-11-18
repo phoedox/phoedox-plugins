@@ -1,0 +1,99 @@
+[
+ {
+  "Id": "f2fb9a5d28756a262ca15d4b545253bcc21f4c837ba78ebd3662dd54b5a9ae58",
+  "Names": [
+   "/maple-labs-caddy-1"
+  ],
+  "Image": "caddy:2.9",
+  "ImageID": "sha256:9178bb6c5a6055f2f6c3bd89e724ff80425bed4460b564396e312593664f2e4f",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [
+   {
+    "IP": "0.0.0.0",
+    "PrivatePort": 80,
+    "PublicPort": 80,
+    "Type": "tcp"
+   },
+   {
+    "IP": "::",
+    "PrivatePort": 80,
+    "PublicPort": 80,
+    "Type": "tcp"
+   },
+   {
+    "IP": "0.0.0.0",
+    "PrivatePort": 443,
+    "PublicPort": 443,
+    "Type": "tcp"
+   },
+   {
+    "IP": "::",
+    "PrivatePort": 443,
+    "PublicPort": 443,
+    "Type": "tcp"
+   }
+  ],
+  "Labels": {
+   "com.docker.compose.project": "maple-labs",
+   "com.docker.compose.service": "caddy",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/maple-labs"
+  },
+  "State": "running",
+  "Status": "Up 12 days",
+  "HostConfig": {
+   "NetworkMode": "maple-labs_default"
+  },
+  "Mounts": []
+ },
+ {
+  "Id": "54de33601477a96a39e4eb5befba995072909be0ad35e8f9405e72b1e24b7a93",
+  "Names": [
+   "/maple-labs-shop-1"
+  ],
+  "Image": "ghcr.io/maple-labs/shop:1.8.2",
+  "ImageID": "sha256:72eb972571ac908d040b7f7db7722cdde87c912b9c3fbdf89cfd85aadff2db2a",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [],
+  "Labels": {
+   "com.docker.compose.project": "maple-labs",
+   "com.docker.compose.service": "shop",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/maple-labs"
+  },
+  "State": "running",
+  "Status": "Up 12 days (healthy)",
+  "HostConfig": {
+   "NetworkMode": "maple-labs_default"
+  },
+  "Mounts": []
+ },
+ {
+  "Id": "5f86bde34ad30ee2168bd7e4c9747943a95410889c3e4581c86ca7e6c6edead9",
+  "Names": [
+   "/maple-labs-db-1"
+  ],
+  "Image": "postgres:17.2",
+  "ImageID": "sha256:8a5cd2f1cde436367672805816e31020ddde1a5d5b6922ef67bd850311890233",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [],
+  "Labels": {
+   "com.docker.compose.project": "maple-labs",
+   "com.docker.compose.service": "db",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/maple-labs"
+  },
+  "State": "running",
+  "Status": "Up 12 days",
+  "HostConfig": {
+   "NetworkMode": "maple-labs_default"
+  },
+  "Mounts": []
+ }
+]

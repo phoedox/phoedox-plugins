@@ -1,0 +1,60 @@
+[
+ {
+  "Id": 1,
+  "Name": "docker-01",
+  "Type": 2,
+  "URL": "tcp://docker-01.home.arpa:9001",
+  "GroupId": 1,
+  "PublicURL": "docker-01.home.arpa",
+  "Status": 1,
+  "TagIds": [],
+  "EdgeID": "",
+  "Snapshots": [
+   {
+    "Time": 1781510000,
+    "DockerVersion": "27.4.1",
+    "Swarm": false,
+    "TotalCPU": 8,
+    "TotalMemory": 33498435584,
+    "RunningContainerCount": 8,
+    "StoppedContainerCount": 1,
+    "StackCount": 3
+   }
+  ]
+ },
+ {
+  "Id": 2,
+  "Name": "shop-vps",
+  "Type": 2,
+  "URL": "tcp://198.51.100.40:9001",
+  "GroupId": 1,
+  "PublicURL": "shop.example.org",
+  "Status": 1,
+  "TagIds": [],
+  "EdgeID": "",
+  "Snapshots": [
+   {
+    "Time": 1781510000,
+    "DockerVersion": "27.4.1",
+    "Swarm": false,
+    "TotalCPU": 2,
+    "TotalMemory": 4102029312,
+    "RunningContainerCount": 3,
+    "StoppedContainerCount": 0,
+    "StackCount": 1
+   }
+  ]
+ },
+ {
+  "Id": 3,
+  "Name": "maple-k3s",
+  "Type": 5,
+  "URL": "https://10.20.1.21:6443",
+  "GroupId": 1,
+  "PublicURL": "",
+  "Status": 1,
+  "TagIds": [],
+  "EdgeID": "",
+  "Snapshots": []
+ }
+]

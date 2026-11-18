@@ -1,0 +1,45 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "token": "ptr_demo0000000000000000000000000000000000000"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 17
+  },
+  "shots": [
+    {
+      "name": "host",
+      "path": "/p/${project}/e/portainer-docker-01",
+      "caption": "A Docker host with its Compose stacks, their containers and their state"
+    },
+    {
+      "name": "map",
+      "path": "/p/${project}/graph/map",
+      "caption": "Containers on the map, linked to their Docker host and Compose stack",
+      "wait": 3000
+    },
+    {
+      "name": "entries",
+      "path": "/p/${project}/graph",
+      "caption": "Containers from Portainer as entries with image and published ports",
+      "actions": [
+        {
+          "click": "text=Container"
+        }
+      ]
+    }
+  ]
+}

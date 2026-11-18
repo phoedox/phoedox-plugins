@@ -3,6 +3,11 @@
   "name": "Portainer",
   "icon": "container",
   "category": "servers",
+  "screenshots": [
+    { "file": "screenshots/host.webp", "caption": "A Docker host with its Compose stacks, their containers and their state" },
+    { "file": "screenshots/map.webp", "caption": "Containers on the map, linked to their Docker host and Compose stack" },
+    { "file": "screenshots/entries.webp", "caption": "Containers from Portainer as entries with image and published ports" }
+  ],
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports Docker environments, stacks and containers from Portainer into the knowledge graph (server, stack, container, \"runs on\", \"part of\") and shows AI clients their state. Settings: url (e.g. https://portainer.example.org:9443) and token (Portainer access token; a read-only user is enough).",

@@ -1,0 +1,227 @@
+[
+ {
+  "Id": "57fd2a19a162c8c0c47801f4511991ccca4ef01453fcc045512f8eafb05584ea",
+  "Names": [
+   "/paperless-webserver-1"
+  ],
+  "Image": "ghcr.io/paperless-ngx/paperless-ngx:2.13.5",
+  "ImageID": "sha256:8ce7955a1044e2cd8e49899e48eddf5b17895fee56a01440d8721af999ab9862",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [
+   {
+    "IP": "0.0.0.0",
+    "PrivatePort": 8000,
+    "PublicPort": 8010,
+    "Type": "tcp"
+   },
+   {
+    "IP": "::",
+    "PrivatePort": 8000,
+    "PublicPort": 8010,
+    "Type": "tcp"
+   }
+  ],
+  "Labels": {
+   "com.docker.compose.project": "paperless",
+   "com.docker.compose.service": "webserver",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/paperless"
+  },
+  "State": "running",
+  "Status": "Up 6 days (healthy)",
+  "HostConfig": {
+   "NetworkMode": "paperless_default"
+  },
+  "Mounts": []
+ },
+ {
+  "Id": "47f78313c22f704cbb5414e046d57dcf83da6016ed993cb56b75cefae10c341d",
+  "Names": [
+   "/paperless-broker-1"
+  ],
+  "Image": "docker.io/library/redis:7",
+  "ImageID": "sha256:a0ed741ac6ba1c5759e6d93b088e5e315e089f8a2a6a17a0c16f6456ff434700",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [],
+  "Labels": {
+   "com.docker.compose.project": "paperless",
+   "com.docker.compose.service": "broker",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/paperless"
+  },
+  "State": "running",
+  "Status": "Up 6 days",
+  "HostConfig": {
+   "NetworkMode": "paperless_default"
+  },
+  "Mounts": []
+ },
+ {
+  "Id": "8d51ac6eca31df407981c18c44b8867f4d7c9e70dda9a8924352bc5b2985b22c",
+  "Names": [
+   "/paperless-db-1"
+  ],
+  "Image": "docker.io/library/postgres:16",
+  "ImageID": "sha256:87fb687776069f58fae791d3204c99d7d93fc59c5e9217241dc420719264a667",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [],
+  "Labels": {
+   "com.docker.compose.project": "paperless",
+   "com.docker.compose.service": "db",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/paperless"
+  },
+  "State": "running",
+  "Status": "Up 6 days",
+  "HostConfig": {
+   "NetworkMode": "paperless_default"
+  },
+  "Mounts": []
+ },
+ {
+  "Id": "568a110ab28123537de3253241dcc8618ae844da762576b4e40119c39cf618a9",
+  "Names": [
+   "/immich_server"
+  ],
+  "Image": "ghcr.io/immich-app/immich-server:v1.123.0",
+  "ImageID": "sha256:719b54c42fc49fe72c5eab21bbe692c7e7971b93993a56f166bc18fa4a9a9aa2",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [
+   {
+    "IP": "0.0.0.0",
+    "PrivatePort": 2283,
+    "PublicPort": 2283,
+    "Type": "tcp"
+   },
+   {
+    "IP": "::",
+    "PrivatePort": 2283,
+    "PublicPort": 2283,
+    "Type": "tcp"
+   }
+  ],
+  "Labels": {
+   "com.docker.compose.project": "immich",
+   "com.docker.compose.service": "immich-server",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/immich"
+  },
+  "State": "running",
+  "Status": "Up 2 days (healthy)",
+  "HostConfig": {
+   "NetworkMode": "immich_default"
+  },
+  "Mounts": []
+ },
+ {
+  "Id": "a447f977cef835f03b5798cb8c42342e3e6a1498c659b12e21a1f5bcfa97e15b",
+  "Names": [
+   "/immich_machine_learning"
+  ],
+  "Image": "ghcr.io/immich-app/immich-machine-learning:v1.123.0",
+  "ImageID": "sha256:f4662922cddf53c731f0b4150c9f931328c9a868e1bf1b95dad108e91c28581b",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [],
+  "Labels": {
+   "com.docker.compose.project": "immich",
+   "com.docker.compose.service": "immich-machine-learning",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/immich"
+  },
+  "State": "running",
+  "Status": "Up 2 days (healthy)",
+  "HostConfig": {
+   "NetworkMode": "immich_default"
+  },
+  "Mounts": []
+ },
+ {
+  "Id": "0a949f0045b4bfbd0855615fb3e6e075661775ebb0a60938cf5e0a6f10967a16",
+  "Names": [
+   "/immich_postgres"
+  ],
+  "Image": "docker.io/tensorchord/pgvecto-rs:pg14-v0.2.0",
+  "ImageID": "sha256:fabb8ee79803fc795d96a2036942cca209e34b0c62d2374739376e0d1aff442c",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [],
+  "Labels": {
+   "com.docker.compose.project": "immich",
+   "com.docker.compose.service": "database",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/immich"
+  },
+  "State": "running",
+  "Status": "Up 2 days (healthy)",
+  "HostConfig": {
+   "NetworkMode": "immich_default"
+  },
+  "Mounts": []
+ },
+ {
+  "Id": "4fed4a8c17c573669cc4461745b7e8626075d75f84629decf2c8736ad5ed9782",
+  "Names": [
+   "/uptime-kuma"
+  ],
+  "Image": "louislam/uptime-kuma:1.23.16",
+  "ImageID": "sha256:c30bd15f37adb19205769e6ebeeb85e35c14eab5862a30cacddd03e6004e409a",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [
+   {
+    "IP": "0.0.0.0",
+    "PrivatePort": 3001,
+    "PublicPort": 3001,
+    "Type": "tcp"
+   },
+   {
+    "IP": "::",
+    "PrivatePort": 3001,
+    "PublicPort": 3001,
+    "Type": "tcp"
+   }
+  ],
+  "Labels": {},
+  "State": "running",
+  "Status": "Up 6 days (healthy)",
+  "HostConfig": {
+   "NetworkMode": "bridge"
+  },
+  "Mounts": []
+ },
+ {
+  "Id": "836fdca745de5a3ba6eed91f7f29da3c1ade819b72571872c187ce03658c46b8",
+  "Names": [
+   "/photoprism-photoprism-1"
+  ],
+  "Image": "photoprism/photoprism:240915",
+  "ImageID": "sha256:43ea7c4d3a8938c6e865229b67ca101224725b05dc5f750793dc03b7bade6f7e",
+  "Command": "/init",
+  "Created": 1779000000,
+  "Ports": [],
+  "Labels": {
+   "com.docker.compose.project": "photoprism",
+   "com.docker.compose.service": "photoprism",
+   "com.docker.compose.oneoff": "False",
+   "com.docker.compose.version": "2.32.1",
+   "com.docker.compose.project.working_dir": "/data/compose/photoprism"
+  },
+  "State": "exited",
+  "Status": "Exited (0) 3 weeks ago",
+  "HostConfig": {
+   "NetworkMode": "photoprism_default"
+  },
+  "Mounts": []
+ }
+]

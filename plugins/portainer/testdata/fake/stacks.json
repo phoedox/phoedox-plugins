@@ -1,0 +1,46 @@
+[
+ {
+  "Id": 1,
+  "Name": "paperless",
+  "Type": 2,
+  "EndpointId": 1,
+  "EntryPoint": "docker-compose.yml",
+  "Status": 1,
+  "ProjectPath": "/data/compose/1",
+  "CreatedBy": "alex",
+  "CreationDate": 1770000000
+ },
+ {
+  "Id": 2,
+  "Name": "immich",
+  "Type": 2,
+  "EndpointId": 1,
+  "EntryPoint": "docker-compose.yml",
+  "Status": 1,
+  "ProjectPath": "/data/compose/2",
+  "CreatedBy": "alex",
+  "CreationDate": 1772000000
+ },
+ {
+  "Id": 3,
+  "Name": "photoprism",
+  "Type": 2,
+  "EndpointId": 1,
+  "EntryPoint": "docker-compose.yml",
+  "Status": 2,
+  "ProjectPath": "/data/compose/3",
+  "CreatedBy": "alex",
+  "CreationDate": 1760000000
+ },
+ {
+  "Id": 4,
+  "Name": "maple-labs",
+  "Type": 2,
+  "EndpointId": 2,
+  "EntryPoint": "compose.yaml",
+  "Status": 1,
+  "ProjectPath": "/data/compose/4",
+  "CreatedBy": "alex",
+  "CreationDate": 1774000000
+ }
+]

@@ -77,8 +77,8 @@ type Stack struct {
 	Status     int    `json:"Status"` // 1 active, 2 inactive
 }
 
-// graphOps: environments become servers, stacks stacks, containers run on
-// their server and are part of their stack.
+// graphOps: environments become servers, stacks stacks that run on their
+// server, containers run on their server and are part of their stack.
 func graphOps(endpoints []Endpoint, containers map[int][]Container, stacks []Stack) pdk.GraphOps {
 	var ops pdk.GraphOps
 	servers := map[int]string{}
@@ -101,6 +101,9 @@ func graphOps(endpoints []Endpoint, containers map[int][]Container, stacks []Sta
 			attrs["status"] = status
 		}
 		ref := ops.UpsertNamed("stack", "portainer-"+names[endpoint]+"-"+integ.Slugify(name), name, attrs)
+		// The stack runs on its environment, so Phoedox shows the host's
+		// software as stacks with their containers.
+		ops.Link(ref, "runs_on", servers[endpoint], nil)
 		stackRefs[key] = ref
 		return ref
 	}
@@ -108,9 +111,10 @@ func graphOps(endpoints []Endpoint, containers map[int][]Container, stacks []Sta
 		if _, ok := servers[s.EndpointID]; !ok {
 			continue
 		}
-		status := "active"
+		// The stack kind knows running and stopped (Portainer: 1 active, 2 inactive).
+		status := "running"
 		if s.Status == 2 {
-			status = "inactive"
+			status = "stopped"
 		}
 		stack(s.EndpointID, s.Name, status)
 	}

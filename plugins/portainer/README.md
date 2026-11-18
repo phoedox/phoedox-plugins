@@ -2,6 +2,8 @@
 
 `com.phoedox.portainer` · version 0.1.0
 
+![A Docker host with its Compose stacks, their containers and their state](screenshots/host.webp)
+
 Imports Docker environments, stacks and containers from Portainer into the knowledge graph (server, stack, container, "runs on", "part of") and shows AI clients their state.
 
 ## What it adds
