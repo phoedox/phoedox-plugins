@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/unifiprotect.svg" width="64" height="64" alt="" align="right">
+
 # UniFi Protect
 
 `com.phoedox.unifiprotect` · version 0.1.0

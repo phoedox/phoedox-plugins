@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/github.svg" width="64" height="64" alt="" align="right">
+
 # GitHub
 
 `com.phoedox.github` · version 0.1.0

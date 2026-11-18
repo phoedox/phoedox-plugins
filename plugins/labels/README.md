@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/labels.svg" width="64" height="64" alt="" align="right">
+
 # Labels
 
 `com.phoedox.labels` · version 0.1.0

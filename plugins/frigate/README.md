@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/frigate.svg" width="64" height="64" alt="" align="right">
+
 # Frigate
 
 `com.phoedox.frigate` · version 0.1.0

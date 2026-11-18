@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/gitlab.svg" width="64" height="64" alt="" align="right">
+
 # GitLab
 
 `com.phoedox.gitlab` · version 0.1.0

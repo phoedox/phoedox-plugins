@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/uptimekuma.svg" width="64" height="64" alt="" align="right">
+
 # Uptime Kuma
 
 `com.phoedox.uptimekuma` · version 0.1.0

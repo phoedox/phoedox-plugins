@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/kubernetes.svg" width="64" height="64" alt="" align="right">
+
 # Kubernetes
 
 `com.phoedox.kubernetes` · version 0.1.0

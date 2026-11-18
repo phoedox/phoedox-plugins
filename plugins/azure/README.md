@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/azure.svg" width="64" height="64" alt="" align="right">
+
 # Microsoft Azure
 
 `com.phoedox.azure` · version 0.1.0

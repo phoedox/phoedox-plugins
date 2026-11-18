@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/fritzbox.svg" width="64" height="64" alt="" align="right">
+
 # FRITZ!Box
 
 `com.phoedox.fritzbox` · version 0.1.0

@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/grafana.svg" width="64" height="64" alt="" align="right">
+
 # Grafana
 
 `com.phoedox.grafana` · version 0.1.0

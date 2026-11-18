@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/paperless.svg" width="64" height="64" alt="" align="right">
+
 # Paperless-ngx
 
 `com.phoedox.paperless` · version 0.1.0

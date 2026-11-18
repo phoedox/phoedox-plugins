@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/portainer.svg" width="64" height="64" alt="" align="right">
+
 # Portainer
 
 `com.phoedox.portainer` · version 0.1.0

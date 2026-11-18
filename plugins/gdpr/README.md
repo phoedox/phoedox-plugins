@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/gdpr.svg" width="64" height="64" alt="" align="right">
+
 # GDPR record of processing activities
 
 `com.phoedox.gdpr` · version 0.1.0

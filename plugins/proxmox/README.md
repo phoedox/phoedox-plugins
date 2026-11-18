@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/proxmox.svg" width="64" height="64" alt="" align="right">
+
 # Proxmox VE
 
 `com.phoedox.proxmox` · version 0.1.0

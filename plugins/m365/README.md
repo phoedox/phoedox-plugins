@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/m365.svg" width="64" height="64" alt="" align="right">
+
 # Microsoft 365 (Intune)
 
 `com.phoedox.m365` · version 0.1.0

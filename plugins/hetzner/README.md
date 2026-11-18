@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/hetzner.svg" width="64" height="64" alt="" align="right">
+
 # Hetzner Cloud
 
 `com.phoedox.hetzner` · version 0.1.0

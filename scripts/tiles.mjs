@@ -67,7 +67,13 @@ for (const mode of ["light", "dark"]) {
   for (const [k, c] of Object.entries(CATS)) {
     const list = P.filter((p) => p[2] === k);
     html += `<h2><span class="dot" style="background:${c[mode]}"></span>${c.label} · ${list.length}</h2><div class="row">`;
-    for (const [, name, cat, icon, old] of list) html += `<div class="p">${await tile(icon, cat, mode)}<small>${name}</small><i>${icon}${old ? ` (was ${old})` : ""}</i></div>`;
+    for (const [id, name, cat, icon, old] of list) {
+      // Plugins with their brand's logo (ADR-0090) show it instead of the glyph.
+      const m = JSON.parse(fs.readFileSync(new URL(`../plugins/${id}/phoedox-plugin.json`, import.meta.url), "utf8"));
+      const logo = mode === "dark" ? m.logoDark ?? m.logo : m.logo;
+      const pic = logo ? logoTile(fs.readFileSync(new URL(`../plugins/${id}/${logo}`, import.meta.url), "utf8"), 72, mode) : await tile(icon, cat, mode);
+      html += `<div class="p">${pic}<small>${name}</small><i>${logo ? "brand logo" : icon + (old ? ` (was ${old})` : "")}</i></div>`;
+    }
     html += `</div>`;
   }
   html += `<h2>Sizes: 24 · 42 · 72 · 128</h2><div class="sizes">${await tile("house", "home", mode, 24)}${await tile("house", "home", mode, 42)}${await tile("house", "home", mode, 72)}${await tile("house", "home", mode, 128)}</div></div>`;
@@ -85,8 +91,8 @@ for (const [id, , cat, icon] of P) {
   }
 }
 
-function logoTile(svg, size) {
+function logoTile(svg, size, mode = "light") {
   const inner = svg.replace(/<\?xml[^>]*>/, "").replace(/<!DOCTYPE[^>]*>/i, "").trim().replace(/^<svg[^>]*>/, (t) => t.replace(/\s(width|height|x|y)="[^"]*"/g, "")).replace(/^<svg/, `<svg x="${size * 0.14}" y="${size * 0.14}" width="${size * 0.72}" height="${size * 0.72}"`);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">` +
-    `<rect x="0.5" y="0.5" width="${size - 1}" height="${size - 1}" rx="${size * 0.25}" fill="#fffdfb" stroke="#e4ddd6"/>${inner}</svg>`;
+    `<rect x="0.5" y="0.5" width="${size - 1}" height="${size - 1}" rx="${size * 0.25}" fill="${mode === "dark" ? "#1f1b18" : "#fffdfb"}" stroke="${mode === "dark" ? "#3a332d" : "#e4ddd6"}"/>${inner}</svg>`;
 }

@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/unifi.svg" width="64" height="64" alt="" align="right">
+
 # UniFi Network
 
 `com.phoedox.unifi` · version 0.1.0

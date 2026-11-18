@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/mindmap.svg" width="64" height="64" alt="" align="right">
+
 # Mind map
 
 `com.phoedox.mindmap` · version 1.0.0

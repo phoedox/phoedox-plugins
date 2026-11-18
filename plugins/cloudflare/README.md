@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/cloudflare.svg" width="64" height="64" alt="" align="right">
+
 # Cloudflare
 
 `com.phoedox.cloudflare` · version 0.1.0

@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/esphome.svg" width="64" height="64" alt="" align="right">
+
 # ESPHome
 
 `com.phoedox.esphome` · version 0.1.0

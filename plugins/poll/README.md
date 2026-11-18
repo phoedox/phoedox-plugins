@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/poll.svg" width="64" height="64" alt="" align="right">
+
 # Poll
 
 `com.phoedox.poll` · version 1.0.0

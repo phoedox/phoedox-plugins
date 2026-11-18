@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/synology.svg" width="64" height="64" alt="" align="right">
+
 # Synology DSM
 
 `com.phoedox.synology` · version 0.1.0

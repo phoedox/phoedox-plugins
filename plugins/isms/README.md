@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/isms.svg" width="64" height="64" alt="" align="right">
+
 # ISMS controls
 
 `com.phoedox.isms` · version 0.1.0

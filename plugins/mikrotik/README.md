@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/mikrotik.svg" width="64" height="64" alt="" align="right">
+
 # MikroTik RouterOS
 
 `com.phoedox.mikrotik` · version 0.1.0

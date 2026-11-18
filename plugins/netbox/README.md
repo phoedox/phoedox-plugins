@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/netbox.svg" width="64" height="64" alt="" align="right">
+
 # NetBox
 
 `com.phoedox.netbox` · version 0.1.0

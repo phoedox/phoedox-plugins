@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/checkmk.svg" width="64" height="64" alt="" align="right">
+
 # Checkmk
 
 `com.phoedox.checkmk` · version 0.1.0

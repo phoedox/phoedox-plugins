@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/gantt.svg" width="64" height="64" alt="" align="right">
+
 # Schedule (Gantt)
 
 `com.phoedox.gantt` · version 1.0.0

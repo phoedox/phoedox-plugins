@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/aws.svg" width="64" height="64" alt="" align="right">
+
 # AWS EC2
 
 `com.phoedox.aws` · version 0.1.0

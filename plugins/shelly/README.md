@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/shelly.svg" width="64" height="64" alt="" align="right">
+
 # Shelly
 
 `com.phoedox.shelly` · version 0.1.0

@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/hue.svg" width="64" height="64" alt="" align="right">
+
 # Philips Hue
 
 `com.phoedox.hue` · version 0.1.0

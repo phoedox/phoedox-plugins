@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/truenas.svg" width="64" height="64" alt="" align="right">
+
 # TrueNAS
 
 `com.phoedox.truenas` · version 0.1.0

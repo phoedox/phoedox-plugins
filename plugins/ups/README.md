@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/ups.svg" width="64" height="64" alt="" align="right">
+
 # UPS monitoring
 
 `de.example.ups` · version 1.2.0

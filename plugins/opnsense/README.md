@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/opnsense.svg" width="64" height="64" alt="" align="right">
+
 # OPNsense
 
 `com.phoedox.opnsense` · version 0.1.0

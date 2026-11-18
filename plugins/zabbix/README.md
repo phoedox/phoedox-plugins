@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/zabbix.svg" width="64" height="64" alt="" align="right">
+
 # Zabbix
 
 `com.phoedox.zabbix` · version 0.1.0

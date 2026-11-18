@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/homeassistant.svg" width="64" height="64" alt="" align="right">
+
 # Home Assistant
 
 `com.phoedox.homeassistant` · version 0.5.0

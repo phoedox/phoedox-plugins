@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/quiz.svg" width="64" height="64" alt="" align="right">
+
 # Quiz
 
 `com.phoedox.quiz` · version 1.0.0

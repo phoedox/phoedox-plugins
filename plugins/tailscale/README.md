@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/tailscale.svg" width="64" height="64" alt="" align="right">
+
 # Tailscale
 
 `com.phoedox.tailscale` · version 0.1.0

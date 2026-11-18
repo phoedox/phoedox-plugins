@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/calc.svg" width="64" height="64" alt="" align="right">
+
 # Calculator
 
 `com.phoedox.calc` · version 1.0.0

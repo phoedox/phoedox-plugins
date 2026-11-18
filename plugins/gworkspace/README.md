@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/gworkspace.svg" width="64" height="64" alt="" align="right">
+
 # Google Workspace
 
 `com.phoedox.gworkspace` · version 0.1.0

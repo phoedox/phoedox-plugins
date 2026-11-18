@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/tasmota.svg" width="64" height="64" alt="" align="right">
+
 # Tasmota
 
 `com.phoedox.tasmota` · version 0.1.0

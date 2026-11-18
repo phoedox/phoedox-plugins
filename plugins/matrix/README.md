@@ -1,3 +1,5 @@
+<img src="../../docs/branding/tiles/matrix.svg" width="64" height="64" alt="" align="right">
+
 # Decision matrix
 
 `com.phoedox.matrix` · version 1.0.0
