@@ -4,7 +4,7 @@
 
 A ```gantt block for pages and whiteboards: bars for tasks over time, sections, milestones, progress and dependencies as arrows, optionally with the cards of a board that have a due date.
 
-![Schedule (Gantt) in Phoedox](docs/screenshot.png)
+![A renovation schedule with sections, progress and dependencies](screenshots/schedule.webp)
 
 ## What it adds
 

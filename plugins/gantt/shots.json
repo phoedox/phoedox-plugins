@@ -1,0 +1,126 @@
+{
+  "setup": [
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "wifi-and-network",
+        "title": "Wi-Fi and network",
+        "category": "Network",
+        "markdown": "Main network 10.20.0.0/24, guest Wi-Fi on its own VLAN."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "heating",
+        "title": "Heating and hot water",
+        "category": "House",
+        "markdown": "Gas boiler in the basement, serviced every October."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "emergency-contacts",
+        "title": "Emergency contacts",
+        "category": "House",
+        "markdown": "Water, power and gas shut-offs are in the basement next to the stairs."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "garage-office",
+        "title": "Garage conversion",
+        "category": "House",
+        "markdown": "The single garage at 12 Maple Street becomes Jane's home office, and the homelab rack moves out of the damp basement into it.\n\n```gantt\ntitle: Garage conversion\n## Planning\nGet quotes [quotes]: 2026-05-04, 10d, done\nBuilding permit [permit]: after quotes, 2w, done\n## Building\nInsulation and drywall [walls]: after permit, 2w, 80%\nElectrics and network cabling [cable]: after walls, 8d\nFloor [floor]: after cable, 6d\nPaint [paint]: after floor, 5d\n## Homelab\nMove the rack [rack]: after paint, 4d, orange\nSwitch and access point [ap]: after rack, 3d, orange\nOffice ready: 2026-07-27\n```\n\nThe electrician needs the network outlets marked on the floor plan before the drywall closes."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "whiteboard",
+        "slug": "garage-board",
+        "title": "Garage office board",
+        "category": "House",
+        "whiteboard": {
+          "background": "dots",
+          "elements": [
+            {
+              "id": "t1",
+              "type": "text",
+              "x": 0,
+              "y": -90,
+              "w": 600,
+              "h": 40,
+              "text": "Garage office",
+              "fontSize": 32
+            },
+            {
+              "id": "g1",
+              "type": "block",
+              "kind": "gantt",
+              "source": "title: Homelab move\nBack up the NAS [backup]: 2026-07-06, 2d, done\nRack and UPS [rack]: after backup, 3d, 40%\nPatch panel [patch]: after rack, 2d\nSwitch and access point [ap]: after patch, 2d\nOnline again: 2026-07-16",
+              "x": 0,
+              "y": 0,
+              "w": 760,
+              "h": 300
+            },
+            {
+              "id": "s1",
+              "type": "sticky",
+              "x": 0,
+              "y": 330,
+              "w": 240,
+              "h": 120,
+              "fill": "yellow",
+              "text": "Rack needs its own 16 A circuit"
+            },
+            {
+              "id": "s2",
+              "type": "sticky",
+              "x": 260,
+              "y": 330,
+              "w": 240,
+              "h": 120,
+              "fill": "blue",
+              "text": "Ask about fibre to the garage"
+            },
+            {
+              "id": "s3",
+              "type": "sticky",
+              "x": 520,
+              "y": 330,
+              "w": 240,
+              "h": 120,
+              "fill": "green",
+              "text": "Desk by the window, rack on the cold wall"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "schedule",
+      "path": "/p/${project}/d/garage-office",
+      "caption": "A renovation schedule with sections, progress and dependencies"
+    },
+    {
+      "name": "whiteboard",
+      "path": "/p/${project}/d/garage-board",
+      "caption": "The same block on a whiteboard, next to the family's sticky notes",
+      "wait": 2500
+    }
+  ]
+}

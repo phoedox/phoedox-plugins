@@ -3,6 +3,10 @@
   "name": "Schedule (Gantt)",
   "icon": "chart-gantt",
   "category": "blocks",
+  "screenshots": [
+    { "file": "screenshots/schedule.webp", "caption": "A renovation schedule with sections, progress and dependencies" },
+    { "file": "screenshots/whiteboard.webp", "caption": "The same block on a whiteboard, next to the family's sticky notes" }
+  ],
   "version": "1.0.0",
   "hostApi": "1",
   "description": "A ```gantt block for pages and whiteboards: bars for tasks over time, sections, milestones, progress and dependencies as arrows, optionally with the cards of a board that have a due date.",
