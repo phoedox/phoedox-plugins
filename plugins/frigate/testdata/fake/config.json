@@ -1,0 +1,632 @@
+{
+ "mqtt": {
+  "enabled": true,
+  "host": "mqtt.home.arpa",
+  "port": 1883,
+  "topic_prefix": "frigate",
+  "client_id": "frigate",
+  "user": null,
+  "password": null
+ },
+ "detectors": {
+  "coral": {
+   "type": "edgetpu",
+   "device": "usb",
+   "model": {
+    "path": "/edgetpu_model.tflite",
+    "width": 320,
+    "height": 320
+   }
+  }
+ },
+ "go2rtc": {
+  "streams": {
+   "front_door": [
+    "rtsp://*:*@192.0.2.61:554/h264Preview_01_main"
+   ],
+   "driveway": [
+    "rtsp://*:*@192.0.2.62:554/h264Preview_01_main"
+   ],
+   "doorbell": [
+    "rtsp://*:*@192.0.2.66:554/h264Preview_01_main"
+   ],
+   "backyard_sub": [
+    "rtsp://*:*@192.0.2.65:554/cam/realmonitor?channel=1&subtype=1"
+   ]
+  }
+ },
+ "cameras": {
+  "front_door": {
+   "name": "front_door",
+   "friendly_name": "Front door",
+   "enabled": true,
+   "ffmpeg": {
+    "inputs": [
+     {
+      "path": "rtsp://127.0.0.1:8554/front_door",
+      "roles": [
+       "detect",
+       "record"
+      ],
+      "global_args": null,
+      "hwaccel_args": [],
+      "input_args": "preset-rtsp-restream"
+     }
+    ],
+    "output_args": {
+     "record": "preset-record-generic-audio-aac"
+    },
+    "retry_interval": 10
+   },
+   "detect": {
+    "enabled": true,
+    "width": 1280,
+    "height": 720,
+    "fps": 5,
+    "min_initialized": 2,
+    "max_disappeared": 25,
+    "stationary": {
+     "interval": 50,
+     "threshold": 50
+    }
+   },
+   "record": {
+    "enabled": true,
+    "retain": {
+     "days": 7,
+     "mode": "motion"
+    },
+    "alerts": {
+     "retain": {
+      "days": 30,
+      "mode": "motion"
+     }
+    },
+    "detections": {
+     "retain": {
+      "days": 14,
+      "mode": "motion"
+     }
+    }
+   },
+   "snapshots": {
+    "enabled": true,
+    "timestamp": false,
+    "bounding_box": true,
+    "retain": {
+     "default": 14
+    }
+   },
+   "objects": {
+    "track": [
+     "person",
+     "package"
+    ],
+    "filters": {
+     "person": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     },
+     "package": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     }
+    }
+   },
+   "onvif": {
+    "host": "",
+    "port": 8000,
+    "user": null,
+    "password": null,
+    "autotracking": {
+     "enabled": false
+    }
+   },
+   "motion": {
+    "threshold": 30,
+    "contour_area": 10,
+    "improve_contrast": true
+   },
+   "zones": {
+    "porch": {
+     "coordinates": "0.12,0.98,0.61,0.97,0.6,0.55,0.15,0.56",
+     "objects": [
+      "person",
+      "package"
+     ]
+    }
+   }
+  },
+  "driveway": {
+   "name": "driveway",
+   "friendly_name": "Driveway",
+   "enabled": true,
+   "ffmpeg": {
+    "inputs": [
+     {
+      "path": "rtsp://127.0.0.1:8554/driveway",
+      "roles": [
+       "detect",
+       "record"
+      ],
+      "global_args": null,
+      "hwaccel_args": [],
+      "input_args": "preset-rtsp-restream"
+     }
+    ],
+    "output_args": {
+     "record": "preset-record-generic-audio-aac"
+    },
+    "retry_interval": 10
+   },
+   "detect": {
+    "enabled": true,
+    "width": 1280,
+    "height": 720,
+    "fps": 5,
+    "min_initialized": 2,
+    "max_disappeared": 25,
+    "stationary": {
+     "interval": 50,
+     "threshold": 50
+    }
+   },
+   "record": {
+    "enabled": true,
+    "retain": {
+     "days": 7,
+     "mode": "motion"
+    },
+    "alerts": {
+     "retain": {
+      "days": 30,
+      "mode": "motion"
+     }
+    },
+    "detections": {
+     "retain": {
+      "days": 14,
+      "mode": "motion"
+     }
+    }
+   },
+   "snapshots": {
+    "enabled": true,
+    "timestamp": false,
+    "bounding_box": true,
+    "retain": {
+     "default": 14
+    }
+   },
+   "objects": {
+    "track": [
+     "person",
+     "car",
+     "bicycle"
+    ],
+    "filters": {
+     "person": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     },
+     "car": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     },
+     "bicycle": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     }
+    }
+   },
+   "onvif": {
+    "host": "",
+    "port": 8000,
+    "user": null,
+    "password": null,
+    "autotracking": {
+     "enabled": false
+    }
+   },
+   "motion": {
+    "threshold": 30,
+    "contour_area": 10,
+    "improve_contrast": true
+   },
+   "zones": {}
+  },
+  "garden": {
+   "name": "garden",
+   "friendly_name": "Garden",
+   "enabled": true,
+   "ffmpeg": {
+    "inputs": [
+     {
+      "path": "rtsp://*:*@192.0.2.63:554/Streaming/Channels/101",
+      "roles": [
+       "record"
+      ],
+      "global_args": null,
+      "hwaccel_args": [],
+      "input_args": "preset-rtsp-generic"
+     },
+     {
+      "path": "rtsp://*:*@192.0.2.63:554/Streaming/Channels/102",
+      "roles": [
+       "detect"
+      ],
+      "global_args": null,
+      "hwaccel_args": [],
+      "input_args": "preset-rtsp-generic"
+     }
+    ],
+    "output_args": {
+     "record": "preset-record-generic-audio-aac"
+    },
+    "retry_interval": 10
+   },
+   "detect": {
+    "enabled": true,
+    "width": 1280,
+    "height": 720,
+    "fps": 5,
+    "min_initialized": 2,
+    "max_disappeared": 25,
+    "stationary": {
+     "interval": 50,
+     "threshold": 50
+    }
+   },
+   "record": {
+    "enabled": true,
+    "retain": {
+     "days": 7,
+     "mode": "motion"
+    },
+    "alerts": {
+     "retain": {
+      "days": 30,
+      "mode": "motion"
+     }
+    },
+    "detections": {
+     "retain": {
+      "days": 14,
+      "mode": "motion"
+     }
+    }
+   },
+   "snapshots": {
+    "enabled": true,
+    "timestamp": false,
+    "bounding_box": true,
+    "retain": {
+     "default": 14
+    }
+   },
+   "objects": {
+    "track": [
+     "person",
+     "dog",
+     "cat"
+    ],
+    "filters": {
+     "person": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     },
+     "dog": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     },
+     "cat": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     }
+    }
+   },
+   "onvif": {
+    "host": "",
+    "port": 8000,
+    "user": null,
+    "password": null,
+    "autotracking": {
+     "enabled": false
+    }
+   },
+   "motion": {
+    "threshold": 30,
+    "contour_area": 10,
+    "improve_contrast": true
+   },
+   "zones": {}
+  },
+  "garage": {
+   "name": "garage",
+   "friendly_name": "Garage",
+   "enabled": true,
+   "ffmpeg": {
+    "inputs": [
+     {
+      "path": "rtsp://*:*@192.0.2.64:554/Streaming/Channels/101",
+      "roles": [
+       "record"
+      ],
+      "global_args": null,
+      "hwaccel_args": [],
+      "input_args": "preset-rtsp-generic"
+     },
+     {
+      "path": "rtsp://*:*@192.0.2.64:554/Streaming/Channels/102",
+      "roles": [
+       "detect"
+      ],
+      "global_args": null,
+      "hwaccel_args": [],
+      "input_args": "preset-rtsp-generic"
+     }
+    ],
+    "output_args": {
+     "record": "preset-record-generic-audio-aac"
+    },
+    "retry_interval": 10
+   },
+   "detect": {
+    "enabled": true,
+    "width": 640,
+    "height": 360,
+    "fps": 5,
+    "min_initialized": 2,
+    "max_disappeared": 25,
+    "stationary": {
+     "interval": 50,
+     "threshold": 50
+    }
+   },
+   "record": {
+    "enabled": false,
+    "retain": {
+     "days": 7,
+     "mode": "motion"
+    },
+    "alerts": {
+     "retain": {
+      "days": 30,
+      "mode": "motion"
+     }
+    },
+    "detections": {
+     "retain": {
+      "days": 14,
+      "mode": "motion"
+     }
+    }
+   },
+   "snapshots": {
+    "enabled": true,
+    "timestamp": false,
+    "bounding_box": true,
+    "retain": {
+     "default": 14
+    }
+   },
+   "objects": {
+    "track": [
+     "person",
+     "car"
+    ],
+    "filters": {
+     "person": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     },
+     "car": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     }
+    }
+   },
+   "onvif": {
+    "host": "",
+    "port": 8000,
+    "user": null,
+    "password": null,
+    "autotracking": {
+     "enabled": false
+    }
+   },
+   "motion": {
+    "threshold": 30,
+    "contour_area": 10,
+    "improve_contrast": true
+   },
+   "zones": {}
+  },
+  "backyard": {
+   "name": "backyard",
+   "friendly_name": "Backyard",
+   "enabled": true,
+   "ffmpeg": {
+    "inputs": [
+     {
+      "path": "rtsp://127.0.0.1:8554/backyard_sub",
+      "roles": [
+       "detect",
+       "record"
+      ],
+      "global_args": null,
+      "hwaccel_args": [],
+      "input_args": "preset-rtsp-restream"
+     }
+    ],
+    "output_args": {
+     "record": "preset-record-generic-audio-aac"
+    },
+    "retry_interval": 10
+   },
+   "detect": {
+    "enabled": true,
+    "width": 1280,
+    "height": 720,
+    "fps": 5,
+    "min_initialized": 2,
+    "max_disappeared": 25,
+    "stationary": {
+     "interval": 50,
+     "threshold": 50
+    }
+   },
+   "record": {
+    "enabled": true,
+    "retain": {
+     "days": 7,
+     "mode": "motion"
+    },
+    "alerts": {
+     "retain": {
+      "days": 30,
+      "mode": "motion"
+     }
+    },
+    "detections": {
+     "retain": {
+      "days": 14,
+      "mode": "motion"
+     }
+    }
+   },
+   "snapshots": {
+    "enabled": true,
+    "timestamp": false,
+    "bounding_box": true,
+    "retain": {
+     "default": 14
+    }
+   },
+   "objects": {
+    "track": [
+     "person",
+     "dog"
+    ],
+    "filters": {
+     "person": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     },
+     "dog": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     }
+    }
+   },
+   "onvif": {
+    "host": "192.0.2.65",
+    "port": 8000,
+    "user": null,
+    "password": null,
+    "autotracking": {
+     "enabled": false
+    }
+   },
+   "motion": {
+    "threshold": 30,
+    "contour_area": 10,
+    "improve_contrast": true
+   },
+   "zones": {}
+  },
+  "doorbell": {
+   "name": "doorbell",
+   "friendly_name": "Doorbell",
+   "enabled": false,
+   "ffmpeg": {
+    "inputs": [
+     {
+      "path": "rtsp://127.0.0.1:8554/doorbell",
+      "roles": [
+       "detect",
+       "record"
+      ],
+      "global_args": null,
+      "hwaccel_args": [],
+      "input_args": "preset-rtsp-restream"
+     }
+    ],
+    "output_args": {
+     "record": "preset-record-generic-audio-aac"
+    },
+    "retry_interval": 10
+   },
+   "detect": {
+    "enabled": false,
+    "width": 1280,
+    "height": 960,
+    "fps": 5,
+    "min_initialized": 2,
+    "max_disappeared": 25,
+    "stationary": {
+     "interval": 50,
+     "threshold": 50
+    }
+   },
+   "record": {
+    "enabled": false,
+    "retain": {
+     "days": 7,
+     "mode": "motion"
+    },
+    "alerts": {
+     "retain": {
+      "days": 30,
+      "mode": "motion"
+     }
+    },
+    "detections": {
+     "retain": {
+      "days": 14,
+      "mode": "motion"
+     }
+    }
+   },
+   "snapshots": {
+    "enabled": false,
+    "timestamp": false,
+    "bounding_box": true,
+    "retain": {
+     "default": 14
+    }
+   },
+   "objects": {
+    "track": [
+     "person"
+    ],
+    "filters": {
+     "person": {
+      "min_score": 0.5,
+      "threshold": 0.7
+     }
+    }
+   },
+   "onvif": {
+    "host": "",
+    "port": 8000,
+    "user": null,
+    "password": null,
+    "autotracking": {
+     "enabled": false
+    }
+   },
+   "motion": {
+    "threshold": 30,
+    "contour_area": 10,
+    "improve_contrast": true
+   },
+   "zones": {}
+  }
+ },
+ "version": "0.16-0",
+ "ui": {
+  "timezone": "Europe/Berlin",
+  "time_format": "24hour"
+ }
+}

@@ -1,0 +1,265 @@
+[
+ {
+  "id": "1781510220.000000-demo00",
+  "camera": "front_door",
+  "label": "person",
+  "sub_label": null,
+  "top_score": null,
+  "false_positive": null,
+  "start_time": 1781510220.0,
+  "end_time": 1781510262.5,
+  "has_clip": true,
+  "has_snapshot": true,
+  "retain_indefinitely": false,
+  "plus_id": null,
+  "model_hash": "demo",
+  "detector_type": "edgetpu",
+  "model_type": "ssd",
+  "zones": [
+   "porch"
+  ],
+  "thumbnail": null,
+  "data": {
+   "type": "object",
+   "box": [
+    0.41,
+    0.32,
+    0.12,
+    0.38
+   ],
+   "region": [
+    0.3,
+    0.2,
+    0.4,
+    0.5
+   ],
+   "score": 0.83,
+   "top_score": 0.87,
+   "attributes": []
+  }
+ },
+ {
+  "id": "1781508900.000000-demo01",
+  "camera": "driveway",
+  "label": "car",
+  "sub_label": null,
+  "top_score": null,
+  "false_positive": null,
+  "start_time": 1781508900.0,
+  "end_time": 1781508942.5,
+  "has_clip": true,
+  "has_snapshot": true,
+  "retain_indefinitely": false,
+  "plus_id": null,
+  "model_hash": "demo",
+  "detector_type": "edgetpu",
+  "model_type": "ssd",
+  "zones": [],
+  "thumbnail": null,
+  "data": {
+   "type": "object",
+   "box": [
+    0.41,
+    0.32,
+    0.12,
+    0.38
+   ],
+   "region": [
+    0.3,
+    0.2,
+    0.4,
+    0.5
+   ],
+   "score": 0.87,
+   "top_score": 0.91,
+   "attributes": []
+  }
+ },
+ {
+  "id": "1781506500.000000-demo02",
+  "camera": "front_door",
+  "label": "package",
+  "sub_label": null,
+  "top_score": null,
+  "false_positive": null,
+  "start_time": 1781506500.0,
+  "end_time": 1781506542.5,
+  "has_clip": true,
+  "has_snapshot": true,
+  "retain_indefinitely": false,
+  "plus_id": null,
+  "model_hash": "demo",
+  "detector_type": "edgetpu",
+  "model_type": "ssd",
+  "zones": [
+   "porch"
+  ],
+  "thumbnail": null,
+  "data": {
+   "type": "object",
+   "box": [
+    0.41,
+    0.32,
+    0.12,
+    0.38
+   ],
+   "region": [
+    0.3,
+    0.2,
+    0.4,
+    0.5
+   ],
+   "score": 0.74,
+   "top_score": 0.78,
+   "attributes": []
+  }
+ },
+ {
+  "id": "1781503200.000000-demo03",
+  "camera": "garden",
+  "label": "dog",
+  "sub_label": null,
+  "top_score": null,
+  "false_positive": null,
+  "start_time": 1781503200.0,
+  "end_time": 1781503242.5,
+  "has_clip": true,
+  "has_snapshot": true,
+  "retain_indefinitely": false,
+  "plus_id": null,
+  "model_hash": "demo",
+  "detector_type": "edgetpu",
+  "model_type": "ssd",
+  "zones": [],
+  "thumbnail": null,
+  "data": {
+   "type": "object",
+   "box": [
+    0.41,
+    0.32,
+    0.12,
+    0.38
+   ],
+   "region": [
+    0.3,
+    0.2,
+    0.4,
+    0.5
+   ],
+   "score": 0.7899999999999999,
+   "top_score": 0.83,
+   "attributes": []
+  }
+ },
+ {
+  "id": "1781501400.000000-demo04",
+  "camera": "driveway",
+  "label": "person",
+  "sub_label": null,
+  "top_score": null,
+  "false_positive": null,
+  "start_time": 1781501400.0,
+  "end_time": 1781501442.5,
+  "has_clip": true,
+  "has_snapshot": true,
+  "retain_indefinitely": false,
+  "plus_id": null,
+  "model_hash": "demo",
+  "detector_type": "edgetpu",
+  "model_type": "ssd",
+  "zones": [],
+  "thumbnail": null,
+  "data": {
+   "type": "object",
+   "box": [
+    0.41,
+    0.32,
+    0.12,
+    0.38
+   ],
+   "region": [
+    0.3,
+    0.2,
+    0.4,
+    0.5
+   ],
+   "score": 0.77,
+   "top_score": 0.81,
+   "attributes": []
+  }
+ },
+ {
+  "id": "1781495900.000000-demo05",
+  "camera": "backyard",
+  "label": "person",
+  "sub_label": null,
+  "top_score": null,
+  "false_positive": null,
+  "start_time": 1781495900.0,
+  "end_time": 1781495942.5,
+  "has_clip": true,
+  "has_snapshot": true,
+  "retain_indefinitely": false,
+  "plus_id": null,
+  "model_hash": "demo",
+  "detector_type": "edgetpu",
+  "model_type": "ssd",
+  "zones": [],
+  "thumbnail": null,
+  "data": {
+   "type": "object",
+   "box": [
+    0.41,
+    0.32,
+    0.12,
+    0.38
+   ],
+   "region": [
+    0.3,
+    0.2,
+    0.4,
+    0.5
+   ],
+   "score": 0.7,
+   "top_score": 0.74,
+   "attributes": []
+  }
+ },
+ {
+  "id": "1781480300.000000-demo06",
+  "camera": "garden",
+  "label": "cat",
+  "sub_label": null,
+  "top_score": null,
+  "false_positive": true,
+  "start_time": 1781480300.0,
+  "end_time": 1781480342.5,
+  "has_clip": true,
+  "has_snapshot": true,
+  "retain_indefinitely": false,
+  "plus_id": null,
+  "model_hash": "demo",
+  "detector_type": "edgetpu",
+  "model_type": "ssd",
+  "zones": [],
+  "thumbnail": null,
+  "data": {
+   "type": "object",
+   "box": [
+    0.41,
+    0.32,
+    0.12,
+    0.38
+   ],
+   "region": [
+    0.3,
+    0.2,
+    0.4,
+    0.5
+   ],
+   "score": 0.6499999999999999,
+   "top_score": 0.69,
+   "attributes": []
+  }
+ }
+]

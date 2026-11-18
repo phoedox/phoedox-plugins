@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {"method": "POST", "path": "/api/login", "headers": {"Set-Cookie": "frigate_token=demo-session-token; Path=/; HttpOnly; SameSite=Lax"}, "json": {}},
+    {"path": "/api/config", "file": "config.json"},
+    {"path": "/api/stats", "file": "stats.json"},
+    {"path": "/api/events", "file": "events.json"}
+  ]
+}

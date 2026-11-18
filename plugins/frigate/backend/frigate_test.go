@@ -6,6 +6,8 @@ import (
 	"testing"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 const config = `{"mqtt":{"enabled":true,"host":"mqtt.lan","password":"********"},
@@ -153,5 +155,47 @@ func TestCameraSchema(t *testing.T) {
 		if r.ID != q.ID || strings.Join(r.From, ",") != strings.Join(q.From, ",") || strings.Join(r.To, ",") != strings.Join(q.To, ",") {
 			t.Fatalf("relation %s differs", r.ID)
 		}
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	get := func(p string) []byte {
+		body, err := fakeapi.Body("../testdata/fake", "GET", p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	cfg, err := parseConfig(get("/api/config"))
+	if err != nil || len(cfg.Cameras) != 6 {
+		t.Fatalf("%v %d", err, len(cfg.Cameras))
+	}
+	st, err := parseStats(get("/api/stats"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	ops := graphOps("Frigate NVR", "http://frigate.home.arpa:5000", cfg, st)
+	if len(ops.Ops) != 1+6*2 {
+		t.Fatalf("ops: %d", len(ops.Ops))
+	}
+	states := map[string]string{}
+	for _, o := range ops.Ops {
+		if o.Kind == "camera" {
+			if o.Attrs["ip"] == nil {
+				t.Fatalf("no ip: %+v", o)
+			}
+			states[o.ID] = o.Attrs["state"].(string)
+		}
+	}
+	if states["frigate-camera-garage"] != "disconnected" || states["frigate-camera-doorbell"] != "disabled" || states["frigate-camera-front-door"] != "connected" {
+		t.Fatalf("states: %v", states)
+	}
+	ev, err := parseEvents(get(eventsQuery(EventArgs{})))
+	if err != nil || len(ev) != 7 || ev[0].Start != "2026-06-15T07:57:00Z" {
+		t.Fatalf("%v %+v", err, ev)
+	}
+	if v := statsView(st); v.LatestVersion != "0.16.1" || len(v.Cameras) != 6 {
+		t.Fatalf("stats: %+v", v)
 	}
 }

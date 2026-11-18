@@ -2,6 +2,8 @@
 
 `com.phoedox.frigate` · version 0.1.0
 
+![The cameras on the knowledge graph map, linked to the Frigate service](screenshots/map.webp)
+
 Imports a Frigate NVR into the knowledge graph: Frigate as a service (URL, port, version) and its cameras as cameras (IP address or host name from the stream or ONVIF address, state, detect resolution, recording on/off, object detection, tracked objects), each "related to" the service. Contributes the kind camera (shared with the UniFi Protect plugin) with the relations "located in" a room and "powered by" a switch, outlet or smart plug. AI clients get the 50 most recent events (label, camera, score, start and end time, clip and snapshot available; optionally filtered by camera or label) and statistics (version, camera and detection rates, detector inference time, CPU and memory, storage). Read-only: only GET requests and the login. Stream credentials are never stored; only the host is read from stream addresses.
 
 ## What it adds

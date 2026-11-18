@@ -1,0 +1,42 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "username": "viewer",
+    "password": "demo-password",
+    "name": "Frigate NVR"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.frigate/tools/frigate.sync",
+      "body": {}
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 7
+  },
+  "shots": [
+    {
+      "name": "map",
+      "path": "/p/${project}/graph/map",
+      "caption": "The cameras on the knowledge graph map, linked to the Frigate service",
+      "wait": 3000
+    },
+    {
+      "name": "cameras",
+      "path": "/p/${project}/graph?kind=camera",
+      "caption": "Frigate cameras as entries with state, resolution and recording"
+    }
+  ]
+}

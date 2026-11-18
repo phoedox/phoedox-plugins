@@ -1,0 +1,136 @@
+{
+ "cameras": {
+  "front_door": {
+   "camera_fps": 8.1,
+   "capture_pid": 1200,
+   "detection_enabled": true,
+   "detection_fps": 2.4,
+   "ffmpeg_pid": 1300,
+   "pid": 1400,
+   "process_fps": 8.1,
+   "skipped_fps": 0.0,
+   "audio_dBFS": 0.0,
+   "audio_rms": 0.0,
+   "connection_quality": "excellent"
+  },
+  "driveway": {
+   "camera_fps": 5.0,
+   "capture_pid": 1201,
+   "detection_enabled": true,
+   "detection_fps": 1.5,
+   "ffmpeg_pid": 1301,
+   "pid": 1401,
+   "process_fps": 5.0,
+   "skipped_fps": 0.0,
+   "audio_dBFS": 0.0,
+   "audio_rms": 0.0,
+   "connection_quality": "good"
+  },
+  "garden": {
+   "camera_fps": 5.0,
+   "capture_pid": 1202,
+   "detection_enabled": true,
+   "detection_fps": 1.5,
+   "ffmpeg_pid": 1302,
+   "pid": 1402,
+   "process_fps": 5.0,
+   "skipped_fps": 0.0,
+   "audio_dBFS": 0.0,
+   "audio_rms": 0.0,
+   "connection_quality": "good"
+  },
+  "garage": {
+   "camera_fps": 0.0,
+   "capture_pid": 1203,
+   "detection_enabled": true,
+   "detection_fps": 0.0,
+   "ffmpeg_pid": 1303,
+   "pid": 1403,
+   "process_fps": 0.0,
+   "skipped_fps": 0.0,
+   "audio_dBFS": 0.0,
+   "audio_rms": 0.0,
+   "connection_quality": "lost"
+  },
+  "backyard": {
+   "camera_fps": 5.0,
+   "capture_pid": 1204,
+   "detection_enabled": true,
+   "detection_fps": 1.5,
+   "ffmpeg_pid": 1304,
+   "pid": 1404,
+   "process_fps": 5.0,
+   "skipped_fps": 0.0,
+   "audio_dBFS": 0.0,
+   "audio_rms": 0.0,
+   "connection_quality": "excellent"
+  },
+  "doorbell": {
+   "camera_fps": 0.0,
+   "capture_pid": 1205,
+   "detection_enabled": false,
+   "detection_fps": 0.0,
+   "ffmpeg_pid": 1305,
+   "pid": 1405,
+   "process_fps": 0.0,
+   "skipped_fps": 0.0,
+   "audio_dBFS": 0.0,
+   "audio_rms": 0.0
+  }
+ },
+ "cpu_usages": {
+  "frigate.full_system": {
+   "cpu": "23.4",
+   "mem": "38.1"
+  }
+ },
+ "detection_fps": 5.6,
+ "detectors": {
+  "coral": {
+   "detection_start": 0.0,
+   "inference_speed": 8.42,
+   "pid": 512
+  }
+ },
+ "processes": {
+  "go2rtc": {
+   "pid": 96
+  },
+  "recording": {
+   "pid": 422
+  }
+ },
+ "service": {
+  "last_updated": 1781510400,
+  "latest_version": "0.16.1",
+  "storage": {
+   "/dev/shm": {
+    "free": 412.3,
+    "mount_type": "tmpfs",
+    "total": 512.0,
+    "used": 99.7
+   },
+   "/media/frigate/clips": {
+    "free": 1290240.0,
+    "mount_type": "ext4",
+    "total": 1907729.0,
+    "used": 617489.0
+   },
+   "/media/frigate/recordings": {
+    "free": 1290240.0,
+    "mount_type": "ext4",
+    "total": 1907729.0,
+    "used": 617489.0
+   },
+   "/tmp/cache": {
+    "free": 938.1,
+    "mount_type": "tmpfs",
+    "total": 1000.0,
+    "used": 61.9
+   }
+  },
+  "temperatures": {},
+  "uptime": 1209600,
+  "version": "0.16.0-c2f8de9"
+ }
+}

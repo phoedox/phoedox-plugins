@@ -3,6 +3,10 @@
   "name": "Frigate",
   "icon": "cctv",
   "category": "home",
+  "screenshots": [
+    { "file": "screenshots/map.webp", "caption": "The cameras on the knowledge graph map, linked to the Frigate service" },
+    { "file": "screenshots/cameras.webp", "caption": "Frigate cameras as entries with state, resolution and recording" }
+  ],
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports a Frigate NVR into the knowledge graph: Frigate as a service (URL, port, version) and its cameras as cameras (IP address or host name from the stream or ONVIF address, state, detect resolution, recording on/off, object detection, tracked objects), each \"related to\" the service. Contributes the kind camera (shared with the UniFi Protect plugin) with the relations \"located in\" a room and \"powered by\" a switch, outlet or smart plug. AI clients get the 50 most recent events (label, camera, score, start and end time, clip and snapshot available; optionally filtered by camera or label) and statistics (version, camera and detection rates, detector inference time, CPU and memory, storage). Read-only: only GET requests and the login. Stream credentials are never stored; only the host is read from stream addresses. Settings: url (e.g. https://frigate.example.org:8971, or http://<host>:5000 for the unauthenticated internal port), optional username and password (a Frigate user, 0.14 or later; the plugin logs in with POST /api/login on each run and uses the session token, a viewer role is enough), optional token (a fixed bearer token instead; Frigate session tokens expire, so username and password are preferred) and optional name (default: Frigate).",
