@@ -1,0 +1,135 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "status_page": "home"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "nas-01",
+        "slug": "nas-01",
+        "attrs": {
+          "hostname": "nas-01.home.arpa",
+          "ip": "10.20.0.10",
+          "os": "TrueNAS"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "pve-01",
+        "slug": "pve-01",
+        "attrs": {
+          "hostname": "pve-01.home.arpa",
+          "ip": "10.20.0.11",
+          "os": "Proxmox VE"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "vm",
+        "name": "Home Assistant",
+        "slug": "home-assistant",
+        "attrs": {
+          "vmid": 101,
+          "os": "Home Assistant OS",
+          "ip": "10.20.0.21"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "router",
+        "name": "Router",
+        "slug": "router",
+        "attrs": {
+          "model": "OPNsense",
+          "ip": "10.20.0.1"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "device",
+        "name": "Garden camera",
+        "slug": "garden-camera",
+        "attrs": {
+          "ip": "10.20.0.42"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "service",
+        "name": "Nextcloud",
+        "slug": "nextcloud",
+        "attrs": {
+          "url": "https://cloud.home.arpa"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "contract",
+        "name": "Internet",
+        "slug": "internet",
+        "attrs": {
+          "contract_number": "FX-2024-118",
+          "cost": 39.9,
+          "billing": "monthly"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.uptimekuma/tools/uptimekuma.status",
+      "body": {},
+      "as": "k"
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "uptime",
+        "title": "Uptime of the household",
+        "category": "Homelab",
+        "markdown": "What an AI client gets from the tool `uptimekuma.status` of the Uptime Kuma plugin: every monitor of the status page, problems first, with the Phoedox entry it belongs to.\n\n| Status | Monitor | Group | Last message | Uptime 24 h | Entry |\n|---|---|---|---|---|---|\n| ${k.monitors.0.status} | ${k.monitors.0.name} | ${k.monitors.0.group} | ${k.monitors.0.message} | ${k.monitors.0.uptime24h} % | @${k.monitors.0.entry.slug} |\n| ${k.monitors.1.status} | ${k.monitors.1.name} | ${k.monitors.1.group} | ${k.monitors.1.message} | ${k.monitors.1.uptime24h} % | @${k.monitors.1.entry.slug} |\n| ${k.monitors.2.status} | ${k.monitors.2.name} | ${k.monitors.2.group} | ${k.monitors.2.message} | ${k.monitors.2.uptime24h} % | @${k.monitors.2.entry.slug} |\n| ${k.monitors.3.status} | ${k.monitors.3.name} | ${k.monitors.3.group} | ${k.monitors.3.message} | ${k.monitors.3.uptime24h} % | @${k.monitors.3.entry.slug} |\n| ${k.monitors.4.status} | ${k.monitors.4.name} | ${k.monitors.4.group} | ${k.monitors.4.message} | ${k.monitors.4.uptime24h} % | @${k.monitors.4.entry.slug} |\n| ${k.monitors.5.status} | ${k.monitors.5.name} | ${k.monitors.5.group} | ${k.monitors.5.message} | ${k.monitors.5.uptime24h} % | @${k.monitors.5.entry.slug} |\n| ${k.monitors.6.status} | ${k.monitors.6.name} | ${k.monitors.6.group} | ${k.monitors.6.message} | ${k.monitors.6.uptime24h} % | @${k.monitors.6.entry.slug} |\n"
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "status",
+      "path": "/p/${project}/d/uptime",
+      "caption": "Uptime Kuma monitors as AI clients get them, each linked to its entry"
+    }
+  ]
+}

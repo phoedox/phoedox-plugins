@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "path": "/api/status-page/home",
+      "file": "status-page.json"
+    },
+    {
+      "path": "/api/status-page/heartbeat/home",
+      "file": "heartbeat.json"
+    }
+  ]
+}

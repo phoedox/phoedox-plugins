@@ -1,0 +1,84 @@
+{
+  "config": {
+    "slug": "home",
+    "title": "Doe household",
+    "description": "Network, homelab and house at 12 Maple Street",
+    "icon": "/icon.svg",
+    "theme": "auto",
+    "published": true,
+    "showTags": false,
+    "domainNameList": [],
+    "customCSS": "",
+    "footerText": null,
+    "showPoweredBy": true,
+    "googleAnalyticsId": null,
+    "showCertificateExpiry": false
+  },
+  "incident": null,
+  "publicGroupList": [
+    {
+      "id": 1,
+      "name": "Network",
+      "weight": 1,
+      "monitorList": [
+        {
+          "id": 1,
+          "name": "Router",
+          "sendUrl": 0,
+          "type": "ping"
+        },
+        {
+          "id": 2,
+          "name": "Internet",
+          "sendUrl": 0,
+          "type": "http"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Homelab",
+      "weight": 2,
+      "monitorList": [
+        {
+          "id": 3,
+          "name": "nas-01 (SMB)",
+          "sendUrl": 0,
+          "type": "port"
+        },
+        {
+          "id": 4,
+          "name": "Home Assistant",
+          "sendUrl": 0,
+          "type": "http"
+        },
+        {
+          "id": 5,
+          "name": "pve-01 (web UI)",
+          "sendUrl": 0,
+          "type": "http"
+        },
+        {
+          "id": 6,
+          "name": "Nextcloud",
+          "sendUrl": 0,
+          "type": "http"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "House",
+      "weight": 3,
+      "monitorList": [
+        {
+          "id": 7,
+          "name": "Garden camera",
+          "sendUrl": 0,
+          "type": "ping"
+        }
+      ]
+    }
+  ],
+  "maintenanceList": []
+}

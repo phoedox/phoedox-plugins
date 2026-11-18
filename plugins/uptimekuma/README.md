@@ -2,6 +2,8 @@
 
 `com.phoedox.uptimekuma` · version 0.1.0
 
+![Uptime Kuma monitors as AI clients get them, each linked to its entry](screenshots/status.webp)
+
 Gives AI clients the live state of the monitors on an Uptime Kuma status page (status, last message, last check, 24-hour uptime) together with the Phoedox entry each monitor belongs to (matched by host name, address or name). Read-only, no import.
 
 ## What it adds
