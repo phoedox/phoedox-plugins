@@ -1,0 +1,106 @@
+{
+  "setup": [
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "wifi-and-network",
+        "title": "Wi-Fi and network",
+        "category": "Network",
+        "markdown": "Main network 10.20.0.0/24, guest Wi-Fi on its own VLAN."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "heating",
+        "title": "Heating and hot water",
+        "category": "House",
+        "markdown": "Gas boiler in the basement, serviced every October."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "emergency-contacts",
+        "title": "Emergency contacts",
+        "category": "House",
+        "markdown": "Water, power and gas shut-offs are in the basement next to the stairs."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "homelab-move",
+        "title": "Homelab move",
+        "category": "Homelab",
+        "markdown": "Ideas for the move of the homelab from the basement into the converted garage.\n\n```mindmap\nMoving the homelab\n  Garage\n    Own 16 A circuit\n    Network outlets\n    Insulation\n  Hardware\n    Rack and UPS\n    NAS\n    Mini PCs\n  Network\n    Fibre to the garage\n    Switch and access point\n    Guest VLAN\n  Before the move\n    Back up the NAS\n    Label every cable\n    Tell the family\n```"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "whiteboard",
+        "slug": "garden-board",
+        "title": "Garden ideas",
+        "category": "House",
+        "whiteboard": {
+          "background": "dots",
+          "elements": [
+            {
+              "id": "mm1",
+              "type": "block",
+              "kind": "mindmap",
+              "source": "Garden 2026\n  Vegetables\n    Tomatoes\n    Beans\n  Lawn\n    Robot mower\n  Pond\n    New pump\n    Netting",
+              "x": 0,
+              "y": 0,
+              "w": 700,
+              "h": 250
+            },
+            {
+              "id": "s1",
+              "type": "sticky",
+              "x": 0,
+              "y": 280,
+              "w": 240,
+              "h": 110,
+              "fill": "green",
+              "text": "Order seeds before March"
+            },
+            {
+              "id": "s2",
+              "type": "sticky",
+              "x": 260,
+              "y": 280,
+              "w": 240,
+              "h": 110,
+              "fill": "yellow",
+              "text": "Pump: check the warranty"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "mindmap",
+      "path": "/p/${project}/d/homelab-move",
+      "caption": "An indented outline drawn as a mind map with branches to both sides"
+    },
+    {
+      "name": "whiteboard",
+      "path": "/p/${project}/d/garden-board",
+      "caption": "A mind map on a whiteboard, next to sticky notes",
+      "wait": 2500
+    }
+  ]
+}

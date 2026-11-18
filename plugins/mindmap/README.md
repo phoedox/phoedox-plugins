@@ -4,7 +4,7 @@
 
 A ```mindmap block for pages and whiteboards: an indented outline (spaces, tabs or "- " lists) drawn as a mind map with the first line in the middle and its branches to both sides. Readers collapse and expand branches and copy the map onto a whiteboard as shapes.
 
-![Mind map in Phoedox](docs/screenshot.png)
+![An indented outline drawn as a mind map with branches to both sides](screenshots/mindmap.webp)
 
 ## What it adds
 

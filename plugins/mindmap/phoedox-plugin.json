@@ -3,6 +3,10 @@
   "name": "Mind map",
   "icon": "brain-circuit",
   "category": "blocks",
+  "screenshots": [
+    { "file": "screenshots/mindmap.webp", "caption": "An indented outline drawn as a mind map with branches to both sides" },
+    { "file": "screenshots/whiteboard.webp", "caption": "A mind map on a whiteboard, next to sticky notes" }
+  ],
   "version": "1.0.0",
   "hostApi": "1",
   "description": "A ```mindmap block for pages and whiteboards: an indented outline (spaces, tabs or \"- \" lists) drawn as a mind map with the first line in the middle and its branches to both sides. Readers collapse and expand branches and copy the map onto a whiteboard as shapes.",
