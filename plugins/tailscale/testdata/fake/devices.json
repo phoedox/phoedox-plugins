@@ -1,0 +1,378 @@
+{
+ "devices": [
+  {
+   "addresses": [
+    "10.20.100.1",
+    "2001:db8:7a11::1"
+   ],
+   "id": "6000000000001111",
+   "nodeId": "nDEMO01CNTRL",
+   "user": "tagged-devices",
+   "name": "homeserver.tail-demo.ts.net",
+   "hostname": "homeserver",
+   "clientVersion": "1.84.3-t1234abcd-g5678efgh",
+   "updateAvailable": false,
+   "os": "linux",
+   "created": "2025-02-11T10:00:00Z",
+   "lastSeen": "2026-06-15T07:59:41Z",
+   "keyExpiryDisabled": true,
+   "expires": "0001-01-01T00:00:00Z",
+   "authorized": true,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo01",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [
+    "10.20.0.0/24"
+   ],
+   "advertisedRoutes": [
+    "10.20.0.0/24"
+   ],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": true,
+   "tags": [
+    "tag:server"
+   ]
+  },
+  {
+   "addresses": [
+    "10.20.100.2",
+    "2001:db8:7a11::2"
+   ],
+   "id": "6000000000002222",
+   "nodeId": "nDEMO02CNTRL",
+   "user": "tagged-devices",
+   "name": "nas.tail-demo.ts.net",
+   "hostname": "nas",
+   "clientVersion": "1.82.5-t9a8b7c6d5-gabcdef01",
+   "updateAvailable": true,
+   "os": "linux",
+   "created": "2025-03-12T10:00:00Z",
+   "lastSeen": "2026-06-15T07:59:12Z",
+   "keyExpiryDisabled": true,
+   "expires": "0001-01-01T00:00:00Z",
+   "authorized": true,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo02",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [],
+   "advertisedRoutes": [],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": true,
+   "tags": [
+    "tag:server"
+   ]
+  },
+  {
+   "addresses": [
+    "10.20.100.3",
+    "2001:db8:7a11::3"
+   ],
+   "id": "6000000000003333",
+   "nodeId": "nDEMO03CNTRL",
+   "user": "tagged-devices",
+   "name": "pihole.tail-demo.ts.net",
+   "hostname": "pihole",
+   "clientVersion": "1.84.3-t1234abcd-g5678efgh",
+   "updateAvailable": false,
+   "os": "linux",
+   "created": "2025-04-13T10:00:00Z",
+   "lastSeen": "2026-06-15T07:58:57Z",
+   "keyExpiryDisabled": true,
+   "expires": "0001-01-01T00:00:00Z",
+   "authorized": true,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo03",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [],
+   "advertisedRoutes": [],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": true,
+   "tags": [
+    "tag:server"
+   ]
+  },
+  {
+   "addresses": [
+    "10.20.100.4",
+    "2001:db8:7a11::4"
+   ],
+   "id": "6000000000004444",
+   "nodeId": "nDEMO04CNTRL",
+   "user": "tagged-devices",
+   "name": "home-assistant.tail-demo.ts.net",
+   "hostname": "home-assistant",
+   "clientVersion": "1.84.0-t0f1e2d3c-g4b5a6978",
+   "updateAvailable": true,
+   "os": "linux",
+   "created": "2025-05-14T10:00:00Z",
+   "lastSeen": "2026-06-15T07:59:30Z",
+   "keyExpiryDisabled": true,
+   "expires": "0001-01-01T00:00:00Z",
+   "authorized": true,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo04",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [],
+   "advertisedRoutes": [],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": true,
+   "tags": [
+    "tag:server"
+   ]
+  },
+  {
+   "addresses": [
+    "10.20.100.5",
+    "2001:db8:7a11::5"
+   ],
+   "id": "6000000000005555",
+   "nodeId": "nDEMO05CNTRL",
+   "user": "alex@example.org",
+   "name": "alex-laptop.tail-demo.ts.net",
+   "hostname": "alex-laptop",
+   "clientVersion": "1.84.3-t1234abcd-g5678efgh",
+   "updateAvailable": false,
+   "os": "macOS",
+   "created": "2025-06-15T10:00:00Z",
+   "lastSeen": "2026-06-15T07:52:03Z",
+   "keyExpiryDisabled": false,
+   "expires": "2026-08-08T10:00:00Z",
+   "authorized": true,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo05",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [],
+   "advertisedRoutes": [],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": false
+  },
+  {
+   "addresses": [
+    "10.20.100.6",
+    "2001:db8:7a11::6"
+   ],
+   "id": "6000000000006666",
+   "nodeId": "nDEMO06CNTRL",
+   "user": "sam@example.org",
+   "name": "sam-phone.tail-demo.ts.net",
+   "hostname": "sam-phone",
+   "clientVersion": "1.84.2-t5e6f7a8b-g9c0d1e2f",
+   "updateAvailable": false,
+   "os": "iOS",
+   "created": "2025-07-16T10:00:00Z",
+   "lastSeen": "2026-06-14T21:14:48Z",
+   "keyExpiryDisabled": false,
+   "expires": "2026-08-09T10:00:00Z",
+   "authorized": true,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo06",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [],
+   "advertisedRoutes": [],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": false
+  },
+  {
+   "addresses": [
+    "10.20.100.7",
+    "2001:db8:7a11::7"
+   ],
+   "id": "6000000000007777",
+   "nodeId": "nDEMO07CNTRL",
+   "user": "alex@example.org",
+   "name": "office-pc.tail-demo.ts.net",
+   "hostname": "office-pc",
+   "clientVersion": "1.80.3-tabc12345-gdef67890",
+   "updateAvailable": true,
+   "os": "windows",
+   "created": "2025-08-17T10:00:00Z",
+   "lastSeen": "2026-06-15T07:49:10Z",
+   "keyExpiryDisabled": false,
+   "expires": "2026-08-10T10:00:00Z",
+   "authorized": true,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo07",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [],
+   "advertisedRoutes": [],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": false
+  },
+  {
+   "addresses": [
+    "10.20.100.8",
+    "2001:db8:7a11::8"
+   ],
+   "id": "6000000000008888",
+   "nodeId": "nDEMO08CNTRL",
+   "user": "tagged-devices",
+   "name": "garden-pi.tail-demo.ts.net",
+   "hostname": "garden-pi",
+   "clientVersion": "1.76.6-t11223344-g55667788",
+   "updateAvailable": true,
+   "os": "linux",
+   "created": "2025-09-18T10:00:00Z",
+   "lastSeen": "2026-06-02T18:40:00Z",
+   "keyExpiryDisabled": true,
+   "expires": "0001-01-01T00:00:00Z",
+   "authorized": true,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo08",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [],
+   "advertisedRoutes": [],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": false,
+   "tags": [
+    "tag:sensor"
+   ]
+  },
+  {
+   "addresses": [
+    "10.20.100.9",
+    "2001:db8:7a11::9"
+   ],
+   "id": "6000000000009999",
+   "nodeId": "nDEMO09CNTRL",
+   "user": "tagged-devices",
+   "name": "vps-exit.tail-demo.ts.net",
+   "hostname": "vps-exit",
+   "clientVersion": "1.84.3-t1234abcd-g5678efgh",
+   "updateAvailable": false,
+   "os": "linux",
+   "created": "2025-01-19T10:00:00Z",
+   "lastSeen": "2026-06-15T07:59:50Z",
+   "keyExpiryDisabled": true,
+   "expires": "0001-01-01T00:00:00Z",
+   "authorized": true,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo09",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [
+    "0.0.0.0/0",
+    "::/0"
+   ],
+   "advertisedRoutes": [
+    "0.0.0.0/0",
+    "::/0"
+   ],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": true,
+   "tags": [
+    "tag:exit-node"
+   ]
+  },
+  {
+   "addresses": [
+    "10.20.100.10",
+    "2001:db8:7a11::a"
+   ],
+   "id": "6000000000011110",
+   "nodeId": "nDEMO10CNTRL",
+   "user": "sam@example.org",
+   "name": "new-tablet.tail-demo.ts.net",
+   "hostname": "new-tablet",
+   "clientVersion": "1.84.3-t1234abcd-g5678efgh",
+   "updateAvailable": false,
+   "os": "android",
+   "created": "2025-02-10T10:00:00Z",
+   "lastSeen": "2026-06-15T07:40:00Z",
+   "keyExpiryDisabled": false,
+   "expires": "2026-08-13T10:00:00Z",
+   "authorized": false,
+   "isExternal": false,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo10",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [],
+   "advertisedRoutes": [],
+   "clientConnectivity": {
+    "endpoints": [],
+    "latency": {},
+    "mappingVariesByDestIP": false
+   },
+   "tailnetLockKey": "",
+   "connectedToControl": false
+  },
+  {
+   "addresses": [
+    "10.20.100.200"
+   ],
+   "id": "6000000000099999",
+   "nodeId": "nDEMO99CNTRL",
+   "user": "friend@example.org",
+   "name": "friends-nas.tail-other.ts.net",
+   "hostname": "friends-nas",
+   "clientVersion": "",
+   "updateAvailable": false,
+   "os": "linux",
+   "created": "",
+   "lastSeen": "2026-06-15T07:30:00Z",
+   "keyExpiryDisabled": true,
+   "expires": "0001-01-01T00:00:00Z",
+   "authorized": true,
+   "isExternal": true,
+   "machineKey": "",
+   "nodeKey": "nodekey:demo99",
+   "blocksIncomingConnections": false,
+   "enabledRoutes": [],
+   "advertisedRoutes": [],
+   "clientConnectivity": null,
+   "tailnetLockKey": ""
+  }
+ ]
+}

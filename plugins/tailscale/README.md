@@ -2,6 +2,8 @@
 
 `com.phoedox.tailscale` · version 0.1.0
 
+![Tailscale nodes as entries with OS, Tailscale address and client version](screenshots/nodes.webp)
+
 Imports the devices of a Tailscale tailnet into the knowledge graph as Tailscale nodes (hostname, OS, Tailscale addresses, client version, last seen, update available, tags, authorized) and links each node "related to" an existing server, VM, LXC container or device with the same hostname. AI clients can ask which devices are online, when they were last seen and whose key expires. Read-only; devices shared in from other tailnets are only listed, not imported.
 
 ## What it adds

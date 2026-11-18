@@ -1,4 +1,6 @@
 {
+  "title": "Tailscale node",
+  "description": "A device in a Tailscale tailnet.",
   "type": "object",
   "properties": {
     "hostname": { "type": "string", "title": "Hostname" },

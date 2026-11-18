@@ -6,6 +6,8 @@ import (
 	"time"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 const devicesJSON = `{"devices":[
@@ -185,5 +187,30 @@ func TestSettingsAndErrors(t *testing.T) {
 	}
 	if httpError(500).Error() != "Tailscale answered HTTP 500" {
 		t.Fatal(httpError(500))
+	}
+}
+
+// TestDemoData parses the recorded demo answer the screenshots use.
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "GET", "/api/v2/tailnet/-/devices")
+	if err != nil {
+		t.Fatal(err)
+	}
+	devs, err := parseDevices(body)
+	if err != nil || len(devs) != 11 {
+		t.Fatalf("%v %d", err, len(devs))
+	}
+	m := newMatcher([]pdk.Entity{
+		{Slug: "homeserver", Kind: "server", Name: "homeserver", Attrs: map[string]any{"hostname": "homeserver.home.arpa", "ip": "10.20.0.10"}},
+		{Slug: "pihole", Kind: "lxc", Name: "pihole", Attrs: map[string]any{"ip": "10.20.0.53"}},
+		{Slug: "home-assistant", Kind: "vm", Name: "home-assistant", Attrs: map[string]any{"ip": "10.20.0.20"}},
+	})
+	ops, links := graphOps(devs, m)
+	if len(ops.Ops) != 10+3 || links != 3 {
+		t.Fatalf("ops %d links %d", len(ops.Ops), links)
+	}
+	info := deviceInfo(devs, time.Date(2026, 6, 15, 8, 0, 0, 0, time.UTC))
+	if !info[0].Online || info[len(info)-1].Online || info[0].TailscaleIP == "" {
+		t.Fatalf("info: %+v", info)
 	}
 }

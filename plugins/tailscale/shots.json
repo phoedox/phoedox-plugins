@@ -1,0 +1,18 @@
+{
+  "secrets": {"apikey": "tskey-api-demo"},
+  "hosts": ["api.tailscale.com"],
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/entities", "body": {"kind": "server", "slug": "homeserver", "name": "homeserver", "attrs": {"ip": "10.20.0.10", "os": "Debian 13"}}},
+    {"method": "POST", "path": "/projects/${project}/entities", "body": {"kind": "lxc", "slug": "pihole", "name": "pihole", "attrs": {"ctid": 105, "os": "Debian 13", "ip": "10.20.0.53"}}},
+    {"method": "POST", "path": "/projects/${project}/entities", "body": {"kind": "vm", "slug": "home-assistant", "name": "home-assistant", "attrs": {"vmid": 101, "os": "Home Assistant OS", "ip": "10.20.0.20"}}},
+    {"method": "POST", "path": "/projects/${project}/edges", "body": {"from": "pihole", "rel": "runs_on", "to": "homeserver"}},
+    {"method": "POST", "path": "/projects/${project}/edges", "body": {"from": "home-assistant", "rel": "runs_on", "to": "homeserver"}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.tailscale/tools/tailscale.sync", "body": {}}
+  ],
+  "wait": {"path": "/projects/${project}/entities", "min": 13},
+  "shots": [
+    {"name": "nodes", "path": "/p/${project}/graph?kind=tailscale_node", "caption": "Tailscale nodes as entries with OS, Tailscale address and client version"},
+    {"name": "map", "path": "/p/${project}/graph/map", "caption": "Tailscale nodes on the map, linked to the servers and guests they run on", "wait": 3000}
+  ]
+}
