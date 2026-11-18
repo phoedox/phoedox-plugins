@@ -2,6 +2,8 @@
 
 `com.phoedox.aws` · version 0.1.0
 
+![EC2 instances as VM entries with OS, IP address and vCPUs](screenshots/entries.webp)
+
 Imports the EC2 instances of an AWS account into the knowledge graph as VMs (name from the Name tag, instance type, state, private and public IP, platform, availability zone and region; terminated instances are skipped) and lists them for AI clients. Read-only: the only API call is DescribeInstances, signed with Signature Version 4.
 
 ## What it adds
