@@ -1,0 +1,86 @@
+{
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "hostid": "10107",
+      "host": "cam-garden",
+      "name": "Garden camera",
+      "status": "0",
+      "interfaces": [
+        {
+          "type": "1",
+          "main": "1",
+          "useip": "1",
+          "ip": "10.20.0.42",
+          "dns": "cam-garden.home.arpa",
+          "available": "2"
+        }
+      ]
+    },
+    {
+      "hostid": "10108",
+      "host": "homeassistant",
+      "name": "Home Assistant",
+      "status": "0",
+      "interfaces": [
+        {
+          "type": "1",
+          "main": "1",
+          "useip": "1",
+          "ip": "10.20.0.21",
+          "dns": "homeassistant.home.arpa",
+          "available": "1"
+        }
+      ]
+    },
+    {
+      "hostid": "10105",
+      "host": "nas-01",
+      "name": "nas-01",
+      "status": "0",
+      "interfaces": [
+        {
+          "type": "1",
+          "main": "1",
+          "useip": "1",
+          "ip": "10.20.0.10",
+          "dns": "nas-01.home.arpa",
+          "available": "1"
+        }
+      ]
+    },
+    {
+      "hostid": "10106",
+      "host": "pve-01",
+      "name": "pve-01",
+      "status": "0",
+      "interfaces": [
+        {
+          "type": "1",
+          "main": "1",
+          "useip": "1",
+          "ip": "10.20.0.11",
+          "dns": "pve-01.home.arpa",
+          "available": "1"
+        }
+      ]
+    },
+    {
+      "hostid": "10101",
+      "host": "router",
+      "name": "Router",
+      "status": "0",
+      "interfaces": [
+        {
+          "type": "1",
+          "main": "1",
+          "useip": "1",
+          "ip": "10.20.0.1",
+          "dns": "router.home.arpa",
+          "available": "1"
+        }
+      ]
+    }
+  ],
+  "id": 3
+}

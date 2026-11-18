@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/api_jsonrpc.php",
+      "seq": [
+        "problem.get.json",
+        "event.get.json",
+        "host.get.json"
+      ]
+    }
+  ]
+}

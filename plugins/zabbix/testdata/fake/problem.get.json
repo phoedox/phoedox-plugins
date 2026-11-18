@@ -1,0 +1,50 @@
+{
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "eventid": "8823",
+      "objectid": "23411",
+      "clock": "1781506200",
+      "name": "Unavailable by ICMP ping",
+      "severity": "4",
+      "acknowledged": "0",
+      "suppressed": "0",
+      "r_eventid": "0",
+      "r_clock": "0"
+    },
+    {
+      "eventid": "8817",
+      "objectid": "23392",
+      "clock": "1781251200",
+      "name": "FS [/mnt/tank]: Space is low (used > 85%, total 8TB)",
+      "severity": "2",
+      "acknowledged": "0",
+      "suppressed": "0",
+      "r_eventid": "0",
+      "r_clock": "0"
+    },
+    {
+      "eventid": "8809",
+      "objectid": "23377",
+      "clock": "1781497800",
+      "name": "Linux: High CPU utilization (over 90% for 5m)",
+      "severity": "2",
+      "acknowledged": "0",
+      "suppressed": "0",
+      "r_eventid": "8812",
+      "r_clock": "1781499300"
+    },
+    {
+      "eventid": "8795",
+      "objectid": "23350",
+      "clock": "1781484600",
+      "name": "Interface wan: High bandwidth usage (>90%)",
+      "severity": "2",
+      "acknowledged": "1",
+      "suppressed": "0",
+      "r_eventid": "0",
+      "r_clock": "0"
+    }
+  ],
+  "id": 1
+}

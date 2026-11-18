@@ -1,0 +1,110 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "token": "demo-zabbix-api-token"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "nas-01",
+        "slug": "nas-01",
+        "attrs": {
+          "hostname": "nas-01.home.arpa",
+          "ip": "10.20.0.10",
+          "os": "TrueNAS"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "server",
+        "name": "pve-01",
+        "slug": "pve-01",
+        "attrs": {
+          "hostname": "pve-01.home.arpa",
+          "ip": "10.20.0.11",
+          "os": "Proxmox VE"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "vm",
+        "name": "Home Assistant",
+        "slug": "home-assistant",
+        "attrs": {
+          "vmid": 101,
+          "os": "Home Assistant OS",
+          "ip": "10.20.0.21"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "router",
+        "name": "Router",
+        "slug": "router",
+        "attrs": {
+          "model": "OPNsense",
+          "ip": "10.20.0.1"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/entities",
+      "body": {
+        "kind": "device",
+        "name": "Garden camera",
+        "slug": "garden-camera",
+        "attrs": {
+          "ip": "10.20.0.42",
+          "model": "Outdoor cam 2"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/plugins/com.phoedox.zabbix/tools/zabbix.problems",
+      "body": {},
+      "as": "zbx"
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "zabbix-problems",
+        "title": "Zabbix problems",
+        "category": "Homelab",
+        "markdown": "What an AI client gets from the tool `zabbix.problems` of the Zabbix plugin: the latest problems, including recently resolved ones, each with the Phoedox entry of its host.\n\n| Severity | Problem | Host | Resolved | Entry |\n|---|---|---|---|---|\n| ${zbx.0.severity} | ${zbx.0.name} | ${zbx.0.hosts.0} | ${zbx.0.resolved} | @${zbx.0.entry.slug} |\n| ${zbx.1.severity} | ${zbx.1.name} | ${zbx.1.hosts.0} | ${zbx.1.resolved} | @${zbx.1.entry.slug} |\n| ${zbx.2.severity} | ${zbx.2.name} | ${zbx.2.hosts.0} | ${zbx.2.resolved} | @${zbx.2.entry.slug} |\n| ${zbx.3.severity} | ${zbx.3.name} | ${zbx.3.hosts.0} | ${zbx.3.resolved} | @${zbx.3.entry.slug} |\n"
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "problems",
+      "path": "/p/${project}/d/zabbix-problems",
+      "caption": "Zabbix problems as AI clients get them, each linked to its entry"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "eventid": "8823",
+      "hosts": [
+        {
+          "hostid": "10107"
+        }
+      ]
+    },
+    {
+      "eventid": "8817",
+      "hosts": [
+        {
+          "hostid": "10105"
+        }
+      ]
+    },
+    {
+      "eventid": "8809",
+      "hosts": [
+        {
+          "hostid": "10106"
+        }
+      ]
+    },
+    {
+      "eventid": "8795",
+      "hosts": [
+        {
+          "hostid": "10101"
+        }
+      ]
+    }
+  ],
+  "id": 2
+}

@@ -2,6 +2,8 @@
 
 `com.phoedox.zabbix` · version 0.1.0
 
+![Zabbix problems as AI clients get them, each linked to its entry](screenshots/problems.webp)
+
 Gives AI clients the current problems and the hosts of a Zabbix server (6.4 or later) together with the Phoedox entry each host belongs to (matched by host name, visible name, IP address or DNS name). Read-only, no import.
 
 ## What it adds
