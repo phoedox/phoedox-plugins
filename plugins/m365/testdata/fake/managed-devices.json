@@ -1,0 +1,70 @@
+{
+ "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#deviceManagement/managedDevices(id,deviceName,operatingSystem,osVersion,model,manufacturer,serialNumber,userDisplayName,complianceState,lastSyncDateTime,managedDeviceOwnerType)",
+ "value": [
+  {
+   "id": "ee15da12-af71-527c-86f9-6e6ba404e05d",
+   "deviceName": "MAPLE-LT-01",
+   "operatingSystem": "Windows",
+   "osVersion": "10.0.26100.4061",
+   "model": "ThinkPad T14 Gen 5",
+   "manufacturer": "LENOVO",
+   "serialNumber": "DEMO-PF5A0101",
+   "userDisplayName": "Alex Doe",
+   "complianceState": "compliant",
+   "lastSyncDateTime": "2026-06-15T06:41:09.1180000Z",
+   "managedDeviceOwnerType": "company"
+  },
+  {
+   "id": "5af7324d-1e3c-5023-8714-548a1997bf2a",
+   "deviceName": "MAPLE-LT-02",
+   "operatingSystem": "Windows",
+   "osVersion": "10.0.26100.4061",
+   "model": "Surface Laptop, 7th Edition",
+   "manufacturer": "Microsoft Corporation",
+   "serialNumber": "DEMO-0F2B0202",
+   "userDisplayName": "Sam Doe",
+   "complianceState": "compliant",
+   "lastSyncDateTime": "2026-06-15T07:12:33.5020000Z",
+   "managedDeviceOwnerType": "company"
+  },
+  {
+   "id": "69cc2400-87d8-58d2-af61-7a6a58768dd0",
+   "deviceName": "MAPLE-MB-01",
+   "operatingSystem": "macOS",
+   "osVersion": "15.5 (24F74)",
+   "model": "MacBook Air (13-inch, M3)",
+   "manufacturer": "Apple",
+   "serialNumber": "DEMO-C02M0303",
+   "userDisplayName": "Alex Doe",
+   "complianceState": "compliant",
+   "lastSyncDateTime": "2026-06-14T19:03:51.0000000Z",
+   "managedDeviceOwnerType": "company"
+  },
+  {
+   "id": "38a9ba93-b589-51c8-8c7b-964d48dcf27a",
+   "deviceName": "Sam's iPhone",
+   "operatingSystem": "iOS",
+   "osVersion": "18.5",
+   "model": "iPhone 15",
+   "manufacturer": "Apple",
+   "serialNumber": "DEMO-F2LX0404",
+   "userDisplayName": "Sam Doe",
+   "complianceState": "compliant",
+   "lastSyncDateTime": "2026-06-15T05:58:20.0000000Z",
+   "managedDeviceOwnerType": "personal"
+  },
+  {
+   "id": "4cb9c12f-14ac-5bce-a152-fd821d40e1ba",
+   "deviceName": "Workshop tablet",
+   "operatingSystem": "Android",
+   "osVersion": "14",
+   "model": "Galaxy Tab Active5",
+   "manufacturer": "samsung",
+   "serialNumber": "DEMO-R9WT0505",
+   "userDisplayName": "Alex Doe",
+   "complianceState": "noncompliant",
+   "lastSyncDateTime": "2026-05-30T16:22:47.0000000Z",
+   "managedDeviceOwnerType": "company"
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+ "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#subscribedSkus",
+ "value": [
+  {
+   "capabilityStatus": "Enabled",
+   "consumedUnits": 2,
+   "id": "9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d_cbdc14ab-d96c-4c30-b9f4-6ada7cdc1d46",
+   "skuId": "cbdc14ab-d96c-4c30-b9f4-6ada7cdc1d46",
+   "skuPartNumber": "SPB",
+   "appliesTo": "User",
+   "prepaidUnits": {
+    "enabled": 3,
+    "suspended": 0,
+    "warning": 0,
+    "lockedOut": 0
+   },
+   "servicePlans": [
+    {
+     "servicePlanId": "c1ec4a95-1f05-45b3-a911-aa3fa01094f5",
+     "servicePlanName": "INTUNE_A",
+     "provisioningStatus": "Success",
+     "appliesTo": "User"
+    }
+   ]
+  },
+  {
+   "capabilityStatus": "Enabled",
+   "consumedUnits": 1,
+   "id": "9a8b7c6d-5e4f-4a3b-8c2d-1e0f9a8b7c6d_f30db892-07e9-47e9-837c-80727f46fd3d",
+   "skuId": "f30db892-07e9-47e9-837c-80727f46fd3d",
+   "skuPartNumber": "FLOW_FREE",
+   "appliesTo": "User",
+   "prepaidUnits": {
+    "enabled": 10000,
+    "suspended": 0,
+    "warning": 0,
+    "lockedOut": 0
+   },
+   "servicePlans": []
+  }
+ ]
+}

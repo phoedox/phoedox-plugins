@@ -5,6 +5,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 	"github.com/phoedox/phoedox-plugins/internal/integ"
 	"github.com/phoedox/phoedox-sdk/go/pdk"
 )
@@ -121,5 +122,38 @@ func TestToken(t *testing.T) {
 		if validTenant(bad) == nil {
 			t.Error("accepted", bad)
 		}
+	}
+}
+
+// TestDemoData parses the recorded demo answers (for screenshots once the
+// Entra ID and Graph addresses can be pointed at the fake API).
+func TestDemoData(t *testing.T) {
+	const dir = "../testdata/fake"
+	body, err := fakeapi.Body(dir, "POST", "/maple-labs.example.org/oauth2/v2.0/token")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if tok, err := parseToken(200, body); err != nil || tok == "" {
+		t.Fatal(tok, err)
+	}
+	u, _ := url.Parse(devicesURL())
+	body, err = fakeapi.Body(dir, "GET", u.Path+"?"+u.RawQuery)
+	if err != nil {
+		t.Fatal(err)
+	}
+	devices, next, err := parseDevices(body)
+	if err != nil || next != "" || len(devices) != 5 {
+		t.Fatalf("%v %q %d", err, next, len(devices))
+	}
+	ops := graphOps(devices).Ops
+	if len(ops) != 5 || ops[0].Name != "MAPLE-LT-01" || ops[0].Attrs["serial"] != "DEMO-PF5A0101" || ops[0].Attrs["user"] != "Alex Doe" || ops[4].Attrs["compliance"] != "noncompliant" {
+		t.Fatalf("ops: %+v", ops)
+	}
+	body, err = fakeapi.Body(dir, "GET", "/v1.0/subscribedSkus")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if list, err := parseLicenses(body); err != nil || len(list) != 2 || list[0].Available != 1 {
+		t.Fatalf("licenses: %+v %v", list, err)
 	}
 }

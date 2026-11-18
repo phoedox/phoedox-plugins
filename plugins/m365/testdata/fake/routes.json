@@ -1,0 +1,17 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/*/oauth2/v2.0/token",
+      "file": "token.json"
+    },
+    {
+      "path": "/v1.0/deviceManagement/managedDevices",
+      "file": "managed-devices.json"
+    },
+    {
+      "path": "/v1.0/subscribedSkus",
+      "file": "subscribed-skus.json"
+    }
+  ]
+}
