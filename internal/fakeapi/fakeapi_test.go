@@ -6,6 +6,7 @@ import (
 	"net/http/httptest"
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -17,7 +18,9 @@ func TestServe(t *testing.T) {
 		{"method":"POST","path":"/login","status":204,"headers":{"Set-Cookie":"sid=demo"}},
 		{"path":"/rpc","query":"m=status","body":"ok"},
 		{"path":"/inline","json":{"b":2}},
-		{"method":"POST","path":"/chat","seq":["t1.sse","t2.sse"]}]}`), 0o644)
+		{"method":"POST","path":"/chat","seq":["t1.sse","t2.sse"]},
+		{"method":"POST","path":"/rpc","bodyContains":"\"host.get\"","body":"hosts"},
+		{"method":"POST","path":"/rpc","body":"other"}]}`), 0o644)
 	_ = os.WriteFile(filepath.Join(dir, "t1.sse"), []byte("data: one\n\n"), 0o644)
 	_ = os.WriteFile(filepath.Join(dir, "t2.sse"), []byte("data: two\n\n"), 0o644)
 	api, err := Load(dir)
@@ -53,6 +56,21 @@ func TestServe(t *testing.T) {
 	}
 	if b, err := Body(dir, "GET", "/inline"); err != nil || string(b) != `{"b":2}` {
 		t.Fatalf("body: %v %s", err, b)
+	}
+	post := func(body string) string {
+		res, err := http.Post(srv.URL+"/rpc", "application/json", strings.NewReader(body))
+		if err != nil {
+			t.Fatal(err)
+		}
+		defer res.Body.Close()
+		b, _ := io.ReadAll(res.Body)
+		return string(b)
+	}
+	if post(`{"method":"host.get"}`) != "hosts" || post(`{"method":"problem.get"}`) != "other" {
+		t.Fatal("bodyContains")
+	}
+	if b, _ := BodyFor(dir, "POST", "/rpc", `{"method":"host.get"}`); string(b) != "hosts" {
+		t.Fatalf("BodyFor: %s", b)
 	}
 	for _, want := range []string{"one", "two", "two"} {
 		if c, b, h := get("POST", "/chat"); c != 200 || b != "data: "+want+"\n\n" || h.Get("Content-Type") != "text/event-stream" {

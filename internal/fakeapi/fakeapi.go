@@ -16,7 +16,9 @@
 //
 // method defaults to GET, status to 200. path is matched with path.Match
 // (* stands for one path segment); query, when set, must be contained in
-// the raw query. The first matching route wins. file is relative to the
+// the raw query; bodyContains, when set, must be contained in the request
+// body (JSON-RPC APIs answer everything on one path). The first matching
+// route wins. file is relative to the
 // folder of routes.json; json is an inline answer; body a plain one; seq
 // lists files answered one after the other (the last one repeats), e.g. the
 // turns of a recorded AI conversation. A file ending in .sse is sent as
@@ -26,6 +28,7 @@ package fakeapi
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 	"path"
@@ -36,15 +39,17 @@ import (
 
 // Route is one recorded answer.
 type Route struct {
-	Method  string            `json:"method,omitempty"`
-	Path    string            `json:"path"`
-	Query   string            `json:"query,omitempty"`
-	Status  int               `json:"status,omitempty"`
-	Headers map[string]string `json:"headers,omitempty"`
-	File    string            `json:"file,omitempty"`
-	JSON    json.RawMessage   `json:"json,omitempty"`
-	Body    string            `json:"body,omitempty"`
-	Seq     []string          `json:"seq,omitempty"`
+	Method string `json:"method,omitempty"`
+	Path   string `json:"path"`
+	Query  string `json:"query,omitempty"`
+	// BodyContains must occur in the request body (JSON-RPC on one path).
+	BodyContains string            `json:"bodyContains,omitempty"`
+	Status       int               `json:"status,omitempty"`
+	Headers      map[string]string `json:"headers,omitempty"`
+	File         string            `json:"file,omitempty"`
+	JSON         json.RawMessage   `json:"json,omitempty"`
+	Body         string            `json:"body,omitempty"`
+	Seq          []string          `json:"seq,omitempty"`
 }
 
 // API is a loaded routes.json.
@@ -81,11 +86,11 @@ func Load(dir string) (*API, error) {
 
 // Find returns the route for a request.
 func (a *API) Find(method, p, rawQuery string) (Route, bool) {
-	r, _, ok := a.find(method, p, rawQuery)
+	r, _, ok := a.find(method, p, rawQuery, "")
 	return r, ok
 }
 
-func (a *API) find(method, p, rawQuery string) (Route, int, bool) {
+func (a *API) find(method, p, rawQuery, body string) (Route, int, bool) {
 	for i, r := range a.Routes {
 		if r.Method != method {
 			continue
@@ -94,6 +99,9 @@ func (a *API) find(method, p, rawQuery string) (Route, int, bool) {
 			continue
 		}
 		if r.Query != "" && !strings.Contains(rawQuery, r.Query) {
+			continue
+		}
+		if r.BodyContains != "" && !strings.Contains(body, r.BodyContains) {
 			continue
 		}
 		return r, i, true
@@ -131,7 +139,8 @@ func (a *API) Content(r Route) ([]byte, error) {
 
 // ServeHTTP answers with the matching route, 404 otherwise.
 func (a *API) ServeHTTP(w http.ResponseWriter, req *http.Request) {
-	r, i, ok := a.find(req.Method, req.URL.Path, req.URL.RawQuery)
+	body, _ := io.ReadAll(io.LimitReader(req.Body, 1<<20))
+	r, i, ok := a.find(req.Method, req.URL.Path, req.URL.RawQuery, string(body))
 	r = a.next(i, r)
 	if !ok {
 		http.Error(w, "fakeapi: no route for "+req.Method+" "+req.URL.Path, http.StatusNotFound)
@@ -157,6 +166,11 @@ func (a *API) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 // Body returns the recorded answer for method and path (tests).
 func Body(dir, method, p string) ([]byte, error) {
+	return BodyFor(dir, method, p, "")
+}
+
+// BodyFor is Body for a request with a body (bodyContains routes).
+func BodyFor(dir, method, p, reqBody string) ([]byte, error) {
 	a, err := Load(dir)
 	if err != nil {
 		return nil, err
@@ -166,7 +180,7 @@ func Body(dir, method, p string) ([]byte, error) {
 	if len(u) == 2 {
 		q = u[1]
 	}
-	r, i, ok := a.find(method, u[0], q)
+	r, i, ok := a.find(method, u[0], q, reqBody)
 	if !ok {
 		return nil, fmt.Errorf("fakeapi: no route for %s %s in %s", method, p, dir)
 	}
