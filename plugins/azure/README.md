@@ -2,6 +2,8 @@
 
 `com.phoedox.azure` · version 0.1.0
 
+![A VM's entry: size, region, resource group, image and power state](screenshots/vm.webp)
+
 Imports the virtual machines of an Azure subscription into the knowledge graph as VMs (size, location, resource group, operating system and image, power state) and lists them for AI clients. Read-only: it signs in with client credentials at login.microsoftonline.com and only reads from Azure Resource Manager.
 
 ## What it adds
