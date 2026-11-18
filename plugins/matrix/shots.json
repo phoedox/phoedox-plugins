@@ -1,0 +1,85 @@
+{
+  "setup": [
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "wifi-and-network",
+        "title": "Wi-Fi and network",
+        "category": "Network",
+        "markdown": "Main network 10.20.0.0/24, guest Wi-Fi on its own VLAN."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "heating",
+        "title": "Heating and hot water",
+        "category": "House",
+        "markdown": "Gas boiler in the basement, serviced every October."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "emergency-contacts",
+        "title": "Emergency contacts",
+        "category": "House",
+        "markdown": "Water, power and gas shut-offs are in the basement next to the stairs."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "heat-pump",
+        "title": "Heat pump options",
+        "category": "House",
+        "markdown": "The gas boiler at 12 Maple Street is 19 years old. The installer's quotes are in the shared folder; scores are from the family meeting.\n\n```matrix\ntitle: Which heat pump do we buy?\ncriteria: Price*3, Noise*2, Efficiency*3, Installer nearby*2\nscale: 1-5\n- Air-to-water, 8 kW: 4, 3, 4, 5\n- Air-to-water, quiet model: 3, 5, 4, 4\n- Ground source: 1, 5, 5, 2\n- Hybrid with the old boiler: 5, 3, 2, 4\n```\n\nThe neighbours at number 14 have the quiet model and are happy with it."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "router-notes",
+        "title": "Router notes",
+        "category": "Network",
+        "markdown": "The router has 10.20.0.1; the guest network is VLAN 30."
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "matrix",
+      "path": "/p/${project}/d/heat-pump",
+      "caption": "Options scored on weighted criteria, with the best one highlighted"
+    },
+    {
+      "name": "weights",
+      "path": "/p/${project}/d/heat-pump",
+      "caption": "Readers try other weights without saving them",
+      "actions": [
+        {
+          "click": "phx-matrix button[aria-pressed]"
+        },
+        {
+          "fill": [
+            "phx-matrix input[data-w='0']",
+            "1"
+          ]
+        },
+        {
+          "wait": 400
+        }
+      ]
+    }
+  ]
+}

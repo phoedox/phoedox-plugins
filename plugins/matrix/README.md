@@ -4,7 +4,7 @@
 
 A ```matrix block for pages and whiteboards: options scored against weighted criteria, totals as bars with the best option highlighted. Readers can try other weights without saving them, and the options can become an open decision in one click.
 
-![Decision matrix in Phoedox](docs/screenshot.png)
+![Options scored on weighted criteria, with the best one highlighted](screenshots/matrix.webp)
 
 ## What it adds
 
