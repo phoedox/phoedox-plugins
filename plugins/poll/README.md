@@ -4,7 +4,7 @@
 
 A ```poll block for pages and whiteboards: a question and its answers as a list ("- …"). Every signed-in reader has their own vote – one answer, or several with "multiple: yes" – and can change or take it back. Readers only ever see how many people chose each answer, never who. The results appear after voting ("results: always" shows them from the start), "closed: yes" ends the poll and "id: …" keeps the votes when the text changes.
 
-![Poll in Phoedox](docs/screenshot.png)
+![A poll on a page: everyone has one vote and sees counts, never names](screenshots/poll.webp)
 
 ## What it adds
 

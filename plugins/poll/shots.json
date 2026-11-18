@@ -1,0 +1,145 @@
+{
+  "setup": [
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "wifi-and-network",
+        "title": "Wi-Fi and network",
+        "category": "Network",
+        "markdown": "Main network 10.20.0.0/24, guest Wi-Fi on its own VLAN."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "heating",
+        "title": "Heating and hot water",
+        "category": "House",
+        "markdown": "Gas boiler in the basement, serviced every October."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "emergency-contacts",
+        "title": "Emergency contacts",
+        "category": "House",
+        "markdown": "Water, power and gas shut-offs are in the basement next to the stairs."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "holiday-budget",
+        "title": "Holiday budget",
+        "category": "Family",
+        "markdown": "Up to 1,800 € for the week, travel included."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "markdown",
+        "slug": "summer-trip",
+        "title": "Summer trip",
+        "category": "Family",
+        "markdown": "Summer holidays start on 27 July. Everyone votes once; the result decides what we book this weekend.\n\n```poll\nquestion: Where does the family trip in August go?\nid: trip-2026\n- Lake cabin\n- Seaside campsite\n- City trip with museums\n- Stay home and fix the garden\n```\n\nBudget and dates are on the [[holiday-budget|holiday budget]] page."
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/projects/${project}/documents",
+      "body": {
+        "type": "whiteboard",
+        "slug": "family-board",
+        "title": "Family board",
+        "category": "Family",
+        "whiteboard": {
+          "background": "dots",
+          "elements": [
+            {
+              "id": "t1",
+              "type": "text",
+              "x": 0,
+              "y": -80,
+              "w": 600,
+              "h": 40,
+              "text": "This week",
+              "fontSize": 32
+            },
+            {
+              "id": "p1",
+              "type": "block",
+              "kind": "poll",
+              "source": "question: Movie night on Friday?\n- Animation\n- Comedy\n- Documentary",
+              "x": 0,
+              "y": 0,
+              "w": 420,
+              "h": 240
+            },
+            {
+              "id": "s1",
+              "type": "sticky",
+              "x": 450,
+              "y": 0,
+              "w": 220,
+              "h": 130,
+              "fill": "yellow",
+              "text": "Dentist Tuesday 3 pm"
+            },
+            {
+              "id": "s2",
+              "type": "sticky",
+              "x": 450,
+              "y": 160,
+              "w": 220,
+              "h": 130,
+              "fill": "green",
+              "text": "Bins out on Thursday"
+            },
+            {
+              "id": "s3",
+              "type": "sticky",
+              "x": 690,
+              "y": 0,
+              "w": 220,
+              "h": 130,
+              "fill": "pink",
+              "text": "Grandma visits Sunday"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "shots": [
+    {
+      "name": "poll",
+      "path": "/p/${project}/d/summer-trip",
+      "caption": "A poll on a page: everyone has one vote and sees counts, never names",
+      "actions": [
+        {
+          "click": "phx-poll button.opt:has-text('Lake cabin')"
+        },
+        {
+          "wait": 800
+        }
+      ]
+    },
+    {
+      "name": "whiteboard",
+      "path": "/p/${project}/d/family-board",
+      "caption": "A live poll on the family whiteboard",
+      "wait": 2500
+    }
+  ]
+}
