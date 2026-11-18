@@ -5,6 +5,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 	"github.com/phoedox/phoedox-plugins/internal/integ"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
@@ -147,5 +148,38 @@ func TestValidation(t *testing.T) {
 	ops.Upsert("vm", "a", nil)
 	if err := integ.ApplyBatches(ops, 500, func(*pdk.GraphOps) (map[string]string, error) { return nil, nil }); err != nil {
 		t.Fatal(err)
+	}
+}
+
+// TestDemoData parses the recorded demo answers (for screenshots once the
+// Entra ID and ARM addresses can be pointed at the fake API).
+func TestDemoData(t *testing.T) {
+	const dir = "../testdata/fake"
+	body, err := fakeapi.Body(dir, "POST", "/maple-labs.example.org/oauth2/v2.0/token")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if tok, err := parseToken(200, body); err != nil || tok == "" {
+		t.Fatal(tok, err)
+	}
+	read := func(statusOnly bool) []VM {
+		t.Helper()
+		u, _ := url.Parse(listURL("5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a", statusOnly))
+		body, err := fakeapi.Body(dir, "GET", u.Path+"?"+u.RawQuery)
+		if err != nil {
+			t.Fatal(err)
+		}
+		vms, next, err := parseVMs(body)
+		if err != nil || next != "" {
+			t.Fatal(err, next)
+		}
+		return vms
+	}
+	vms := read(false)
+	mergeStatus(vms, read(true))
+	ops := graphOps(vms).Ops
+	if len(ops) != 3 || ops[0].Name != "shop-api" || ops[0].Attrs["os"] != "ubuntu 24.04" || ops[0].Attrs["power_state"] != "running" ||
+		ops[2].Attrs["power_state"] != "deallocated" || ops[2].Attrs["resource_group"] != "rg-maple-labs-ci" {
+		t.Fatalf("ops: %+v", ops)
 	}
 }

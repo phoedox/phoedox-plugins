@@ -1,0 +1,154 @@
+{
+ "value": [
+  {
+   "name": "shop-api",
+   "id": "/subscriptions/5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a/resourceGroups/rg-maple-labs/providers/Microsoft.Compute/virtualMachines/shop-api",
+   "type": "Microsoft.Compute/virtualMachines",
+   "location": "germanywestcentral",
+   "tags": {
+    "project": "maple-labs",
+    "env": "prod"
+   },
+   "properties": {
+    "vmId": "3f6a1c2e-7b4d-4e8a-9c1f-2d3e4f5a6b7c",
+    "hardwareProfile": {
+     "vmSize": "Standard_B2s"
+    },
+    "storageProfile": {
+     "imageReference": {
+      "publisher": "Canonical",
+      "offer": "ubuntu-24_04-lts",
+      "sku": "server",
+      "version": "latest",
+      "exactVersion": "24.04.202605130"
+     },
+     "osDisk": {
+      "osType": "Linux",
+      "name": "shop-api_OsDisk_1_0a1b2c3d",
+      "createOption": "FromImage",
+      "caching": "ReadWrite",
+      "managedDisk": {
+       "storageAccountType": "Premium_LRS"
+      },
+      "diskSizeGB": 64
+     }
+    },
+    "osProfile": {
+     "computerName": "shop-api",
+     "adminUsername": "mapleadmin"
+    },
+    "networkProfile": {
+     "networkInterfaces": [
+      {
+       "id": "/subscriptions/5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a/resourceGroups/rg-maple-labs/providers/Microsoft.Network/networkInterfaces/shop-api-nic"
+      }
+     ]
+    },
+    "provisioningState": "Succeeded",
+    "timeCreated": "2026-02-11T09:30:12.4410000+00:00"
+   },
+   "zones": [
+    "1"
+   ]
+  },
+  {
+   "name": "bookkeeping",
+   "id": "/subscriptions/5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a/resourceGroups/rg-maple-labs/providers/Microsoft.Compute/virtualMachines/bookkeeping",
+   "type": "Microsoft.Compute/virtualMachines",
+   "location": "germanywestcentral",
+   "tags": {
+    "project": "maple-labs",
+    "owner": "office"
+   },
+   "properties": {
+    "vmId": "8b9c0d1e-2f3a-4b5c-8d6e-7f8a9b0c1d2e",
+    "hardwareProfile": {
+     "vmSize": "Standard_B2ms"
+    },
+    "storageProfile": {
+     "imageReference": {
+      "publisher": "MicrosoftWindowsServer",
+      "offer": "WindowsServer",
+      "sku": "2022-datacenter-azure-edition",
+      "version": "latest",
+      "exactVersion": "20348.3561.250505"
+     },
+     "osDisk": {
+      "osType": "Windows",
+      "name": "bookkeeping_OsDisk_1_0a1b2c3d",
+      "createOption": "FromImage",
+      "caching": "ReadWrite",
+      "managedDisk": {
+       "storageAccountType": "Premium_LRS"
+      },
+      "diskSizeGB": 64
+     }
+    },
+    "osProfile": {
+     "computerName": "bookkeeping",
+     "adminUsername": "mapleadmin"
+    },
+    "networkProfile": {
+     "networkInterfaces": [
+      {
+       "id": "/subscriptions/5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a/resourceGroups/rg-maple-labs/providers/Microsoft.Network/networkInterfaces/bookkeeping-nic"
+      }
+     ]
+    },
+    "provisioningState": "Succeeded",
+    "timeCreated": "2026-02-11T09:30:12.4410000+00:00"
+   }
+  },
+  {
+   "name": "test-runner",
+   "id": "/subscriptions/5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a/resourceGroups/rg-maple-labs-ci/providers/Microsoft.Compute/virtualMachines/test-runner",
+   "type": "Microsoft.Compute/virtualMachines",
+   "location": "westeurope",
+   "tags": {
+    "project": "maple-labs",
+    "env": "ci"
+   },
+   "properties": {
+    "vmId": "c4d5e6f7-0a1b-4c2d-8e3f-4a5b6c7d8e9f",
+    "hardwareProfile": {
+     "vmSize": "Standard_D2s_v5"
+    },
+    "storageProfile": {
+     "imageReference": {
+      "publisher": "Canonical",
+      "offer": "ubuntu-24_04-lts",
+      "sku": "server",
+      "version": "latest",
+      "exactVersion": "24.04.202605130"
+     },
+     "osDisk": {
+      "osType": "Linux",
+      "name": "test-runner_OsDisk_1_0a1b2c3d",
+      "createOption": "FromImage",
+      "caching": "ReadWrite",
+      "managedDisk": {
+       "storageAccountType": "Premium_LRS"
+      },
+      "diskSizeGB": 64
+     }
+    },
+    "osProfile": {
+     "computerName": "test-runner",
+     "adminUsername": "mapleadmin"
+    },
+    "networkProfile": {
+     "networkInterfaces": [
+      {
+       "id": "/subscriptions/5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a/resourceGroups/rg-maple-labs-ci/providers/Microsoft.Network/networkInterfaces/test-runner-nic"
+      }
+     ]
+    },
+    "provisioningState": "Succeeded",
+    "timeCreated": "2026-02-11T09:30:12.4410000+00:00"
+   },
+   "zones": [
+    "2"
+   ]
+  }
+ ]
+}

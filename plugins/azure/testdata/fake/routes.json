@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/*/oauth2/v2.0/token",
+      "file": "token.json"
+    },
+    {
+      "path": "/subscriptions/*/providers/Microsoft.Compute/virtualMachines",
+      "query": "statusOnly=true",
+      "file": "vms-status.json"
+    },
+    {
+      "path": "/subscriptions/*/providers/Microsoft.Compute/virtualMachines",
+      "query": "statusOnly=false",
+      "file": "vms.json"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+ "value": [
+  {
+   "name": "shop-api",
+   "id": "/subscriptions/5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a/resourceGroups/rg-maple-labs/providers/Microsoft.Compute/virtualMachines/shop-api",
+   "properties": {
+    "instanceView": {
+     "statuses": [
+      {
+       "code": "ProvisioningState/succeeded",
+       "level": "Info",
+       "displayStatus": "Provisioning succeeded"
+      },
+      {
+       "code": "PowerState/running",
+       "level": "Info",
+       "displayStatus": "VM running"
+      }
+     ],
+     "computerName": "shop-api",
+     "osName": "ubuntu",
+     "osVersion": "24.04"
+    }
+   }
+  },
+  {
+   "name": "bookkeeping",
+   "id": "/subscriptions/5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a/resourceGroups/rg-maple-labs/providers/Microsoft.Compute/virtualMachines/bookkeeping",
+   "properties": {
+    "instanceView": {
+     "statuses": [
+      {
+       "code": "ProvisioningState/succeeded",
+       "level": "Info",
+       "displayStatus": "Provisioning succeeded"
+      },
+      {
+       "code": "PowerState/running",
+       "level": "Info",
+       "displayStatus": "VM running"
+      }
+     ],
+     "computerName": "bookkeeping",
+     "osName": "Windows Server 2022 Datacenter Azure Edition",
+     "osVersion": "10.0.20348.3561"
+    }
+   }
+  },
+  {
+   "name": "test-runner",
+   "id": "/subscriptions/5e7d1c2a-3b4f-4a6e-9c8d-0f1e2d3c4b5a/resourceGroups/rg-maple-labs-ci/providers/Microsoft.Compute/virtualMachines/test-runner",
+   "properties": {
+    "instanceView": {
+     "statuses": [
+      {
+       "code": "ProvisioningState/succeeded",
+       "level": "Info",
+       "displayStatus": "Provisioning succeeded"
+      },
+      {
+       "code": "PowerState/deallocated",
+       "level": "Info",
+       "displayStatus": "VM deallocated"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}
