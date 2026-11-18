@@ -2,6 +2,8 @@
 
 `com.phoedox.proxmox` · version 0.1.0
 
+![The guests on the knowledge graph map, linked to the node they run on](screenshots/map.webp)
+
 Imports nodes, VMs and LXC containers from Proxmox VE into the knowledge graph (server, VM, LXC, "runs on") and shows AI clients their state.
 
 ## What it adds

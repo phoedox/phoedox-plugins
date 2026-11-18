@@ -66,6 +66,20 @@ Planned:
 - **Doc types:** checklist/form, glossary, patch list/cable plan, network configuration, calendar, free diagram, process (EPC/eEPC, BPMN, swimlanes), architecture (C4), sequence diagram, database model, component, fuse box/electrical plan, map, notebook, runbook
 - **Integrations:** Zammad / Jira, RoomPlan import (see the Roadmap board in Phoedox for more)
 
+## Tiles, logos and screenshots
+
+Rules: Phoedox page "Plugin logos and screenshots" and ADR-0090; brand checks in
+[`docs/branding/brands.md`](docs/branding/brands.md).
+
+- Every plugin has an `icon` (Lucide) and a `category`; `node scripts/tiles.mjs` draws the tiles
+  into `docs/branding/`. A product's own logo (`logo`, `logoDark`) only where brands.md says allowed.
+- Integrations record the answers of their API with fictional data in
+  `plugins/<name>/testdata/fake/routes.json` (see `internal/fakeapi`); the Go tests read the same files.
+- `plugins/<name>/shots.json` plans the screenshots. `node scripts/shots.mjs <name>|all` starts a fresh
+  Phoedox from `../phoedox` (or `PHOEDOX_DIR`), installs the plugin, starts its fake API
+  (`go run ./tools/fakeapi`), takes 1280×800 shots at scale 2 and writes `screenshots/*.webp`, the
+  manifest's `screenshots` and the README image. Needs Go, Bun and Playwright with Chromium.
+
 ## Publishing
 
 `scripts/pack.sh <plugin>` builds `dist/<id>-<version>.phxp` with `phx-plugin` from phoedox-sdk.

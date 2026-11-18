@@ -3,6 +3,10 @@
   "name": "Proxmox VE",
   "icon": "server-cog",
   "category": "servers",
+  "screenshots": [
+    { "file": "screenshots/map.webp", "caption": "The guests on the knowledge graph map, linked to the node they run on" },
+    { "file": "screenshots/entries.webp", "caption": "Nodes, VMs and containers from Proxmox VE as entries, with their host" }
+  ],
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports nodes, VMs and LXC containers from Proxmox VE into the knowledge graph (server, VM, LXC, \"runs on\") and shows AI clients their state. Settings: url (e.g. https://pve.example.org:8006, valid certificate) and token (API token in the form USER@REALM!ID=SECRET; the PVEAuditor role is enough).",

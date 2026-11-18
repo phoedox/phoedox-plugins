@@ -34,12 +34,12 @@ func TestParse(t *testing.T) {
 		t.Errorf("milestone/sections: %+v %+v", m, g)
 	}
 	for src, want := range map[string]string{
-		"X: after y, 2d":                     "no such id",
+		"X: after y, 2d":                         "no such id",
 		"A [a]: after b, 1d\nB [b]: after a, 1d": "circle",
-		"A: tomorrow":                         "neither a date",
-		"A: 2026-01-01, soon":                 "not a date, a duration",
-		"A: 2026-01-10, 2026-01-05":           "ends before",
-		"just text":                           "unknown line",
+		"A: tomorrow":                            "neither a date",
+		"A: 2026-01-01, soon":                    "not a date, a duration",
+		"A: 2026-01-10, 2026-01-05":              "ends before",
+		"just text":                              "unknown line",
 	} {
 		_, ps := Parse(src)
 		if len(ps) == 0 || !strings.Contains(ps[0].Message, want) {

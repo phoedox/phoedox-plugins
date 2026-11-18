@@ -1,0 +1,11 @@
+{"data": [
+  {"type": "node", "node": "pve-01", "status": "online", "maxcpu": 16, "cpu": 0.12, "maxmem": 68719476736, "mem": 30064771072, "uptime": 2851200},
+  {"type": "node", "node": "pve-02", "status": "online", "maxcpu": 8, "cpu": 0.05, "maxmem": 34359738368, "mem": 9663676416, "uptime": 2851100},
+  {"type": "qemu", "node": "pve-01", "vmid": 101, "name": "home-assistant", "status": "running", "maxcpu": 2, "cpu": 0.08, "maxmem": 4294967296, "mem": 2576980378, "uptime": 2850000, "tags": "smarthome;prod"},
+  {"type": "qemu", "node": "pve-01", "vmid": 102, "name": "opnsense", "status": "running", "maxcpu": 2, "cpu": 0.03, "maxmem": 4294967296, "mem": 1717986918, "uptime": 2850000, "tags": "network;prod"},
+  {"type": "qemu", "node": "pve-02", "vmid": 110, "name": "windows-lab", "status": "stopped", "maxcpu": 4, "maxmem": 8589934592, "tags": "lab"},
+  {"type": "lxc", "node": "pve-01", "vmid": 200, "name": "paperless", "status": "running", "maxcpu": 2, "cpu": 0.02, "maxmem": 2147483648, "mem": 943718400, "uptime": 2849000, "tags": "documents"},
+  {"type": "lxc", "node": "pve-01", "vmid": 201, "name": "uptime-kuma", "status": "running", "maxcpu": 1, "cpu": 0.01, "maxmem": 1073741824, "mem": 268435456, "uptime": 2849000, "tags": "monitoring"},
+  {"type": "lxc", "node": "pve-02", "vmid": 202, "name": "pihole", "status": "running", "maxcpu": 1, "cpu": 0.01, "maxmem": 536870912, "mem": 157286400, "uptime": 2849500, "tags": "network"},
+  {"type": "storage", "node": "pve-01", "storage": "local-zfs"}
+]}

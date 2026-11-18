@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
+)
 
 func TestProxmox(t *testing.T) {
 	body := []byte(`{"data":[
@@ -27,5 +31,20 @@ func TestProxmox(t *testing.T) {
 	}
 	if st := statusOf(list); len(st) != 3 || st[0].CPU != 5 || st[0].MemGiB != 20 {
 		t.Fatalf("status: %+v", st)
+	}
+}
+
+// TestDemoData parses the recorded demo answer the screenshots use.
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "GET", "/api2/json/cluster/resources")
+	if err != nil {
+		t.Fatal(err)
+	}
+	list, err := parseResources(body)
+	if err != nil || len(list) != 9 {
+		t.Fatalf("%v %d", err, len(list))
+	}
+	if ops := graphOps(list); len(ops.Ops) < 8 {
+		t.Fatalf("ops: %d", len(ops.Ops))
 	}
 }

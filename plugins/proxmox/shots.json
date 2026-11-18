@@ -1,0 +1,35 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "token": "shots@pve!demo=00000000-0000-4000-8000-000000000000"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 8
+  },
+  "shots": [
+    {
+      "name": "map",
+      "path": "/p/${project}/graph/map",
+      "caption": "The guests on the knowledge graph map, linked to the node they run on",
+      "wait": 3000
+    },
+    {
+      "name": "entries",
+      "path": "/p/${project}/graph",
+      "caption": "Nodes, VMs and containers from Proxmox VE as entries, with their host"
+    }
+  ]
+}
