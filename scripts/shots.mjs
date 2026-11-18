@@ -13,6 +13,7 @@
 // shots.json:
 //   {
 //     "secrets": {"url": "${fake}", "token": "demo"},        // project settings of the plugin
+//     "hosts":   ["api.hetzner.cloud"],                       // fixed hosts sent to the fake API
 //     "setup":   [{"method": "POST", "path": "/projects/${project}/documents", "body": {…}, "as": "doc"}],
 //     "wait":    {"path": "/projects/${project}/entities", "min": 8, "timeout": 30000},
 //     "shots":   [{"name": "main", "path": "/p/${project}/graph", "caption": "…",
@@ -61,9 +62,9 @@ async function waitFor(fn, timeout = 30000, what = "condition") {
   }
 }
 
-async function startServer() {
+async function startServer(fetchMap = "") {
   const data = fs.mkdtempSync(path.join(tmp, "data-"));
-  const env = { ...process.env, PHOEDOX_DATA_DIR: data, PHOEDOX_LISTEN: `127.0.0.1:${port}`, PHOEDOX_PUBLIC_URL: base,
+  const env = { ...process.env, PHOEDOX_PLUGINS_FETCH_MAP: fetchMap, PHOEDOX_DATA_DIR: data, PHOEDOX_LISTEN: `127.0.0.1:${port}`, PHOEDOX_PUBLIC_URL: base,
     PHOEDOX_PLUGINS_ALLOW_UNSIGNED: "true", PHOEDOX_BACKUP_HOURS: "0", PHOEDOX_INSECURE_COOKIES: "true", PHOEDOX_DEFAULT_LOCALE: "en" };
   sh(path.join(bin, "phx"), ["admin", "create-user", "--email", admin.email, "--name", "Alex Doe", "--admin", "--password", admin.password], { env });
   const proc = spawn(path.join(bin, "phoedox"), [], { env, stdio: ["ignore", "ignore", "pipe"] });
@@ -143,8 +144,10 @@ async function run(browser, name) {
   const plan = JSON.parse(fs.readFileSync(path.join(dir, "shots.json"), "utf8"));
   const manifest = JSON.parse(fs.readFileSync(path.join(dir, "phoedox-plugin.json"), "utf8"));
   const pkg = sh(path.join(repo, "scripts", "pack.sh"), [name, path.join(tmp, "dist")], { cwd: repo }).split("\n").pop();
-  const server = await startServer();
   const fake = await startFake(name);
+  // Cloud plugins call fixed hosts: Phoedox sends those to the fake API
+  // (PHOEDOX_PLUGINS_FETCH_MAP, development only).
+  const server = await startServer((plan.hosts ?? []).map((h) => `${h}=${fake.url}`).join(","));
   const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: SCALE, locale: "en-US", timezoneId: "Europe/Berlin", colorScheme: "light", baseURL: base });
   try {
     const page = await ctx.newPage();
@@ -170,7 +173,13 @@ async function run(browser, name) {
       const out = await api(step.method ?? "POST", fill(step.path, vars), fill(step.body, vars));
       if (step.as) vars[step.as] = out;
     }
-    if (plan.wait?.path) await waitFor(async () => count(await api("GET", fill(plan.wait.path, vars))) >= (plan.wait.min ?? 1), plan.wait.timeout ?? 30000, plan.wait.path);
+    if (plan.wait?.path) {
+      await waitFor(async () => count(await api("GET", fill(plan.wait.path, vars))) >= (plan.wait.min ?? 1), plan.wait.timeout ?? 30000, plan.wait.path).catch(async (e) => {
+        const logs = await api("GET", `/admin/plugins/${manifest.id}/logs`).catch(() => []);
+        console.error(`${name}: plugin log:\n` + (logs ?? []).map((l) => `  ${l.level} ${l.msg}`).join("\n"));
+        throw e;
+      });
+    }
     else if (plan.wait?.ms) await page.waitForTimeout(plan.wait.ms);
 
     fs.mkdirSync(path.join(dir, "screenshots"), { recursive: true });
