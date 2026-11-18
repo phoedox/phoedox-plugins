@@ -2,6 +2,8 @@
 
 `com.phoedox.hue` · version 0.1.0
 
+![Hue lights on the knowledge graph map, in their rooms and linked to the bridge](screenshots/map.webp)
+
 Imports a Philips Hue bridge into the knowledge graph: the bridge as a device (model, serial, IP address, MAC, firmware), its rooms as rooms (a room with the same name that already exists is reused, otherwise a new one is created) and its lights as lights (manufacturer, model, product, unique ID, firmware, reachable) "located in" their room and "related to" the bridge. AI clients get each light's on/off state, brightness and reachability. Read-only: the plugin only reads and never switches. Uses the local API v1 over plain HTTP, because the bridge's HTTPS certificate is signed by Signify's own CA, which Phoedox does not trust; zones, entertainment areas, sensors and scenes are not imported, and Matter devices that are not paired with the bridge cannot be reached over HTTP.
 
 ## What it adds

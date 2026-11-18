@@ -1,0 +1,168 @@
+{
+ "1": {
+  "name": "Living room",
+  "lights": [
+   "1",
+   "2",
+   "3"
+  ],
+  "sensors": [],
+  "type": "Room",
+  "state": {
+   "all_on": false,
+   "any_on": true
+  },
+  "recycle": false,
+  "class": "Living room",
+  "action": {
+   "on": true,
+   "bri": 254,
+   "alert": "select"
+  }
+ },
+ "2": {
+  "name": "Kitchen",
+  "lights": [
+   "4",
+   "5",
+   "6"
+  ],
+  "sensors": [],
+  "type": "Room",
+  "state": {
+   "all_on": false,
+   "any_on": true
+  },
+  "recycle": false,
+  "class": "Kitchen",
+  "action": {
+   "on": true,
+   "bri": 254,
+   "alert": "select"
+  }
+ },
+ "3": {
+  "name": "Bedroom",
+  "lights": [
+   "7",
+   "8"
+  ],
+  "sensors": [],
+  "type": "Room",
+  "state": {
+   "all_on": false,
+   "any_on": false
+  },
+  "recycle": false,
+  "class": "Bedroom",
+  "action": {
+   "on": false,
+   "bri": 254,
+   "alert": "select"
+  }
+ },
+ "4": {
+  "name": "Office",
+  "lights": [
+   "9"
+  ],
+  "sensors": [],
+  "type": "Room",
+  "state": {
+   "all_on": true,
+   "any_on": true
+  },
+  "recycle": false,
+  "class": "Office",
+  "action": {
+   "on": true,
+   "bri": 254,
+   "alert": "select"
+  }
+ },
+ "5": {
+  "name": "Hallway",
+  "lights": [
+   "10"
+  ],
+  "sensors": [],
+  "type": "Room",
+  "state": {
+   "all_on": false,
+   "any_on": false
+  },
+  "recycle": false,
+  "class": "Hallway",
+  "action": {
+   "on": false,
+   "bri": 254,
+   "alert": "select"
+  }
+ },
+ "6": {
+  "name": "Front yard",
+  "lights": [
+   "11"
+  ],
+  "sensors": [],
+  "type": "Room",
+  "state": {
+   "all_on": true,
+   "any_on": true
+  },
+  "recycle": false,
+  "class": "Front door",
+  "action": {
+   "on": true,
+   "bri": 254,
+   "alert": "select"
+  }
+ },
+ "7": {
+  "name": "Downstairs",
+  "lights": [
+   "1",
+   "2",
+   "4",
+   "5",
+   "6",
+   "10"
+  ],
+  "sensors": [],
+  "type": "Zone",
+  "state": {
+   "all_on": false,
+   "any_on": true
+  },
+  "recycle": false,
+  "class": "Downstairs",
+  "action": {
+   "on": true,
+   "bri": 200,
+   "alert": "select"
+  }
+ },
+ "8": {
+  "name": "TV area",
+  "lights": [
+   "3"
+  ],
+  "sensors": [],
+  "type": "Entertainment",
+  "state": {
+   "all_on": false,
+   "any_on": false
+  },
+  "recycle": false,
+  "class": "TV",
+  "stream": {
+   "proxymode": "auto",
+   "active": false
+  },
+  "action": {
+   "on": false,
+   "bri": 254,
+   "alert": "select"
+  }
+ }
+}

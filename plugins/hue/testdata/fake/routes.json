@@ -1,0 +1,7 @@
+{
+  "routes": [
+    {"path": "/api/*/config", "file": "config.json"},
+    {"path": "/api/*/lights", "file": "lights.json"},
+    {"path": "/api/*/groups", "file": "groups.json"}
+  ]
+}

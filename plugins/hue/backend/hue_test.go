@@ -5,6 +5,8 @@ import (
 	"testing"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 const key = "1028d66426293e821ecfd9ef1a0731df"
@@ -100,5 +102,34 @@ func TestErrors(t *testing.T) {
 	msg := redact(`fetch 192.168.1.20: Get "http://192.168.1.20/api/`+key+`/lights": i/o timeout`, key)
 	if strings.Contains(msg, key) {
 		t.Fatal(msg)
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	get := func(p string) []byte {
+		body, err := fakeapi.Body("../testdata/fake", "GET", "/api/demo-application-key-0001"+p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	c, err := parseConfig(get("/config"))
+	if err != nil || c.IP != "192.0.2.20" {
+		t.Fatalf("%v %+v", err, c)
+	}
+	lights, err := parseLights(get("/lights"))
+	if err != nil || len(lights) != 11 {
+		t.Fatalf("%v %d", err, len(lights))
+	}
+	rooms, err := parseRooms(get("/groups"))
+	if err != nil || len(rooms) != 6 {
+		t.Fatalf("%v %d", err, len(rooms))
+	}
+	if ops := graphOps(c, lights, rooms, map[string]string{}); len(ops.Ops) != 1+6+11*3 {
+		t.Fatalf("ops: %d", len(ops.Ops))
+	}
+	if rows := lightRows(lights, rooms); rows[7].Room != "Bedroom" || *rows[7].Reachable {
+		t.Fatalf("rows: %+v", rows[7])
 	}
 }

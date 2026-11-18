@@ -1,0 +1,12 @@
+{
+  "secrets": {"url": "${fake}", "username": "demo-application-key-0001"},
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.hue/tools/hue.sync", "body": {}}
+  ],
+  "wait": {"path": "/projects/${project}/entities", "min": 18},
+  "shots": [
+    {"name": "map", "path": "/p/${project}/graph/map", "caption": "Hue lights on the knowledge graph map, in their rooms and linked to the bridge", "wait": 3000},
+    {"name": "bridge", "path": "/p/${project}/e/hue-bridge-demo-0017-88ff-fe0a", "caption": "The Hue bridge as an entry with model, serial, IP address and firmware"}
+  ]
+}

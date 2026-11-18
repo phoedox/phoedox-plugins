@@ -1,0 +1,339 @@
+{
+ "1": {
+  "state": {
+   "on": true,
+   "bri": 178,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true,
+   "ct": 366,
+   "colormode": "ct"
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Extended color light",
+  "name": "Ceiling light",
+  "modelid": "LCA001",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue color lamp",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0a:01-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LCA001-1-A19ECLv5"
+ },
+ "2": {
+  "state": {
+   "on": true,
+   "bri": 120,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true,
+   "ct": 366,
+   "colormode": "ct"
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Color temperature light",
+  "name": "Floor lamp",
+  "modelid": "LTA009",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue ambiance lamp",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0a:02-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LTA009-1-A19ECLv5"
+ },
+ "3": {
+  "state": {
+   "on": false,
+   "bri": 254,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true,
+   "ct": 366,
+   "colormode": "ct"
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Extended color light",
+  "name": "TV lightstrip",
+  "modelid": "LCX004",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue play gradient lightstrip",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0a:03-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LCX004-1-A19ECLv5"
+ },
+ "4": {
+  "state": {
+   "on": true,
+   "bri": 254,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true,
+   "ct": 366,
+   "colormode": "ct"
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Color temperature light",
+  "name": "Kitchen spot 1",
+  "modelid": "LTG002",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue ambiance spot",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0b:01-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LTG002-1-A19ECLv5"
+ },
+ "5": {
+  "state": {
+   "on": true,
+   "bri": 254,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true,
+   "ct": 366,
+   "colormode": "ct"
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Color temperature light",
+  "name": "Kitchen spot 2",
+  "modelid": "LTG002",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue ambiance spot",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0b:02-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LTG002-1-A19ECLv5"
+ },
+ "6": {
+  "state": {
+   "on": false,
+   "bri": 200,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Dimmable light",
+  "name": "Dining pendant",
+  "modelid": "LWA017",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue white lamp",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0b:03-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LWA017-1-A19ECLv5"
+ },
+ "7": {
+  "state": {
+   "on": false,
+   "bri": 90,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true,
+   "ct": 366,
+   "colormode": "ct"
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Extended color light",
+  "name": "Bedside left",
+  "modelid": "LLC020",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue go",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0c:01-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LLC020-1-A19ECLv5"
+ },
+ "8": {
+  "state": {
+   "on": false,
+   "bri": 90,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": false,
+   "ct": 366,
+   "colormode": "ct"
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Extended color light",
+  "name": "Bedside right",
+  "modelid": "LLC020",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue go",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0c:02-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LLC020-1-A19ECLv5"
+ },
+ "9": {
+  "state": {
+   "on": true,
+   "bri": 230,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true,
+   "ct": 366,
+   "colormode": "ct"
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Color temperature light",
+  "name": "Desk lamp",
+  "modelid": "LTA009",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue ambiance lamp",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0d:01-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LTA009-1-A19ECLv5"
+ },
+ "10": {
+  "state": {
+   "on": false,
+   "bri": 127,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Dimmable light",
+  "name": "Hallway ceiling",
+  "modelid": "LWA017",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue white lamp",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0e:01-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LWA017-1-A19ECLv5"
+ },
+ "11": {
+  "state": {
+   "on": true,
+   "bri": 80,
+   "alert": "select",
+   "mode": "homeautomation",
+   "reachable": true,
+   "ct": 366,
+   "colormode": "ct"
+  },
+  "swupdate": {
+   "state": "noupdates",
+   "lastinstall": "2026-05-20T02:41:13"
+  },
+  "type": "Extended color light",
+  "name": "Porch light",
+  "modelid": "LCA001",
+  "manufacturername": "Signify Netherlands B.V.",
+  "productname": "Hue color lamp",
+  "capabilities": {
+   "certified": true
+  },
+  "config": {
+   "archetype": "classicbulb",
+   "function": "mixed",
+   "direction": "omnidirectional"
+  },
+  "uniqueid": "02:00:5e:ff:fe:00:0f:01-0b",
+  "swversion": "1.104.2",
+  "productid": "Philips-LCA001-1-A19ECLv5"
+ }
+}
