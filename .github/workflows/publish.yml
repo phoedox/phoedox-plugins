@@ -3,6 +3,12 @@ name: Publish
 # for review with trusted publishing (ADR-0074): no secret, the store checks
 # GitHub's ID token against the plugin's trusted publisher (this repository,
 # workflow publish.yml, environment "store").
+#
+# First upload of a plugin: a trusted publisher can only be set for a plugin
+# the store already knows. For that one upload put an author token (phxa_…)
+# into the secret PHOEDOX_STORE_TOKEN of the environment "store"; publish uses
+# it instead of the ID token. Afterwards add the trusted publishers in the
+# author area and delete the secret (docs/publishing.md).
 on:
   push:
     tags: ["*/v*"]
@@ -36,6 +42,8 @@ jobs:
       - name: Publish for review
         env:
           PHOEDOX_AUTHOR_KEY: ${{ secrets.PHOEDOX_AUTHOR_KEY }}
+          # Only for the first upload (see above); empty = trusted publishing.
+          PHOEDOX_STORE_TOKEN: ${{ secrets.PHOEDOX_STORE_TOKEN }}
         # A logo was checked against the brand's rules (docs/branding/brands.md,
         # ADR-0090) before it went into the manifest.
         run: |
