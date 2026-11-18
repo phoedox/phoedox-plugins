@@ -2,6 +2,8 @@
 
 `com.phoedox.unifiprotect` · version 0.1.0
 
+![Cameras, floodlight and sensors on the map, linked to the Protect NVR](screenshots/map.webp)
+
 Imports UniFi Protect into the knowledge graph through the official integration API: the NVR (console) as a device (model, MAC, Protect version), cameras as cameras (model, MAC, connection state), floodlights as lights and sensors as devices, each "related to" the NVR. Contributes the kind camera (shared with the Frigate plugin) with the relations "located in" a room and "powered by" a switch, outlet or smart plug. AI clients get the cameras with state, model, video and HDR mode, microphone and enabled smart detections. Read-only: only GET requests. The integration API does not provide IP addresses, firmware, recording mode or last-seen times, so these camera attributes stay empty (fill them in by hand if needed).
 
 ## What it adds

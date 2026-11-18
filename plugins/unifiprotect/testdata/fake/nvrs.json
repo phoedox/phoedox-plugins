@@ -1,0 +1,19 @@
+{
+ "id": "6650a1c0demo000000000001",
+ "modelKey": "nvr",
+ "name": "Maple Street NVR",
+ "type": "UNVR",
+ "mac": "02005E100070",
+ "doorbellSettings": {
+  "defaultMessageText": "Welcome",
+  "defaultMessageResetTimeoutMs": 60000,
+  "customMessages": [
+   "Please leave packages at the side door"
+  ],
+  "customImages": []
+ },
+ "armMode": {
+  "status": "disabled",
+  "armProfileId": null
+ }
+}

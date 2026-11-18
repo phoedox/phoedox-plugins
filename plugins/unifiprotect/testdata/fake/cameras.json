@@ -1,0 +1,310 @@
+[
+ {
+  "id": "6650a1c0demo000000000101",
+  "modelKey": "camera",
+  "state": "CONNECTED",
+  "name": "Front door",
+  "type": "G4 Doorbell Pro",
+  "mac": "02005E100071",
+  "isMicEnabled": true,
+  "osdSettings": {
+   "isNameEnabled": true,
+   "isDateEnabled": true,
+   "isLogoEnabled": false,
+   "isDebugEnabled": false,
+   "overlayLocation": "topLeft"
+  },
+  "ledSettings": {
+   "isEnabled": true
+  },
+  "lcdMessage": {
+   "type": "LEAVE_PACKAGE_AT_DOOR",
+   "resetAt": null,
+   "text": ""
+  },
+  "micVolume": 80,
+  "activePatrolSlot": null,
+  "videoMode": "default",
+  "hdrType": "auto",
+  "featureFlags": {
+   "supportFullHdSnapshot": true,
+   "hasHdr": true,
+   "smartDetectTypes": [
+    "person",
+    "vehicle",
+    "package"
+   ],
+   "smartDetectAudioTypes": [
+    "alrmSmoke",
+    "alrmCmonx"
+   ],
+   "videoModes": [
+    "default"
+   ],
+   "hasMic": true,
+   "hasLedStatus": true,
+   "hasSpeaker": true
+  },
+  "smartDetectSettings": {
+   "objectTypes": [
+    "person",
+    "package"
+   ],
+   "audioTypes": []
+  },
+  "hasPackageCamera": true
+ },
+ {
+  "id": "6650a1c0demo000000000102",
+  "modelKey": "camera",
+  "state": "CONNECTED",
+  "name": "Driveway",
+  "type": "G5 Bullet",
+  "mac": "02005E100072",
+  "isMicEnabled": false,
+  "osdSettings": {
+   "isNameEnabled": true,
+   "isDateEnabled": true,
+   "isLogoEnabled": false,
+   "isDebugEnabled": false,
+   "overlayLocation": "topLeft"
+  },
+  "ledSettings": {
+   "isEnabled": true
+  },
+  "lcdMessage": {},
+  "micVolume": 0,
+  "activePatrolSlot": null,
+  "videoMode": "highFps",
+  "hdrType": "auto",
+  "featureFlags": {
+   "supportFullHdSnapshot": true,
+   "hasHdr": true,
+   "smartDetectTypes": [
+    "person",
+    "vehicle",
+    "licensePlate"
+   ],
+   "smartDetectAudioTypes": [
+    "alrmSmoke",
+    "alrmCmonx"
+   ],
+   "videoModes": [
+    "default",
+    "highFps"
+   ],
+   "hasMic": true,
+   "hasLedStatus": true,
+   "hasSpeaker": false
+  },
+  "smartDetectSettings": {
+   "objectTypes": [
+    "person",
+    "vehicle"
+   ],
+   "audioTypes": []
+  },
+  "hasPackageCamera": false
+ },
+ {
+  "id": "6650a1c0demo000000000103",
+  "modelKey": "camera",
+  "state": "CONNECTED",
+  "name": "Garden",
+  "type": "G5 Turret Ultra",
+  "mac": "02005E100073",
+  "isMicEnabled": false,
+  "osdSettings": {
+   "isNameEnabled": true,
+   "isDateEnabled": true,
+   "isLogoEnabled": false,
+   "isDebugEnabled": false,
+   "overlayLocation": "topLeft"
+  },
+  "ledSettings": {
+   "isEnabled": true
+  },
+  "lcdMessage": {},
+  "micVolume": 0,
+  "activePatrolSlot": null,
+  "videoMode": "default",
+  "hdrType": "auto",
+  "featureFlags": {
+   "supportFullHdSnapshot": true,
+   "hasHdr": true,
+   "smartDetectTypes": [
+    "person",
+    "vehicle",
+    "animal"
+   ],
+   "smartDetectAudioTypes": [
+    "alrmSmoke",
+    "alrmCmonx"
+   ],
+   "videoModes": [
+    "default"
+   ],
+   "hasMic": true,
+   "hasLedStatus": true,
+   "hasSpeaker": false
+  },
+  "smartDetectSettings": {
+   "objectTypes": [
+    "person",
+    "animal"
+   ],
+   "audioTypes": []
+  },
+  "hasPackageCamera": false
+ },
+ {
+  "id": "6650a1c0demo000000000104",
+  "modelKey": "camera",
+  "state": "CONNECTED",
+  "name": "Backyard",
+  "type": "G5 Flex",
+  "mac": "02005E100074",
+  "isMicEnabled": true,
+  "osdSettings": {
+   "isNameEnabled": true,
+   "isDateEnabled": true,
+   "isLogoEnabled": false,
+   "isDebugEnabled": false,
+   "overlayLocation": "topLeft"
+  },
+  "ledSettings": {
+   "isEnabled": true
+  },
+  "lcdMessage": {},
+  "micVolume": 80,
+  "activePatrolSlot": null,
+  "videoMode": "default",
+  "hdrType": "off",
+  "featureFlags": {
+   "supportFullHdSnapshot": true,
+   "hasHdr": true,
+   "smartDetectTypes": [
+    "person",
+    "vehicle"
+   ],
+   "smartDetectAudioTypes": [
+    "alrmSmoke",
+    "alrmCmonx"
+   ],
+   "videoModes": [
+    "default"
+   ],
+   "hasMic": true,
+   "hasLedStatus": true,
+   "hasSpeaker": false
+  },
+  "smartDetectSettings": {
+   "objectTypes": [
+    "person"
+   ],
+   "audioTypes": [
+    "alrmSmoke"
+   ]
+  },
+  "hasPackageCamera": false
+ },
+ {
+  "id": "6650a1c0demo000000000105",
+  "modelKey": "camera",
+  "state": "DISCONNECTED",
+  "name": "Garage",
+  "type": "G4 Instant",
+  "mac": "02005E100075",
+  "isMicEnabled": false,
+  "osdSettings": {
+   "isNameEnabled": true,
+   "isDateEnabled": true,
+   "isLogoEnabled": false,
+   "isDebugEnabled": false,
+   "overlayLocation": "topLeft"
+  },
+  "ledSettings": {
+   "isEnabled": true
+  },
+  "lcdMessage": {},
+  "micVolume": 0,
+  "activePatrolSlot": null,
+  "videoMode": "default",
+  "hdrType": "off",
+  "featureFlags": {
+   "supportFullHdSnapshot": true,
+   "hasHdr": true,
+   "smartDetectTypes": [
+    "person",
+    "vehicle"
+   ],
+   "smartDetectAudioTypes": [
+    "alrmSmoke",
+    "alrmCmonx"
+   ],
+   "videoModes": [
+    "default"
+   ],
+   "hasMic": true,
+   "hasLedStatus": true,
+   "hasSpeaker": false
+  },
+  "smartDetectSettings": {
+   "objectTypes": [],
+   "audioTypes": []
+  },
+  "hasPackageCamera": false
+ },
+ {
+  "id": "6650a1c0demo000000000106",
+  "modelKey": "camera",
+  "state": "CONNECTED",
+  "name": "Hallway",
+  "type": "G5 Flex",
+  "mac": "02005E100076",
+  "isMicEnabled": true,
+  "osdSettings": {
+   "isNameEnabled": true,
+   "isDateEnabled": true,
+   "isLogoEnabled": false,
+   "isDebugEnabled": false,
+   "overlayLocation": "topLeft"
+  },
+  "ledSettings": {
+   "isEnabled": true
+  },
+  "lcdMessage": {},
+  "micVolume": 80,
+  "activePatrolSlot": null,
+  "videoMode": "default",
+  "hdrType": "auto",
+  "featureFlags": {
+   "supportFullHdSnapshot": true,
+   "hasHdr": true,
+   "smartDetectTypes": [
+    "person",
+    "vehicle"
+   ],
+   "smartDetectAudioTypes": [
+    "alrmSmoke",
+    "alrmCmonx"
+   ],
+   "videoModes": [
+    "default"
+   ],
+   "hasMic": true,
+   "hasLedStatus": true,
+   "hasSpeaker": false
+  },
+  "smartDetectSettings": {
+   "objectTypes": [
+    "person"
+   ],
+   "audioTypes": [
+    "alrmSmoke",
+    "alrmCmonx"
+   ]
+  },
+  "hasPackageCamera": false
+ }
+]

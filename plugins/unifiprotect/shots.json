@@ -1,0 +1,12 @@
+{
+  "secrets": {"url": "${fake}", "apikey": "demo-protect-api-key"},
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.unifiprotect/tools/protect.sync", "body": {}}
+  ],
+  "wait": {"path": "/projects/${project}/entities", "min": 11},
+  "shots": [
+    {"name": "map", "path": "/p/${project}/graph/map", "caption": "Cameras, floodlight and sensors on the map, linked to the Protect NVR", "wait": 3000},
+    {"name": "cameras", "path": "/p/${project}/graph?kind=camera", "caption": "UniFi Protect cameras as entries with model, MAC address and state"}
+  ]
+}

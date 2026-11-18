@@ -1,0 +1,9 @@
+{
+  "routes": [
+    {"path": "/proxy/protect/integration/v1/meta/info", "json": {"applicationVersion": "6.0.53"}},
+    {"path": "/proxy/protect/integration/v1/nvrs", "file": "nvrs.json"},
+    {"path": "/proxy/protect/integration/v1/cameras", "file": "cameras.json"},
+    {"path": "/proxy/protect/integration/v1/lights", "file": "lights.json"},
+    {"path": "/proxy/protect/integration/v1/sensors", "file": "sensors.json"}
+  ]
+}

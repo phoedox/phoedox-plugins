@@ -2,9 +2,12 @@ package main
 
 import (
 	"os"
+	"strings"
 	"testing"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 const cameras = `[
@@ -105,5 +108,44 @@ func TestCameraSchema(t *testing.T) {
 	m, err := pdk.ParseManifest(data)
 	if err != nil || len(m.Contributes.Kinds) != 1 || m.Contributes.Kinds[0].ID != "camera" {
 		t.Fatalf("manifest: %v", err)
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	base, _ := apiBase("https://unifi.example.org")
+	get := func(p string) []byte {
+		body, err := fakeapi.Body("../testdata/fake", "GET", strings.TrimPrefix(base, "https://unifi.example.org")+p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	cams, err := parseDevices("camera list", get("/cameras"))
+	if err != nil || len(cams) != 6 {
+		t.Fatalf("%v %d", err, len(cams))
+	}
+	nvr, err := parseNVR(get("/nvrs"))
+	if err != nil || nvr.Type != "UNVR" {
+		t.Fatalf("%v %+v", err, nvr)
+	}
+	meta, err := decode[Meta]("version", get("/meta/info"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	lights, err := parseDevices("lights", get("/lights"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	sensors, err := parseDevices("sensors", get("/sensors"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	ops := graphOps(nvr, meta.Version, cams, lights, sensors).Ops
+	if len(ops) != 1+(6+1+3)*2 || ops[0].Attrs["protect_version"] != "6.0.53" {
+		t.Fatalf("ops: %d %+v", len(ops), ops[0])
+	}
+	if rows := cameraRows(cams); rows[4].State != "disconnected" || len(rows[0].SmartDetect) != 2 {
+		t.Fatalf("rows: %+v", rows)
 	}
 }

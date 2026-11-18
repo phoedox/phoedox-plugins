@@ -1,0 +1,173 @@
+[
+ {
+  "id": "6650a1c0demo000000000301",
+  "modelKey": "sensor",
+  "state": "CONNECTED",
+  "name": "Back door",
+  "type": "UP Sense",
+  "mac": "02005E100078",
+  "mountType": "door",
+  "batteryStatus": {
+   "percentage": 86,
+   "isLow": false
+  },
+  "stats": {
+   "light": {
+    "value": 12,
+    "status": "neutral"
+   },
+   "humidity": {
+    "value": 48,
+    "status": "neutral"
+   },
+   "temperature": {
+    "value": 21.3,
+    "status": "neutral"
+   }
+  },
+  "lightSettings": {
+   "isEnabled": true,
+   "margin": 10
+  },
+  "humiditySettings": {
+   "isEnabled": true,
+   "lowThreshold": null,
+   "highThreshold": null,
+   "margin": 1
+  },
+  "temperatureSettings": {
+   "isEnabled": true,
+   "lowThreshold": null,
+   "highThreshold": null,
+   "margin": 0.1
+  },
+  "isOpened": false,
+  "openStatusChangedAt": null,
+  "isMotionDetected": false,
+  "motionDetectedAt": null,
+  "motionSettings": {
+   "isEnabled": true,
+   "sensitivity": 100
+  },
+  "alarmTriggeredAt": null,
+  "alarmSettings": {
+   "isEnabled": true
+  },
+  "leakDetectedAt": null,
+  "tamperingDetectedAt": null
+ },
+ {
+  "id": "6650a1c0demo000000000302",
+  "modelKey": "sensor",
+  "state": "CONNECTED",
+  "name": "Basement window",
+  "type": "UP Sense",
+  "mac": "02005E100079",
+  "mountType": "window",
+  "batteryStatus": {
+   "percentage": 14,
+   "isLow": true
+  },
+  "stats": {
+   "light": {
+    "value": 12,
+    "status": "neutral"
+   },
+   "humidity": {
+    "value": 48,
+    "status": "neutral"
+   },
+   "temperature": {
+    "value": 21.3,
+    "status": "neutral"
+   }
+  },
+  "lightSettings": {
+   "isEnabled": true,
+   "margin": 10
+  },
+  "humiditySettings": {
+   "isEnabled": true,
+   "lowThreshold": null,
+   "highThreshold": null,
+   "margin": 1
+  },
+  "temperatureSettings": {
+   "isEnabled": true,
+   "lowThreshold": null,
+   "highThreshold": null,
+   "margin": 0.1
+  },
+  "isOpened": false,
+  "openStatusChangedAt": null,
+  "isMotionDetected": false,
+  "motionDetectedAt": null,
+  "motionSettings": {
+   "isEnabled": true,
+   "sensitivity": 100
+  },
+  "alarmTriggeredAt": null,
+  "alarmSettings": {
+   "isEnabled": true
+  },
+  "leakDetectedAt": null,
+  "tamperingDetectedAt": null
+ },
+ {
+  "id": "6650a1c0demo000000000303",
+  "modelKey": "sensor",
+  "state": "CONNECTED",
+  "name": "Utility room leak",
+  "type": "UP Sense",
+  "mac": "02005E10007A",
+  "mountType": "leak",
+  "batteryStatus": {
+   "percentage": 71,
+   "isLow": false
+  },
+  "stats": {
+   "light": {
+    "value": 12,
+    "status": "neutral"
+   },
+   "humidity": {
+    "value": 48,
+    "status": "neutral"
+   },
+   "temperature": {
+    "value": 21.3,
+    "status": "neutral"
+   }
+  },
+  "lightSettings": {
+   "isEnabled": true,
+   "margin": 10
+  },
+  "humiditySettings": {
+   "isEnabled": true,
+   "lowThreshold": null,
+   "highThreshold": null,
+   "margin": 1
+  },
+  "temperatureSettings": {
+   "isEnabled": true,
+   "lowThreshold": null,
+   "highThreshold": null,
+   "margin": 0.1
+  },
+  "isOpened": false,
+  "openStatusChangedAt": null,
+  "isMotionDetected": false,
+  "motionDetectedAt": null,
+  "motionSettings": {
+   "isEnabled": true,
+   "sensitivity": 100
+  },
+  "alarmTriggeredAt": null,
+  "alarmSettings": {
+   "isEnabled": true
+  },
+  "leakDetectedAt": null,
+  "tamperingDetectedAt": null
+ }
+]

@@ -1,0 +1,26 @@
+[
+ {
+  "id": "6650a1c0demo000000000201",
+  "modelKey": "light",
+  "state": "CONNECTED",
+  "name": "Driveway floodlight",
+  "type": "UP FloodLight",
+  "mac": "02005E100077",
+  "lightModeSettings": {
+   "mode": "motion",
+   "enableAt": "dark"
+  },
+  "lightDeviceSettings": {
+   "isIndicatorEnabled": false,
+   "pirDuration": 30000,
+   "pirSensitivity": 70,
+   "ledLevel": 5
+  },
+  "isDark": false,
+  "isLightOn": false,
+  "isLightForceEnabled": false,
+  "lastMotion": null,
+  "isPirMotionDetected": false,
+  "camera": "6650a1c0demo000000000102"
+ }
+]
