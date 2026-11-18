@@ -155,7 +155,8 @@ func graphOps(s System, base string) pdk.GraphOps {
 		attrs["ram"] = integ.GiB(s.RAM)
 	}
 	if u, err := url.Parse(base); err == nil {
-		if ip, err := netip.ParseAddr(u.Hostname()); err == nil {
+		// A loopback address (a tunnel) is not the address of the system.
+		if ip, err := netip.ParseAddr(u.Hostname()); err == nil && !ip.IsLoopback() {
 			attrs["ip"] = ip.String()
 		}
 	}

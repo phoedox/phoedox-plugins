@@ -1,0 +1,36 @@
+[
+ {
+  "id": 1,
+  "path": "/mnt/tank/media",
+  "aliases": [],
+  "comment": "Media library for jellyfin",
+  "networks": [
+   "10.20.1.0/24"
+  ],
+  "hosts": [],
+  "ro": true,
+  "maproot_user": null,
+  "maproot_group": null,
+  "mapall_user": null,
+  "mapall_group": null,
+  "security": [],
+  "enabled": true,
+  "locked": false
+ },
+ {
+  "id": 2,
+  "path": "/mnt/apps/k3s",
+  "aliases": [],
+  "comment": "Persistent volumes of maple-k3s",
+  "networks": [],
+  "hosts": [
+   "10.20.1.21",
+   "10.20.1.22",
+   "10.20.1.23"
+  ],
+  "ro": false,
+  "security": [],
+  "enabled": true,
+  "locked": false
+ }
+]

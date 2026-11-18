@@ -1,0 +1,41 @@
+[
+ {
+  "id": 1,
+  "purpose": "DEFAULT_SHARE",
+  "path": "/mnt/tank/family",
+  "path_suffix": "",
+  "home": false,
+  "name": "family",
+  "comment": "Photos and documents of the Doe family",
+  "ro": false,
+  "browsable": true,
+  "recyclebin": true,
+  "guestok": false,
+  "hostsallow": [],
+  "hostsdeny": [],
+  "enabled": true,
+  "locked": false
+ },
+ {
+  "id": 2,
+  "purpose": "TIMEMACHINE_SHARE",
+  "path": "/mnt/tank/timemachine",
+  "name": "timemachine",
+  "comment": "Time Machine backups",
+  "ro": false,
+  "browsable": true,
+  "enabled": true,
+  "locked": false
+ },
+ {
+  "id": 3,
+  "purpose": "DEFAULT_SHARE",
+  "path": "/mnt/tank/maple-labs",
+  "name": "maple-labs",
+  "comment": "Shared files of Maple Labs",
+  "ro": false,
+  "browsable": true,
+  "enabled": true,
+  "locked": false
+ }
+]

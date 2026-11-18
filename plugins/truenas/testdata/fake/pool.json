@@ -1,0 +1,73 @@
+[
+ {
+  "id": 1,
+  "name": "tank",
+  "guid": "1428570958233150891",
+  "path": "/mnt/tank",
+  "status": "ONLINE",
+  "scan": {
+   "function": "SCRUB",
+   "state": "FINISHED",
+   "end_time": {
+    "$date": 1781395200000
+   },
+   "errors": 0
+  },
+  "topology": {
+   "data": [
+    {
+     "type": "RAIDZ2",
+     "status": "ONLINE",
+     "children": []
+    }
+   ],
+   "log": [],
+   "cache": [],
+   "spare": [],
+   "special": [],
+   "dedup": []
+  },
+  "healthy": true,
+  "warning": false,
+  "status_code": "HEALTHY",
+  "status_detail": null,
+  "size": 47938706971033,
+  "allocated": 19681258137190,
+  "free": 28257448833843,
+  "freeing": 0,
+  "fragmentation": "4",
+  "size_str": null,
+  "allocated_str": null,
+  "free_str": null,
+  "autotrim": {
+   "value": "off"
+  }
+ },
+ {
+  "id": 2,
+  "name": "apps",
+  "guid": "9302114508177340021",
+  "path": "/mnt/apps",
+  "status": "ONLINE",
+  "topology": {
+   "data": [
+    {
+     "type": "MIRROR",
+     "status": "ONLINE",
+     "children": []
+    }
+   ]
+  },
+  "healthy": true,
+  "warning": false,
+  "status_code": "HEALTHY",
+  "size": 1022545813831,
+  "allocated": 340848604610,
+  "free": 681697209221,
+  "freeing": 0,
+  "fragmentation": "9",
+  "autotrim": {
+   "value": "on"
+  }
+ }
+]

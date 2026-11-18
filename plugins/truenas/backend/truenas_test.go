@@ -3,6 +3,8 @@ package main
 import (
 	"strings"
 	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 const systemInfoJSON = `{"version":"TrueNAS-SCALE-24.04.2","buildtime":{"$date":1719240000000},"hostname":"truenas","physmem":34359738368,
@@ -118,5 +120,34 @@ func TestURLAndErrors(t *testing.T) {
 	}
 	if httpError(502).Error() != "TrueNAS answered HTTP 502" {
 		t.Fatal(httpError(502))
+	}
+}
+
+// TestDemoData parses the recorded demo answers (for screenshots once the
+// fake API can serve https, which the plugin insists on).
+func TestDemoData(t *testing.T) {
+	get := func(p string) []byte {
+		t.Helper()
+		body, err := fakeapi.Body("../testdata/fake", "GET", "/api/v2.0"+p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	s, err := parseSystem(get("/system/info"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	op := graphOps(s, "https://127.0.0.1:8443").Ops[0]
+	if op.ID != "truenas-demo-a1-30512" || op.Attrs["os"] != "TrueNAS 25.04.1" || op.Attrs["ram"] != 64.0 || op.Attrs["ip"] != nil {
+		t.Fatalf("server: %+v", op)
+	}
+	pools, err := parsePools(get("/pool"))
+	if err != nil || len(pools) != 2 || !pools[0].Healthy || pools[0].UsedPercent != 41.1 {
+		t.Fatalf("pools: %+v %v", pools, err)
+	}
+	shares, err := parseShares(get("/sharing/smb"), get("/sharing/nfs"))
+	if err != nil || len(shares) != 5 || shares[3].Name != "Media library for jellyfin" || !shares[3].ReadOnly {
+		t.Fatalf("shares: %+v %v", shares, err)
 	}
 }

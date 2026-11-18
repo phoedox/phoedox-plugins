@@ -1,0 +1,31 @@
+{
+ "version": "25.04.1",
+ "buildtime": {
+  "$date": 1747920000000
+ },
+ "hostname": "truenas",
+ "physmem": 68719476736,
+ "model": "Intel(R) Xeon(R) E-2336 CPU @ 2.90GHz",
+ "cores": 12,
+ "physical_cores": 6,
+ "loadavg": [
+  0.21,
+  0.18,
+  0.15
+ ],
+ "uptime": "19 days, 4:12:09.33",
+ "uptime_seconds": 1656729.33,
+ "system_serial": "DEMO-A1-30512",
+ "system_product": "TRUENAS-MINI-3.0-XL+",
+ "system_product_version": "1.0",
+ "license": null,
+ "boottime": {
+  "$date": 1779840000000
+ },
+ "datetime": {
+  "$date": 1781510400000
+ },
+ "timezone": "Europe/Berlin",
+ "system_manufacturer": "iXsystems",
+ "ecc_memory": true
+}

@@ -1,0 +1,20 @@
+{
+  "routes": [
+    {
+      "path": "/api/v2.0/system/info",
+      "file": "system-info.json"
+    },
+    {
+      "path": "/api/v2.0/pool",
+      "file": "pool.json"
+    },
+    {
+      "path": "/api/v2.0/sharing/smb",
+      "file": "sharing-smb.json"
+    },
+    {
+      "path": "/api/v2.0/sharing/nfs",
+      "file": "sharing-nfs.json"
+    }
+  ]
+}
