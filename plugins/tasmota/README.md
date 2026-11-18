@@ -2,6 +2,8 @@
 
 `com.phoedox.tasmota` · version 0.1.0
 
+![Tasmota plugs and relays with their addresses in the IoT network](screenshots/addresses.webp)
+
 Imports Tasmota devices from the local network into the knowledge graph: devices with a relay and an energy meter become smart plugs, all others devices (module or template name, firmware, hardware, IP address, MAC, host name, MQTT topic). AI clients get relay states, power, energy today/yesterday/total, voltage, current, Wi-Fi signal and uptime. Read-only: the plugin only sends the commands "Status 0" and "Module" over the HTTP API (/cm) and never switches; MQTT is not used.
 
 ## What it adds

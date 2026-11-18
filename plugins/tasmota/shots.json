@@ -1,0 +1,22 @@
+{
+  "secrets": {
+    "url": "${fake}/washer",
+    "device2_url": "${fake}/dryer",
+    "device3_url": "${fake}/dishwasher",
+    "device4_url": "${fake}/aquarium",
+    "device5_url": "${fake}/ledstrip",
+    "device6_url": "${fake}/heatpump",
+    "device7_url": "${fake}/fan"
+  },
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/entities", "body": {"kind": "subnet", "slug": "iot-network", "name": "IoT network", "attrs": {"cidr": "192.0.2.0/24", "vlan": 30, "gateway": "192.0.2.1", "dhcp_start": "192.0.2.100", "dhcp_end": "192.0.2.199", "purpose": "Smart home devices"}}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.tasmota/tools/tasmota.sync", "body": {}}
+  ],
+  "wait": {"path": "/projects/${project}/entities", "min": 8},
+  "shots": [
+    {"name": "addresses", "path": "/p/${project}/ipam", "caption": "Tasmota plugs and relays with their addresses in the IoT network", "actions": [{"click": "text=Used addresses"}]},
+    {"name": "devices", "path": "/p/${project}/graph?kind=device", "caption": "Tasmota devices as entries with module, IP and MAC address"},
+    {"name": "plug", "path": "/p/${project}/e/tasmota-02005e100041", "caption": "A Tasmota plug with firmware, hardware, host name and MQTT topic"}
+  ]
+}

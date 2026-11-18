@@ -7,6 +7,8 @@ import (
 	"testing"
 
 	"github.com/phoedox/phoedox-sdk/go/pdk"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 const status0 = `{"Status":{"Module":0,"DeviceName":"Washing Machine","FriendlyName":["Washing Machine"],"Topic":"tasmota_A1B2C3","ButtonTopic":"0",
@@ -108,5 +110,32 @@ func TestManifestSlots(t *testing.T) {
 		if !slices.Contains(m.Permissions, "secrets:"+s) || (s != "url" && !strings.HasSuffix(s, "_url")) {
 			t.Errorf("slot %s not declared", s)
 		}
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	kinds := map[string]int{}
+	for _, slug := range []string{"washer", "dryer", "dishwasher", "aquarium", "ledstrip", "heatpump", "fan"} {
+		body, err := fakeapi.Body("../testdata/fake", "GET", "/"+slug+"/cm?cmnd=Status%200")
+		if err != nil {
+			t.Fatal(err)
+		}
+		s, err := parseStatus0(body)
+		if err != nil {
+			t.Fatal(slug, err)
+		}
+		if body, err = fakeapi.Body("../testdata/fake", "GET", "/"+slug+"/cm?cmnd=Module"); err != nil {
+			t.Fatal(err)
+		}
+		d := Device{Setting: "url", Status: s, Module: parseModule(body)}
+		op := graphOps(d).Ops[0]
+		if d.Module == "" || op.Attrs["ip"] == nil || op.Attrs["mac"] == "" {
+			t.Fatalf("%s: %+v", slug, op)
+		}
+		kinds[op.Kind]++
+	}
+	if kinds["smart_plug"] != 3 || kinds["device"] != 4 {
+		t.Fatalf("kinds: %v", kinds)
 	}
 }

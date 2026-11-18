@@ -1,0 +1,18 @@
+{
+  "routes": [
+    {"path": "/washer/cm", "query": "cmnd=Status%200", "file": "washer/status0.json"},
+    {"path": "/washer/cm", "query": "cmnd=Module", "file": "washer/module.json"},
+    {"path": "/dryer/cm", "query": "cmnd=Status%200", "file": "dryer/status0.json"},
+    {"path": "/dryer/cm", "query": "cmnd=Module", "file": "dryer/module.json"},
+    {"path": "/dishwasher/cm", "query": "cmnd=Status%200", "file": "dishwasher/status0.json"},
+    {"path": "/dishwasher/cm", "query": "cmnd=Module", "file": "dishwasher/module.json"},
+    {"path": "/aquarium/cm", "query": "cmnd=Status%200", "file": "aquarium/status0.json"},
+    {"path": "/aquarium/cm", "query": "cmnd=Module", "file": "aquarium/module.json"},
+    {"path": "/ledstrip/cm", "query": "cmnd=Status%200", "file": "ledstrip/status0.json"},
+    {"path": "/ledstrip/cm", "query": "cmnd=Module", "file": "ledstrip/module.json"},
+    {"path": "/heatpump/cm", "query": "cmnd=Status%200", "file": "heatpump/status0.json"},
+    {"path": "/heatpump/cm", "query": "cmnd=Module", "file": "heatpump/module.json"},
+    {"path": "/fan/cm", "query": "cmnd=Status%200", "file": "fan/status0.json"},
+    {"path": "/fan/cm", "query": "cmnd=Module", "file": "fan/module.json"}
+  ]
+}
