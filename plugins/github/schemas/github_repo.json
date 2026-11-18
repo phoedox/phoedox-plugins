@@ -1,4 +1,5 @@
 {
+  "title": "GitHub repository",
   "type": "object",
   "properties": {
     "url": { "type": "string", "format": "uri", "title": "Adresse" },

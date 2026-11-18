@@ -1,0 +1,46 @@
+[
+ {
+  "id": 3101,
+  "number": 61,
+  "title": "Shipping costs for orders to Austria and Switzerland",
+  "state": "open",
+  "html_url": "https://github.com/maple-labs/shop/issues/61",
+  "user": {
+   "login": "alex-doe",
+   "id": 5001,
+   "type": "User"
+  },
+  "labels": [
+   {
+    "id": 1,
+    "name": "checkout",
+    "color": "0e8a16"
+   }
+  ],
+  "created_at": "2026-06-10T08:12:00Z"
+ },
+ {
+  "id": 3102,
+  "number": 64,
+  "title": "Upgrade to Django 5.2",
+  "state": "open",
+  "html_url": "https://github.com/maple-labs/shop/pull/64",
+  "user": {
+   "login": "sam-doe",
+   "id": 5002,
+   "type": "User"
+  },
+  "labels": [
+   {
+    "id": 2,
+    "name": "dependencies",
+    "color": "0366d6"
+   }
+  ],
+  "pull_request": {
+   "url": "https://api.github.com/repos/maple-labs/shop/pulls/64",
+   "html_url": "https://github.com/maple-labs/shop/pull/64"
+  },
+  "created_at": "2026-06-12T09:00:00Z"
+ }
+]

@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
+)
 
 func TestGitHub(t *testing.T) {
 	repos, err := parseRepos([]byte(`[
@@ -23,5 +27,29 @@ func TestGitHub(t *testing.T) {
 	}
 	if validName("../etc") == nil {
 		t.Fatal("bad name")
+	}
+}
+
+// TestDemoData parses the recorded demo answers (for screenshots once the API
+// address can be pointed at the fake API).
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "GET", "/orgs/maple-labs/repos?per_page=100&page=1&sort=pushed")
+	if err != nil {
+		t.Fatal(err)
+	}
+	repos, err := parseRepos(body)
+	if err != nil || len(repos) != 7 {
+		t.Fatal(err, len(repos))
+	}
+	ops := graphOps("maple-labs", repos).Ops
+	if len(ops) != 6 || ops[2].Name != "maple-labs/maple-ui" || ops[2].Attrs["license"] != "MIT" || ops[2].Attrs["stars"] != 48 {
+		t.Fatalf("ops: %+v", ops)
+	}
+	body, err = fakeapi.Body("../testdata/fake", "GET", "/repos/maple-labs/shop/issues?state=open&per_page=50")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if items, err := openItems(body); err != nil || len(items) != 2 || items[1].Kind != "pull" {
+		t.Fatalf("items: %+v %v", items, err)
 	}
 }

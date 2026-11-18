@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "path": "/orgs/maple-labs/repos",
+      "query": "page=1",
+      "file": "repos.json"
+    },
+    {
+      "path": "/repos/maple-labs/shop/issues",
+      "query": "state=open",
+      "file": "issues.json"
+    }
+  ]
+}
