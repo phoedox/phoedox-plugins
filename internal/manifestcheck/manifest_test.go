@@ -61,6 +61,23 @@ func TestManifests(t *testing.T) {
 				t.Errorf("same icon and category as %s: %s", other, tile)
 			}
 			tiles[tile] = filepath.Base(dir)
+			// Screenshots (concept "Plugin logos and screenshots"): at least
+			// one, made by scripts/shots.mjs, with a caption, at most 2 MB.
+			if len(m.Screenshots) == 0 {
+				t.Errorf("official plugins need at least one screenshot (scripts/shots.mjs)")
+			}
+			for _, sc := range m.Screenshots {
+				info, err := os.Stat(filepath.Join(dir, sc.File))
+				switch {
+				case err != nil:
+					t.Errorf("screenshot %s missing", sc.File)
+				case info.Size() > 2<<20:
+					t.Errorf("screenshot %s is larger than 2 MB", sc.File)
+				}
+				if strings.TrimSpace(sc.Caption) == "" {
+					t.Errorf("screenshot %s needs a caption", sc.File)
+				}
+			}
 			for _, l := range []string{m.Logo, m.LogoDark} {
 				if l == "" {
 					continue
