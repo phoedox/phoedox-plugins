@@ -1,0 +1,26 @@
+{
+ "chromeosdevices": [
+  {
+   "deviceId": "7c2e9a41-5b3d-4f8e-a1c6-0d9b8e7f6a52",
+   "serialNumber": "DEMO-5CD3010",
+   "status": "ACTIVE",
+   "lastSync": "2026-06-15T06:12:48.204Z",
+   "model": "Lenovo IdeaPad Flex 5 Chromebook Plus",
+   "osVersion": "137.0.7151.72",
+   "orgUnitPath": "/Family/Kids",
+   "annotatedAssetId": "KIDS-CB-01",
+   "macAddress": "02005e0010a1"
+  },
+  {
+   "deviceId": "1e8d4c27-9a6b-4e3f-b5d0-7c2a1f9e8b34",
+   "serialNumber": "DEMO-NXK3020",
+   "status": "ACTIVE",
+   "lastSync": "2026-06-14T18:40:03.917Z",
+   "model": "Acer Chromebook Plus 515",
+   "osVersion": "137.0.7151.72",
+   "orgUnitPath": "/Maple Labs",
+   "annotatedAssetId": "ML-CB-02",
+   "macAddress": "02005e0010a2"
+  }
+ ]
+}

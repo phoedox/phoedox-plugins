@@ -1,0 +1,17 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/token",
+      "file": "token.json"
+    },
+    {
+      "path": "/admin/directory/v1/customer/my_customer/devices/chromeos",
+      "file": "chromeos.json"
+    },
+    {
+      "path": "/admin/directory/v1/customer/my_customer/devices/mobile",
+      "file": "mobile.json"
+    }
+  ]
+}

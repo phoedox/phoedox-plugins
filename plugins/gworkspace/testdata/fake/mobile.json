@@ -1,0 +1,31 @@
+{
+ "mobiledevices": [
+  {
+   "resourceId": "AFiQxQ8demoPixel9x",
+   "serialNumber": "DEMO-4A1F0301",
+   "status": "APPROVED",
+   "lastSync": "2026-06-15T07:31:55.000Z",
+   "model": "Pixel 9",
+   "os": "Android 15",
+   "type": "ANDROID",
+   "name": [
+    "Alex Doe"
+   ],
+   "manufacturer": "Google",
+   "brand": "google"
+  },
+  {
+   "resourceId": "AFiQxQ8demoiPad10x",
+   "serialNumber": "",
+   "status": "APPROVED",
+   "lastSync": "2026-06-15T05:47:12.000Z",
+   "model": "iPad",
+   "os": "iPadOS 18.5",
+   "type": "IOS_SYNC",
+   "name": [
+    "Sam Doe"
+   ],
+   "brand": "Apple"
+  }
+ ]
+}

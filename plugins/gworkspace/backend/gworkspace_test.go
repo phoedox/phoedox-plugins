@@ -4,6 +4,8 @@ import (
 	"net/url"
 	"strings"
 	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 // Answers of the Directory API with the plugin's fields selection.
@@ -96,5 +98,39 @@ func TestURLs(t *testing.T) {
 	}
 	if formatMAC("not-a-mac") != "not-a-mac" {
 		t.Fatal("mac")
+	}
+}
+
+// TestDemoData parses the recorded demo answers (for screenshots once the
+// token and Admin SDK addresses can be pointed at the fake API).
+func TestDemoData(t *testing.T) {
+	const dir = "../testdata/fake"
+	body, err := fakeapi.Body(dir, "POST", "/token")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if tok, err := parseToken(200, body); err != nil || tok == "" {
+		t.Fatal(tok, err)
+	}
+	get := func(link string) []byte {
+		t.Helper()
+		u, _ := url.Parse(link)
+		body, err := fakeapi.Body(dir, "GET", u.Path+"?"+u.RawQuery)
+		if err != nil {
+			t.Fatal(err)
+		}
+		return body
+	}
+	chrome, next, err := parseChrome(get(chromeURL("")))
+	if err != nil || next != "" || len(chrome) != 2 {
+		t.Fatal(err, next, len(chrome))
+	}
+	mobile, next, err := parseMobile(get(mobileURL("")))
+	if err != nil || next != "" || len(mobile) != 2 {
+		t.Fatal(err, next, len(mobile))
+	}
+	ops := graphOps(append(fromChrome(chrome), fromMobile(mobile)...)).Ops
+	if len(ops) != 4 || ops[0].Attrs["org_unit"] != "/Family/Kids" || ops[0].Attrs["asset_tag"] != "KIDS-CB-01" || ops[2].Attrs["user"] != "Alex Doe" {
+		t.Fatalf("ops: %+v", ops)
 	}
 }
