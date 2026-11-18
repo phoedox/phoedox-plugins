@@ -19,13 +19,16 @@
 //     "shots":   [{"name": "main", "path": "/p/${project}/graph", "caption": "…",
 //                  "selector": "phx-plugin-block", "actions": [{"click": "text=Run"}], "wait": 1500}]
 //   }
-// ${project} is the demo project's slug, ${fake} the fake API's address and
+// ${project} is the demo project's slug, ${fake} the fake API's address,
+// ${rsaKey} a fresh RSA key (PKCS #8 PEM, JSON-escaped) for services that
+// sign tokens, made for each run so no key is stored in the repository, and
 // ${<as>.<field>} a field of an earlier setup answer.
 import { spawn, execFileSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { createRequire } from "node:module";
+import { generateKeyPairSync } from "node:crypto";
 
 const require = createRequire(import.meta.url);
 const { chromium } = require("playwright");
@@ -157,6 +160,7 @@ async function run(browser, name) {
     await page.fill("input[type=password]", admin.password);
     await page.keyboard.press("Enter");
     await page.waitForURL((u) => !u.pathname.startsWith("/login"));
+    await waitFor(async () => (await ctx.request.get("/api/v1/me", { headers: { "X-Phoedox": "1" } })).ok(), 10000, "sign-in");
     const api = async (method, p, body, raw) => {
       const res = await ctx.request.fetch("/api/v1" + p, { method, headers: { "X-Phoedox": "1", "Content-Type": raw ? "application/octet-stream" : "application/json" }, data: raw ?? (body === undefined ? undefined : JSON.stringify(body)) });
       const text = await res.text();
@@ -167,7 +171,8 @@ async function run(browser, name) {
     await api("PATCH", `/admin/plugins/${manifest.id}`, { enabled: true });
     const project = (await api("POST", "/projects", { name: "Maple Street 12", description: "Home of the Doe family: house, network and homelab." })).slug;
     await api("PUT", `/projects/${project}/plugins/${manifest.id}`, { enabled: true });
-    const vars = { project, fake: fake.url };
+    const pem = generateKeyPairSync("rsa", { modulusLength: 2048 }).privateKey.export({ type: "pkcs8", format: "pem" });
+    const vars = { project, fake: fake.url, rsaKey: JSON.stringify(pem).slice(1, -1) };
     if (plan.secrets) await api("PUT", `/projects/${project}/plugins/${manifest.id}/secrets`, fill(plan.secrets, vars));
     for (const step of plan.setup ?? []) {
       const out = await api(step.method ?? "POST", fill(step.path, vars), fill(step.body, vars));
