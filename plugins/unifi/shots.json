@@ -1,0 +1,12 @@
+{
+  "secrets": {"url": "${fake}", "apikey": "demo-unifi-api-key"},
+  "setup": [
+    {"method": "PATCH", "path": "/projects/${project}", "body": {"name": "Maple Street 12", "features": ["graph"]}},
+    {"method": "POST", "path": "/projects/${project}/plugins/com.phoedox.unifi/tools/unifi.sync", "body": {}}
+  ],
+  "wait": {"path": "/projects/${project}/entities", "min": 8},
+  "shots": [
+    {"name": "network", "path": "/p/${project}/topology", "caption": "The UniFi gateway, switches and access points as a network plan", "wait": 2000},
+    {"name": "map", "path": "/p/${project}/graph/map", "caption": "UniFi devices on the knowledge graph map, wired to their uplinks", "wait": 3000}
+  ]
+}

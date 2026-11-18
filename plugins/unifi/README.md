@@ -2,6 +2,8 @@
 
 `com.phoedox.unifi` · version 0.1.0
 
+![The UniFi gateway, switches and access points as a network plan](screenshots/network.webp)
+
 Imports UniFi gateways, switches and access points into the knowledge graph (router, switch, access point, "wired to" their uplink) through the official UniFi Network API and lists connected clients for AI clients.
 
 ## What it adds

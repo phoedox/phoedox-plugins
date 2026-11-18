@@ -2,7 +2,10 @@ package main
 
 import (
 	"encoding/json"
+	"slices"
 	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
 )
 
 func TestUniFi(t *testing.T) {
@@ -38,6 +41,57 @@ func TestUniFi(t *testing.T) {
 	}
 	cl := clientInfo([]Client{{Type: "WIRELESS", MacAddress: "11:22:33:44:55:66", IPAddress: "192.168.1.50", UplinkDeviceID: "a"}}, devices)
 	if cl[0].Name != "11:22:33:44:55:66" || cl[0].Via != "AP Hall" || cl[0].Type != "wireless" {
+		t.Fatalf("clients: %+v", cl)
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use: the
+// device list names the features, the device details key them by name.
+func TestDemoData(t *testing.T) {
+	const api = "/proxy/network/integration/v1"
+	get := func(p string, out any) {
+		body, err := fakeapi.Body("../testdata/fake", "GET", api+p)
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := json.Unmarshal(body, out); err != nil {
+			t.Fatal(p, err)
+		}
+	}
+	var sites page[Site]
+	get("/sites?limit=200", &sites)
+	site, ok := pickSite(sites.Data, "")
+	if !ok {
+		t.Fatal("no site")
+	}
+	var list page[Device]
+	get("/sites/"+site.ID+"/devices?limit=200", &list)
+	if len(list.Data) != 8 || list.Data[0].Uplink != nil {
+		t.Fatalf("list: %+v", list.Data)
+	}
+	for i, d := range list.Data {
+		var full Device
+		get("/sites/"+site.ID+"/devices/"+d.ID, &full)
+		if !slices.Equal(full.Features, d.Features) {
+			t.Fatalf("%s: features %v, list %v", d.Name, full.Features, d.Features)
+		}
+		list.Data[i] = full
+	}
+	ops := graphOps(list.Data)
+	kinds, links := map[string]int{}, 0
+	for _, o := range ops.Ops {
+		if o.Op == "link" {
+			links++
+		} else {
+			kinds[o.Kind]++
+		}
+	}
+	if kinds["router"] != 1 || kinds["switch"] != 3 || kinds["access_point"] != 4 || links != 6 {
+		t.Fatalf("kinds %v links %d", kinds, links)
+	}
+	var clients page[Client]
+	get("/sites/"+site.ID+"/clients?limit=500", &clients)
+	if cl := clientInfo(clients.Data, list.Data); len(cl) != 8 || cl[7].Via != "AP garden" {
 		t.Fatalf("clients: %+v", cl)
 	}
 }

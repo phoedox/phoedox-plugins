@@ -3,6 +3,8 @@
 package main
 
 import (
+	"encoding/json"
+	"maps"
 	"slices"
 	"strings"
 
@@ -25,11 +27,31 @@ type Device struct {
 	MacAddress      string   `json:"macAddress"`
 	IPAddress       string   `json:"ipAddress"`
 	State           string   `json:"state"`
-	Features        []string `json:"features"`
+	Features        Features `json:"features"`
 	FirmwareVersion string   `json:"firmwareVersion"`
 	Uplink          *struct {
 		DeviceID string `json:"deviceId"`
 	} `json:"uplink"`
+}
+
+// Features are the capabilities of a device: the device list sends them as
+// names (["switching"]), the device details as an object keyed by name
+// ({"switching": {…}}); both are read.
+type Features []string
+
+// UnmarshalJSON accepts a list of names or an object keyed by name.
+func (f *Features) UnmarshalJSON(b []byte) error {
+	var list []string
+	if err := json.Unmarshal(b, &list); err == nil {
+		*f = list
+		return nil
+	}
+	var obj map[string]json.RawMessage
+	if err := json.Unmarshal(b, &obj); err != nil {
+		return err
+	}
+	*f = slices.Sorted(maps.Keys(obj))
+	return nil
 }
 
 // Client is a connected client.

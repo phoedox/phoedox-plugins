@@ -1,0 +1,339 @@
+{
+ "id": "d0c00002-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+ "name": "Rack switch",
+ "model": "USW Pro 24 PoE",
+ "supported": true,
+ "macAddress": "02:00:5e:10:00:02",
+ "ipAddress": "10.20.0.2",
+ "state": "ONLINE",
+ "firmwareVersion": "7.1.26",
+ "firmwareUpdatable": false,
+ "adoptedAt": "2025-03-08T11:20:41Z",
+ "provisionedAt": "2026-05-30T02:14:09Z",
+ "configurationId": "7596498d2f367dc2",
+ "features": {
+  "switching": {}
+ },
+ "interfaces": {
+  "ports": [
+   {
+    "idx": 1,
+    "state": "UP",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "speedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "UP"
+    }
+   },
+   {
+    "idx": 2,
+    "state": "UP",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "speedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "UP"
+    }
+   },
+   {
+    "idx": 3,
+    "state": "UP",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "speedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 4,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 5,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 6,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 7,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 8,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 9,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 10,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 11,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 12,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 13,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 14,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 15,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 16,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 17,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 18,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 19,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 20,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 21,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 22,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 23,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 24,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 25,
+    "state": "DOWN",
+    "connector": "SFPPLUS",
+    "maxSpeedMbps": 10000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 26,
+    "state": "DOWN",
+    "connector": "SFPPLUS",
+    "maxSpeedMbps": 10000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   }
+  ]
+ },
+ "uplink": {
+  "deviceId": "d0c00001-1a2b-4c3d-8e4f-0a1b2c3d4e5f"
+ }
+}

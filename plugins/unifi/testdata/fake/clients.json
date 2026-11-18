@@ -1,0 +1,104 @@
+{
+ "offset": 0,
+ "limit": 500,
+ "count": 8,
+ "totalCount": 8,
+ "data": [
+  {
+   "type": "WIRED",
+   "id": "c1e00001-0000-4000-8000-000000000000",
+   "name": "homeserver",
+   "connectedAt": "2026-06-15T06:03:00Z",
+   "ipAddress": "10.20.0.10",
+   "macAddress": "02:00:5e:10:00:10",
+   "uplinkDeviceId": "d0c00002-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "access": {
+    "type": "DEFAULT"
+   }
+  },
+  {
+   "type": "WIRED",
+   "id": "c1e00002-0000-4000-8000-000000000000",
+   "name": "nas",
+   "connectedAt": "2026-06-15T06:06:00Z",
+   "ipAddress": "10.20.0.11",
+   "macAddress": "02:00:5e:10:00:11",
+   "uplinkDeviceId": "d0c00002-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "access": {
+    "type": "DEFAULT"
+   }
+  },
+  {
+   "type": "WIRED",
+   "id": "c1e00003-0000-4000-8000-000000000000",
+   "name": "printer",
+   "connectedAt": "2026-06-15T06:09:00Z",
+   "ipAddress": "10.20.0.12",
+   "macAddress": "02:00:5e:10:00:12",
+   "uplinkDeviceId": "d0c00003-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "access": {
+    "type": "DEFAULT"
+   }
+  },
+  {
+   "type": "WIRED",
+   "id": "c1e00004-0000-4000-8000-000000000000",
+   "name": "living-room-tv",
+   "connectedAt": "2026-06-15T06:12:00Z",
+   "ipAddress": "10.20.0.103",
+   "macAddress": "02:00:5e:10:01:03",
+   "uplinkDeviceId": "d0c00004-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "access": {
+    "type": "DEFAULT"
+   }
+  },
+  {
+   "type": "WIRELESS",
+   "id": "c1e00005-0000-4000-8000-000000000000",
+   "name": "alex-laptop",
+   "connectedAt": "2026-06-15T06:15:00Z",
+   "ipAddress": "10.20.0.101",
+   "macAddress": "02:00:5e:10:01:01",
+   "uplinkDeviceId": "d0c00005-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "access": {
+    "type": "DEFAULT"
+   }
+  },
+  {
+   "type": "WIRELESS",
+   "id": "c1e00006-0000-4000-8000-000000000000",
+   "name": "sam-phone",
+   "connectedAt": "2026-06-15T06:18:00Z",
+   "ipAddress": "10.20.0.102",
+   "macAddress": "02:00:5e:10:01:02",
+   "uplinkDeviceId": "d0c00006-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "access": {
+    "type": "DEFAULT"
+   }
+  },
+  {
+   "type": "WIRELESS",
+   "id": "c1e00007-0000-4000-8000-000000000000",
+   "name": "kitchen-speaker",
+   "connectedAt": "2026-06-15T06:21:00Z",
+   "ipAddress": "10.20.0.104",
+   "macAddress": "02:00:5e:10:01:04",
+   "uplinkDeviceId": "d0c00006-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "access": {
+    "type": "DEFAULT"
+   }
+  },
+  {
+   "type": "WIRELESS",
+   "id": "c1e00008-0000-4000-8000-000000000000",
+   "name": "garden-camera",
+   "connectedAt": "2026-06-15T06:24:00Z",
+   "ipAddress": "10.20.30.63",
+   "macAddress": "02:00:5e:10:00:63",
+   "uplinkDeviceId": "d0c00007-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "access": {
+    "type": "DEFAULT"
+   }
+  }
+ ]
+}

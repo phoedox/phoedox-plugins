@@ -1,0 +1,120 @@
+{
+ "offset": 0,
+ "limit": 200,
+ "count": 8,
+ "totalCount": 8,
+ "data": [
+  {
+   "id": "d0c00001-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "name": "Gateway",
+   "model": "UCG Ultra",
+   "macAddress": "02:00:5e:10:00:01",
+   "ipAddress": "10.20.0.1",
+   "state": "ONLINE",
+   "features": [
+    "switching"
+   ],
+   "interfaces": [
+    "ports"
+   ]
+  },
+  {
+   "id": "d0c00002-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "name": "Rack switch",
+   "model": "USW Pro 24 PoE",
+   "macAddress": "02:00:5e:10:00:02",
+   "ipAddress": "10.20.0.2",
+   "state": "ONLINE",
+   "features": [
+    "switching"
+   ],
+   "interfaces": [
+    "ports"
+   ]
+  },
+  {
+   "id": "d0c00003-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "name": "Office switch",
+   "model": "USW Lite 8 PoE",
+   "macAddress": "02:00:5e:10:00:03",
+   "ipAddress": "10.20.0.3",
+   "state": "ONLINE",
+   "features": [
+    "switching"
+   ],
+   "interfaces": [
+    "ports"
+   ]
+  },
+  {
+   "id": "d0c00004-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "name": "Living room switch",
+   "model": "USW Flex Mini",
+   "macAddress": "02:00:5e:10:00:04",
+   "ipAddress": "10.20.0.4",
+   "state": "ONLINE",
+   "features": [
+    "switching"
+   ],
+   "interfaces": [
+    "ports"
+   ]
+  },
+  {
+   "id": "d0c00005-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "name": "AP upstairs",
+   "model": "U7 Pro",
+   "macAddress": "02:00:5e:10:00:05",
+   "ipAddress": "10.20.0.5",
+   "state": "ONLINE",
+   "features": [
+    "accessPoint"
+   ],
+   "interfaces": [
+    "radios"
+   ]
+  },
+  {
+   "id": "d0c00006-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "name": "AP downstairs",
+   "model": "U6 Lite",
+   "macAddress": "02:00:5e:10:00:06",
+   "ipAddress": "10.20.0.6",
+   "state": "ONLINE",
+   "features": [
+    "accessPoint"
+   ],
+   "interfaces": [
+    "radios"
+   ]
+  },
+  {
+   "id": "d0c00007-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "name": "AP garden",
+   "model": "U6 Mesh",
+   "macAddress": "02:00:5e:10:00:07",
+   "ipAddress": "10.20.0.7",
+   "state": "ONLINE",
+   "features": [
+    "accessPoint"
+   ],
+   "interfaces": [
+    "radios"
+   ]
+  },
+  {
+   "id": "d0c00008-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+   "name": "AP garage",
+   "model": "U6 Lite",
+   "macAddress": "02:00:5e:10:00:08",
+   "ipAddress": "10.20.0.8",
+   "state": "OFFLINE",
+   "features": [
+    "accessPoint"
+   ],
+   "interfaces": [
+    "radios"
+   ]
+  }
+ ]
+}

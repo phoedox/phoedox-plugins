@@ -1,0 +1,15 @@
+{
+  "routes": [
+    {"path": "/proxy/network/integration/v1/sites", "file": "sites.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/devices/d0c00001-1a2b-4c3d-8e4f-0a1b2c3d4e5f", "file": "devices/gw.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/devices/d0c00002-1a2b-4c3d-8e4f-0a1b2c3d4e5f", "file": "devices/rack.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/devices/d0c00003-1a2b-4c3d-8e4f-0a1b2c3d4e5f", "file": "devices/office.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/devices/d0c00004-1a2b-4c3d-8e4f-0a1b2c3d4e5f", "file": "devices/living.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/devices/d0c00005-1a2b-4c3d-8e4f-0a1b2c3d4e5f", "file": "devices/ap1.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/devices/d0c00006-1a2b-4c3d-8e4f-0a1b2c3d4e5f", "file": "devices/ap2.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/devices/d0c00007-1a2b-4c3d-8e4f-0a1b2c3d4e5f", "file": "devices/ap3.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/devices/d0c00008-1a2b-4c3d-8e4f-0a1b2c3d4e5f", "file": "devices/ap4.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/devices", "file": "devices.json"},
+    {"path": "/proxy/network/integration/v1/sites/88f7af54-98f8-306a-a1c7-c9349722b1f6/clients", "file": "clients.json"}
+  ]
+}

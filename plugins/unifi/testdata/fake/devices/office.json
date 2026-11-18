@@ -1,0 +1,123 @@
+{
+ "id": "d0c00003-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+ "name": "Office switch",
+ "model": "USW Lite 8 PoE",
+ "supported": true,
+ "macAddress": "02:00:5e:10:00:03",
+ "ipAddress": "10.20.0.3",
+ "state": "ONLINE",
+ "firmwareVersion": "7.1.26",
+ "firmwareUpdatable": false,
+ "adoptedAt": "2025-03-08T11:20:41Z",
+ "provisionedAt": "2026-05-30T02:14:09Z",
+ "configurationId": "7596498d2f367dc2",
+ "features": {
+  "switching": {}
+ },
+ "interfaces": {
+  "ports": [
+   {
+    "idx": 1,
+    "state": "UP",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "speedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "UP"
+    }
+   },
+   {
+    "idx": 2,
+    "state": "UP",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "speedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "UP"
+    }
+   },
+   {
+    "idx": 3,
+    "state": "UP",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "speedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 4,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 5,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 6,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 7,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   },
+   {
+    "idx": 8,
+    "state": "DOWN",
+    "connector": "RJ45",
+    "maxSpeedMbps": 1000,
+    "poe": {
+     "standard": "802.3at",
+     "type": 2,
+     "enabled": true,
+     "state": "DOWN"
+    }
+   }
+  ]
+ },
+ "uplink": {
+  "deviceId": "d0c00002-1a2b-4c3d-8e4f-0a1b2c3d4e5f"
+ }
+}

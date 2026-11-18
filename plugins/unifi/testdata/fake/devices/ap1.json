@@ -1,0 +1,36 @@
+{
+ "id": "d0c00005-1a2b-4c3d-8e4f-0a1b2c3d4e5f",
+ "name": "AP upstairs",
+ "model": "U7 Pro",
+ "supported": true,
+ "macAddress": "02:00:5e:10:00:05",
+ "ipAddress": "10.20.0.5",
+ "state": "ONLINE",
+ "firmwareVersion": "8.0.33",
+ "firmwareUpdatable": false,
+ "adoptedAt": "2025-03-08T11:20:41Z",
+ "provisionedAt": "2026-05-30T02:14:09Z",
+ "configurationId": "7596498d2f367dc2",
+ "features": {
+  "accessPoint": {}
+ },
+ "interfaces": {
+  "radios": [
+   {
+    "wlanStandard": "802.11be",
+    "frequencyGHz": 5,
+    "channelWidthMHz": 80,
+    "channel": 44
+   },
+   {
+    "wlanStandard": "802.11ax",
+    "frequencyGHz": 2.4,
+    "channelWidthMHz": 20,
+    "channel": 6
+   }
+  ]
+ },
+ "uplink": {
+  "deviceId": "d0c00002-1a2b-4c3d-8e4f-0a1b2c3d4e5f"
+ }
+}
