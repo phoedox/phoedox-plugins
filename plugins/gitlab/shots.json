@@ -1,0 +1,35 @@
+{
+  "secrets": {
+    "url": "${fake}",
+    "group": "maple-labs",
+    "token": "glpat-demo0000000000000000"
+  },
+  "setup": [
+    {
+      "method": "PATCH",
+      "path": "/projects/${project}",
+      "body": {
+        "name": "Maple Street 12",
+        "features": [
+          "graph"
+        ]
+      }
+    }
+  ],
+  "wait": {
+    "path": "/projects/${project}/entities",
+    "min": 6
+  },
+  "shots": [
+    {
+      "name": "project",
+      "path": "/p/${project}/e/gl-maple-labs-shop",
+      "caption": "A project's entry: description, open issues, stars and last activity"
+    },
+    {
+      "name": "entries",
+      "path": "/p/${project}/graph",
+      "caption": "The projects of a GitLab group as entries with visibility, branch and topics"
+    }
+  ]
+}

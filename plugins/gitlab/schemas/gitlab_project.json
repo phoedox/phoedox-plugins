@@ -1,4 +1,5 @@
 {
+  "title": "GitLab project",
   "type": "object",
   "properties": {
     "url": { "type": "string", "format": "uri", "title": "Address" },

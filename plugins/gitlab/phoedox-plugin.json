@@ -3,6 +3,10 @@
   "name": "GitLab",
   "icon": "git-merge",
   "category": "development",
+  "screenshots": [
+    { "file": "screenshots/project.webp", "caption": "A project's entry: description, open issues, stars and last activity" },
+    { "file": "screenshots/entries.webp", "caption": "The projects of a GitLab group as entries with visibility, branch and topics" }
+  ],
   "version": "0.1.0",
   "hostApi": "1",
   "description": "Imports the projects of a GitLab group (with subgroups) into the knowledge graph (visibility, default branch, topics, last activity) and lists open issues and merge requests for AI clients. Works with gitlab.com and self-managed GitLab. Settings: url (e.g. https://gitlab.com), group (path, e.g. acme/infra), optional token (personal or group access token with read_api; needed for private projects).",

@@ -2,6 +2,8 @@
 
 `com.phoedox.gitlab` · version 0.1.0
 
+![A project's entry: description, open issues, stars and last activity](screenshots/project.webp)
+
 Imports the projects of a GitLab group (with subgroups) into the knowledge graph (visibility, default branch, topics, last activity) and lists open issues and merge requests for AI clients. Works with gitlab.com and self-managed GitLab.
 
 ## What it adds

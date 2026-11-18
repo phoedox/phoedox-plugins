@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {
+      "path": "/api/v4/groups/maple-labs/projects",
+      "query": "include_subgroups=true",
+      "file": "projects.json"
+    },
+    {
+      "path": "/api/v4/projects/maple-labs/shop/issues",
+      "query": "state=opened",
+      "file": "issues.json"
+    },
+    {
+      "path": "/api/v4/projects/maple-labs/shop/merge_requests",
+      "query": "state=opened",
+      "file": "merge_requests.json"
+    }
+  ]
+}

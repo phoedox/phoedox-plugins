@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/phoedox/phoedox-plugins/internal/fakeapi"
+)
 
 func TestGitLab(t *testing.T) {
 	list, err := parseProjects([]byte(`[
@@ -28,5 +32,30 @@ func TestGitLab(t *testing.T) {
 	}
 	if validPath("acme/infra/ansible") != nil {
 		t.Fatal("rejected a good path")
+	}
+}
+
+// TestDemoData parses the recorded demo answers the screenshots use.
+func TestDemoData(t *testing.T) {
+	body, err := fakeapi.Body("../testdata/fake", "GET", "/api/v4/groups/maple-labs/projects?include_subgroups=true&per_page=100&page=1&order_by=last_activity_at")
+	if err != nil {
+		t.Fatal(err)
+	}
+	list, err := parseProjects(body)
+	if err != nil || len(list) != 7 {
+		t.Fatalf("%v %d", err, len(list))
+	}
+	ops := graphOps(list).Ops
+	if len(ops) != 6 || ops[0].ID != "gl-maple-labs-shop" || ops[0].Attrs["open_issues"] != 7 || ops[0].Attrs["last_activity"] != "2026-06-14" {
+		t.Fatalf("ops: %+v", ops)
+	}
+	for _, f := range []string{"issues", "merge_requests"} {
+		body, err := fakeapi.Body("../testdata/fake", "GET", "/api/v4/projects/maple-labs/shop/"+f+"?state=opened&per_page=50")
+		if err != nil {
+			t.Fatal(err)
+		}
+		if items, err := parseItems(f, body); err != nil || len(items) == 0 || items[0].Author == "" {
+			t.Fatalf("%s: %+v %v", f, items, err)
+		}
 	}
 }

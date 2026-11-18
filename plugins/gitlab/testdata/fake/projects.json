@@ -1,0 +1,287 @@
+[
+ {
+  "id": 301,
+  "description": "Online shop for hand-made maple boards: storefront and checkout.",
+  "name": "shop",
+  "name_with_namespace": "Maple Labs / shop",
+  "path": "shop",
+  "path_with_namespace": "maple-labs/shop",
+  "created_at": "2025-03-02T10:11:00.000Z",
+  "default_branch": "main",
+  "tag_list": [
+   "python",
+   "django"
+  ],
+  "topics": [
+   "python",
+   "django"
+  ],
+  "ssh_url_to_repo": "git@gitlab.example.org:maple-labs/shop.git",
+  "http_url_to_repo": "https://gitlab.example.org/maple-labs/shop.git",
+  "web_url": "https://gitlab.example.org/maple-labs/shop",
+  "readme_url": "https://gitlab.example.org/maple-labs/shop/-/blob/main/README.md",
+  "forks_count": 0,
+  "avatar_url": null,
+  "star_count": 3,
+  "last_activity_at": "2026-06-14T17:42:10.512Z",
+  "namespace": {
+   "id": 41,
+   "name": "Maple Labs",
+   "path": "maple-labs",
+   "kind": "group",
+   "full_path": "maple-labs",
+   "parent_id": null,
+   "web_url": "https://gitlab.example.org/groups/maple-labs"
+  },
+  "visibility": "private",
+  "archived": false,
+  "open_issues_count": 7,
+  "issues_enabled": true,
+  "merge_requests_enabled": true,
+  "empty_repo": false
+ },
+ {
+  "id": 302,
+  "description": "Kubernetes manifests of the homelab cluster maple-k3s (Flux).",
+  "name": "k3s-manifests",
+  "name_with_namespace": "Maple Labs / infra / k3s-manifests",
+  "path": "k3s-manifests",
+  "path_with_namespace": "maple-labs/infra/k3s-manifests",
+  "created_at": "2025-11-02T12:00:00.000Z",
+  "default_branch": "main",
+  "tag_list": [
+   "kubernetes",
+   "gitops"
+  ],
+  "topics": [
+   "kubernetes",
+   "gitops"
+  ],
+  "ssh_url_to_repo": "git@gitlab.example.org:maple-labs/infra/k3s-manifests.git",
+  "http_url_to_repo": "https://gitlab.example.org/maple-labs/infra/k3s-manifests.git",
+  "web_url": "https://gitlab.example.org/maple-labs/infra/k3s-manifests",
+  "readme_url": "https://gitlab.example.org/maple-labs/infra/k3s-manifests/-/blob/main/README.md",
+  "forks_count": 0,
+  "avatar_url": null,
+  "star_count": 1,
+  "last_activity_at": "2026-06-13T09:05:33.101Z",
+  "namespace": {
+   "id": 42,
+   "name": "infra",
+   "path": "infra",
+   "kind": "group",
+   "full_path": "maple-labs/infra",
+   "parent_id": 41,
+   "web_url": "https://gitlab.example.org/groups/maple-labs/infra"
+  },
+  "visibility": "private",
+  "archived": false,
+  "open_issues_count": 2,
+  "issues_enabled": true,
+  "merge_requests_enabled": true,
+  "empty_repo": false
+ },
+ {
+  "id": 303,
+  "description": "Playbooks for the servers at 12 Maple Street.",
+  "name": "ansible",
+  "name_with_namespace": "Maple Labs / infra / ansible",
+  "path": "ansible",
+  "path_with_namespace": "maple-labs/infra/ansible",
+  "created_at": "2024-08-19T08:30:00.000Z",
+  "default_branch": "main",
+  "tag_list": [
+   "ansible",
+   "homelab"
+  ],
+  "topics": [
+   "ansible",
+   "homelab"
+  ],
+  "ssh_url_to_repo": "git@gitlab.example.org:maple-labs/infra/ansible.git",
+  "http_url_to_repo": "https://gitlab.example.org/maple-labs/infra/ansible.git",
+  "web_url": "https://gitlab.example.org/maple-labs/infra/ansible",
+  "readme_url": "https://gitlab.example.org/maple-labs/infra/ansible/-/blob/main/README.md",
+  "forks_count": 0,
+  "avatar_url": null,
+  "star_count": 1,
+  "last_activity_at": "2026-06-11T20:18:47.290Z",
+  "namespace": {
+   "id": 42,
+   "name": "infra",
+   "path": "infra",
+   "kind": "group",
+   "full_path": "maple-labs/infra",
+   "parent_id": 41,
+   "web_url": "https://gitlab.example.org/groups/maple-labs/infra"
+  },
+  "visibility": "private",
+  "archived": false,
+  "open_issues_count": 4,
+  "issues_enabled": true,
+  "merge_requests_enabled": true,
+  "empty_repo": false
+ },
+ {
+  "id": 304,
+  "description": "Static website of Maple Labs (example.org), built with Hugo.",
+  "name": "website",
+  "name_with_namespace": "Maple Labs / website",
+  "path": "website",
+  "path_with_namespace": "maple-labs/website",
+  "created_at": "2024-05-01T09:00:00.000Z",
+  "default_branch": "main",
+  "tag_list": [
+   "hugo",
+   "website"
+  ],
+  "topics": [
+   "hugo",
+   "website"
+  ],
+  "ssh_url_to_repo": "git@gitlab.example.org:maple-labs/website.git",
+  "http_url_to_repo": "https://gitlab.example.org/maple-labs/website.git",
+  "web_url": "https://gitlab.example.org/maple-labs/website",
+  "readme_url": "https://gitlab.example.org/maple-labs/website/-/blob/main/README.md",
+  "forks_count": 0,
+  "avatar_url": null,
+  "star_count": 5,
+  "last_activity_at": "2026-06-09T15:27:02.874Z",
+  "namespace": {
+   "id": 41,
+   "name": "Maple Labs",
+   "path": "maple-labs",
+   "kind": "group",
+   "full_path": "maple-labs",
+   "parent_id": null,
+   "web_url": "https://gitlab.example.org/groups/maple-labs"
+  },
+  "visibility": "public",
+  "archived": false,
+  "open_issues_count": 1,
+  "issues_enabled": true,
+  "merge_requests_enabled": true,
+  "empty_repo": false
+ },
+ {
+  "id": 305,
+  "description": "Cloud servers and DNS of the shop as code.",
+  "name": "terraform",
+  "name_with_namespace": "Maple Labs / infra / terraform",
+  "path": "terraform",
+  "path_with_namespace": "maple-labs/infra/terraform",
+  "created_at": "2025-01-15T14:20:00.000Z",
+  "default_branch": "main",
+  "tag_list": [
+   "terraform"
+  ],
+  "topics": [
+   "terraform"
+  ],
+  "ssh_url_to_repo": "git@gitlab.example.org:maple-labs/infra/terraform.git",
+  "http_url_to_repo": "https://gitlab.example.org/maple-labs/infra/terraform.git",
+  "web_url": "https://gitlab.example.org/maple-labs/infra/terraform",
+  "readme_url": "https://gitlab.example.org/maple-labs/infra/terraform/-/blob/main/README.md",
+  "forks_count": 0,
+  "avatar_url": null,
+  "star_count": 0,
+  "last_activity_at": "2026-05-28T11:02:55.440Z",
+  "namespace": {
+   "id": 42,
+   "name": "infra",
+   "path": "infra",
+   "kind": "group",
+   "full_path": "maple-labs/infra",
+   "parent_id": 41,
+   "web_url": "https://gitlab.example.org/groups/maple-labs/infra"
+  },
+  "visibility": "internal",
+  "archived": false,
+  "open_issues_count": 0,
+  "issues_enabled": true,
+  "merge_requests_enabled": true,
+  "empty_repo": false
+ },
+ {
+  "id": 306,
+  "description": "Fork of a Caddy DNS provider module.",
+  "name": "caddy-dns-plugin",
+  "name_with_namespace": "Maple Labs / caddy-dns-plugin",
+  "path": "caddy-dns-plugin",
+  "path_with_namespace": "maple-labs/caddy-dns-plugin",
+  "created_at": "2026-03-30T08:00:00.000Z",
+  "default_branch": "main",
+  "tag_list": [
+   "caddy"
+  ],
+  "topics": [
+   "caddy"
+  ],
+  "ssh_url_to_repo": "git@gitlab.example.org:maple-labs/caddy-dns-plugin.git",
+  "http_url_to_repo": "https://gitlab.example.org/maple-labs/caddy-dns-plugin.git",
+  "web_url": "https://gitlab.example.org/maple-labs/caddy-dns-plugin",
+  "readme_url": "https://gitlab.example.org/maple-labs/caddy-dns-plugin/-/blob/main/README.md",
+  "forks_count": 0,
+  "avatar_url": null,
+  "star_count": 0,
+  "last_activity_at": "2026-04-02T08:00:00.000Z",
+  "namespace": {
+   "id": 41,
+   "name": "Maple Labs",
+   "path": "maple-labs",
+   "kind": "group",
+   "full_path": "maple-labs",
+   "parent_id": null,
+   "web_url": "https://gitlab.example.org/groups/maple-labs"
+  },
+  "visibility": "public",
+  "archived": false,
+  "open_issues_count": 0,
+  "issues_enabled": true,
+  "merge_requests_enabled": true,
+  "empty_repo": false,
+  "forked_from_project": {
+   "id": 9001,
+   "path_with_namespace": "upstream/caddy-dns-plugin"
+  }
+ },
+ {
+  "id": 307,
+  "description": "The first landing page from 2023, kept for reference.",
+  "name": "old-landing-page",
+  "name_with_namespace": "Maple Labs / old-landing-page",
+  "path": "old-landing-page",
+  "path_with_namespace": "maple-labs/old-landing-page",
+  "created_at": "2023-04-12T16:00:00.000Z",
+  "default_branch": "master",
+  "tag_list": [
+   "html"
+  ],
+  "topics": [
+   "html"
+  ],
+  "ssh_url_to_repo": "git@gitlab.example.org:maple-labs/old-landing-page.git",
+  "http_url_to_repo": "https://gitlab.example.org/maple-labs/old-landing-page.git",
+  "web_url": "https://gitlab.example.org/maple-labs/old-landing-page",
+  "readme_url": "https://gitlab.example.org/maple-labs/old-landing-page/-/blob/master/README.md",
+  "forks_count": 0,
+  "avatar_url": null,
+  "star_count": 2,
+  "last_activity_at": "2025-02-10T19:44:00.000Z",
+  "namespace": {
+   "id": 41,
+   "name": "Maple Labs",
+   "path": "maple-labs",
+   "kind": "group",
+   "full_path": "maple-labs",
+   "parent_id": null,
+   "web_url": "https://gitlab.example.org/groups/maple-labs"
+  },
+  "visibility": "public",
+  "archived": true,
+  "open_issues_count": 0,
+  "issues_enabled": true,
+  "merge_requests_enabled": true,
+  "empty_repo": false
+ }
+]
