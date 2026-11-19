@@ -26,6 +26,8 @@ jobs:
       - uses: actions/setup-go@v5
         with: { go-version-file: go.mod }
       - uses: oven-sh/setup-bun@v2
+      - name: SDK's JS dependencies (lit) for building frontends
+        run: cd ../phoedox-sdk/js && bun install --frozen-lockfile
       - name: Plugin and version from the tag
         id: tag
         run: |
@@ -38,7 +40,11 @@ jobs:
       - run: go test ./...
       - name: Pack
         id: pack
-        run: echo "package=$(scripts/pack.sh ${{ steps.tag.outputs.name }} dist)" >> "$GITHUB_OUTPUT"
+        # The assignment makes a failed pack fail the step (an echo of $(…) would not).
+        run: |
+          pkg=$(scripts/pack.sh ${{ steps.tag.outputs.name }} dist)
+          test -f "$pkg"
+          echo "package=$pkg" >> "$GITHUB_OUTPUT"
       - name: Publish for review
         env:
           PHOEDOX_AUTHOR_KEY: ${{ secrets.PHOEDOX_AUTHOR_KEY }}
